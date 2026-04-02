@@ -1,0 +1,1539 @@
+{
+  "generated": "2026-04-02T11:06:53Z",
+  "sources": {
+    "who_gho": "WHO Global Health Observatory OData API — ghoapi.azureedge.net",
+    "seasonal_events": "Blueprint §City Coverage table + academic/WHO seasonal health literature",
+    "exercise_thresholds": "WHO 2021 AQI guidelines adapted for activity-specific inhalation rates"
+  },
+  "exerciseThresholds": {
+    "walk": {
+      "maxPm25": 50.0,
+      "rationale": "WHO 'Unhealthy' threshold; walkers have baseline inhalation rate"
+    },
+    "cycle": {
+      "maxPm25": 35.0,
+      "rationale": "Intermediate; moderate exertion increases inhalation 3-5x"
+    },
+    "jog": {
+      "maxPm25": 25.0,
+      "rationale": "WHO 'Moderate' threshold; runners inhale 5-10x more than walkers"
+    }
+  },
+  "whoBands": [
+    {
+      "id": "good",
+      "label": "Good",
+      "min": 0,
+      "max": 15.0,
+      "color": "#4CAF50"
+    },
+    {
+      "id": "moderate",
+      "label": "Moderate",
+      "min": 15.1,
+      "max": 25.0,
+      "color": "#FFEB3B"
+    },
+    {
+      "id": "unhealthy_sensitive",
+      "label": "Unhealthy for Sensitive",
+      "min": 25.1,
+      "max": 50.0,
+      "color": "#FF9800"
+    },
+    {
+      "id": "unhealthy",
+      "label": "Unhealthy",
+      "min": 50.1,
+      "max": 100.0,
+      "color": "#F44336"
+    },
+    {
+      "id": "hazardous",
+      "label": "Hazardous",
+      "min": 100.1,
+      "max": 9999,
+      "color": "#9C27B0"
+    }
+  ],
+  "cities": {
+    "bangkok": {
+      "cityId": "bangkok",
+      "countryCode": "THA",
+      "whoData": {
+        "available": true,
+        "pm25Estimate": {
+          "value": 25.48299,
+          "year": 2019,
+          "unit": null
+        },
+        "mortalityPer100k": {
+          "value": 10.43,
+          "year": 2019,
+          "unit": null
+        }
+      },
+      "seasonalEvents": [
+        {
+          "months": [
+            2,
+            3,
+            4
+          ],
+          "event": "Northern crop burning season",
+          "risk_level": "high",
+          "cause": "Agricultural burning in northern Thailand and neighbouring Mekong countries"
+        },
+        {
+          "months": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "event": "Monsoon season",
+          "risk_level": "low",
+          "cause": "Rain washes particulates from the air"
+        },
+        {
+          "months": [
+            11,
+            12,
+            1
+          ],
+          "event": "Cool season haze",
+          "risk_level": "medium",
+          "cause": "Temperature inversion traps vehicle and industrial emissions"
+        }
+      ],
+      "monthlyRiskIndex": [
+        {
+          "month": 1,
+          "riskLevel": "medium"
+        },
+        {
+          "month": 2,
+          "riskLevel": "high"
+        },
+        {
+          "month": 3,
+          "riskLevel": "high"
+        },
+        {
+          "month": 4,
+          "riskLevel": "high"
+        },
+        {
+          "month": 5,
+          "riskLevel": "low"
+        },
+        {
+          "month": 6,
+          "riskLevel": "low"
+        },
+        {
+          "month": 7,
+          "riskLevel": "low"
+        },
+        {
+          "month": 8,
+          "riskLevel": "low"
+        },
+        {
+          "month": 9,
+          "riskLevel": "low"
+        },
+        {
+          "month": 10,
+          "riskLevel": "low"
+        },
+        {
+          "month": 11,
+          "riskLevel": "medium"
+        },
+        {
+          "month": 12,
+          "riskLevel": "medium"
+        }
+      ]
+    },
+    "chiang-mai": {
+      "cityId": "chiang-mai",
+      "countryCode": "THA",
+      "whoData": {
+        "available": true,
+        "pm25Estimate": {
+          "value": 25.48299,
+          "year": 2019,
+          "unit": null
+        },
+        "mortalityPer100k": {
+          "value": 10.43,
+          "year": 2019,
+          "unit": null
+        }
+      },
+      "seasonalEvents": [
+        {
+          "months": [
+            2,
+            3,
+            4
+          ],
+          "event": "Worst burning season in SE Asia",
+          "risk_level": "high",
+          "cause": "Upland deforestation burning + crop residue burning across the Mekong sub-region"
+        },
+        {
+          "months": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "event": "Monsoon season",
+          "risk_level": "low",
+          "cause": "Heavy rainfall clears smoke and dust"
+        },
+        {
+          "months": [
+            12,
+            1
+          ],
+          "event": "Valley inversion haze",
+          "risk_level": "medium",
+          "cause": "Mountain topography traps cool-season pollution in the valley"
+        }
+      ],
+      "monthlyRiskIndex": [
+        {
+          "month": 1,
+          "riskLevel": "medium"
+        },
+        {
+          "month": 2,
+          "riskLevel": "high"
+        },
+        {
+          "month": 3,
+          "riskLevel": "high"
+        },
+        {
+          "month": 4,
+          "riskLevel": "high"
+        },
+        {
+          "month": 5,
+          "riskLevel": "low"
+        },
+        {
+          "month": 6,
+          "riskLevel": "low"
+        },
+        {
+          "month": 7,
+          "riskLevel": "low"
+        },
+        {
+          "month": 8,
+          "riskLevel": "low"
+        },
+        {
+          "month": 9,
+          "riskLevel": "low"
+        },
+        {
+          "month": 10,
+          "riskLevel": "low"
+        },
+        {
+          "month": 11,
+          "riskLevel": "low"
+        },
+        {
+          "month": 12,
+          "riskLevel": "medium"
+        }
+      ]
+    },
+    "delhi": {
+      "cityId": "delhi",
+      "countryCode": "IND",
+      "whoData": {
+        "available": true,
+        "pm25Estimate": {
+          "value": 50.17359,
+          "year": 2019,
+          "unit": null
+        },
+        "mortalityPer100k": {
+          "value": 157.54999,
+          "year": 2019,
+          "unit": null
+        }
+      },
+      "seasonalEvents": [
+        {
+          "months": [
+            10,
+            11
+          ],
+          "event": "Diwali fireworks + crop burning",
+          "risk_level": "high",
+          "cause": "Diwali pyrotechnics combined with Punjab/Haryana post-harvest stubble burning peak simultaneously"
+        },
+        {
+          "months": [
+            12,
+            1,
+            2
+          ],
+          "event": "Winter inversion trap",
+          "risk_level": "high",
+          "cause": "Cold air mass + low wind traps vehicle, industrial and biomass burning emissions in the Indo-Gangetic Plain"
+        },
+        {
+          "months": [
+            6,
+            7,
+            8
+          ],
+          "event": "Monsoon season",
+          "risk_level": "low",
+          "cause": "Southwest monsoon suppresses dust and washes particulates"
+        },
+        {
+          "months": [
+            3,
+            4,
+            5
+          ],
+          "event": "Pre-monsoon dust storms",
+          "risk_level": "medium",
+          "cause": "Westerly winds carry Rajasthan desert dust"
+        }
+      ],
+      "monthlyRiskIndex": [
+        {
+          "month": 1,
+          "riskLevel": "high"
+        },
+        {
+          "month": 2,
+          "riskLevel": "high"
+        },
+        {
+          "month": 3,
+          "riskLevel": "medium"
+        },
+        {
+          "month": 4,
+          "riskLevel": "medium"
+        },
+        {
+          "month": 5,
+          "riskLevel": "medium"
+        },
+        {
+          "month": 6,
+          "riskLevel": "low"
+        },
+        {
+          "month": 7,
+          "riskLevel": "low"
+        },
+        {
+          "month": 8,
+          "riskLevel": "low"
+        },
+        {
+          "month": 9,
+          "riskLevel": "low"
+        },
+        {
+          "month": 10,
+          "riskLevel": "high"
+        },
+        {
+          "month": 11,
+          "riskLevel": "high"
+        },
+        {
+          "month": 12,
+          "riskLevel": "high"
+        }
+      ]
+    },
+    "hanoi": {
+      "cityId": "hanoi",
+      "countryCode": "VNM",
+      "whoData": {
+        "available": true,
+        "pm25Estimate": {
+          "value": 22.11983,
+          "year": 2019,
+          "unit": null
+        },
+        "mortalityPer100k": {
+          "value": 44.83205,
+          "year": 2019,
+          "unit": null
+        }
+      },
+      "seasonalEvents": [
+        {
+          "months": [
+            11,
+            12,
+            1,
+            2
+          ],
+          "event": "Winter pollution season",
+          "risk_level": "high",
+          "cause": "Coal power plants, motorcycles and brick kilns under northeast monsoon inversion"
+        },
+        {
+          "months": [
+            3
+          ],
+          "event": "Spring haze",
+          "risk_level": "medium",
+          "cause": "Agricultural burning transitions with monsoon onset"
+        },
+        {
+          "months": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "event": "Summer monsoon",
+          "risk_level": "low",
+          "cause": "Southwest monsoon brings cleaner air from the Gulf of Tonkin"
+        }
+      ],
+      "monthlyRiskIndex": [
+        {
+          "month": 1,
+          "riskLevel": "high"
+        },
+        {
+          "month": 2,
+          "riskLevel": "high"
+        },
+        {
+          "month": 3,
+          "riskLevel": "medium"
+        },
+        {
+          "month": 4,
+          "riskLevel": "low"
+        },
+        {
+          "month": 5,
+          "riskLevel": "low"
+        },
+        {
+          "month": 6,
+          "riskLevel": "low"
+        },
+        {
+          "month": 7,
+          "riskLevel": "low"
+        },
+        {
+          "month": 8,
+          "riskLevel": "low"
+        },
+        {
+          "month": 9,
+          "riskLevel": "low"
+        },
+        {
+          "month": 10,
+          "riskLevel": "low"
+        },
+        {
+          "month": 11,
+          "riskLevel": "high"
+        },
+        {
+          "month": 12,
+          "riskLevel": "high"
+        }
+      ]
+    },
+    "jakarta": {
+      "cityId": "jakarta",
+      "countryCode": "IDN",
+      "whoData": {
+        "available": true,
+        "pm25Estimate": {
+          "value": 19.3398,
+          "year": 2019,
+          "unit": null
+        },
+        "mortalityPer100k": {
+          "value": 62.30603,
+          "year": 2019,
+          "unit": null
+        }
+      },
+      "seasonalEvents": [
+        {
+          "months": [
+            7,
+            8,
+            9,
+            10
+          ],
+          "event": "Dry season peat fire haze",
+          "risk_level": "high",
+          "cause": "Kalimantan and Sumatra peat fires during El Niño-amplified dry seasons"
+        },
+        {
+          "months": [
+            6
+          ],
+          "event": "Dry season onset",
+          "risk_level": "medium",
+          "cause": "Transition from wet to dry season, vehicle emissions accumulate"
+        },
+        {
+          "months": [
+            12,
+            1,
+            2
+          ],
+          "event": "Wet season",
+          "risk_level": "low",
+          "cause": "Northwest monsoon rains suppress particulates"
+        }
+      ],
+      "monthlyRiskIndex": [
+        {
+          "month": 1,
+          "riskLevel": "low"
+        },
+        {
+          "month": 2,
+          "riskLevel": "low"
+        },
+        {
+          "month": 3,
+          "riskLevel": "low"
+        },
+        {
+          "month": 4,
+          "riskLevel": "low"
+        },
+        {
+          "month": 5,
+          "riskLevel": "low"
+        },
+        {
+          "month": 6,
+          "riskLevel": "medium"
+        },
+        {
+          "month": 7,
+          "riskLevel": "high"
+        },
+        {
+          "month": 8,
+          "riskLevel": "high"
+        },
+        {
+          "month": 9,
+          "riskLevel": "high"
+        },
+        {
+          "month": 10,
+          "riskLevel": "high"
+        },
+        {
+          "month": 11,
+          "riskLevel": "low"
+        },
+        {
+          "month": 12,
+          "riskLevel": "low"
+        }
+      ]
+    },
+    "seoul": {
+      "cityId": "seoul",
+      "countryCode": "KOR",
+      "whoData": {
+        "available": true,
+        "pm25Estimate": {
+          "value": 24.21615,
+          "year": 2019,
+          "unit": null
+        },
+        "mortalityPer100k": {
+          "value": 0.69065,
+          "year": 2019,
+          "unit": null
+        }
+      },
+      "seasonalEvents": [
+        {
+          "months": [
+            3,
+            4,
+            5
+          ],
+          "event": "Yellow dust season",
+          "risk_level": "high",
+          "cause": "Gobi and Taklamakan desert dust transported eastward by spring westerlies across China"
+        },
+        {
+          "months": [
+            11,
+            12,
+            1,
+            2
+          ],
+          "event": "Winter particulate season",
+          "risk_level": "medium",
+          "cause": "Coal combustion in China and Korea transported by northwesterly winds"
+        },
+        {
+          "months": [
+            7,
+            8
+          ],
+          "event": "Summer monsoon",
+          "risk_level": "low",
+          "cause": "East Asian monsoon rains clear the atmosphere"
+        }
+      ],
+      "monthlyRiskIndex": [
+        {
+          "month": 1,
+          "riskLevel": "medium"
+        },
+        {
+          "month": 2,
+          "riskLevel": "medium"
+        },
+        {
+          "month": 3,
+          "riskLevel": "high"
+        },
+        {
+          "month": 4,
+          "riskLevel": "high"
+        },
+        {
+          "month": 5,
+          "riskLevel": "high"
+        },
+        {
+          "month": 6,
+          "riskLevel": "low"
+        },
+        {
+          "month": 7,
+          "riskLevel": "low"
+        },
+        {
+          "month": 8,
+          "riskLevel": "low"
+        },
+        {
+          "month": 9,
+          "riskLevel": "low"
+        },
+        {
+          "month": 10,
+          "riskLevel": "low"
+        },
+        {
+          "month": 11,
+          "riskLevel": "medium"
+        },
+        {
+          "month": 12,
+          "riskLevel": "medium"
+        }
+      ]
+    },
+    "beijing": {
+      "cityId": "beijing",
+      "countryCode": "CHN",
+      "whoData": {
+        "available": true,
+        "pm25Estimate": {
+          "value": 39.11733,
+          "year": 2019,
+          "unit": null
+        },
+        "mortalityPer100k": {
+          "value": 31.27764,
+          "year": 2019,
+          "unit": null
+        }
+      },
+      "seasonalEvents": [
+        {
+          "months": [
+            11,
+            12,
+            1,
+            2
+          ],
+          "event": "Heating season coal combustion",
+          "risk_level": "high",
+          "cause": "District heating systems burning coal under winter temperature inversions"
+        },
+        {
+          "months": [
+            3,
+            4
+          ],
+          "event": "Spring dust storms",
+          "risk_level": "high",
+          "cause": "Gobi Desert dust mobilised by spring cyclones"
+        },
+        {
+          "months": [
+            7,
+            8
+          ],
+          "event": "Summer monsoon",
+          "risk_level": "low",
+          "cause": "East Asian monsoon reduces pollution concentration"
+        }
+      ],
+      "monthlyRiskIndex": [
+        {
+          "month": 1,
+          "riskLevel": "high"
+        },
+        {
+          "month": 2,
+          "riskLevel": "high"
+        },
+        {
+          "month": 3,
+          "riskLevel": "high"
+        },
+        {
+          "month": 4,
+          "riskLevel": "high"
+        },
+        {
+          "month": 5,
+          "riskLevel": "low"
+        },
+        {
+          "month": 6,
+          "riskLevel": "low"
+        },
+        {
+          "month": 7,
+          "riskLevel": "low"
+        },
+        {
+          "month": 8,
+          "riskLevel": "low"
+        },
+        {
+          "month": 9,
+          "riskLevel": "low"
+        },
+        {
+          "month": 10,
+          "riskLevel": "low"
+        },
+        {
+          "month": 11,
+          "riskLevel": "high"
+        },
+        {
+          "month": 12,
+          "riskLevel": "high"
+        }
+      ]
+    },
+    "manila": {
+      "cityId": "manila",
+      "countryCode": "PHL",
+      "whoData": {
+        "available": true,
+        "pm25Estimate": {
+          "value": 22.45141,
+          "year": 2019,
+          "unit": null
+        },
+        "mortalityPer100k": {
+          "value": 128.73817,
+          "year": 2019,
+          "unit": null
+        }
+      },
+      "seasonalEvents": [
+        {
+          "months": [
+            12,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "event": "Dry season pollution",
+          "risk_level": "medium",
+          "cause": "Vehicle exhaust and industrial emissions accumulate during dry northeast monsoon"
+        },
+        {
+          "months": [
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "event": "Wet season",
+          "risk_level": "low",
+          "cause": "Southwest monsoon and typhoon season bring regular rainfall"
+        }
+      ],
+      "monthlyRiskIndex": [
+        {
+          "month": 1,
+          "riskLevel": "medium"
+        },
+        {
+          "month": 2,
+          "riskLevel": "medium"
+        },
+        {
+          "month": 3,
+          "riskLevel": "medium"
+        },
+        {
+          "month": 4,
+          "riskLevel": "medium"
+        },
+        {
+          "month": 5,
+          "riskLevel": "medium"
+        },
+        {
+          "month": 6,
+          "riskLevel": "low"
+        },
+        {
+          "month": 7,
+          "riskLevel": "low"
+        },
+        {
+          "month": 8,
+          "riskLevel": "low"
+        },
+        {
+          "month": 9,
+          "riskLevel": "low"
+        },
+        {
+          "month": 10,
+          "riskLevel": "low"
+        },
+        {
+          "month": 11,
+          "riskLevel": "low"
+        },
+        {
+          "month": 12,
+          "riskLevel": "medium"
+        }
+      ]
+    },
+    "dhaka": {
+      "cityId": "dhaka",
+      "countryCode": "BGD",
+      "whoData": {
+        "available": true,
+        "pm25Estimate": {
+          "value": 50.1194,
+          "year": 2019,
+          "unit": null
+        },
+        "mortalityPer100k": {
+          "value": 114.95736,
+          "year": 2019,
+          "unit": null
+        }
+      },
+      "seasonalEvents": [
+        {
+          "months": [
+            11,
+            12,
+            1,
+            2
+          ],
+          "event": "Brick kiln burning season",
+          "risk_level": "high",
+          "cause": "500+ brick kilns around Dhaka operate during dry winter, combined with vehicle emissions and biomass cooking"
+        },
+        {
+          "months": [
+            3
+          ],
+          "event": "Late dry season",
+          "risk_level": "medium",
+          "cause": "Pre-monsoon heat and dust with reduced dilution"
+        },
+        {
+          "months": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "event": "Monsoon season",
+          "risk_level": "low",
+          "cause": "Heavy rainfall washes out particulates"
+        }
+      ],
+      "monthlyRiskIndex": [
+        {
+          "month": 1,
+          "riskLevel": "high"
+        },
+        {
+          "month": 2,
+          "riskLevel": "high"
+        },
+        {
+          "month": 3,
+          "riskLevel": "medium"
+        },
+        {
+          "month": 4,
+          "riskLevel": "low"
+        },
+        {
+          "month": 5,
+          "riskLevel": "low"
+        },
+        {
+          "month": 6,
+          "riskLevel": "low"
+        },
+        {
+          "month": 7,
+          "riskLevel": "low"
+        },
+        {
+          "month": 8,
+          "riskLevel": "low"
+        },
+        {
+          "month": 9,
+          "riskLevel": "low"
+        },
+        {
+          "month": 10,
+          "riskLevel": "low"
+        },
+        {
+          "month": 11,
+          "riskLevel": "high"
+        },
+        {
+          "month": 12,
+          "riskLevel": "high"
+        }
+      ]
+    },
+    "kathmandu": {
+      "cityId": "kathmandu",
+      "countryCode": "NPL",
+      "whoData": {
+        "available": true,
+        "pm25Estimate": {
+          "value": 36.74763,
+          "year": 2019,
+          "unit": null
+        },
+        "mortalityPer100k": {
+          "value": 95.16506,
+          "year": 2019,
+          "unit": null
+        }
+      },
+      "seasonalEvents": [
+        {
+          "months": [
+            11,
+            12,
+            1,
+            2
+          ],
+          "event": "Winter valley inversion",
+          "risk_level": "high",
+          "cause": "Himalayan bowl traps cold air, vehicle fumes, waste burning and brick kiln emissions under inversion layer"
+        },
+        {
+          "months": [
+            3,
+            4
+          ],
+          "event": "Pre-monsoon dust and fires",
+          "risk_level": "medium",
+          "cause": "Forest fires and agricultural burning on valley slopes before monsoon"
+        },
+        {
+          "months": [
+            7,
+            8,
+            9
+          ],
+          "event": "Monsoon season",
+          "risk_level": "low",
+          "cause": "Himalayan monsoon clears the valley air"
+        }
+      ],
+      "monthlyRiskIndex": [
+        {
+          "month": 1,
+          "riskLevel": "high"
+        },
+        {
+          "month": 2,
+          "riskLevel": "high"
+        },
+        {
+          "month": 3,
+          "riskLevel": "medium"
+        },
+        {
+          "month": 4,
+          "riskLevel": "medium"
+        },
+        {
+          "month": 5,
+          "riskLevel": "low"
+        },
+        {
+          "month": 6,
+          "riskLevel": "low"
+        },
+        {
+          "month": 7,
+          "riskLevel": "low"
+        },
+        {
+          "month": 8,
+          "riskLevel": "low"
+        },
+        {
+          "month": 9,
+          "riskLevel": "low"
+        },
+        {
+          "month": 10,
+          "riskLevel": "low"
+        },
+        {
+          "month": 11,
+          "riskLevel": "high"
+        },
+        {
+          "month": 12,
+          "riskLevel": "high"
+        }
+      ]
+    },
+    "ho-chi-minh-city": {
+      "cityId": "ho-chi-minh-city",
+      "countryCode": "VNM",
+      "whoData": {
+        "available": true,
+        "pm25Estimate": {
+          "value": 22.11983,
+          "year": 2019,
+          "unit": null
+        },
+        "mortalityPer100k": {
+          "value": 44.83205,
+          "year": 2019,
+          "unit": null
+        }
+      },
+      "seasonalEvents": [
+        {
+          "months": [
+            12,
+            1,
+            2,
+            3,
+            4
+          ],
+          "event": "Dry season construction dust",
+          "risk_level": "medium",
+          "cause": "Rapid urban construction, vehicle traffic and agricultural burning during dry northeast monsoon"
+        },
+        {
+          "months": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "event": "Wet season",
+          "risk_level": "low",
+          "cause": "Southwest monsoon and tropical rains suppress dust and emissions"
+        }
+      ],
+      "monthlyRiskIndex": [
+        {
+          "month": 1,
+          "riskLevel": "medium"
+        },
+        {
+          "month": 2,
+          "riskLevel": "medium"
+        },
+        {
+          "month": 3,
+          "riskLevel": "medium"
+        },
+        {
+          "month": 4,
+          "riskLevel": "medium"
+        },
+        {
+          "month": 5,
+          "riskLevel": "low"
+        },
+        {
+          "month": 6,
+          "riskLevel": "low"
+        },
+        {
+          "month": 7,
+          "riskLevel": "low"
+        },
+        {
+          "month": 8,
+          "riskLevel": "low"
+        },
+        {
+          "month": 9,
+          "riskLevel": "low"
+        },
+        {
+          "month": 10,
+          "riskLevel": "low"
+        },
+        {
+          "month": 11,
+          "riskLevel": "low"
+        },
+        {
+          "month": 12,
+          "riskLevel": "medium"
+        }
+      ]
+    },
+    "taipei": {
+      "cityId": "taipei",
+      "countryCode": "TWN",
+      "whoData": {
+        "available": false
+      },
+      "seasonalEvents": [
+        {
+          "months": [
+            10,
+            11,
+            12,
+            1,
+            2,
+            3
+          ],
+          "event": "Cross-strait industrial pollution",
+          "risk_level": "medium",
+          "cause": "Northeast monsoon carries PM2.5 from eastern Chinese industrial zones across the Taiwan Strait"
+        },
+        {
+          "months": [
+            4,
+            5
+          ],
+          "event": "Spring transitional haze",
+          "risk_level": "low",
+          "cause": "Shifting winds during monsoon transition"
+        },
+        {
+          "months": [
+            7,
+            8,
+            9
+          ],
+          "event": "Typhoon season",
+          "risk_level": "low",
+          "cause": "Frequent rainfall and strong winds clean the atmosphere, though typhoons can also carry dust"
+        }
+      ],
+      "monthlyRiskIndex": [
+        {
+          "month": 1,
+          "riskLevel": "medium"
+        },
+        {
+          "month": 2,
+          "riskLevel": "medium"
+        },
+        {
+          "month": 3,
+          "riskLevel": "medium"
+        },
+        {
+          "month": 4,
+          "riskLevel": "low"
+        },
+        {
+          "month": 5,
+          "riskLevel": "low"
+        },
+        {
+          "month": 6,
+          "riskLevel": "low"
+        },
+        {
+          "month": 7,
+          "riskLevel": "low"
+        },
+        {
+          "month": 8,
+          "riskLevel": "low"
+        },
+        {
+          "month": 9,
+          "riskLevel": "low"
+        },
+        {
+          "month": 10,
+          "riskLevel": "medium"
+        },
+        {
+          "month": 11,
+          "riskLevel": "medium"
+        },
+        {
+          "month": 12,
+          "riskLevel": "medium"
+        }
+      ]
+    },
+    "singapore": {
+      "cityId": "singapore",
+      "countryCode": "SGP",
+      "whoData": {
+        "available": true,
+        "pm25Estimate": {
+          "value": 13.33302,
+          "year": 2019,
+          "unit": null
+        },
+        "mortalityPer100k": {
+          "value": 1.75216,
+          "year": 2019,
+          "unit": null
+        }
+      },
+      "seasonalEvents": [
+        {
+          "months": [
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "event": "Transboundary haze episodes",
+          "risk_level": "high",
+          "cause": "Sumatra and Kalimantan peat/forest fires carried by southwest monsoon winds to Singapore"
+        },
+        {
+          "months": [
+            11,
+            12,
+            1,
+            2
+          ],
+          "event": "Northeast monsoon",
+          "risk_level": "low",
+          "cause": "Northeast monsoon brings cleaner oceanic air"
+        },
+        {
+          "months": [
+            3,
+            4,
+            5
+          ],
+          "event": "Inter-monsoon period",
+          "risk_level": "medium",
+          "cause": "Light variable winds can concentrate localised emissions"
+        }
+      ],
+      "monthlyRiskIndex": [
+        {
+          "month": 1,
+          "riskLevel": "low"
+        },
+        {
+          "month": 2,
+          "riskLevel": "low"
+        },
+        {
+          "month": 3,
+          "riskLevel": "medium"
+        },
+        {
+          "month": 4,
+          "riskLevel": "medium"
+        },
+        {
+          "month": 5,
+          "riskLevel": "medium"
+        },
+        {
+          "month": 6,
+          "riskLevel": "high"
+        },
+        {
+          "month": 7,
+          "riskLevel": "high"
+        },
+        {
+          "month": 8,
+          "riskLevel": "high"
+        },
+        {
+          "month": 9,
+          "riskLevel": "high"
+        },
+        {
+          "month": 10,
+          "riskLevel": "high"
+        },
+        {
+          "month": 11,
+          "riskLevel": "low"
+        },
+        {
+          "month": 12,
+          "riskLevel": "low"
+        }
+      ]
+    },
+    "mumbai": {
+      "cityId": "mumbai",
+      "countryCode": "IND",
+      "whoData": {
+        "available": true,
+        "pm25Estimate": {
+          "value": 50.17359,
+          "year": 2019,
+          "unit": null
+        },
+        "mortalityPer100k": {
+          "value": 157.54999,
+          "year": 2019,
+          "unit": null
+        }
+      },
+      "seasonalEvents": [
+        {
+          "months": [
+            11,
+            12,
+            1,
+            2
+          ],
+          "event": "Winter construction and burning",
+          "risk_level": "high",
+          "cause": "Post-monsoon construction boom, Diwali residue, vehicular emissions under winter inversion over Arabian Sea coast"
+        },
+        {
+          "months": [
+            3,
+            4,
+            5
+          ],
+          "event": "Pre-monsoon heat haze",
+          "risk_level": "medium",
+          "cause": "Rising temperatures and low rainfall concentrate urban emissions"
+        },
+        {
+          "months": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "event": "Southwest monsoon",
+          "risk_level": "low",
+          "cause": "Arabian Sea monsoon brings heavy rainfall and clean oceanic air"
+        }
+      ],
+      "monthlyRiskIndex": [
+        {
+          "month": 1,
+          "riskLevel": "high"
+        },
+        {
+          "month": 2,
+          "riskLevel": "high"
+        },
+        {
+          "month": 3,
+          "riskLevel": "medium"
+        },
+        {
+          "month": 4,
+          "riskLevel": "medium"
+        },
+        {
+          "month": 5,
+          "riskLevel": "medium"
+        },
+        {
+          "month": 6,
+          "riskLevel": "low"
+        },
+        {
+          "month": 7,
+          "riskLevel": "low"
+        },
+        {
+          "month": 8,
+          "riskLevel": "low"
+        },
+        {
+          "month": 9,
+          "riskLevel": "low"
+        },
+        {
+          "month": 10,
+          "riskLevel": "low"
+        },
+        {
+          "month": 11,
+          "riskLevel": "high"
+        },
+        {
+          "month": 12,
+          "riskLevel": "high"
+        }
+      ]
+    },
+    "ulaanbaatar": {
+      "cityId": "ulaanbaatar",
+      "countryCode": "MNG",
+      "whoData": {
+        "available": true,
+        "pm25Estimate": {
+          "value": 37.90245,
+          "year": 2019,
+          "unit": null
+        },
+        "mortalityPer100k": {
+          "value": 104.95998,
+          "year": 2019,
+          "unit": null
+        }
+      },
+      "seasonalEvents": [
+        {
+          "months": [
+            10,
+            11,
+            12,
+            1,
+            2,
+            3,
+            4
+          ],
+          "event": "Coal ger district heating",
+          "risk_level": "high",
+          "cause": "Traditional felt tents (gers) in peri-urban districts burn low-grade coal for heating during -40°C winters; one of the worst urban winter pollution events globally"
+        },
+        {
+          "months": [
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "event": "Summer season",
+          "risk_level": "low",
+          "cause": "No heating demand; strong summer winds dilute remaining vehicle emissions"
+        }
+      ],
+      "monthlyRiskIndex": [
+        {
+          "month": 1,
+          "riskLevel": "high"
+        },
+        {
+          "month": 2,
+          "riskLevel": "high"
+        },
+        {
+          "month": 3,
+          "riskLevel": "high"
+        },
+        {
+          "month": 4,
+          "riskLevel": "high"
+        },
+        {
+          "month": 5,
+          "riskLevel": "low"
+        },
+        {
+          "month": 6,
+          "riskLevel": "low"
+        },
+        {
+          "month": 7,
+          "riskLevel": "low"
+        },
+        {
+          "month": 8,
+          "riskLevel": "low"
+        },
+        {
+          "month": 9,
+          "riskLevel": "low"
+        },
+        {
+          "month": 10,
+          "riskLevel": "high"
+        },
+        {
+          "month": 11,
+          "riskLevel": "high"
+        },
+        {
+          "month": 12,
+          "riskLevel": "high"
+        }
+      ]
+    }
+  }
+}

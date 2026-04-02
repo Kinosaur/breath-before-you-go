@@ -1,0 +1,6820 @@
+{
+  "cityId": "singapore",
+  "cityName": "Singapore",
+  "country": "Singapore",
+  "tier": 3,
+  "coordinates": {
+    "lat": 1.3521,
+    "lon": 103.8198
+  },
+  "timezone": "Asia/Singapore",
+  "healthMetrics": {
+    "annualMedianPm25": 16.0,
+    "annualMeanPm25": 17.5,
+    "cigarettesPerDay": 0.73,
+    "yearsLost": 10.78,
+    "aqiDistribution": {
+      "good": 45.4,
+      "moderate": 34.9,
+      "unhealthy_sensitive": 19.7,
+      "unhealthy": 0.0,
+      "hazardous": 0.0
+    },
+    "bestMonth": 12,
+    "bestMonthName": "December",
+    "bestMonthMedian": 11.0,
+    "worstMonth": 7,
+    "worstMonthName": "July",
+    "worstMonthMedian": 23.6,
+    "bestVisitMonth": 12,
+    "bestVisitMonthName": "December",
+    "cigMethodologyNote": "Berkeley Earth conversion: 22.0 µg/m³ PM2.5 ≈ 1 cigarette/day. This compares population-level mortality risk, not individual clinical outcomes. Acute vs chronic exposure differs significantly.",
+    "aqliMethodologyNote": "AQLI methodology: each 10 µg/m³ PM2.5 above WHO baseline (5.0 µg/m³) ≈ 0.98 years of life expectancy lost."
+  },
+  "monthlyProfiles": [
+    {
+      "month": 1,
+      "monthName": "January",
+      "monthShort": "Jan",
+      "p10": 9.55,
+      "p25": 10.47,
+      "p50": 12.28,
+      "p75": 17.8,
+      "p90": 22.21,
+      "mean": 14.4,
+      "aqiDistribution": {
+        "good": 62.3,
+        "moderate": 34.4,
+        "unhealthy_sensitive": 3.3,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "good",
+      "cigarettesPerDay": 0.56,
+      "daysCount": 61,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 100.0,
+        "jog": 96.7
+      }
+    },
+    {
+      "month": 2,
+      "monthName": "February",
+      "monthShort": "Feb",
+      "p10": 8.25,
+      "p25": 9.61,
+      "p50": 12.89,
+      "p75": 16.01,
+      "p90": 21.37,
+      "mean": 13.78,
+      "aqiDistribution": {
+        "good": 67.3,
+        "moderate": 25.5,
+        "unhealthy_sensitive": 7.3,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "good",
+      "cigarettesPerDay": 0.59,
+      "daysCount": 55,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 100.0,
+        "jog": 92.7
+      }
+    },
+    {
+      "month": 3,
+      "monthName": "March",
+      "monthShort": "Mar",
+      "p10": 8.94,
+      "p25": 12.33,
+      "p50": 18.41,
+      "p75": 23.99,
+      "p90": 32.95,
+      "mean": 19.53,
+      "aqiDistribution": {
+        "good": 35.5,
+        "moderate": 43.5,
+        "unhealthy_sensitive": 21.0,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "moderate",
+      "cigarettesPerDay": 0.84,
+      "daysCount": 62,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 91.9,
+        "jog": 79.0
+      }
+    },
+    {
+      "month": 4,
+      "monthName": "April",
+      "monthShort": "Apr",
+      "p10": 8.83,
+      "p25": 9.63,
+      "p50": 13.14,
+      "p75": 19.97,
+      "p90": 24.94,
+      "mean": 15.32,
+      "aqiDistribution": {
+        "good": 54.8,
+        "moderate": 35.5,
+        "unhealthy_sensitive": 9.7,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "good",
+      "cigarettesPerDay": 0.6,
+      "daysCount": 31,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 100.0,
+        "jog": 90.3
+      }
+    },
+    {
+      "month": 5,
+      "monthName": "May",
+      "monthShort": "May",
+      "p10": 11.38,
+      "p25": 14.88,
+      "p50": 18.18,
+      "p75": 23.97,
+      "p90": 29.22,
+      "mean": 19.33,
+      "aqiDistribution": {
+        "good": 25.8,
+        "moderate": 48.4,
+        "unhealthy_sensitive": 25.8,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "moderate",
+      "cigarettesPerDay": 0.83,
+      "daysCount": 31,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 100.0,
+        "jog": 74.2
+      }
+    },
+    {
+      "month": 6,
+      "monthName": "June",
+      "monthShort": "Jun",
+      "p10": 9.96,
+      "p25": 13.56,
+      "p50": 18.85,
+      "p75": 25.24,
+      "p90": 29.72,
+      "mean": 19.54,
+      "aqiDistribution": {
+        "good": 40.0,
+        "moderate": 33.3,
+        "unhealthy_sensitive": 26.7,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "good",
+      "cigarettesPerDay": 0.86,
+      "daysCount": 30,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 96.7,
+        "jog": 73.3
+      }
+    },
+    {
+      "month": 7,
+      "monthName": "July",
+      "monthShort": "Jul",
+      "p10": 15.04,
+      "p25": 18.75,
+      "p50": 23.64,
+      "p75": 30.36,
+      "p90": 33.02,
+      "mean": 23.62,
+      "aqiDistribution": {
+        "good": 9.7,
+        "moderate": 48.4,
+        "unhealthy_sensitive": 41.9,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "moderate",
+      "cigarettesPerDay": 1.07,
+      "daysCount": 31,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 96.8,
+        "jog": 58.1
+      }
+    },
+    {
+      "month": 8,
+      "monthName": "August",
+      "monthShort": "Aug",
+      "p10": 5.32,
+      "p25": 8.79,
+      "p50": 16.78,
+      "p75": 23.76,
+      "p90": 32.38,
+      "mean": 17.44,
+      "aqiDistribution": {
+        "good": 46.5,
+        "moderate": 30.2,
+        "unhealthy_sensitive": 23.3,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "good",
+      "cigarettesPerDay": 0.76,
+      "daysCount": 43,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 97.7,
+        "jog": 76.7
+      }
+    },
+    {
+      "month": 9,
+      "monthName": "September",
+      "monthShort": "Sep",
+      "p10": 9.25,
+      "p25": 11.38,
+      "p50": 17.78,
+      "p75": 26.45,
+      "p90": 32.4,
+      "mean": 19.94,
+      "aqiDistribution": {
+        "good": 36.7,
+        "moderate": 33.3,
+        "unhealthy_sensitive": 30.0,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "good",
+      "cigarettesPerDay": 0.81,
+      "daysCount": 60,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 95.0,
+        "jog": 70.0
+      }
+    },
+    {
+      "month": 10,
+      "monthName": "October",
+      "monthShort": "Oct",
+      "p10": 8.79,
+      "p25": 12.76,
+      "p50": 18.5,
+      "p75": 26.64,
+      "p90": 31.66,
+      "mean": 19.59,
+      "aqiDistribution": {
+        "good": 33.9,
+        "moderate": 35.5,
+        "unhealthy_sensitive": 30.6,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "moderate",
+      "cigarettesPerDay": 0.84,
+      "daysCount": 62,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 96.8,
+        "jog": 69.4
+      }
+    },
+    {
+      "month": 11,
+      "monthName": "November",
+      "monthShort": "Nov",
+      "p10": 8.49,
+      "p25": 11.06,
+      "p50": 16.43,
+      "p75": 22.18,
+      "p90": 27.7,
+      "mean": 17.14,
+      "aqiDistribution": {
+        "good": 43.3,
+        "moderate": 33.3,
+        "unhealthy_sensitive": 23.3,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "good",
+      "cigarettesPerDay": 0.75,
+      "daysCount": 60,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 100.0,
+        "jog": 76.7
+      }
+    },
+    {
+      "month": 12,
+      "monthName": "December",
+      "monthShort": "Dec",
+      "p10": 6.9,
+      "p25": 8.58,
+      "p50": 10.97,
+      "p75": 17.89,
+      "p90": 22.17,
+      "mean": 13.56,
+      "aqiDistribution": {
+        "good": 66.1,
+        "moderate": 27.4,
+        "unhealthy_sensitive": 6.5,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "good",
+      "cigarettesPerDay": 0.5,
+      "daysCount": 62,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 100.0,
+        "jog": 93.5
+      }
+    }
+  ],
+  "heatmap": {
+    "aggregated": [
+      {
+        "month": 1,
+        "day": 1,
+        "value": 19.3,
+        "band": "moderate",
+        "cigEquiv": 0.88,
+        "sampleYears": 2
+      },
+      {
+        "month": 1,
+        "day": 2,
+        "value": 21.4,
+        "band": "moderate",
+        "cigEquiv": 0.97,
+        "sampleYears": 2
+      },
+      {
+        "month": 1,
+        "day": 3,
+        "value": 15.4,
+        "band": "moderate",
+        "cigEquiv": 0.7,
+        "sampleYears": 2
+      },
+      {
+        "month": 1,
+        "day": 4,
+        "value": 12.1,
+        "band": "good",
+        "cigEquiv": 0.55,
+        "sampleYears": 2
+      },
+      {
+        "month": 1,
+        "day": 5,
+        "value": 11.2,
+        "band": "good",
+        "cigEquiv": 0.51,
+        "sampleYears": 2
+      },
+      {
+        "month": 1,
+        "day": 6,
+        "value": 10.0,
+        "band": "good",
+        "cigEquiv": 0.45,
+        "sampleYears": 2
+      },
+      {
+        "month": 1,
+        "day": 7,
+        "value": 14.1,
+        "band": "good",
+        "cigEquiv": 0.64,
+        "sampleYears": 2
+      },
+      {
+        "month": 1,
+        "day": 8,
+        "value": 14.2,
+        "band": "good",
+        "cigEquiv": 0.64,
+        "sampleYears": 2
+      },
+      {
+        "month": 1,
+        "day": 9,
+        "value": 18.5,
+        "band": "moderate",
+        "cigEquiv": 0.84,
+        "sampleYears": 2
+      },
+      {
+        "month": 1,
+        "day": 10,
+        "value": 20.0,
+        "band": "moderate",
+        "cigEquiv": 0.91,
+        "sampleYears": 2
+      },
+      {
+        "month": 1,
+        "day": 11,
+        "value": 14.9,
+        "band": "good",
+        "cigEquiv": 0.68,
+        "sampleYears": 2
+      },
+      {
+        "month": 1,
+        "day": 12,
+        "value": 12.1,
+        "band": "good",
+        "cigEquiv": 0.55,
+        "sampleYears": 2
+      },
+      {
+        "month": 1,
+        "day": 13,
+        "value": 26.5,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.21,
+        "sampleYears": 1
+      },
+      {
+        "month": 1,
+        "day": 14,
+        "value": 10.9,
+        "band": "good",
+        "cigEquiv": 0.5,
+        "sampleYears": 2
+      },
+      {
+        "month": 1,
+        "day": 15,
+        "value": 21.5,
+        "band": "moderate",
+        "cigEquiv": 0.98,
+        "sampleYears": 2
+      },
+      {
+        "month": 1,
+        "day": 16,
+        "value": 15.9,
+        "band": "moderate",
+        "cigEquiv": 0.72,
+        "sampleYears": 2
+      },
+      {
+        "month": 1,
+        "day": 17,
+        "value": 17.1,
+        "band": "moderate",
+        "cigEquiv": 0.78,
+        "sampleYears": 2
+      },
+      {
+        "month": 1,
+        "day": 18,
+        "value": 15.7,
+        "band": "moderate",
+        "cigEquiv": 0.71,
+        "sampleYears": 2
+      },
+      {
+        "month": 1,
+        "day": 19,
+        "value": 13.3,
+        "band": "good",
+        "cigEquiv": 0.61,
+        "sampleYears": 2
+      },
+      {
+        "month": 1,
+        "day": 20,
+        "value": 16.9,
+        "band": "moderate",
+        "cigEquiv": 0.77,
+        "sampleYears": 2
+      },
+      {
+        "month": 1,
+        "day": 21,
+        "value": 15.3,
+        "band": "moderate",
+        "cigEquiv": 0.7,
+        "sampleYears": 2
+      },
+      {
+        "month": 1,
+        "day": 22,
+        "value": 17.3,
+        "band": "moderate",
+        "cigEquiv": 0.79,
+        "sampleYears": 2
+      },
+      {
+        "month": 1,
+        "day": 23,
+        "value": 10.6,
+        "band": "good",
+        "cigEquiv": 0.48,
+        "sampleYears": 2
+      },
+      {
+        "month": 1,
+        "day": 24,
+        "value": 10.5,
+        "band": "good",
+        "cigEquiv": 0.48,
+        "sampleYears": 2
+      },
+      {
+        "month": 1,
+        "day": 25,
+        "value": 10.7,
+        "band": "good",
+        "cigEquiv": 0.49,
+        "sampleYears": 2
+      },
+      {
+        "month": 1,
+        "day": 26,
+        "value": 11.5,
+        "band": "good",
+        "cigEquiv": 0.52,
+        "sampleYears": 2
+      },
+      {
+        "month": 1,
+        "day": 27,
+        "value": 11.1,
+        "band": "good",
+        "cigEquiv": 0.5,
+        "sampleYears": 2
+      },
+      {
+        "month": 1,
+        "day": 28,
+        "value": 12.3,
+        "band": "good",
+        "cigEquiv": 0.56,
+        "sampleYears": 2
+      },
+      {
+        "month": 1,
+        "day": 29,
+        "value": 10.8,
+        "band": "good",
+        "cigEquiv": 0.49,
+        "sampleYears": 2
+      },
+      {
+        "month": 1,
+        "day": 30,
+        "value": 10.4,
+        "band": "good",
+        "cigEquiv": 0.47,
+        "sampleYears": 2
+      },
+      {
+        "month": 1,
+        "day": 31,
+        "value": 11.0,
+        "band": "good",
+        "cigEquiv": 0.5,
+        "sampleYears": 2
+      },
+      {
+        "month": 2,
+        "day": 1,
+        "value": 11.9,
+        "band": "good",
+        "cigEquiv": 0.54,
+        "sampleYears": 2
+      },
+      {
+        "month": 2,
+        "day": 2,
+        "value": 17.1,
+        "band": "moderate",
+        "cigEquiv": 0.78,
+        "sampleYears": 2
+      },
+      {
+        "month": 2,
+        "day": 3,
+        "value": 17.1,
+        "band": "moderate",
+        "cigEquiv": 0.78,
+        "sampleYears": 1
+      },
+      {
+        "month": 2,
+        "day": 4,
+        "value": 9.6,
+        "band": "good",
+        "cigEquiv": 0.44,
+        "sampleYears": 2
+      },
+      {
+        "month": 2,
+        "day": 5,
+        "value": 10.7,
+        "band": "good",
+        "cigEquiv": 0.48,
+        "sampleYears": 2
+      },
+      {
+        "month": 2,
+        "day": 6,
+        "value": 13.9,
+        "band": "good",
+        "cigEquiv": 0.63,
+        "sampleYears": 2
+      },
+      {
+        "month": 2,
+        "day": 7,
+        "value": 15.5,
+        "band": "moderate",
+        "cigEquiv": 0.71,
+        "sampleYears": 2
+      },
+      {
+        "month": 2,
+        "day": 8,
+        "value": 19.5,
+        "band": "moderate",
+        "cigEquiv": 0.89,
+        "sampleYears": 2
+      },
+      {
+        "month": 2,
+        "day": 9,
+        "value": 12.0,
+        "band": "good",
+        "cigEquiv": 0.55,
+        "sampleYears": 2
+      },
+      {
+        "month": 2,
+        "day": 10,
+        "value": 9.6,
+        "band": "good",
+        "cigEquiv": 0.44,
+        "sampleYears": 2
+      },
+      {
+        "month": 2,
+        "day": 11,
+        "value": 7.7,
+        "band": "good",
+        "cigEquiv": 0.35,
+        "sampleYears": 2
+      },
+      {
+        "month": 2,
+        "day": 12,
+        "value": 15.4,
+        "band": "moderate",
+        "cigEquiv": 0.7,
+        "sampleYears": 2
+      },
+      {
+        "month": 2,
+        "day": 13,
+        "value": 15.3,
+        "band": "moderate",
+        "cigEquiv": 0.7,
+        "sampleYears": 2
+      },
+      {
+        "month": 2,
+        "day": 14,
+        "value": 13.0,
+        "band": "good",
+        "cigEquiv": 0.59,
+        "sampleYears": 2
+      },
+      {
+        "month": 2,
+        "day": 15,
+        "value": 11.2,
+        "band": "good",
+        "cigEquiv": 0.51,
+        "sampleYears": 2
+      },
+      {
+        "month": 2,
+        "day": 16,
+        "value": 13.2,
+        "band": "good",
+        "cigEquiv": 0.6,
+        "sampleYears": 2
+      },
+      {
+        "month": 2,
+        "day": 17,
+        "value": 12.5,
+        "band": "good",
+        "cigEquiv": 0.57,
+        "sampleYears": 2
+      },
+      {
+        "month": 2,
+        "day": 18,
+        "value": 5.9,
+        "band": "good",
+        "cigEquiv": 0.27,
+        "sampleYears": 2
+      },
+      {
+        "month": 2,
+        "day": 19,
+        "value": 12.5,
+        "band": "good",
+        "cigEquiv": 0.57,
+        "sampleYears": 2
+      },
+      {
+        "month": 2,
+        "day": 20,
+        "value": 16.1,
+        "band": "moderate",
+        "cigEquiv": 0.73,
+        "sampleYears": 2
+      },
+      {
+        "month": 2,
+        "day": 21,
+        "value": 13.4,
+        "band": "good",
+        "cigEquiv": 0.61,
+        "sampleYears": 2
+      },
+      {
+        "month": 2,
+        "day": 22,
+        "value": 13.3,
+        "band": "good",
+        "cigEquiv": 0.6,
+        "sampleYears": 2
+      },
+      {
+        "month": 2,
+        "day": 23,
+        "value": 20.2,
+        "band": "moderate",
+        "cigEquiv": 0.92,
+        "sampleYears": 2
+      },
+      {
+        "month": 2,
+        "day": 24,
+        "value": 14.9,
+        "band": "good",
+        "cigEquiv": 0.68,
+        "sampleYears": 2
+      },
+      {
+        "month": 2,
+        "day": 25,
+        "value": 16.7,
+        "band": "moderate",
+        "cigEquiv": 0.76,
+        "sampleYears": 2
+      },
+      {
+        "month": 2,
+        "day": 26,
+        "value": 15.3,
+        "band": "moderate",
+        "cigEquiv": 0.7,
+        "sampleYears": 2
+      },
+      {
+        "month": 2,
+        "day": 27,
+        "value": 12.6,
+        "band": "good",
+        "cigEquiv": 0.57,
+        "sampleYears": 2
+      },
+      {
+        "month": 2,
+        "day": 28,
+        "value": 21.4,
+        "band": "moderate",
+        "cigEquiv": 0.97,
+        "sampleYears": 2
+      },
+      {
+        "month": 3,
+        "day": 1,
+        "value": 17.9,
+        "band": "moderate",
+        "cigEquiv": 0.81,
+        "sampleYears": 2
+      },
+      {
+        "month": 3,
+        "day": 2,
+        "value": 18.1,
+        "band": "moderate",
+        "cigEquiv": 0.82,
+        "sampleYears": 2
+      },
+      {
+        "month": 3,
+        "day": 3,
+        "value": 21.9,
+        "band": "moderate",
+        "cigEquiv": 1.0,
+        "sampleYears": 2
+      },
+      {
+        "month": 3,
+        "day": 4,
+        "value": 20.3,
+        "band": "moderate",
+        "cigEquiv": 0.92,
+        "sampleYears": 2
+      },
+      {
+        "month": 3,
+        "day": 5,
+        "value": 22.3,
+        "band": "moderate",
+        "cigEquiv": 1.01,
+        "sampleYears": 2
+      },
+      {
+        "month": 3,
+        "day": 6,
+        "value": 13.6,
+        "band": "good",
+        "cigEquiv": 0.62,
+        "sampleYears": 2
+      },
+      {
+        "month": 3,
+        "day": 7,
+        "value": 17.9,
+        "band": "moderate",
+        "cigEquiv": 0.81,
+        "sampleYears": 2
+      },
+      {
+        "month": 3,
+        "day": 8,
+        "value": 17.9,
+        "band": "moderate",
+        "cigEquiv": 0.81,
+        "sampleYears": 2
+      },
+      {
+        "month": 3,
+        "day": 9,
+        "value": 17.9,
+        "band": "moderate",
+        "cigEquiv": 0.82,
+        "sampleYears": 2
+      },
+      {
+        "month": 3,
+        "day": 10,
+        "value": 15.8,
+        "band": "moderate",
+        "cigEquiv": 0.72,
+        "sampleYears": 2
+      },
+      {
+        "month": 3,
+        "day": 11,
+        "value": 13.4,
+        "band": "good",
+        "cigEquiv": 0.61,
+        "sampleYears": 2
+      },
+      {
+        "month": 3,
+        "day": 12,
+        "value": 9.7,
+        "band": "good",
+        "cigEquiv": 0.44,
+        "sampleYears": 2
+      },
+      {
+        "month": 3,
+        "day": 13,
+        "value": 10.2,
+        "band": "good",
+        "cigEquiv": 0.46,
+        "sampleYears": 2
+      },
+      {
+        "month": 3,
+        "day": 14,
+        "value": 9.7,
+        "band": "good",
+        "cigEquiv": 0.44,
+        "sampleYears": 2
+      },
+      {
+        "month": 3,
+        "day": 15,
+        "value": 12.1,
+        "band": "good",
+        "cigEquiv": 0.55,
+        "sampleYears": 2
+      },
+      {
+        "month": 3,
+        "day": 16,
+        "value": 15.5,
+        "band": "moderate",
+        "cigEquiv": 0.7,
+        "sampleYears": 2
+      },
+      {
+        "month": 3,
+        "day": 17,
+        "value": 11.4,
+        "band": "good",
+        "cigEquiv": 0.52,
+        "sampleYears": 2
+      },
+      {
+        "month": 3,
+        "day": 18,
+        "value": 15.1,
+        "band": "moderate",
+        "cigEquiv": 0.68,
+        "sampleYears": 2
+      },
+      {
+        "month": 3,
+        "day": 19,
+        "value": 17.8,
+        "band": "moderate",
+        "cigEquiv": 0.81,
+        "sampleYears": 2
+      },
+      {
+        "month": 3,
+        "day": 20,
+        "value": 16.2,
+        "band": "moderate",
+        "cigEquiv": 0.74,
+        "sampleYears": 2
+      },
+      {
+        "month": 3,
+        "day": 21,
+        "value": 23.2,
+        "band": "moderate",
+        "cigEquiv": 1.05,
+        "sampleYears": 2
+      },
+      {
+        "month": 3,
+        "day": 22,
+        "value": 16.8,
+        "band": "moderate",
+        "cigEquiv": 0.76,
+        "sampleYears": 2
+      },
+      {
+        "month": 3,
+        "day": 23,
+        "value": 11.6,
+        "band": "good",
+        "cigEquiv": 0.53,
+        "sampleYears": 2
+      },
+      {
+        "month": 3,
+        "day": 24,
+        "value": 21.4,
+        "band": "moderate",
+        "cigEquiv": 0.97,
+        "sampleYears": 2
+      },
+      {
+        "month": 3,
+        "day": 25,
+        "value": 30.7,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.39,
+        "sampleYears": 2
+      },
+      {
+        "month": 3,
+        "day": 26,
+        "value": 33.5,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.52,
+        "sampleYears": 2
+      },
+      {
+        "month": 3,
+        "day": 27,
+        "value": 34.8,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.58,
+        "sampleYears": 2
+      },
+      {
+        "month": 3,
+        "day": 28,
+        "value": 21.5,
+        "band": "moderate",
+        "cigEquiv": 0.98,
+        "sampleYears": 2
+      },
+      {
+        "month": 3,
+        "day": 29,
+        "value": 31.2,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.42,
+        "sampleYears": 2
+      },
+      {
+        "month": 3,
+        "day": 30,
+        "value": 35.8,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.63,
+        "sampleYears": 2
+      },
+      {
+        "month": 3,
+        "day": 31,
+        "value": 30.2,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.37,
+        "sampleYears": 2
+      },
+      {
+        "month": 4,
+        "day": 1,
+        "value": 25.9,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.18,
+        "sampleYears": 2
+      },
+      {
+        "month": 4,
+        "day": 2,
+        "value": 9.8,
+        "band": "good",
+        "cigEquiv": 0.45,
+        "sampleYears": 1
+      },
+      {
+        "month": 4,
+        "day": 3,
+        "value": 6.1,
+        "band": "good",
+        "cigEquiv": 0.28,
+        "sampleYears": 1
+      },
+      {
+        "month": 4,
+        "day": 4,
+        "value": 15.2,
+        "band": "moderate",
+        "cigEquiv": 0.69,
+        "sampleYears": 1
+      },
+      {
+        "month": 4,
+        "day": 5,
+        "value": 9.4,
+        "band": "good",
+        "cigEquiv": 0.43,
+        "sampleYears": 1
+      },
+      {
+        "month": 4,
+        "day": 6,
+        "value": 9.4,
+        "band": "good",
+        "cigEquiv": 0.43,
+        "sampleYears": 1
+      },
+      {
+        "month": 4,
+        "day": 7,
+        "value": 5.3,
+        "band": "good",
+        "cigEquiv": 0.24,
+        "sampleYears": 1
+      },
+      {
+        "month": 4,
+        "day": 8,
+        "value": 13.6,
+        "band": "good",
+        "cigEquiv": 0.62,
+        "sampleYears": 1
+      },
+      {
+        "month": 4,
+        "day": 9,
+        "value": 10.8,
+        "band": "good",
+        "cigEquiv": 0.49,
+        "sampleYears": 1
+      },
+      {
+        "month": 4,
+        "day": 10,
+        "value": 17.7,
+        "band": "moderate",
+        "cigEquiv": 0.8,
+        "sampleYears": 1
+      },
+      {
+        "month": 4,
+        "day": 11,
+        "value": 8.2,
+        "band": "good",
+        "cigEquiv": 0.37,
+        "sampleYears": 1
+      },
+      {
+        "month": 4,
+        "day": 12,
+        "value": 8.8,
+        "band": "good",
+        "cigEquiv": 0.4,
+        "sampleYears": 1
+      },
+      {
+        "month": 4,
+        "day": 13,
+        "value": 9.0,
+        "band": "good",
+        "cigEquiv": 0.41,
+        "sampleYears": 1
+      },
+      {
+        "month": 4,
+        "day": 14,
+        "value": 11.2,
+        "band": "good",
+        "cigEquiv": 0.51,
+        "sampleYears": 1
+      },
+      {
+        "month": 4,
+        "day": 15,
+        "value": 10.2,
+        "band": "good",
+        "cigEquiv": 0.47,
+        "sampleYears": 1
+      },
+      {
+        "month": 4,
+        "day": 16,
+        "value": 23.8,
+        "band": "moderate",
+        "cigEquiv": 1.08,
+        "sampleYears": 1
+      },
+      {
+        "month": 4,
+        "day": 17,
+        "value": 9.5,
+        "band": "good",
+        "cigEquiv": 0.43,
+        "sampleYears": 1
+      },
+      {
+        "month": 4,
+        "day": 18,
+        "value": 24.9,
+        "band": "moderate",
+        "cigEquiv": 1.13,
+        "sampleYears": 1
+      },
+      {
+        "month": 4,
+        "day": 19,
+        "value": 11.0,
+        "band": "good",
+        "cigEquiv": 0.5,
+        "sampleYears": 1
+      },
+      {
+        "month": 4,
+        "day": 20,
+        "value": 11.7,
+        "band": "good",
+        "cigEquiv": 0.53,
+        "sampleYears": 1
+      },
+      {
+        "month": 4,
+        "day": 21,
+        "value": 13.1,
+        "band": "good",
+        "cigEquiv": 0.6,
+        "sampleYears": 1
+      },
+      {
+        "month": 4,
+        "day": 22,
+        "value": 22.3,
+        "band": "moderate",
+        "cigEquiv": 1.01,
+        "sampleYears": 1
+      },
+      {
+        "month": 4,
+        "day": 23,
+        "value": 16.4,
+        "band": "moderate",
+        "cigEquiv": 0.75,
+        "sampleYears": 1
+      },
+      {
+        "month": 4,
+        "day": 24,
+        "value": 33.7,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.53,
+        "sampleYears": 1
+      },
+      {
+        "month": 4,
+        "day": 25,
+        "value": 24.6,
+        "band": "moderate",
+        "cigEquiv": 1.12,
+        "sampleYears": 1
+      },
+      {
+        "month": 4,
+        "day": 26,
+        "value": 12.1,
+        "band": "good",
+        "cigEquiv": 0.55,
+        "sampleYears": 1
+      },
+      {
+        "month": 4,
+        "day": 27,
+        "value": 16.1,
+        "band": "moderate",
+        "cigEquiv": 0.73,
+        "sampleYears": 1
+      },
+      {
+        "month": 4,
+        "day": 28,
+        "value": 15.7,
+        "band": "moderate",
+        "cigEquiv": 0.71,
+        "sampleYears": 1
+      },
+      {
+        "month": 4,
+        "day": 29,
+        "value": 27.7,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.26,
+        "sampleYears": 1
+      },
+      {
+        "month": 4,
+        "day": 30,
+        "value": 16.0,
+        "band": "moderate",
+        "cigEquiv": 0.73,
+        "sampleYears": 1
+      },
+      {
+        "month": 5,
+        "day": 1,
+        "value": 21.5,
+        "band": "moderate",
+        "cigEquiv": 0.98,
+        "sampleYears": 1
+      },
+      {
+        "month": 5,
+        "day": 2,
+        "value": 31.6,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.44,
+        "sampleYears": 1
+      },
+      {
+        "month": 5,
+        "day": 3,
+        "value": 16.2,
+        "band": "moderate",
+        "cigEquiv": 0.74,
+        "sampleYears": 1
+      },
+      {
+        "month": 5,
+        "day": 4,
+        "value": 8.2,
+        "band": "good",
+        "cigEquiv": 0.37,
+        "sampleYears": 1
+      },
+      {
+        "month": 5,
+        "day": 5,
+        "value": 17.4,
+        "band": "moderate",
+        "cigEquiv": 0.79,
+        "sampleYears": 1
+      },
+      {
+        "month": 5,
+        "day": 6,
+        "value": 14.1,
+        "band": "good",
+        "cigEquiv": 0.64,
+        "sampleYears": 1
+      },
+      {
+        "month": 5,
+        "day": 7,
+        "value": 29.2,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.33,
+        "sampleYears": 1
+      },
+      {
+        "month": 5,
+        "day": 8,
+        "value": 22.9,
+        "band": "moderate",
+        "cigEquiv": 1.04,
+        "sampleYears": 1
+      },
+      {
+        "month": 5,
+        "day": 9,
+        "value": 25.0,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.14,
+        "sampleYears": 1
+      },
+      {
+        "month": 5,
+        "day": 10,
+        "value": 34.2,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.55,
+        "sampleYears": 1
+      },
+      {
+        "month": 5,
+        "day": 11,
+        "value": 17.0,
+        "band": "moderate",
+        "cigEquiv": 0.77,
+        "sampleYears": 1
+      },
+      {
+        "month": 5,
+        "day": 12,
+        "value": 26.7,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.21,
+        "sampleYears": 1
+      },
+      {
+        "month": 5,
+        "day": 13,
+        "value": 26.1,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.19,
+        "sampleYears": 1
+      },
+      {
+        "month": 5,
+        "day": 14,
+        "value": 16.9,
+        "band": "moderate",
+        "cigEquiv": 0.77,
+        "sampleYears": 1
+      },
+      {
+        "month": 5,
+        "day": 15,
+        "value": 26.5,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.21,
+        "sampleYears": 1
+      },
+      {
+        "month": 5,
+        "day": 16,
+        "value": 20.7,
+        "band": "moderate",
+        "cigEquiv": 0.94,
+        "sampleYears": 1
+      },
+      {
+        "month": 5,
+        "day": 17,
+        "value": 10.0,
+        "band": "good",
+        "cigEquiv": 0.45,
+        "sampleYears": 1
+      },
+      {
+        "month": 5,
+        "day": 18,
+        "value": 8.4,
+        "band": "good",
+        "cigEquiv": 0.38,
+        "sampleYears": 1
+      },
+      {
+        "month": 5,
+        "day": 19,
+        "value": 11.4,
+        "band": "good",
+        "cigEquiv": 0.52,
+        "sampleYears": 1
+      },
+      {
+        "month": 5,
+        "day": 20,
+        "value": 14.6,
+        "band": "good",
+        "cigEquiv": 0.67,
+        "sampleYears": 1
+      },
+      {
+        "month": 5,
+        "day": 21,
+        "value": 19.7,
+        "band": "moderate",
+        "cigEquiv": 0.9,
+        "sampleYears": 1
+      },
+      {
+        "month": 5,
+        "day": 22,
+        "value": 32.1,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.46,
+        "sampleYears": 1
+      },
+      {
+        "month": 5,
+        "day": 23,
+        "value": 13.7,
+        "band": "good",
+        "cigEquiv": 0.62,
+        "sampleYears": 1
+      },
+      {
+        "month": 5,
+        "day": 24,
+        "value": 11.5,
+        "band": "good",
+        "cigEquiv": 0.52,
+        "sampleYears": 1
+      },
+      {
+        "month": 5,
+        "day": 25,
+        "value": 15.1,
+        "band": "moderate",
+        "cigEquiv": 0.69,
+        "sampleYears": 1
+      },
+      {
+        "month": 5,
+        "day": 26,
+        "value": 15.3,
+        "band": "moderate",
+        "cigEquiv": 0.69,
+        "sampleYears": 1
+      },
+      {
+        "month": 5,
+        "day": 27,
+        "value": 19.7,
+        "band": "moderate",
+        "cigEquiv": 0.89,
+        "sampleYears": 1
+      },
+      {
+        "month": 5,
+        "day": 28,
+        "value": 21.2,
+        "band": "moderate",
+        "cigEquiv": 0.96,
+        "sampleYears": 1
+      },
+      {
+        "month": 5,
+        "day": 29,
+        "value": 18.2,
+        "band": "moderate",
+        "cigEquiv": 0.83,
+        "sampleYears": 1
+      },
+      {
+        "month": 5,
+        "day": 30,
+        "value": 15.3,
+        "band": "moderate",
+        "cigEquiv": 0.7,
+        "sampleYears": 1
+      },
+      {
+        "month": 5,
+        "day": 31,
+        "value": 18.7,
+        "band": "moderate",
+        "cigEquiv": 0.85,
+        "sampleYears": 1
+      },
+      {
+        "month": 6,
+        "day": 1,
+        "value": 14.4,
+        "band": "good",
+        "cigEquiv": 0.65,
+        "sampleYears": 1
+      },
+      {
+        "month": 6,
+        "day": 2,
+        "value": 15.7,
+        "band": "moderate",
+        "cigEquiv": 0.71,
+        "sampleYears": 1
+      },
+      {
+        "month": 6,
+        "day": 3,
+        "value": 19.9,
+        "band": "moderate",
+        "cigEquiv": 0.9,
+        "sampleYears": 1
+      },
+      {
+        "month": 6,
+        "day": 4,
+        "value": 30.5,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.38,
+        "sampleYears": 1
+      },
+      {
+        "month": 6,
+        "day": 5,
+        "value": 29.2,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.33,
+        "sampleYears": 1
+      },
+      {
+        "month": 6,
+        "day": 6,
+        "value": 10.0,
+        "band": "good",
+        "cigEquiv": 0.46,
+        "sampleYears": 1
+      },
+      {
+        "month": 6,
+        "day": 7,
+        "value": 11.5,
+        "band": "good",
+        "cigEquiv": 0.52,
+        "sampleYears": 1
+      },
+      {
+        "month": 6,
+        "day": 8,
+        "value": 14.5,
+        "band": "good",
+        "cigEquiv": 0.66,
+        "sampleYears": 1
+      },
+      {
+        "month": 6,
+        "day": 9,
+        "value": 25.4,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.15,
+        "sampleYears": 1
+      },
+      {
+        "month": 6,
+        "day": 10,
+        "value": 8.9,
+        "band": "good",
+        "cigEquiv": 0.4,
+        "sampleYears": 1
+      },
+      {
+        "month": 6,
+        "day": 11,
+        "value": 11.6,
+        "band": "good",
+        "cigEquiv": 0.53,
+        "sampleYears": 1
+      },
+      {
+        "month": 6,
+        "day": 12,
+        "value": 32.8,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.49,
+        "sampleYears": 1
+      },
+      {
+        "month": 6,
+        "day": 13,
+        "value": 13.5,
+        "band": "good",
+        "cigEquiv": 0.62,
+        "sampleYears": 1
+      },
+      {
+        "month": 6,
+        "day": 14,
+        "value": 8.5,
+        "band": "good",
+        "cigEquiv": 0.39,
+        "sampleYears": 1
+      },
+      {
+        "month": 6,
+        "day": 15,
+        "value": 9.2,
+        "band": "good",
+        "cigEquiv": 0.42,
+        "sampleYears": 1
+      },
+      {
+        "month": 6,
+        "day": 16,
+        "value": 14.4,
+        "band": "good",
+        "cigEquiv": 0.65,
+        "sampleYears": 1
+      },
+      {
+        "month": 6,
+        "day": 17,
+        "value": 24.7,
+        "band": "moderate",
+        "cigEquiv": 1.12,
+        "sampleYears": 1
+      },
+      {
+        "month": 6,
+        "day": 18,
+        "value": 13.6,
+        "band": "good",
+        "cigEquiv": 0.62,
+        "sampleYears": 1
+      },
+      {
+        "month": 6,
+        "day": 19,
+        "value": 19.4,
+        "band": "moderate",
+        "cigEquiv": 0.88,
+        "sampleYears": 1
+      },
+      {
+        "month": 6,
+        "day": 20,
+        "value": 25.9,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.18,
+        "sampleYears": 1
+      },
+      {
+        "month": 6,
+        "day": 21,
+        "value": 29.6,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.35,
+        "sampleYears": 1
+      },
+      {
+        "month": 6,
+        "day": 22,
+        "value": 22.1,
+        "band": "moderate",
+        "cigEquiv": 1.0,
+        "sampleYears": 1
+      },
+      {
+        "month": 6,
+        "day": 23,
+        "value": 18.3,
+        "band": "moderate",
+        "cigEquiv": 0.83,
+        "sampleYears": 1
+      },
+      {
+        "month": 6,
+        "day": 24,
+        "value": 20.0,
+        "band": "moderate",
+        "cigEquiv": 0.91,
+        "sampleYears": 1
+      },
+      {
+        "month": 6,
+        "day": 25,
+        "value": 17.1,
+        "band": "moderate",
+        "cigEquiv": 0.78,
+        "sampleYears": 1
+      },
+      {
+        "month": 6,
+        "day": 26,
+        "value": 23.4,
+        "band": "moderate",
+        "cigEquiv": 1.06,
+        "sampleYears": 1
+      },
+      {
+        "month": 6,
+        "day": 27,
+        "value": 38.4,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.75,
+        "sampleYears": 1
+      },
+      {
+        "month": 6,
+        "day": 28,
+        "value": 28.1,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.28,
+        "sampleYears": 1
+      },
+      {
+        "month": 6,
+        "day": 29,
+        "value": 11.6,
+        "band": "good",
+        "cigEquiv": 0.53,
+        "sampleYears": 1
+      },
+      {
+        "month": 6,
+        "day": 30,
+        "value": 23.9,
+        "band": "moderate",
+        "cigEquiv": 1.09,
+        "sampleYears": 1
+      },
+      {
+        "month": 7,
+        "day": 1,
+        "value": 15.0,
+        "band": "moderate",
+        "cigEquiv": 0.68,
+        "sampleYears": 1
+      },
+      {
+        "month": 7,
+        "day": 2,
+        "value": 13.1,
+        "band": "good",
+        "cigEquiv": 0.6,
+        "sampleYears": 1
+      },
+      {
+        "month": 7,
+        "day": 3,
+        "value": 33.7,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.53,
+        "sampleYears": 1
+      },
+      {
+        "month": 7,
+        "day": 4,
+        "value": 20.1,
+        "band": "moderate",
+        "cigEquiv": 0.91,
+        "sampleYears": 1
+      },
+      {
+        "month": 7,
+        "day": 5,
+        "value": 23.1,
+        "band": "moderate",
+        "cigEquiv": 1.05,
+        "sampleYears": 1
+      },
+      {
+        "month": 7,
+        "day": 6,
+        "value": 18.8,
+        "band": "moderate",
+        "cigEquiv": 0.86,
+        "sampleYears": 1
+      },
+      {
+        "month": 7,
+        "day": 7,
+        "value": 9.0,
+        "band": "good",
+        "cigEquiv": 0.41,
+        "sampleYears": 1
+      },
+      {
+        "month": 7,
+        "day": 8,
+        "value": 15.9,
+        "band": "moderate",
+        "cigEquiv": 0.72,
+        "sampleYears": 1
+      },
+      {
+        "month": 7,
+        "day": 9,
+        "value": 20.1,
+        "band": "moderate",
+        "cigEquiv": 0.91,
+        "sampleYears": 1
+      },
+      {
+        "month": 7,
+        "day": 10,
+        "value": 14.6,
+        "band": "good",
+        "cigEquiv": 0.66,
+        "sampleYears": 1
+      },
+      {
+        "month": 7,
+        "day": 11,
+        "value": 23.6,
+        "band": "moderate",
+        "cigEquiv": 1.07,
+        "sampleYears": 1
+      },
+      {
+        "month": 7,
+        "day": 12,
+        "value": 17.1,
+        "band": "moderate",
+        "cigEquiv": 0.78,
+        "sampleYears": 1
+      },
+      {
+        "month": 7,
+        "day": 13,
+        "value": 19.6,
+        "band": "moderate",
+        "cigEquiv": 0.89,
+        "sampleYears": 1
+      },
+      {
+        "month": 7,
+        "day": 14,
+        "value": 19.6,
+        "band": "moderate",
+        "cigEquiv": 0.89,
+        "sampleYears": 1
+      },
+      {
+        "month": 7,
+        "day": 15,
+        "value": 26.6,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.21,
+        "sampleYears": 1
+      },
+      {
+        "month": 7,
+        "day": 16,
+        "value": 30.1,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.37,
+        "sampleYears": 1
+      },
+      {
+        "month": 7,
+        "day": 17,
+        "value": 17.0,
+        "band": "moderate",
+        "cigEquiv": 0.77,
+        "sampleYears": 1
+      },
+      {
+        "month": 7,
+        "day": 18,
+        "value": 18.7,
+        "band": "moderate",
+        "cigEquiv": 0.85,
+        "sampleYears": 1
+      },
+      {
+        "month": 7,
+        "day": 19,
+        "value": 33.0,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.5,
+        "sampleYears": 1
+      },
+      {
+        "month": 7,
+        "day": 20,
+        "value": 30.6,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.39,
+        "sampleYears": 1
+      },
+      {
+        "month": 7,
+        "day": 21,
+        "value": 34.1,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.55,
+        "sampleYears": 1
+      },
+      {
+        "month": 7,
+        "day": 22,
+        "value": 32.7,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.49,
+        "sampleYears": 1
+      },
+      {
+        "month": 7,
+        "day": 23,
+        "value": 36.8,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.67,
+        "sampleYears": 1
+      },
+      {
+        "month": 7,
+        "day": 24,
+        "value": 30.7,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.4,
+        "sampleYears": 1
+      },
+      {
+        "month": 7,
+        "day": 25,
+        "value": 26.3,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.2,
+        "sampleYears": 1
+      },
+      {
+        "month": 7,
+        "day": 26,
+        "value": 23.9,
+        "band": "moderate",
+        "cigEquiv": 1.08,
+        "sampleYears": 1
+      },
+      {
+        "month": 7,
+        "day": 27,
+        "value": 19.1,
+        "band": "moderate",
+        "cigEquiv": 0.87,
+        "sampleYears": 1
+      },
+      {
+        "month": 7,
+        "day": 28,
+        "value": 23.9,
+        "band": "moderate",
+        "cigEquiv": 1.08,
+        "sampleYears": 1
+      },
+      {
+        "month": 7,
+        "day": 29,
+        "value": 29.0,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.32,
+        "sampleYears": 1
+      },
+      {
+        "month": 7,
+        "day": 30,
+        "value": 31.5,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.43,
+        "sampleYears": 1
+      },
+      {
+        "month": 7,
+        "day": 31,
+        "value": 25.1,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.14,
+        "sampleYears": 1
+      },
+      {
+        "month": 8,
+        "day": 1,
+        "value": 21.3,
+        "band": "moderate",
+        "cigEquiv": 0.97,
+        "sampleYears": 1
+      },
+      {
+        "month": 8,
+        "day": 2,
+        "value": 22.5,
+        "band": "moderate",
+        "cigEquiv": 1.02,
+        "sampleYears": 1
+      },
+      {
+        "month": 8,
+        "day": 3,
+        "value": 16.8,
+        "band": "moderate",
+        "cigEquiv": 0.76,
+        "sampleYears": 1
+      },
+      {
+        "month": 8,
+        "day": 4,
+        "value": 11.8,
+        "band": "good",
+        "cigEquiv": 0.54,
+        "sampleYears": 1
+      },
+      {
+        "month": 8,
+        "day": 5,
+        "value": 9.0,
+        "band": "good",
+        "cigEquiv": 0.41,
+        "sampleYears": 1
+      },
+      {
+        "month": 8,
+        "day": 6,
+        "value": 10.4,
+        "band": "good",
+        "cigEquiv": 0.47,
+        "sampleYears": 1
+      },
+      {
+        "month": 8,
+        "day": 7,
+        "value": 33.5,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.52,
+        "sampleYears": 1
+      },
+      {
+        "month": 8,
+        "day": 8,
+        "value": 33.8,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.54,
+        "sampleYears": 1
+      },
+      {
+        "month": 8,
+        "day": 9,
+        "value": 32.7,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.49,
+        "sampleYears": 1
+      },
+      {
+        "month": 8,
+        "day": 10,
+        "value": 32.1,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.46,
+        "sampleYears": 1
+      },
+      {
+        "month": 8,
+        "day": 11,
+        "value": 24.3,
+        "band": "moderate",
+        "cigEquiv": 1.11,
+        "sampleYears": 1
+      },
+      {
+        "month": 8,
+        "day": 12,
+        "value": 22.6,
+        "band": "moderate",
+        "cigEquiv": 1.03,
+        "sampleYears": 1
+      },
+      {
+        "month": 8,
+        "day": 13,
+        "value": 8.6,
+        "band": "good",
+        "cigEquiv": 0.39,
+        "sampleYears": 1
+      },
+      {
+        "month": 8,
+        "day": 14,
+        "value": 13.9,
+        "band": "good",
+        "cigEquiv": 0.63,
+        "sampleYears": 1
+      },
+      {
+        "month": 8,
+        "day": 15,
+        "value": 9.8,
+        "band": "good",
+        "cigEquiv": 0.45,
+        "sampleYears": 1
+      },
+      {
+        "month": 8,
+        "day": 16,
+        "value": 20.6,
+        "band": "moderate",
+        "cigEquiv": 0.93,
+        "sampleYears": 1
+      },
+      {
+        "month": 8,
+        "day": 17,
+        "value": 17.3,
+        "band": "moderate",
+        "cigEquiv": 0.79,
+        "sampleYears": 1
+      },
+      {
+        "month": 8,
+        "day": 18,
+        "value": 17.4,
+        "band": "moderate",
+        "cigEquiv": 0.79,
+        "sampleYears": 1
+      },
+      {
+        "month": 8,
+        "day": 19,
+        "value": 9.1,
+        "band": "good",
+        "cigEquiv": 0.41,
+        "sampleYears": 2
+      },
+      {
+        "month": 8,
+        "day": 20,
+        "value": 9.2,
+        "band": "good",
+        "cigEquiv": 0.42,
+        "sampleYears": 2
+      },
+      {
+        "month": 8,
+        "day": 21,
+        "value": 10.4,
+        "band": "good",
+        "cigEquiv": 0.47,
+        "sampleYears": 2
+      },
+      {
+        "month": 8,
+        "day": 22,
+        "value": 11.7,
+        "band": "good",
+        "cigEquiv": 0.53,
+        "sampleYears": 2
+      },
+      {
+        "month": 8,
+        "day": 23,
+        "value": 17.7,
+        "band": "moderate",
+        "cigEquiv": 0.81,
+        "sampleYears": 2
+      },
+      {
+        "month": 8,
+        "day": 24,
+        "value": 16.0,
+        "band": "moderate",
+        "cigEquiv": 0.73,
+        "sampleYears": 2
+      },
+      {
+        "month": 8,
+        "day": 25,
+        "value": 12.9,
+        "band": "good",
+        "cigEquiv": 0.59,
+        "sampleYears": 2
+      },
+      {
+        "month": 8,
+        "day": 26,
+        "value": 17.5,
+        "band": "moderate",
+        "cigEquiv": 0.8,
+        "sampleYears": 2
+      },
+      {
+        "month": 8,
+        "day": 27,
+        "value": 23.5,
+        "band": "moderate",
+        "cigEquiv": 1.07,
+        "sampleYears": 2
+      },
+      {
+        "month": 8,
+        "day": 28,
+        "value": 26.6,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.21,
+        "sampleYears": 1
+      },
+      {
+        "month": 8,
+        "day": 29,
+        "value": 22.9,
+        "band": "moderate",
+        "cigEquiv": 1.04,
+        "sampleYears": 2
+      },
+      {
+        "month": 8,
+        "day": 30,
+        "value": 9.8,
+        "band": "good",
+        "cigEquiv": 0.45,
+        "sampleYears": 2
+      },
+      {
+        "month": 8,
+        "day": 31,
+        "value": 21.8,
+        "band": "moderate",
+        "cigEquiv": 0.99,
+        "sampleYears": 2
+      },
+      {
+        "month": 9,
+        "day": 1,
+        "value": 15.3,
+        "band": "moderate",
+        "cigEquiv": 0.7,
+        "sampleYears": 2
+      },
+      {
+        "month": 9,
+        "day": 2,
+        "value": 17.2,
+        "band": "moderate",
+        "cigEquiv": 0.78,
+        "sampleYears": 2
+      },
+      {
+        "month": 9,
+        "day": 3,
+        "value": 21.0,
+        "band": "moderate",
+        "cigEquiv": 0.96,
+        "sampleYears": 2
+      },
+      {
+        "month": 9,
+        "day": 4,
+        "value": 22.2,
+        "band": "moderate",
+        "cigEquiv": 1.01,
+        "sampleYears": 2
+      },
+      {
+        "month": 9,
+        "day": 5,
+        "value": 23.4,
+        "band": "moderate",
+        "cigEquiv": 1.06,
+        "sampleYears": 2
+      },
+      {
+        "month": 9,
+        "day": 6,
+        "value": 21.8,
+        "band": "moderate",
+        "cigEquiv": 0.99,
+        "sampleYears": 2
+      },
+      {
+        "month": 9,
+        "day": 7,
+        "value": 22.0,
+        "band": "moderate",
+        "cigEquiv": 1.0,
+        "sampleYears": 2
+      },
+      {
+        "month": 9,
+        "day": 8,
+        "value": 25.5,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.16,
+        "sampleYears": 2
+      },
+      {
+        "month": 9,
+        "day": 9,
+        "value": 20.3,
+        "band": "moderate",
+        "cigEquiv": 0.92,
+        "sampleYears": 2
+      },
+      {
+        "month": 9,
+        "day": 10,
+        "value": 16.6,
+        "band": "moderate",
+        "cigEquiv": 0.75,
+        "sampleYears": 2
+      },
+      {
+        "month": 9,
+        "day": 11,
+        "value": 20.7,
+        "band": "moderate",
+        "cigEquiv": 0.94,
+        "sampleYears": 2
+      },
+      {
+        "month": 9,
+        "day": 12,
+        "value": 11.9,
+        "band": "good",
+        "cigEquiv": 0.54,
+        "sampleYears": 2
+      },
+      {
+        "month": 9,
+        "day": 13,
+        "value": 13.3,
+        "band": "good",
+        "cigEquiv": 0.61,
+        "sampleYears": 2
+      },
+      {
+        "month": 9,
+        "day": 14,
+        "value": 15.0,
+        "band": "good",
+        "cigEquiv": 0.68,
+        "sampleYears": 2
+      },
+      {
+        "month": 9,
+        "day": 15,
+        "value": 27.3,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.24,
+        "sampleYears": 2
+      },
+      {
+        "month": 9,
+        "day": 16,
+        "value": 30.1,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.37,
+        "sampleYears": 2
+      },
+      {
+        "month": 9,
+        "day": 17,
+        "value": 18.6,
+        "band": "moderate",
+        "cigEquiv": 0.85,
+        "sampleYears": 2
+      },
+      {
+        "month": 9,
+        "day": 18,
+        "value": 14.9,
+        "band": "good",
+        "cigEquiv": 0.68,
+        "sampleYears": 2
+      },
+      {
+        "month": 9,
+        "day": 19,
+        "value": 21.4,
+        "band": "moderate",
+        "cigEquiv": 0.97,
+        "sampleYears": 2
+      },
+      {
+        "month": 9,
+        "day": 20,
+        "value": 23.1,
+        "band": "moderate",
+        "cigEquiv": 1.05,
+        "sampleYears": 2
+      },
+      {
+        "month": 9,
+        "day": 21,
+        "value": 11.4,
+        "band": "good",
+        "cigEquiv": 0.52,
+        "sampleYears": 2
+      },
+      {
+        "month": 9,
+        "day": 22,
+        "value": 16.9,
+        "band": "moderate",
+        "cigEquiv": 0.77,
+        "sampleYears": 2
+      },
+      {
+        "month": 9,
+        "day": 23,
+        "value": 17.9,
+        "band": "moderate",
+        "cigEquiv": 0.81,
+        "sampleYears": 2
+      },
+      {
+        "month": 9,
+        "day": 24,
+        "value": 22.8,
+        "band": "moderate",
+        "cigEquiv": 1.04,
+        "sampleYears": 2
+      },
+      {
+        "month": 9,
+        "day": 25,
+        "value": 23.8,
+        "band": "moderate",
+        "cigEquiv": 1.08,
+        "sampleYears": 2
+      },
+      {
+        "month": 9,
+        "day": 26,
+        "value": 25.3,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.15,
+        "sampleYears": 2
+      },
+      {
+        "month": 9,
+        "day": 27,
+        "value": 25.5,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.16,
+        "sampleYears": 2
+      },
+      {
+        "month": 9,
+        "day": 28,
+        "value": 27.5,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.25,
+        "sampleYears": 2
+      },
+      {
+        "month": 9,
+        "day": 29,
+        "value": 11.8,
+        "band": "good",
+        "cigEquiv": 0.53,
+        "sampleYears": 2
+      },
+      {
+        "month": 9,
+        "day": 30,
+        "value": 13.8,
+        "band": "good",
+        "cigEquiv": 0.63,
+        "sampleYears": 2
+      },
+      {
+        "month": 10,
+        "day": 1,
+        "value": 8.7,
+        "band": "good",
+        "cigEquiv": 0.39,
+        "sampleYears": 2
+      },
+      {
+        "month": 10,
+        "day": 2,
+        "value": 15.4,
+        "band": "moderate",
+        "cigEquiv": 0.7,
+        "sampleYears": 2
+      },
+      {
+        "month": 10,
+        "day": 3,
+        "value": 14.0,
+        "band": "good",
+        "cigEquiv": 0.64,
+        "sampleYears": 2
+      },
+      {
+        "month": 10,
+        "day": 4,
+        "value": 17.2,
+        "band": "moderate",
+        "cigEquiv": 0.78,
+        "sampleYears": 2
+      },
+      {
+        "month": 10,
+        "day": 5,
+        "value": 21.2,
+        "band": "moderate",
+        "cigEquiv": 0.96,
+        "sampleYears": 2
+      },
+      {
+        "month": 10,
+        "day": 6,
+        "value": 18.5,
+        "band": "moderate",
+        "cigEquiv": 0.84,
+        "sampleYears": 2
+      },
+      {
+        "month": 10,
+        "day": 7,
+        "value": 25.7,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.17,
+        "sampleYears": 2
+      },
+      {
+        "month": 10,
+        "day": 8,
+        "value": 20.6,
+        "band": "moderate",
+        "cigEquiv": 0.94,
+        "sampleYears": 2
+      },
+      {
+        "month": 10,
+        "day": 9,
+        "value": 14.6,
+        "band": "good",
+        "cigEquiv": 0.66,
+        "sampleYears": 2
+      },
+      {
+        "month": 10,
+        "day": 10,
+        "value": 16.3,
+        "band": "moderate",
+        "cigEquiv": 0.74,
+        "sampleYears": 2
+      },
+      {
+        "month": 10,
+        "day": 11,
+        "value": 19.9,
+        "band": "moderate",
+        "cigEquiv": 0.91,
+        "sampleYears": 2
+      },
+      {
+        "month": 10,
+        "day": 12,
+        "value": 19.8,
+        "band": "moderate",
+        "cigEquiv": 0.9,
+        "sampleYears": 2
+      },
+      {
+        "month": 10,
+        "day": 13,
+        "value": 22.6,
+        "band": "moderate",
+        "cigEquiv": 1.03,
+        "sampleYears": 2
+      },
+      {
+        "month": 10,
+        "day": 14,
+        "value": 12.9,
+        "band": "good",
+        "cigEquiv": 0.58,
+        "sampleYears": 2
+      },
+      {
+        "month": 10,
+        "day": 15,
+        "value": 9.8,
+        "band": "good",
+        "cigEquiv": 0.44,
+        "sampleYears": 2
+      },
+      {
+        "month": 10,
+        "day": 16,
+        "value": 18.0,
+        "band": "moderate",
+        "cigEquiv": 0.82,
+        "sampleYears": 2
+      },
+      {
+        "month": 10,
+        "day": 17,
+        "value": 29.6,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.34,
+        "sampleYears": 2
+      },
+      {
+        "month": 10,
+        "day": 18,
+        "value": 25.1,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.14,
+        "sampleYears": 2
+      },
+      {
+        "month": 10,
+        "day": 19,
+        "value": 23.3,
+        "band": "moderate",
+        "cigEquiv": 1.06,
+        "sampleYears": 2
+      },
+      {
+        "month": 10,
+        "day": 20,
+        "value": 13.3,
+        "band": "good",
+        "cigEquiv": 0.6,
+        "sampleYears": 2
+      },
+      {
+        "month": 10,
+        "day": 21,
+        "value": 21.0,
+        "band": "moderate",
+        "cigEquiv": 0.95,
+        "sampleYears": 2
+      },
+      {
+        "month": 10,
+        "day": 22,
+        "value": 16.3,
+        "band": "moderate",
+        "cigEquiv": 0.74,
+        "sampleYears": 2
+      },
+      {
+        "month": 10,
+        "day": 23,
+        "value": 17.1,
+        "band": "moderate",
+        "cigEquiv": 0.78,
+        "sampleYears": 2
+      },
+      {
+        "month": 10,
+        "day": 24,
+        "value": 20.7,
+        "band": "moderate",
+        "cigEquiv": 0.94,
+        "sampleYears": 2
+      },
+      {
+        "month": 10,
+        "day": 25,
+        "value": 13.9,
+        "band": "good",
+        "cigEquiv": 0.63,
+        "sampleYears": 2
+      },
+      {
+        "month": 10,
+        "day": 26,
+        "value": 15.6,
+        "band": "moderate",
+        "cigEquiv": 0.71,
+        "sampleYears": 2
+      },
+      {
+        "month": 10,
+        "day": 27,
+        "value": 20.9,
+        "band": "moderate",
+        "cigEquiv": 0.95,
+        "sampleYears": 2
+      },
+      {
+        "month": 10,
+        "day": 28,
+        "value": 24.0,
+        "band": "moderate",
+        "cigEquiv": 1.09,
+        "sampleYears": 2
+      },
+      {
+        "month": 10,
+        "day": 29,
+        "value": 30.6,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.39,
+        "sampleYears": 2
+      },
+      {
+        "month": 10,
+        "day": 30,
+        "value": 30.1,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.37,
+        "sampleYears": 2
+      },
+      {
+        "month": 10,
+        "day": 31,
+        "value": 30.5,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.38,
+        "sampleYears": 2
+      },
+      {
+        "month": 11,
+        "day": 1,
+        "value": 23.6,
+        "band": "moderate",
+        "cigEquiv": 1.07,
+        "sampleYears": 2
+      },
+      {
+        "month": 11,
+        "day": 2,
+        "value": 23.8,
+        "band": "moderate",
+        "cigEquiv": 1.08,
+        "sampleYears": 2
+      },
+      {
+        "month": 11,
+        "day": 3,
+        "value": 16.8,
+        "band": "moderate",
+        "cigEquiv": 0.76,
+        "sampleYears": 2
+      },
+      {
+        "month": 11,
+        "day": 4,
+        "value": 26.1,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.19,
+        "sampleYears": 2
+      },
+      {
+        "month": 11,
+        "day": 5,
+        "value": 23.7,
+        "band": "moderate",
+        "cigEquiv": 1.08,
+        "sampleYears": 2
+      },
+      {
+        "month": 11,
+        "day": 6,
+        "value": 17.6,
+        "band": "moderate",
+        "cigEquiv": 0.8,
+        "sampleYears": 2
+      },
+      {
+        "month": 11,
+        "day": 7,
+        "value": 16.4,
+        "band": "moderate",
+        "cigEquiv": 0.75,
+        "sampleYears": 2
+      },
+      {
+        "month": 11,
+        "day": 8,
+        "value": 17.7,
+        "band": "moderate",
+        "cigEquiv": 0.81,
+        "sampleYears": 2
+      },
+      {
+        "month": 11,
+        "day": 9,
+        "value": 28.7,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.31,
+        "sampleYears": 2
+      },
+      {
+        "month": 11,
+        "day": 10,
+        "value": 11.3,
+        "band": "good",
+        "cigEquiv": 0.52,
+        "sampleYears": 2
+      },
+      {
+        "month": 11,
+        "day": 11,
+        "value": 24.2,
+        "band": "moderate",
+        "cigEquiv": 1.1,
+        "sampleYears": 2
+      },
+      {
+        "month": 11,
+        "day": 12,
+        "value": 29.6,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.34,
+        "sampleYears": 2
+      },
+      {
+        "month": 11,
+        "day": 13,
+        "value": 27.3,
+        "band": "unhealthy_sensitive",
+        "cigEquiv": 1.24,
+        "sampleYears": 2
+      },
+      {
+        "month": 11,
+        "day": 14,
+        "value": 24.3,
+        "band": "moderate",
+        "cigEquiv": 1.1,
+        "sampleYears": 2
+      },
+      {
+        "month": 11,
+        "day": 15,
+        "value": 17.3,
+        "band": "moderate",
+        "cigEquiv": 0.79,
+        "sampleYears": 2
+      },
+      {
+        "month": 11,
+        "day": 16,
+        "value": 17.5,
+        "band": "moderate",
+        "cigEquiv": 0.8,
+        "sampleYears": 2
+      },
+      {
+        "month": 11,
+        "day": 17,
+        "value": 13.0,
+        "band": "good",
+        "cigEquiv": 0.59,
+        "sampleYears": 2
+      },
+      {
+        "month": 11,
+        "day": 18,
+        "value": 16.5,
+        "band": "moderate",
+        "cigEquiv": 0.75,
+        "sampleYears": 2
+      },
+      {
+        "month": 11,
+        "day": 19,
+        "value": 12.6,
+        "band": "good",
+        "cigEquiv": 0.57,
+        "sampleYears": 2
+      },
+      {
+        "month": 11,
+        "day": 20,
+        "value": 11.6,
+        "band": "good",
+        "cigEquiv": 0.53,
+        "sampleYears": 2
+      },
+      {
+        "month": 11,
+        "day": 21,
+        "value": 11.5,
+        "band": "good",
+        "cigEquiv": 0.52,
+        "sampleYears": 2
+      },
+      {
+        "month": 11,
+        "day": 22,
+        "value": 8.0,
+        "band": "good",
+        "cigEquiv": 0.36,
+        "sampleYears": 2
+      },
+      {
+        "month": 11,
+        "day": 23,
+        "value": 6.9,
+        "band": "good",
+        "cigEquiv": 0.31,
+        "sampleYears": 2
+      },
+      {
+        "month": 11,
+        "day": 24,
+        "value": 9.9,
+        "band": "good",
+        "cigEquiv": 0.45,
+        "sampleYears": 2
+      },
+      {
+        "month": 11,
+        "day": 25,
+        "value": 11.5,
+        "band": "good",
+        "cigEquiv": 0.52,
+        "sampleYears": 2
+      },
+      {
+        "month": 11,
+        "day": 26,
+        "value": 12.9,
+        "band": "good",
+        "cigEquiv": 0.59,
+        "sampleYears": 2
+      },
+      {
+        "month": 11,
+        "day": 27,
+        "value": 12.2,
+        "band": "good",
+        "cigEquiv": 0.56,
+        "sampleYears": 2
+      },
+      {
+        "month": 11,
+        "day": 28,
+        "value": 12.2,
+        "band": "good",
+        "cigEquiv": 0.56,
+        "sampleYears": 2
+      },
+      {
+        "month": 11,
+        "day": 29,
+        "value": 10.3,
+        "band": "good",
+        "cigEquiv": 0.47,
+        "sampleYears": 2
+      },
+      {
+        "month": 11,
+        "day": 30,
+        "value": 18.9,
+        "band": "moderate",
+        "cigEquiv": 0.86,
+        "sampleYears": 2
+      },
+      {
+        "month": 12,
+        "day": 1,
+        "value": 22.4,
+        "band": "moderate",
+        "cigEquiv": 1.02,
+        "sampleYears": 2
+      },
+      {
+        "month": 12,
+        "day": 2,
+        "value": 16.1,
+        "band": "moderate",
+        "cigEquiv": 0.73,
+        "sampleYears": 2
+      },
+      {
+        "month": 12,
+        "day": 3,
+        "value": 24.2,
+        "band": "moderate",
+        "cigEquiv": 1.1,
+        "sampleYears": 2
+      },
+      {
+        "month": 12,
+        "day": 4,
+        "value": 20.2,
+        "band": "moderate",
+        "cigEquiv": 0.92,
+        "sampleYears": 2
+      },
+      {
+        "month": 12,
+        "day": 5,
+        "value": 14.9,
+        "band": "good",
+        "cigEquiv": 0.68,
+        "sampleYears": 2
+      },
+      {
+        "month": 12,
+        "day": 6,
+        "value": 12.4,
+        "band": "good",
+        "cigEquiv": 0.57,
+        "sampleYears": 2
+      },
+      {
+        "month": 12,
+        "day": 7,
+        "value": 12.2,
+        "band": "good",
+        "cigEquiv": 0.55,
+        "sampleYears": 2
+      },
+      {
+        "month": 12,
+        "day": 8,
+        "value": 11.0,
+        "band": "good",
+        "cigEquiv": 0.5,
+        "sampleYears": 2
+      },
+      {
+        "month": 12,
+        "day": 9,
+        "value": 10.5,
+        "band": "good",
+        "cigEquiv": 0.48,
+        "sampleYears": 2
+      },
+      {
+        "month": 12,
+        "day": 10,
+        "value": 8.2,
+        "band": "good",
+        "cigEquiv": 0.37,
+        "sampleYears": 2
+      },
+      {
+        "month": 12,
+        "day": 11,
+        "value": 17.7,
+        "band": "moderate",
+        "cigEquiv": 0.8,
+        "sampleYears": 2
+      },
+      {
+        "month": 12,
+        "day": 12,
+        "value": 23.6,
+        "band": "moderate",
+        "cigEquiv": 1.07,
+        "sampleYears": 2
+      },
+      {
+        "month": 12,
+        "day": 13,
+        "value": 11.2,
+        "band": "good",
+        "cigEquiv": 0.51,
+        "sampleYears": 2
+      },
+      {
+        "month": 12,
+        "day": 14,
+        "value": 17.7,
+        "band": "moderate",
+        "cigEquiv": 0.8,
+        "sampleYears": 2
+      },
+      {
+        "month": 12,
+        "day": 15,
+        "value": 13.2,
+        "band": "good",
+        "cigEquiv": 0.6,
+        "sampleYears": 2
+      },
+      {
+        "month": 12,
+        "day": 16,
+        "value": 13.0,
+        "band": "good",
+        "cigEquiv": 0.59,
+        "sampleYears": 2
+      },
+      {
+        "month": 12,
+        "day": 17,
+        "value": 6.2,
+        "band": "good",
+        "cigEquiv": 0.28,
+        "sampleYears": 2
+      },
+      {
+        "month": 12,
+        "day": 18,
+        "value": 6.9,
+        "band": "good",
+        "cigEquiv": 0.31,
+        "sampleYears": 2
+      },
+      {
+        "month": 12,
+        "day": 19,
+        "value": 9.2,
+        "band": "good",
+        "cigEquiv": 0.42,
+        "sampleYears": 2
+      },
+      {
+        "month": 12,
+        "day": 20,
+        "value": 11.3,
+        "band": "good",
+        "cigEquiv": 0.51,
+        "sampleYears": 2
+      },
+      {
+        "month": 12,
+        "day": 21,
+        "value": 12.7,
+        "band": "good",
+        "cigEquiv": 0.58,
+        "sampleYears": 2
+      },
+      {
+        "month": 12,
+        "day": 22,
+        "value": 13.4,
+        "band": "good",
+        "cigEquiv": 0.61,
+        "sampleYears": 2
+      },
+      {
+        "month": 12,
+        "day": 23,
+        "value": 16.8,
+        "band": "moderate",
+        "cigEquiv": 0.76,
+        "sampleYears": 2
+      },
+      {
+        "month": 12,
+        "day": 24,
+        "value": 12.0,
+        "band": "good",
+        "cigEquiv": 0.55,
+        "sampleYears": 2
+      },
+      {
+        "month": 12,
+        "day": 25,
+        "value": 16.3,
+        "band": "moderate",
+        "cigEquiv": 0.74,
+        "sampleYears": 2
+      },
+      {
+        "month": 12,
+        "day": 26,
+        "value": 15.0,
+        "band": "good",
+        "cigEquiv": 0.68,
+        "sampleYears": 2
+      },
+      {
+        "month": 12,
+        "day": 27,
+        "value": 11.3,
+        "band": "good",
+        "cigEquiv": 0.52,
+        "sampleYears": 2
+      },
+      {
+        "month": 12,
+        "day": 28,
+        "value": 8.3,
+        "band": "good",
+        "cigEquiv": 0.38,
+        "sampleYears": 2
+      },
+      {
+        "month": 12,
+        "day": 29,
+        "value": 7.6,
+        "band": "good",
+        "cigEquiv": 0.34,
+        "sampleYears": 2
+      },
+      {
+        "month": 12,
+        "day": 30,
+        "value": 10.3,
+        "band": "good",
+        "cigEquiv": 0.47,
+        "sampleYears": 2
+      },
+      {
+        "month": 12,
+        "day": 31,
+        "value": 14.6,
+        "band": "good",
+        "cigEquiv": 0.66,
+        "sampleYears": 2
+      }
+    ],
+    "byYear": {
+      "2024": [
+        {
+          "month": 8,
+          "day": 19,
+          "value": 5.6,
+          "band": "good"
+        },
+        {
+          "month": 8,
+          "day": 20,
+          "value": 5.2,
+          "band": "good"
+        },
+        {
+          "month": 8,
+          "day": 21,
+          "value": 5.3,
+          "band": "good"
+        },
+        {
+          "month": 8,
+          "day": 22,
+          "value": 5.3,
+          "band": "good"
+        },
+        {
+          "month": 8,
+          "day": 23,
+          "value": 5.3,
+          "band": "good"
+        },
+        {
+          "month": 8,
+          "day": 24,
+          "value": 5.3,
+          "band": "good"
+        },
+        {
+          "month": 8,
+          "day": 25,
+          "value": 5.3,
+          "band": "good"
+        },
+        {
+          "month": 8,
+          "day": 26,
+          "value": 5.4,
+          "band": "good"
+        },
+        {
+          "month": 8,
+          "day": 27,
+          "value": 5.4,
+          "band": "good"
+        },
+        {
+          "month": 8,
+          "day": 29,
+          "value": 13.3,
+          "band": "good"
+        },
+        {
+          "month": 8,
+          "day": 30,
+          "value": 11.3,
+          "band": "good"
+        },
+        {
+          "month": 8,
+          "day": 31,
+          "value": 20.3,
+          "band": "moderate"
+        },
+        {
+          "month": 9,
+          "day": 1,
+          "value": 21.9,
+          "band": "moderate"
+        },
+        {
+          "month": 9,
+          "day": 2,
+          "value": 26.6,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 9,
+          "day": 3,
+          "value": 32.3,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 9,
+          "day": 4,
+          "value": 33.0,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 9,
+          "day": 5,
+          "value": 37.8,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 9,
+          "day": 6,
+          "value": 28.1,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 9,
+          "day": 7,
+          "value": 17.8,
+          "band": "moderate"
+        },
+        {
+          "month": 9,
+          "day": 8,
+          "value": 20.7,
+          "band": "moderate"
+        },
+        {
+          "month": 9,
+          "day": 9,
+          "value": 17.4,
+          "band": "moderate"
+        },
+        {
+          "month": 9,
+          "day": 10,
+          "value": 10.2,
+          "band": "good"
+        },
+        {
+          "month": 9,
+          "day": 11,
+          "value": 14.1,
+          "band": "good"
+        },
+        {
+          "month": 9,
+          "day": 12,
+          "value": 10.2,
+          "band": "good"
+        },
+        {
+          "month": 9,
+          "day": 13,
+          "value": 17.7,
+          "band": "moderate"
+        },
+        {
+          "month": 9,
+          "day": 14,
+          "value": 17.2,
+          "band": "moderate"
+        },
+        {
+          "month": 9,
+          "day": 15,
+          "value": 29.8,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 9,
+          "day": 16,
+          "value": 28.6,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 9,
+          "day": 17,
+          "value": 26.4,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 9,
+          "day": 18,
+          "value": 6.7,
+          "band": "good"
+        },
+        {
+          "month": 9,
+          "day": 19,
+          "value": 31.5,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 9,
+          "day": 20,
+          "value": 33.8,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 9,
+          "day": 21,
+          "value": 13.6,
+          "band": "good"
+        },
+        {
+          "month": 9,
+          "day": 22,
+          "value": 24.2,
+          "band": "moderate"
+        },
+        {
+          "month": 9,
+          "day": 23,
+          "value": 24.6,
+          "band": "moderate"
+        },
+        {
+          "month": 9,
+          "day": 24,
+          "value": 23.0,
+          "band": "moderate"
+        },
+        {
+          "month": 9,
+          "day": 25,
+          "value": 21.5,
+          "band": "moderate"
+        },
+        {
+          "month": 9,
+          "day": 26,
+          "value": 9.3,
+          "band": "good"
+        },
+        {
+          "month": 9,
+          "day": 27,
+          "value": 17.5,
+          "band": "moderate"
+        },
+        {
+          "month": 9,
+          "day": 28,
+          "value": 16.2,
+          "band": "moderate"
+        },
+        {
+          "month": 9,
+          "day": 29,
+          "value": 16.4,
+          "band": "moderate"
+        },
+        {
+          "month": 9,
+          "day": 30,
+          "value": 12.6,
+          "band": "good"
+        },
+        {
+          "month": 10,
+          "day": 1,
+          "value": 8.7,
+          "band": "good"
+        },
+        {
+          "month": 10,
+          "day": 2,
+          "value": 12.0,
+          "band": "good"
+        },
+        {
+          "month": 10,
+          "day": 3,
+          "value": 13.9,
+          "band": "good"
+        },
+        {
+          "month": 10,
+          "day": 4,
+          "value": 23.4,
+          "band": "moderate"
+        },
+        {
+          "month": 10,
+          "day": 5,
+          "value": 16.6,
+          "band": "moderate"
+        },
+        {
+          "month": 10,
+          "day": 6,
+          "value": 10.5,
+          "band": "good"
+        },
+        {
+          "month": 10,
+          "day": 7,
+          "value": 19.7,
+          "band": "moderate"
+        },
+        {
+          "month": 10,
+          "day": 8,
+          "value": 17.6,
+          "band": "moderate"
+        },
+        {
+          "month": 10,
+          "day": 9,
+          "value": 15.1,
+          "band": "moderate"
+        },
+        {
+          "month": 10,
+          "day": 10,
+          "value": 15.4,
+          "band": "moderate"
+        },
+        {
+          "month": 10,
+          "day": 11,
+          "value": 11.9,
+          "band": "good"
+        },
+        {
+          "month": 10,
+          "day": 12,
+          "value": 18.1,
+          "band": "moderate"
+        },
+        {
+          "month": 10,
+          "day": 13,
+          "value": 15.0,
+          "band": "good"
+        },
+        {
+          "month": 10,
+          "day": 14,
+          "value": 9.7,
+          "band": "good"
+        },
+        {
+          "month": 10,
+          "day": 15,
+          "value": 9.9,
+          "band": "good"
+        },
+        {
+          "month": 10,
+          "day": 16,
+          "value": 18.2,
+          "band": "moderate"
+        },
+        {
+          "month": 10,
+          "day": 17,
+          "value": 28.5,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 10,
+          "day": 18,
+          "value": 34.5,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 10,
+          "day": 19,
+          "value": 34.2,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 10,
+          "day": 20,
+          "value": 18.9,
+          "band": "moderate"
+        },
+        {
+          "month": 10,
+          "day": 21,
+          "value": 27.2,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 10,
+          "day": 22,
+          "value": 26.2,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 10,
+          "day": 23,
+          "value": 26.7,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 10,
+          "day": 24,
+          "value": 35.6,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 10,
+          "day": 25,
+          "value": 20.4,
+          "band": "moderate"
+        },
+        {
+          "month": 10,
+          "day": 26,
+          "value": 18.8,
+          "band": "moderate"
+        },
+        {
+          "month": 10,
+          "day": 27,
+          "value": 21.9,
+          "band": "moderate"
+        },
+        {
+          "month": 10,
+          "day": 28,
+          "value": 21.2,
+          "band": "moderate"
+        },
+        {
+          "month": 10,
+          "day": 29,
+          "value": 39.9,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 10,
+          "day": 30,
+          "value": 33.3,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 10,
+          "day": 31,
+          "value": 34.1,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 11,
+          "day": 1,
+          "value": 20.7,
+          "band": "moderate"
+        },
+        {
+          "month": 11,
+          "day": 2,
+          "value": 20.8,
+          "band": "moderate"
+        },
+        {
+          "month": 11,
+          "day": 3,
+          "value": 17.0,
+          "band": "moderate"
+        },
+        {
+          "month": 11,
+          "day": 4,
+          "value": 21.0,
+          "band": "moderate"
+        },
+        {
+          "month": 11,
+          "day": 5,
+          "value": 25.6,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 11,
+          "day": 6,
+          "value": 20.4,
+          "band": "moderate"
+        },
+        {
+          "month": 11,
+          "day": 7,
+          "value": 17.8,
+          "band": "moderate"
+        },
+        {
+          "month": 11,
+          "day": 8,
+          "value": 14.5,
+          "band": "good"
+        },
+        {
+          "month": 11,
+          "day": 9,
+          "value": 26.7,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 11,
+          "day": 10,
+          "value": 11.9,
+          "band": "good"
+        },
+        {
+          "month": 11,
+          "day": 11,
+          "value": 19.8,
+          "band": "moderate"
+        },
+        {
+          "month": 11,
+          "day": 12,
+          "value": 30.7,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 11,
+          "day": 13,
+          "value": 27.1,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 11,
+          "day": 14,
+          "value": 19.5,
+          "band": "moderate"
+        },
+        {
+          "month": 11,
+          "day": 15,
+          "value": 23.4,
+          "band": "moderate"
+        },
+        {
+          "month": 11,
+          "day": 16,
+          "value": 17.5,
+          "band": "moderate"
+        },
+        {
+          "month": 11,
+          "day": 17,
+          "value": 9.4,
+          "band": "good"
+        },
+        {
+          "month": 11,
+          "day": 18,
+          "value": 6.8,
+          "band": "good"
+        },
+        {
+          "month": 11,
+          "day": 19,
+          "value": 8.9,
+          "band": "good"
+        },
+        {
+          "month": 11,
+          "day": 20,
+          "value": 8.8,
+          "band": "good"
+        },
+        {
+          "month": 11,
+          "day": 21,
+          "value": 8.9,
+          "band": "good"
+        },
+        {
+          "month": 11,
+          "day": 22,
+          "value": 8.8,
+          "band": "good"
+        },
+        {
+          "month": 11,
+          "day": 23,
+          "value": 8.7,
+          "band": "good"
+        },
+        {
+          "month": 11,
+          "day": 24,
+          "value": 11.3,
+          "band": "good"
+        },
+        {
+          "month": 11,
+          "day": 25,
+          "value": 15.2,
+          "band": "moderate"
+        },
+        {
+          "month": 11,
+          "day": 26,
+          "value": 13.2,
+          "band": "good"
+        },
+        {
+          "month": 11,
+          "day": 27,
+          "value": 15.1,
+          "band": "moderate"
+        },
+        {
+          "month": 11,
+          "day": 28,
+          "value": 16.7,
+          "band": "moderate"
+        },
+        {
+          "month": 11,
+          "day": 29,
+          "value": 8.5,
+          "band": "good"
+        },
+        {
+          "month": 11,
+          "day": 30,
+          "value": 11.4,
+          "band": "good"
+        },
+        {
+          "month": 12,
+          "day": 1,
+          "value": 11.0,
+          "band": "good"
+        },
+        {
+          "month": 12,
+          "day": 2,
+          "value": 13.7,
+          "band": "good"
+        },
+        {
+          "month": 12,
+          "day": 3,
+          "value": 17.4,
+          "band": "moderate"
+        },
+        {
+          "month": 12,
+          "day": 4,
+          "value": 21.2,
+          "band": "moderate"
+        },
+        {
+          "month": 12,
+          "day": 5,
+          "value": 10.6,
+          "band": "good"
+        },
+        {
+          "month": 12,
+          "day": 6,
+          "value": 14.4,
+          "band": "good"
+        },
+        {
+          "month": 12,
+          "day": 7,
+          "value": 14.7,
+          "band": "good"
+        },
+        {
+          "month": 12,
+          "day": 8,
+          "value": 9.1,
+          "band": "good"
+        },
+        {
+          "month": 12,
+          "day": 9,
+          "value": 7.8,
+          "band": "good"
+        },
+        {
+          "month": 12,
+          "day": 10,
+          "value": 6.1,
+          "band": "good"
+        },
+        {
+          "month": 12,
+          "day": 11,
+          "value": 9.8,
+          "band": "good"
+        },
+        {
+          "month": 12,
+          "day": 12,
+          "value": 22.2,
+          "band": "moderate"
+        },
+        {
+          "month": 12,
+          "day": 13,
+          "value": 12.1,
+          "band": "good"
+        },
+        {
+          "month": 12,
+          "day": 14,
+          "value": 26.2,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 12,
+          "day": 15,
+          "value": 20.1,
+          "band": "moderate"
+        },
+        {
+          "month": 12,
+          "day": 16,
+          "value": 17.6,
+          "band": "moderate"
+        },
+        {
+          "month": 12,
+          "day": 17,
+          "value": 7.0,
+          "band": "good"
+        },
+        {
+          "month": 12,
+          "day": 18,
+          "value": 8.5,
+          "band": "good"
+        },
+        {
+          "month": 12,
+          "day": 19,
+          "value": 10.9,
+          "band": "good"
+        },
+        {
+          "month": 12,
+          "day": 20,
+          "value": 12.1,
+          "band": "good"
+        },
+        {
+          "month": 12,
+          "day": 21,
+          "value": 17.4,
+          "band": "moderate"
+        },
+        {
+          "month": 12,
+          "day": 22,
+          "value": 18.0,
+          "band": "moderate"
+        },
+        {
+          "month": 12,
+          "day": 23,
+          "value": 23.0,
+          "band": "moderate"
+        },
+        {
+          "month": 12,
+          "day": 24,
+          "value": 16.5,
+          "band": "moderate"
+        },
+        {
+          "month": 12,
+          "day": 25,
+          "value": 21.0,
+          "band": "moderate"
+        },
+        {
+          "month": 12,
+          "day": 26,
+          "value": 21.5,
+          "band": "moderate"
+        },
+        {
+          "month": 12,
+          "day": 27,
+          "value": 15.1,
+          "band": "moderate"
+        },
+        {
+          "month": 12,
+          "day": 28,
+          "value": 10.5,
+          "band": "good"
+        },
+        {
+          "month": 12,
+          "day": 29,
+          "value": 9.8,
+          "band": "good"
+        },
+        {
+          "month": 12,
+          "day": 30,
+          "value": 6.9,
+          "band": "good"
+        },
+        {
+          "month": 12,
+          "day": 31,
+          "value": 9.3,
+          "band": "good"
+        }
+      ],
+      "2025": [
+        {
+          "month": 1,
+          "day": 1,
+          "value": 16.3,
+          "band": "moderate"
+        },
+        {
+          "month": 1,
+          "day": 2,
+          "value": 20.9,
+          "band": "moderate"
+        },
+        {
+          "month": 1,
+          "day": 3,
+          "value": 17.1,
+          "band": "moderate"
+        },
+        {
+          "month": 1,
+          "day": 4,
+          "value": 11.6,
+          "band": "good"
+        },
+        {
+          "month": 1,
+          "day": 5,
+          "value": 11.9,
+          "band": "good"
+        },
+        {
+          "month": 1,
+          "day": 6,
+          "value": 9.6,
+          "band": "good"
+        },
+        {
+          "month": 1,
+          "day": 7,
+          "value": 19.7,
+          "band": "moderate"
+        },
+        {
+          "month": 1,
+          "day": 8,
+          "value": 12.4,
+          "band": "good"
+        },
+        {
+          "month": 1,
+          "day": 9,
+          "value": 21.0,
+          "band": "moderate"
+        },
+        {
+          "month": 1,
+          "day": 10,
+          "value": 17.8,
+          "band": "moderate"
+        },
+        {
+          "month": 1,
+          "day": 11,
+          "value": 8.7,
+          "band": "good"
+        },
+        {
+          "month": 1,
+          "day": 12,
+          "value": 10.7,
+          "band": "good"
+        },
+        {
+          "month": 1,
+          "day": 14,
+          "value": 8.6,
+          "band": "good"
+        },
+        {
+          "month": 1,
+          "day": 15,
+          "value": 17.8,
+          "band": "moderate"
+        },
+        {
+          "month": 1,
+          "day": 16,
+          "value": 9.0,
+          "band": "good"
+        },
+        {
+          "month": 1,
+          "day": 17,
+          "value": 9.5,
+          "band": "good"
+        },
+        {
+          "month": 1,
+          "day": 18,
+          "value": 10.0,
+          "band": "good"
+        },
+        {
+          "month": 1,
+          "day": 19,
+          "value": 11.2,
+          "band": "good"
+        },
+        {
+          "month": 1,
+          "day": 20,
+          "value": 10.4,
+          "band": "good"
+        },
+        {
+          "month": 1,
+          "day": 21,
+          "value": 10.5,
+          "band": "good"
+        },
+        {
+          "month": 1,
+          "day": 22,
+          "value": 15.1,
+          "band": "moderate"
+        },
+        {
+          "month": 1,
+          "day": 23,
+          "value": 11.0,
+          "band": "good"
+        },
+        {
+          "month": 1,
+          "day": 24,
+          "value": 11.6,
+          "band": "good"
+        },
+        {
+          "month": 1,
+          "day": 25,
+          "value": 11.0,
+          "band": "good"
+        },
+        {
+          "month": 1,
+          "day": 26,
+          "value": 10.6,
+          "band": "good"
+        },
+        {
+          "month": 1,
+          "day": 27,
+          "value": 11.4,
+          "band": "good"
+        },
+        {
+          "month": 1,
+          "day": 28,
+          "value": 12.1,
+          "band": "good"
+        },
+        {
+          "month": 1,
+          "day": 29,
+          "value": 10.7,
+          "band": "good"
+        },
+        {
+          "month": 1,
+          "day": 30,
+          "value": 10.5,
+          "band": "good"
+        },
+        {
+          "month": 1,
+          "day": 31,
+          "value": 9.6,
+          "band": "good"
+        },
+        {
+          "month": 2,
+          "day": 1,
+          "value": 10.3,
+          "band": "good"
+        },
+        {
+          "month": 2,
+          "day": 2,
+          "value": 12.3,
+          "band": "good"
+        },
+        {
+          "month": 2,
+          "day": 4,
+          "value": 8.9,
+          "band": "good"
+        },
+        {
+          "month": 2,
+          "day": 5,
+          "value": 8.4,
+          "band": "good"
+        },
+        {
+          "month": 2,
+          "day": 6,
+          "value": 13.0,
+          "band": "good"
+        },
+        {
+          "month": 2,
+          "day": 7,
+          "value": 10.0,
+          "band": "good"
+        },
+        {
+          "month": 2,
+          "day": 8,
+          "value": 10.5,
+          "band": "good"
+        },
+        {
+          "month": 2,
+          "day": 9,
+          "value": 10.0,
+          "band": "good"
+        },
+        {
+          "month": 2,
+          "day": 10,
+          "value": 9.6,
+          "band": "good"
+        },
+        {
+          "month": 2,
+          "day": 11,
+          "value": 8.2,
+          "band": "good"
+        },
+        {
+          "month": 2,
+          "day": 12,
+          "value": 18.3,
+          "band": "moderate"
+        },
+        {
+          "month": 2,
+          "day": 13,
+          "value": 15.4,
+          "band": "moderate"
+        },
+        {
+          "month": 2,
+          "day": 14,
+          "value": 9.4,
+          "band": "good"
+        },
+        {
+          "month": 2,
+          "day": 15,
+          "value": 14.0,
+          "band": "good"
+        },
+        {
+          "month": 2,
+          "day": 16,
+          "value": 18.4,
+          "band": "moderate"
+        },
+        {
+          "month": 2,
+          "day": 17,
+          "value": 16.2,
+          "band": "moderate"
+        },
+        {
+          "month": 2,
+          "day": 18,
+          "value": 6.7,
+          "band": "good"
+        },
+        {
+          "month": 2,
+          "day": 19,
+          "value": 15.4,
+          "band": "moderate"
+        },
+        {
+          "month": 2,
+          "day": 20,
+          "value": 18.7,
+          "band": "moderate"
+        },
+        {
+          "month": 2,
+          "day": 21,
+          "value": 13.5,
+          "band": "good"
+        },
+        {
+          "month": 2,
+          "day": 22,
+          "value": 12.7,
+          "band": "good"
+        },
+        {
+          "month": 2,
+          "day": 23,
+          "value": 12.1,
+          "band": "good"
+        },
+        {
+          "month": 2,
+          "day": 24,
+          "value": 8.3,
+          "band": "good"
+        },
+        {
+          "month": 2,
+          "day": 25,
+          "value": 8.2,
+          "band": "good"
+        },
+        {
+          "month": 2,
+          "day": 26,
+          "value": 11.4,
+          "band": "good"
+        },
+        {
+          "month": 2,
+          "day": 27,
+          "value": 9.4,
+          "band": "good"
+        },
+        {
+          "month": 2,
+          "day": 28,
+          "value": 11.4,
+          "band": "good"
+        },
+        {
+          "month": 3,
+          "day": 1,
+          "value": 12.0,
+          "band": "good"
+        },
+        {
+          "month": 3,
+          "day": 2,
+          "value": 10.3,
+          "band": "good"
+        },
+        {
+          "month": 3,
+          "day": 3,
+          "value": 13.2,
+          "band": "good"
+        },
+        {
+          "month": 3,
+          "day": 4,
+          "value": 16.5,
+          "band": "moderate"
+        },
+        {
+          "month": 3,
+          "day": 5,
+          "value": 21.7,
+          "band": "moderate"
+        },
+        {
+          "month": 3,
+          "day": 6,
+          "value": 8.7,
+          "band": "good"
+        },
+        {
+          "month": 3,
+          "day": 7,
+          "value": 18.3,
+          "band": "moderate"
+        },
+        {
+          "month": 3,
+          "day": 8,
+          "value": 16.9,
+          "band": "moderate"
+        },
+        {
+          "month": 3,
+          "day": 9,
+          "value": 13.5,
+          "band": "good"
+        },
+        {
+          "month": 3,
+          "day": 10,
+          "value": 8.3,
+          "band": "good"
+        },
+        {
+          "month": 3,
+          "day": 11,
+          "value": 5.4,
+          "band": "good"
+        },
+        {
+          "month": 3,
+          "day": 12,
+          "value": 7.8,
+          "band": "good"
+        },
+        {
+          "month": 3,
+          "day": 13,
+          "value": 10.7,
+          "band": "good"
+        },
+        {
+          "month": 3,
+          "day": 14,
+          "value": 7.8,
+          "band": "good"
+        },
+        {
+          "month": 3,
+          "day": 15,
+          "value": 9.2,
+          "band": "good"
+        },
+        {
+          "month": 3,
+          "day": 16,
+          "value": 8.9,
+          "band": "good"
+        },
+        {
+          "month": 3,
+          "day": 17,
+          "value": 9.4,
+          "band": "good"
+        },
+        {
+          "month": 3,
+          "day": 18,
+          "value": 14.8,
+          "band": "good"
+        },
+        {
+          "month": 3,
+          "day": 19,
+          "value": 16.2,
+          "band": "moderate"
+        },
+        {
+          "month": 3,
+          "day": 20,
+          "value": 9.6,
+          "band": "good"
+        },
+        {
+          "month": 3,
+          "day": 21,
+          "value": 26.1,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 3,
+          "day": 22,
+          "value": 14.6,
+          "band": "good"
+        },
+        {
+          "month": 3,
+          "day": 23,
+          "value": 6.6,
+          "band": "good"
+        },
+        {
+          "month": 3,
+          "day": 24,
+          "value": 18.2,
+          "band": "moderate"
+        },
+        {
+          "month": 3,
+          "day": 25,
+          "value": 41.0,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 3,
+          "day": 26,
+          "value": 43.7,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 3,
+          "day": 27,
+          "value": 40.4,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 3,
+          "day": 28,
+          "value": 18.3,
+          "band": "moderate"
+        },
+        {
+          "month": 3,
+          "day": 29,
+          "value": 34.7,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 3,
+          "day": 30,
+          "value": 35.1,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 3,
+          "day": 31,
+          "value": 27.3,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 4,
+          "day": 1,
+          "value": 24.1,
+          "band": "moderate"
+        },
+        {
+          "month": 4,
+          "day": 2,
+          "value": 9.8,
+          "band": "good"
+        },
+        {
+          "month": 4,
+          "day": 3,
+          "value": 6.1,
+          "band": "good"
+        },
+        {
+          "month": 4,
+          "day": 4,
+          "value": 15.2,
+          "band": "moderate"
+        },
+        {
+          "month": 4,
+          "day": 5,
+          "value": 9.4,
+          "band": "good"
+        },
+        {
+          "month": 4,
+          "day": 6,
+          "value": 9.4,
+          "band": "good"
+        },
+        {
+          "month": 4,
+          "day": 7,
+          "value": 5.3,
+          "band": "good"
+        },
+        {
+          "month": 4,
+          "day": 8,
+          "value": 13.6,
+          "band": "good"
+        },
+        {
+          "month": 4,
+          "day": 9,
+          "value": 10.8,
+          "band": "good"
+        },
+        {
+          "month": 4,
+          "day": 10,
+          "value": 17.7,
+          "band": "moderate"
+        },
+        {
+          "month": 4,
+          "day": 11,
+          "value": 8.2,
+          "band": "good"
+        },
+        {
+          "month": 4,
+          "day": 12,
+          "value": 8.8,
+          "band": "good"
+        },
+        {
+          "month": 4,
+          "day": 13,
+          "value": 9.0,
+          "band": "good"
+        },
+        {
+          "month": 4,
+          "day": 14,
+          "value": 11.2,
+          "band": "good"
+        },
+        {
+          "month": 4,
+          "day": 15,
+          "value": 10.2,
+          "band": "good"
+        },
+        {
+          "month": 4,
+          "day": 16,
+          "value": 23.8,
+          "band": "moderate"
+        },
+        {
+          "month": 4,
+          "day": 17,
+          "value": 9.5,
+          "band": "good"
+        },
+        {
+          "month": 4,
+          "day": 18,
+          "value": 24.9,
+          "band": "moderate"
+        },
+        {
+          "month": 4,
+          "day": 19,
+          "value": 11.0,
+          "band": "good"
+        },
+        {
+          "month": 4,
+          "day": 20,
+          "value": 11.7,
+          "band": "good"
+        },
+        {
+          "month": 4,
+          "day": 21,
+          "value": 13.1,
+          "band": "good"
+        },
+        {
+          "month": 4,
+          "day": 22,
+          "value": 22.3,
+          "band": "moderate"
+        },
+        {
+          "month": 4,
+          "day": 23,
+          "value": 16.4,
+          "band": "moderate"
+        },
+        {
+          "month": 4,
+          "day": 24,
+          "value": 33.7,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 4,
+          "day": 25,
+          "value": 24.6,
+          "band": "moderate"
+        },
+        {
+          "month": 4,
+          "day": 26,
+          "value": 12.1,
+          "band": "good"
+        },
+        {
+          "month": 4,
+          "day": 27,
+          "value": 16.1,
+          "band": "moderate"
+        },
+        {
+          "month": 4,
+          "day": 28,
+          "value": 15.7,
+          "band": "moderate"
+        },
+        {
+          "month": 4,
+          "day": 29,
+          "value": 27.7,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 4,
+          "day": 30,
+          "value": 16.0,
+          "band": "moderate"
+        },
+        {
+          "month": 5,
+          "day": 1,
+          "value": 21.5,
+          "band": "moderate"
+        },
+        {
+          "month": 5,
+          "day": 2,
+          "value": 31.6,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 5,
+          "day": 3,
+          "value": 16.2,
+          "band": "moderate"
+        },
+        {
+          "month": 5,
+          "day": 4,
+          "value": 8.2,
+          "band": "good"
+        },
+        {
+          "month": 5,
+          "day": 5,
+          "value": 17.4,
+          "band": "moderate"
+        },
+        {
+          "month": 5,
+          "day": 6,
+          "value": 14.1,
+          "band": "good"
+        },
+        {
+          "month": 5,
+          "day": 7,
+          "value": 29.2,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 5,
+          "day": 8,
+          "value": 22.9,
+          "band": "moderate"
+        },
+        {
+          "month": 5,
+          "day": 9,
+          "value": 25.0,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 5,
+          "day": 10,
+          "value": 34.2,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 5,
+          "day": 11,
+          "value": 17.0,
+          "band": "moderate"
+        },
+        {
+          "month": 5,
+          "day": 12,
+          "value": 26.7,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 5,
+          "day": 13,
+          "value": 26.1,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 5,
+          "day": 14,
+          "value": 16.9,
+          "band": "moderate"
+        },
+        {
+          "month": 5,
+          "day": 15,
+          "value": 26.5,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 5,
+          "day": 16,
+          "value": 20.7,
+          "band": "moderate"
+        },
+        {
+          "month": 5,
+          "day": 17,
+          "value": 10.0,
+          "band": "good"
+        },
+        {
+          "month": 5,
+          "day": 18,
+          "value": 8.4,
+          "band": "good"
+        },
+        {
+          "month": 5,
+          "day": 19,
+          "value": 11.4,
+          "band": "good"
+        },
+        {
+          "month": 5,
+          "day": 20,
+          "value": 14.6,
+          "band": "good"
+        },
+        {
+          "month": 5,
+          "day": 21,
+          "value": 19.7,
+          "band": "moderate"
+        },
+        {
+          "month": 5,
+          "day": 22,
+          "value": 32.1,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 5,
+          "day": 23,
+          "value": 13.7,
+          "band": "good"
+        },
+        {
+          "month": 5,
+          "day": 24,
+          "value": 11.5,
+          "band": "good"
+        },
+        {
+          "month": 5,
+          "day": 25,
+          "value": 15.1,
+          "band": "moderate"
+        },
+        {
+          "month": 5,
+          "day": 26,
+          "value": 15.3,
+          "band": "moderate"
+        },
+        {
+          "month": 5,
+          "day": 27,
+          "value": 19.7,
+          "band": "moderate"
+        },
+        {
+          "month": 5,
+          "day": 28,
+          "value": 21.2,
+          "band": "moderate"
+        },
+        {
+          "month": 5,
+          "day": 29,
+          "value": 18.2,
+          "band": "moderate"
+        },
+        {
+          "month": 5,
+          "day": 30,
+          "value": 15.3,
+          "band": "moderate"
+        },
+        {
+          "month": 5,
+          "day": 31,
+          "value": 18.7,
+          "band": "moderate"
+        },
+        {
+          "month": 6,
+          "day": 1,
+          "value": 14.4,
+          "band": "good"
+        },
+        {
+          "month": 6,
+          "day": 2,
+          "value": 15.7,
+          "band": "moderate"
+        },
+        {
+          "month": 6,
+          "day": 3,
+          "value": 19.9,
+          "band": "moderate"
+        },
+        {
+          "month": 6,
+          "day": 4,
+          "value": 30.5,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 6,
+          "day": 5,
+          "value": 29.2,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 6,
+          "day": 6,
+          "value": 10.0,
+          "band": "good"
+        },
+        {
+          "month": 6,
+          "day": 7,
+          "value": 11.5,
+          "band": "good"
+        },
+        {
+          "month": 6,
+          "day": 8,
+          "value": 14.5,
+          "band": "good"
+        },
+        {
+          "month": 6,
+          "day": 9,
+          "value": 25.4,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 6,
+          "day": 10,
+          "value": 8.9,
+          "band": "good"
+        },
+        {
+          "month": 6,
+          "day": 11,
+          "value": 11.6,
+          "band": "good"
+        },
+        {
+          "month": 6,
+          "day": 12,
+          "value": 32.8,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 6,
+          "day": 13,
+          "value": 13.5,
+          "band": "good"
+        },
+        {
+          "month": 6,
+          "day": 14,
+          "value": 8.5,
+          "band": "good"
+        },
+        {
+          "month": 6,
+          "day": 15,
+          "value": 9.2,
+          "band": "good"
+        },
+        {
+          "month": 6,
+          "day": 16,
+          "value": 14.4,
+          "band": "good"
+        },
+        {
+          "month": 6,
+          "day": 17,
+          "value": 24.7,
+          "band": "moderate"
+        },
+        {
+          "month": 6,
+          "day": 18,
+          "value": 13.6,
+          "band": "good"
+        },
+        {
+          "month": 6,
+          "day": 19,
+          "value": 19.4,
+          "band": "moderate"
+        },
+        {
+          "month": 6,
+          "day": 20,
+          "value": 25.9,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 6,
+          "day": 21,
+          "value": 29.6,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 6,
+          "day": 22,
+          "value": 22.1,
+          "band": "moderate"
+        },
+        {
+          "month": 6,
+          "day": 23,
+          "value": 18.3,
+          "band": "moderate"
+        },
+        {
+          "month": 6,
+          "day": 24,
+          "value": 20.0,
+          "band": "moderate"
+        },
+        {
+          "month": 6,
+          "day": 25,
+          "value": 17.1,
+          "band": "moderate"
+        },
+        {
+          "month": 6,
+          "day": 26,
+          "value": 23.4,
+          "band": "moderate"
+        },
+        {
+          "month": 6,
+          "day": 27,
+          "value": 38.4,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 6,
+          "day": 28,
+          "value": 28.1,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 6,
+          "day": 29,
+          "value": 11.6,
+          "band": "good"
+        },
+        {
+          "month": 6,
+          "day": 30,
+          "value": 23.9,
+          "band": "moderate"
+        },
+        {
+          "month": 7,
+          "day": 1,
+          "value": 15.0,
+          "band": "moderate"
+        },
+        {
+          "month": 7,
+          "day": 2,
+          "value": 13.1,
+          "band": "good"
+        },
+        {
+          "month": 7,
+          "day": 3,
+          "value": 33.7,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 7,
+          "day": 4,
+          "value": 20.1,
+          "band": "moderate"
+        },
+        {
+          "month": 7,
+          "day": 5,
+          "value": 23.1,
+          "band": "moderate"
+        },
+        {
+          "month": 7,
+          "day": 6,
+          "value": 18.8,
+          "band": "moderate"
+        },
+        {
+          "month": 7,
+          "day": 7,
+          "value": 9.0,
+          "band": "good"
+        },
+        {
+          "month": 7,
+          "day": 8,
+          "value": 15.9,
+          "band": "moderate"
+        },
+        {
+          "month": 7,
+          "day": 9,
+          "value": 20.1,
+          "band": "moderate"
+        },
+        {
+          "month": 7,
+          "day": 10,
+          "value": 14.6,
+          "band": "good"
+        },
+        {
+          "month": 7,
+          "day": 11,
+          "value": 23.6,
+          "band": "moderate"
+        },
+        {
+          "month": 7,
+          "day": 12,
+          "value": 17.1,
+          "band": "moderate"
+        },
+        {
+          "month": 7,
+          "day": 13,
+          "value": 19.6,
+          "band": "moderate"
+        },
+        {
+          "month": 7,
+          "day": 14,
+          "value": 19.6,
+          "band": "moderate"
+        },
+        {
+          "month": 7,
+          "day": 15,
+          "value": 26.6,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 7,
+          "day": 16,
+          "value": 30.1,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 7,
+          "day": 17,
+          "value": 17.0,
+          "band": "moderate"
+        },
+        {
+          "month": 7,
+          "day": 18,
+          "value": 18.7,
+          "band": "moderate"
+        },
+        {
+          "month": 7,
+          "day": 19,
+          "value": 33.0,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 7,
+          "day": 20,
+          "value": 30.6,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 7,
+          "day": 21,
+          "value": 34.1,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 7,
+          "day": 22,
+          "value": 32.7,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 7,
+          "day": 23,
+          "value": 36.8,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 7,
+          "day": 24,
+          "value": 30.7,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 7,
+          "day": 25,
+          "value": 26.3,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 7,
+          "day": 26,
+          "value": 23.9,
+          "band": "moderate"
+        },
+        {
+          "month": 7,
+          "day": 27,
+          "value": 19.1,
+          "band": "moderate"
+        },
+        {
+          "month": 7,
+          "day": 28,
+          "value": 23.9,
+          "band": "moderate"
+        },
+        {
+          "month": 7,
+          "day": 29,
+          "value": 29.0,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 7,
+          "day": 30,
+          "value": 31.5,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 7,
+          "day": 31,
+          "value": 25.1,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 8,
+          "day": 1,
+          "value": 21.3,
+          "band": "moderate"
+        },
+        {
+          "month": 8,
+          "day": 2,
+          "value": 22.5,
+          "band": "moderate"
+        },
+        {
+          "month": 8,
+          "day": 3,
+          "value": 16.8,
+          "band": "moderate"
+        },
+        {
+          "month": 8,
+          "day": 4,
+          "value": 11.8,
+          "band": "good"
+        },
+        {
+          "month": 8,
+          "day": 5,
+          "value": 9.0,
+          "band": "good"
+        },
+        {
+          "month": 8,
+          "day": 6,
+          "value": 10.4,
+          "band": "good"
+        },
+        {
+          "month": 8,
+          "day": 7,
+          "value": 33.5,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 8,
+          "day": 8,
+          "value": 33.8,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 8,
+          "day": 9,
+          "value": 32.7,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 8,
+          "day": 10,
+          "value": 32.1,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 8,
+          "day": 11,
+          "value": 24.3,
+          "band": "moderate"
+        },
+        {
+          "month": 8,
+          "day": 12,
+          "value": 22.6,
+          "band": "moderate"
+        },
+        {
+          "month": 8,
+          "day": 13,
+          "value": 8.6,
+          "band": "good"
+        },
+        {
+          "month": 8,
+          "day": 14,
+          "value": 13.9,
+          "band": "good"
+        },
+        {
+          "month": 8,
+          "day": 15,
+          "value": 9.8,
+          "band": "good"
+        },
+        {
+          "month": 8,
+          "day": 16,
+          "value": 20.6,
+          "band": "moderate"
+        },
+        {
+          "month": 8,
+          "day": 17,
+          "value": 17.3,
+          "band": "moderate"
+        },
+        {
+          "month": 8,
+          "day": 18,
+          "value": 17.4,
+          "band": "moderate"
+        },
+        {
+          "month": 8,
+          "day": 19,
+          "value": 12.6,
+          "band": "good"
+        },
+        {
+          "month": 8,
+          "day": 20,
+          "value": 13.1,
+          "band": "good"
+        },
+        {
+          "month": 8,
+          "day": 21,
+          "value": 15.5,
+          "band": "moderate"
+        },
+        {
+          "month": 8,
+          "day": 22,
+          "value": 18.0,
+          "band": "moderate"
+        },
+        {
+          "month": 8,
+          "day": 23,
+          "value": 30.1,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 8,
+          "day": 24,
+          "value": 26.7,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 8,
+          "day": 25,
+          "value": 20.5,
+          "band": "moderate"
+        },
+        {
+          "month": 8,
+          "day": 26,
+          "value": 29.6,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 8,
+          "day": 27,
+          "value": 41.7,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 8,
+          "day": 28,
+          "value": 26.6,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 8,
+          "day": 29,
+          "value": 32.4,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 8,
+          "day": 30,
+          "value": 8.4,
+          "band": "good"
+        },
+        {
+          "month": 8,
+          "day": 31,
+          "value": 23.2,
+          "band": "moderate"
+        },
+        {
+          "month": 9,
+          "day": 1,
+          "value": 8.7,
+          "band": "good"
+        },
+        {
+          "month": 9,
+          "day": 2,
+          "value": 7.9,
+          "band": "good"
+        },
+        {
+          "month": 9,
+          "day": 3,
+          "value": 9.7,
+          "band": "good"
+        },
+        {
+          "month": 9,
+          "day": 4,
+          "value": 11.4,
+          "band": "good"
+        },
+        {
+          "month": 9,
+          "day": 5,
+          "value": 9.0,
+          "band": "good"
+        },
+        {
+          "month": 9,
+          "day": 6,
+          "value": 15.5,
+          "band": "moderate"
+        },
+        {
+          "month": 9,
+          "day": 7,
+          "value": 26.2,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 9,
+          "day": 8,
+          "value": 30.3,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 9,
+          "day": 9,
+          "value": 23.1,
+          "band": "moderate"
+        },
+        {
+          "month": 9,
+          "day": 10,
+          "value": 22.9,
+          "band": "moderate"
+        },
+        {
+          "month": 9,
+          "day": 11,
+          "value": 27.2,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 9,
+          "day": 12,
+          "value": 13.6,
+          "band": "good"
+        },
+        {
+          "month": 9,
+          "day": 13,
+          "value": 8.9,
+          "band": "good"
+        },
+        {
+          "month": 9,
+          "day": 14,
+          "value": 12.8,
+          "band": "good"
+        },
+        {
+          "month": 9,
+          "day": 15,
+          "value": 24.8,
+          "band": "moderate"
+        },
+        {
+          "month": 9,
+          "day": 16,
+          "value": 31.6,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 9,
+          "day": 17,
+          "value": 10.8,
+          "band": "good"
+        },
+        {
+          "month": 9,
+          "day": 18,
+          "value": 23.1,
+          "band": "moderate"
+        },
+        {
+          "month": 9,
+          "day": 19,
+          "value": 11.3,
+          "band": "good"
+        },
+        {
+          "month": 9,
+          "day": 20,
+          "value": 12.3,
+          "band": "good"
+        },
+        {
+          "month": 9,
+          "day": 21,
+          "value": 9.3,
+          "band": "good"
+        },
+        {
+          "month": 9,
+          "day": 22,
+          "value": 9.7,
+          "band": "good"
+        },
+        {
+          "month": 9,
+          "day": 23,
+          "value": 11.2,
+          "band": "good"
+        },
+        {
+          "month": 9,
+          "day": 24,
+          "value": 22.6,
+          "band": "moderate"
+        },
+        {
+          "month": 9,
+          "day": 25,
+          "value": 26.0,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 9,
+          "day": 26,
+          "value": 41.4,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 9,
+          "day": 27,
+          "value": 33.4,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 9,
+          "day": 28,
+          "value": 38.7,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 9,
+          "day": 29,
+          "value": 7.1,
+          "band": "good"
+        },
+        {
+          "month": 9,
+          "day": 30,
+          "value": 15.0,
+          "band": "moderate"
+        },
+        {
+          "month": 10,
+          "day": 1,
+          "value": 8.6,
+          "band": "good"
+        },
+        {
+          "month": 10,
+          "day": 2,
+          "value": 18.8,
+          "band": "moderate"
+        },
+        {
+          "month": 10,
+          "day": 3,
+          "value": 14.1,
+          "band": "good"
+        },
+        {
+          "month": 10,
+          "day": 4,
+          "value": 11.0,
+          "band": "good"
+        },
+        {
+          "month": 10,
+          "day": 5,
+          "value": 25.7,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 10,
+          "day": 6,
+          "value": 26.6,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 10,
+          "day": 7,
+          "value": 31.8,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 10,
+          "day": 8,
+          "value": 23.6,
+          "band": "moderate"
+        },
+        {
+          "month": 10,
+          "day": 9,
+          "value": 14.1,
+          "band": "good"
+        },
+        {
+          "month": 10,
+          "day": 10,
+          "value": 17.2,
+          "band": "moderate"
+        },
+        {
+          "month": 10,
+          "day": 11,
+          "value": 28.0,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 10,
+          "day": 12,
+          "value": 21.6,
+          "band": "moderate"
+        },
+        {
+          "month": 10,
+          "day": 13,
+          "value": 30.3,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 10,
+          "day": 14,
+          "value": 16.0,
+          "band": "moderate"
+        },
+        {
+          "month": 10,
+          "day": 15,
+          "value": 9.6,
+          "band": "good"
+        },
+        {
+          "month": 10,
+          "day": 16,
+          "value": 17.7,
+          "band": "moderate"
+        },
+        {
+          "month": 10,
+          "day": 17,
+          "value": 30.7,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 10,
+          "day": 18,
+          "value": 15.7,
+          "band": "moderate"
+        },
+        {
+          "month": 10,
+          "day": 19,
+          "value": 12.4,
+          "band": "good"
+        },
+        {
+          "month": 10,
+          "day": 20,
+          "value": 7.6,
+          "band": "good"
+        },
+        {
+          "month": 10,
+          "day": 21,
+          "value": 14.8,
+          "band": "good"
+        },
+        {
+          "month": 10,
+          "day": 22,
+          "value": 6.5,
+          "band": "good"
+        },
+        {
+          "month": 10,
+          "day": 23,
+          "value": 7.6,
+          "band": "good"
+        },
+        {
+          "month": 10,
+          "day": 24,
+          "value": 5.8,
+          "band": "good"
+        },
+        {
+          "month": 10,
+          "day": 25,
+          "value": 7.3,
+          "band": "good"
+        },
+        {
+          "month": 10,
+          "day": 26,
+          "value": 12.4,
+          "band": "good"
+        },
+        {
+          "month": 10,
+          "day": 27,
+          "value": 19.9,
+          "band": "moderate"
+        },
+        {
+          "month": 10,
+          "day": 28,
+          "value": 26.9,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 10,
+          "day": 29,
+          "value": 21.3,
+          "band": "moderate"
+        },
+        {
+          "month": 10,
+          "day": 30,
+          "value": 27.0,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 10,
+          "day": 31,
+          "value": 26.8,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 11,
+          "day": 1,
+          "value": 26.5,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 11,
+          "day": 2,
+          "value": 26.8,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 11,
+          "day": 3,
+          "value": 16.7,
+          "band": "moderate"
+        },
+        {
+          "month": 11,
+          "day": 4,
+          "value": 31.3,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 11,
+          "day": 5,
+          "value": 21.8,
+          "band": "moderate"
+        },
+        {
+          "month": 11,
+          "day": 6,
+          "value": 14.8,
+          "band": "good"
+        },
+        {
+          "month": 11,
+          "day": 7,
+          "value": 15.1,
+          "band": "moderate"
+        },
+        {
+          "month": 11,
+          "day": 8,
+          "value": 21.0,
+          "band": "moderate"
+        },
+        {
+          "month": 11,
+          "day": 9,
+          "value": 30.7,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 11,
+          "day": 10,
+          "value": 10.8,
+          "band": "good"
+        },
+        {
+          "month": 11,
+          "day": 11,
+          "value": 28.6,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 11,
+          "day": 12,
+          "value": 28.4,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 11,
+          "day": 13,
+          "value": 27.6,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 11,
+          "day": 14,
+          "value": 29.1,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 11,
+          "day": 15,
+          "value": 11.1,
+          "band": "good"
+        },
+        {
+          "month": 11,
+          "day": 16,
+          "value": 17.6,
+          "band": "moderate"
+        },
+        {
+          "month": 11,
+          "day": 17,
+          "value": 16.6,
+          "band": "moderate"
+        },
+        {
+          "month": 11,
+          "day": 18,
+          "value": 26.3,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 11,
+          "day": 19,
+          "value": 16.3,
+          "band": "moderate"
+        },
+        {
+          "month": 11,
+          "day": 20,
+          "value": 14.4,
+          "band": "good"
+        },
+        {
+          "month": 11,
+          "day": 21,
+          "value": 14.2,
+          "band": "good"
+        },
+        {
+          "month": 11,
+          "day": 22,
+          "value": 7.2,
+          "band": "good"
+        },
+        {
+          "month": 11,
+          "day": 23,
+          "value": 5.1,
+          "band": "good"
+        },
+        {
+          "month": 11,
+          "day": 24,
+          "value": 8.5,
+          "band": "good"
+        },
+        {
+          "month": 11,
+          "day": 25,
+          "value": 7.9,
+          "band": "good"
+        },
+        {
+          "month": 11,
+          "day": 26,
+          "value": 12.5,
+          "band": "good"
+        },
+        {
+          "month": 11,
+          "day": 27,
+          "value": 9.4,
+          "band": "good"
+        },
+        {
+          "month": 11,
+          "day": 28,
+          "value": 7.8,
+          "band": "good"
+        },
+        {
+          "month": 11,
+          "day": 29,
+          "value": 12.1,
+          "band": "good"
+        },
+        {
+          "month": 11,
+          "day": 30,
+          "value": 26.5,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 12,
+          "day": 1,
+          "value": 33.8,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 12,
+          "day": 2,
+          "value": 18.5,
+          "band": "moderate"
+        },
+        {
+          "month": 12,
+          "day": 3,
+          "value": 30.9,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 12,
+          "day": 4,
+          "value": 19.2,
+          "band": "moderate"
+        },
+        {
+          "month": 12,
+          "day": 5,
+          "value": 19.1,
+          "band": "moderate"
+        },
+        {
+          "month": 12,
+          "day": 6,
+          "value": 10.5,
+          "band": "good"
+        },
+        {
+          "month": 12,
+          "day": 7,
+          "value": 9.7,
+          "band": "good"
+        },
+        {
+          "month": 12,
+          "day": 8,
+          "value": 13.0,
+          "band": "good"
+        },
+        {
+          "month": 12,
+          "day": 9,
+          "value": 13.3,
+          "band": "good"
+        },
+        {
+          "month": 12,
+          "day": 10,
+          "value": 10.4,
+          "band": "good"
+        },
+        {
+          "month": 12,
+          "day": 11,
+          "value": 25.6,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 12,
+          "day": 12,
+          "value": 24.9,
+          "band": "moderate"
+        },
+        {
+          "month": 12,
+          "day": 13,
+          "value": 10.2,
+          "band": "good"
+        },
+        {
+          "month": 12,
+          "day": 14,
+          "value": 9.2,
+          "band": "good"
+        },
+        {
+          "month": 12,
+          "day": 15,
+          "value": 6.3,
+          "band": "good"
+        },
+        {
+          "month": 12,
+          "day": 16,
+          "value": 8.3,
+          "band": "good"
+        },
+        {
+          "month": 12,
+          "day": 17,
+          "value": 5.3,
+          "band": "good"
+        },
+        {
+          "month": 12,
+          "day": 18,
+          "value": 5.2,
+          "band": "good"
+        },
+        {
+          "month": 12,
+          "day": 19,
+          "value": 7.4,
+          "band": "good"
+        },
+        {
+          "month": 12,
+          "day": 20,
+          "value": 10.4,
+          "band": "good"
+        },
+        {
+          "month": 12,
+          "day": 21,
+          "value": 8.0,
+          "band": "good"
+        },
+        {
+          "month": 12,
+          "day": 22,
+          "value": 8.9,
+          "band": "good"
+        },
+        {
+          "month": 12,
+          "day": 23,
+          "value": 10.5,
+          "band": "good"
+        },
+        {
+          "month": 12,
+          "day": 24,
+          "value": 7.5,
+          "band": "good"
+        },
+        {
+          "month": 12,
+          "day": 25,
+          "value": 11.6,
+          "band": "good"
+        },
+        {
+          "month": 12,
+          "day": 26,
+          "value": 8.4,
+          "band": "good"
+        },
+        {
+          "month": 12,
+          "day": 27,
+          "value": 7.6,
+          "band": "good"
+        },
+        {
+          "month": 12,
+          "day": 28,
+          "value": 6.2,
+          "band": "good"
+        },
+        {
+          "month": 12,
+          "day": 29,
+          "value": 5.3,
+          "band": "good"
+        },
+        {
+          "month": 12,
+          "day": 30,
+          "value": 13.6,
+          "band": "good"
+        },
+        {
+          "month": 12,
+          "day": 31,
+          "value": 19.9,
+          "band": "moderate"
+        }
+      ],
+      "2026": [
+        {
+          "month": 1,
+          "day": 1,
+          "value": 22.3,
+          "band": "moderate"
+        },
+        {
+          "month": 1,
+          "day": 2,
+          "value": 22.0,
+          "band": "moderate"
+        },
+        {
+          "month": 1,
+          "day": 3,
+          "value": 13.8,
+          "band": "good"
+        },
+        {
+          "month": 1,
+          "day": 4,
+          "value": 12.6,
+          "band": "good"
+        },
+        {
+          "month": 1,
+          "day": 5,
+          "value": 10.4,
+          "band": "good"
+        },
+        {
+          "month": 1,
+          "day": 6,
+          "value": 10.4,
+          "band": "good"
+        },
+        {
+          "month": 1,
+          "day": 7,
+          "value": 8.4,
+          "band": "good"
+        },
+        {
+          "month": 1,
+          "day": 8,
+          "value": 16.0,
+          "band": "moderate"
+        },
+        {
+          "month": 1,
+          "day": 9,
+          "value": 16.0,
+          "band": "moderate"
+        },
+        {
+          "month": 1,
+          "day": 10,
+          "value": 22.2,
+          "band": "moderate"
+        },
+        {
+          "month": 1,
+          "day": 11,
+          "value": 21.1,
+          "band": "moderate"
+        },
+        {
+          "month": 1,
+          "day": 12,
+          "value": 13.6,
+          "band": "good"
+        },
+        {
+          "month": 1,
+          "day": 13,
+          "value": 26.5,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 1,
+          "day": 14,
+          "value": 13.3,
+          "band": "good"
+        },
+        {
+          "month": 1,
+          "day": 15,
+          "value": 25.3,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 1,
+          "day": 16,
+          "value": 22.8,
+          "band": "moderate"
+        },
+        {
+          "month": 1,
+          "day": 17,
+          "value": 24.8,
+          "band": "moderate"
+        },
+        {
+          "month": 1,
+          "day": 18,
+          "value": 21.3,
+          "band": "moderate"
+        },
+        {
+          "month": 1,
+          "day": 19,
+          "value": 15.5,
+          "band": "moderate"
+        },
+        {
+          "month": 1,
+          "day": 20,
+          "value": 23.4,
+          "band": "moderate"
+        },
+        {
+          "month": 1,
+          "day": 21,
+          "value": 20.2,
+          "band": "moderate"
+        },
+        {
+          "month": 1,
+          "day": 22,
+          "value": 19.5,
+          "band": "moderate"
+        },
+        {
+          "month": 1,
+          "day": 23,
+          "value": 10.2,
+          "band": "good"
+        },
+        {
+          "month": 1,
+          "day": 24,
+          "value": 9.5,
+          "band": "good"
+        },
+        {
+          "month": 1,
+          "day": 25,
+          "value": 10.5,
+          "band": "good"
+        },
+        {
+          "month": 1,
+          "day": 26,
+          "value": 12.3,
+          "band": "good"
+        },
+        {
+          "month": 1,
+          "day": 27,
+          "value": 10.8,
+          "band": "good"
+        },
+        {
+          "month": 1,
+          "day": 28,
+          "value": 12.5,
+          "band": "good"
+        },
+        {
+          "month": 1,
+          "day": 29,
+          "value": 10.8,
+          "band": "good"
+        },
+        {
+          "month": 1,
+          "day": 30,
+          "value": 10.4,
+          "band": "good"
+        },
+        {
+          "month": 1,
+          "day": 31,
+          "value": 12.4,
+          "band": "good"
+        },
+        {
+          "month": 2,
+          "day": 1,
+          "value": 13.4,
+          "band": "good"
+        },
+        {
+          "month": 2,
+          "day": 2,
+          "value": 22.0,
+          "band": "moderate"
+        },
+        {
+          "month": 2,
+          "day": 3,
+          "value": 17.1,
+          "band": "moderate"
+        },
+        {
+          "month": 2,
+          "day": 4,
+          "value": 10.3,
+          "band": "good"
+        },
+        {
+          "month": 2,
+          "day": 5,
+          "value": 12.9,
+          "band": "good"
+        },
+        {
+          "month": 2,
+          "day": 6,
+          "value": 14.7,
+          "band": "good"
+        },
+        {
+          "month": 2,
+          "day": 7,
+          "value": 21.1,
+          "band": "moderate"
+        },
+        {
+          "month": 2,
+          "day": 8,
+          "value": 28.5,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 2,
+          "day": 9,
+          "value": 14.0,
+          "band": "good"
+        },
+        {
+          "month": 2,
+          "day": 10,
+          "value": 9.7,
+          "band": "good"
+        },
+        {
+          "month": 2,
+          "day": 11,
+          "value": 7.2,
+          "band": "good"
+        },
+        {
+          "month": 2,
+          "day": 12,
+          "value": 12.5,
+          "band": "good"
+        },
+        {
+          "month": 2,
+          "day": 13,
+          "value": 15.2,
+          "band": "moderate"
+        },
+        {
+          "month": 2,
+          "day": 14,
+          "value": 16.6,
+          "band": "moderate"
+        },
+        {
+          "month": 2,
+          "day": 15,
+          "value": 8.5,
+          "band": "good"
+        },
+        {
+          "month": 2,
+          "day": 16,
+          "value": 8.0,
+          "band": "good"
+        },
+        {
+          "month": 2,
+          "day": 17,
+          "value": 8.7,
+          "band": "good"
+        },
+        {
+          "month": 2,
+          "day": 18,
+          "value": 5.0,
+          "band": "good"
+        },
+        {
+          "month": 2,
+          "day": 19,
+          "value": 9.6,
+          "band": "good"
+        },
+        {
+          "month": 2,
+          "day": 20,
+          "value": 13.4,
+          "band": "good"
+        },
+        {
+          "month": 2,
+          "day": 21,
+          "value": 13.3,
+          "band": "good"
+        },
+        {
+          "month": 2,
+          "day": 22,
+          "value": 13.8,
+          "band": "good"
+        },
+        {
+          "month": 2,
+          "day": 23,
+          "value": 28.3,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 2,
+          "day": 24,
+          "value": 21.6,
+          "band": "moderate"
+        },
+        {
+          "month": 2,
+          "day": 25,
+          "value": 25.2,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 2,
+          "day": 26,
+          "value": 19.2,
+          "band": "moderate"
+        },
+        {
+          "month": 2,
+          "day": 27,
+          "value": 15.8,
+          "band": "moderate"
+        },
+        {
+          "month": 2,
+          "day": 28,
+          "value": 31.4,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 3,
+          "day": 1,
+          "value": 23.8,
+          "band": "moderate"
+        },
+        {
+          "month": 3,
+          "day": 2,
+          "value": 25.9,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 3,
+          "day": 3,
+          "value": 30.7,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 3,
+          "day": 4,
+          "value": 24.0,
+          "band": "moderate"
+        },
+        {
+          "month": 3,
+          "day": 5,
+          "value": 23.0,
+          "band": "moderate"
+        },
+        {
+          "month": 3,
+          "day": 6,
+          "value": 18.5,
+          "band": "moderate"
+        },
+        {
+          "month": 3,
+          "day": 7,
+          "value": 17.4,
+          "band": "moderate"
+        },
+        {
+          "month": 3,
+          "day": 8,
+          "value": 18.9,
+          "band": "moderate"
+        },
+        {
+          "month": 3,
+          "day": 9,
+          "value": 22.4,
+          "band": "moderate"
+        },
+        {
+          "month": 3,
+          "day": 10,
+          "value": 23.4,
+          "band": "moderate"
+        },
+        {
+          "month": 3,
+          "day": 11,
+          "value": 21.4,
+          "band": "moderate"
+        },
+        {
+          "month": 3,
+          "day": 12,
+          "value": 11.6,
+          "band": "good"
+        },
+        {
+          "month": 3,
+          "day": 13,
+          "value": 9.7,
+          "band": "good"
+        },
+        {
+          "month": 3,
+          "day": 14,
+          "value": 11.6,
+          "band": "good"
+        },
+        {
+          "month": 3,
+          "day": 15,
+          "value": 14.9,
+          "band": "good"
+        },
+        {
+          "month": 3,
+          "day": 16,
+          "value": 22.1,
+          "band": "moderate"
+        },
+        {
+          "month": 3,
+          "day": 17,
+          "value": 13.3,
+          "band": "good"
+        },
+        {
+          "month": 3,
+          "day": 18,
+          "value": 15.3,
+          "band": "moderate"
+        },
+        {
+          "month": 3,
+          "day": 19,
+          "value": 19.3,
+          "band": "moderate"
+        },
+        {
+          "month": 3,
+          "day": 20,
+          "value": 22.9,
+          "band": "moderate"
+        },
+        {
+          "month": 3,
+          "day": 21,
+          "value": 20.2,
+          "band": "moderate"
+        },
+        {
+          "month": 3,
+          "day": 22,
+          "value": 19.1,
+          "band": "moderate"
+        },
+        {
+          "month": 3,
+          "day": 23,
+          "value": 16.5,
+          "band": "moderate"
+        },
+        {
+          "month": 3,
+          "day": 24,
+          "value": 24.6,
+          "band": "moderate"
+        },
+        {
+          "month": 3,
+          "day": 25,
+          "value": 20.4,
+          "band": "moderate"
+        },
+        {
+          "month": 3,
+          "day": 26,
+          "value": 23.3,
+          "band": "moderate"
+        },
+        {
+          "month": 3,
+          "day": 27,
+          "value": 29.2,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 3,
+          "day": 28,
+          "value": 24.6,
+          "band": "moderate"
+        },
+        {
+          "month": 3,
+          "day": 29,
+          "value": 27.8,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 3,
+          "day": 30,
+          "value": 36.6,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 3,
+          "day": 31,
+          "value": 33.2,
+          "band": "unhealthy_sensitive"
+        },
+        {
+          "month": 4,
+          "day": 1,
+          "value": 27.8,
+          "band": "unhealthy_sensitive"
+        }
+      ]
+    }
+  },
+  "dataQuality": {
+    "dateFrom": "2024-08-19",
+    "dateTo": "2026-04-01",
+    "yearsAvailable": [
+      2024,
+      2025,
+      2026
+    ],
+    "totalDays": 588,
+    "sensors": 5,
+    "lastComputed": "2026-04-02T11:14:03Z"
+  }
+}
