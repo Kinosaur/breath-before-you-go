@@ -37,6 +37,7 @@ const OUTER_R    = 160;
 const PAD_ANGLE  = 0.028;                  // ~1.6° gap between arcs
 const LABEL_R    = 178;                    // hour-label orbit radius
 const SAFE_RING  = OUTER_R + 8;           // outer safety ring radius
+const SUN_MARK_R = OUTER_R + 34;          // sunrise/sunset icon orbit (outside hour labels)
 
 type Activity = "none" | "walk" | "cycle" | "jog";
 
@@ -121,13 +122,16 @@ export function LungClock({ typicalDay, lat, cityName }: Props) {
     // Sunrise / sunset tick marks
     [{ h: sunrise, label: "🌅" }, { h: sunset, label: "🌇" }].forEach(({ h, label }) => {
       const a = hourToAngle(h);
-      const rx = CX + Math.cos(a) * (OUTER_R + 18);
-      const ry = CY + Math.sin(a) * (OUTER_R + 18);
+      // Add a small tangential offset so icons don't sit on top of 06:00 / 18:00 labels.
+      const tangentX = -Math.sin(a) * 8;
+      const tangentY =  Math.cos(a) * 8;
+      const rx = CX + Math.cos(a) * SUN_MARK_R + tangentX;
+      const ry = CY + Math.sin(a) * SUN_MARK_R + tangentY;
       svg.append("text")
         .attr("x", rx).attr("y", ry)
         .attr("text-anchor", "middle")
         .attr("dominant-baseline", "central")
-        .attr("font-size", 11)
+        .attr("font-size", 10)
         .text(label);
     });
 
