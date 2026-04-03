@@ -16,6 +16,14 @@ interface Props {
   profile: CityProfile;
 }
 
+/** Returns a display label for a comparison anchor, replacing generic "this city" text. */
+function anchorLabel(label: string, cityName: string): string {
+  if (label.toLowerCase().includes("this city") || label.toLowerCase().includes("city's air")) {
+    return `${cityName}'s air`;
+  }
+  return label;
+}
+
 function BandBadge({ pm25 }: { pm25: number }) {
   const band  = classifyBand(pm25);
   const color = getBandColor(band);
@@ -125,14 +133,16 @@ export function HealthMetricsPanel({ profile }: Props) {
         {/* Comparison anchors */}
         <div className="space-y-2">
           {hm.lifeExpectancyContext.comparisonAnchors.map((anchor) => {
-            const isCity = anchor.label.toLowerCase().includes("this city");
+            const isCity   = anchor.label.toLowerCase().includes("this city") ||
+                             anchor.label.toLowerCase().includes("city's air");
             const maxYears = Math.max(...hm.lifeExpectancyContext.comparisonAnchors.map((a) => a.yearsLost));
-            const pct = maxYears > 0 ? (anchor.yearsLost / maxYears) * 100 : 0;
+            const pct      = maxYears > 0 ? (anchor.yearsLost / maxYears) * 100 : 0;
+            const display  = anchorLabel(anchor.label, profile.cityName);
             return (
               <div key={anchor.label}>
                 <div className="flex justify-between text-xs mb-0.5">
                   <span className={isCity ? "text-ink font-semibold" : "text-ink-muted"}>
-                    {anchor.label}
+                    {display}
                   </span>
                   <span className={isCity ? "text-ink font-semibold tabular-nums" : "text-ink-faint tabular-nums"}>
                     {anchor.yearsLost.toFixed(1)} yr
@@ -143,7 +153,7 @@ export function HealthMetricsPanel({ profile }: Props) {
                     className="h-full rounded-full"
                     style={{
                       width: `${pct}%`,
-                      background: isCity ? "#F44336" : "#5a5a5a",
+                      background: isCity ? "#E87040" : "#4a4a4a",
                     }}
                   />
                 </div>

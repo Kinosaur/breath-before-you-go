@@ -38,7 +38,7 @@ export function DataFreshnessBadge({ generatedAt, className = "" }: Props) {
 
   return (
     <div
-      className={`group relative inline-flex items-center gap-2 text-xs font-mono text-ink-muted ${className}`}
+      className={`group relative inline-flex items-center gap-2 rounded-full border border-surface-3 px-2.5 py-1 text-xs font-mono text-ink-muted transition-colors duration-150 hover:border-ink-faint/60 ${className}`}
     >
       {/* Animated ping for live status */}
       <span className="relative flex h-2 w-2 flex-shrink-0">
@@ -54,8 +54,8 @@ export function DataFreshnessBadge({ generatedAt, className = "" }: Props) {
 
       {status === "historical" && (
         <span
-          className="pointer-events-none absolute left-0 top-full mt-1 whitespace-nowrap
-                     rounded-md border border-surface-3 bg-surface px-2 py-1 text-[10px] text-ink-faint shadow-lg
+          className="pointer-events-none absolute left-0 top-full mt-1 max-w-[220px] whitespace-normal
+                     rounded-md border border-surface-3 bg-surface px-2 py-1 text-[10px] leading-relaxed text-ink-muted shadow-lg
                      opacity-0 -translate-y-1 transition-all duration-150 group-hover:opacity-100 group-hover:translate-y-0"
         >
           {historicalHint}

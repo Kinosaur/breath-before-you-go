@@ -68,7 +68,9 @@ export default async function CityPage({ params }: Props) {
     isCurrent: c.id === id,
   }));
 
-  const hasHourly = hourly?.available && (hourly?.typicalDay?.length ?? 0) === 24;
+  const hourlyCount = hourly?.typicalDay?.length ?? 0;
+  const hasHourlyAny = Boolean(hourly?.available && hourlyCount > 0);
+  const hasHourlyFull = hasHourlyAny && hourlyCount === 24;
 
   return (
     <main className="min-h-screen bg-[#0a0a0a]">
@@ -115,7 +117,7 @@ export default async function CityPage({ params }: Props) {
           <nav className="mt-6 flex flex-wrap gap-2" aria-label="City page sections">
             {[
               { href: "#health",   label: "Health" },
-              { href: "#clock",    label: "Lung Clock",     show: hasHourly },
+              { href: "#clock",    label: "Lung Clock" },
               { href: "#life",     label: "Life impact" },
               { href: "#calendar", label: "Calendar" },
               { href: "#exposure", label: "Exposure" },
@@ -144,21 +146,33 @@ export default async function CityPage({ params }: Props) {
         </section>
 
         {/* ── Lung Clock ─────────────────────────────────────────────────── */}
-        {hasHourly && (
-          <section id="clock" className="pb-12 scroll-mt-6">
-            <h2 className="text-lg font-semibold text-ink mb-2">Lung clock</h2>
-            <p className="text-sm text-ink-muted mb-5">
-              24-hour air quality pattern. Dimmed arcs are unsafe for the selected activity.
-            </p>
+        <section id="clock" className="pb-12 scroll-mt-6">
+          <h2 className="text-lg font-semibold text-ink mb-2">Lung clock</h2>
+          <p className="text-sm text-ink-muted mb-5">
+            24-hour air quality pattern. Dimmed arcs are unsafe for the selected activity.
+          </p>
+          {hasHourlyAny ? (
             <div className="rounded-xl bg-surface-2 border border-surface-3 p-5">
+              {!hasHourlyFull && (
+                <div className="mb-3 text-[11px] text-ink-muted font-mono">
+                  Partial hourly data: showing {hourlyCount}/24 hours. Missing hours are marked as gray arcs.
+                </div>
+              )}
               <LungClock
                 typicalDay={hourly!.typicalDay}
                 lat={profile.coordinates.lat}
                 cityName={profile.cityName}
+                timezone={profile.timezone}
               />
             </div>
-          </section>
-        )}
+          ) : (
+            <div className="rounded-xl bg-surface-2 border border-surface-3 p-5">
+              <p className="text-sm text-ink-muted">
+                Hourly data is currently unavailable for this city. You can still use the seasonal calendar and health summary.
+              </p>
+            </div>
+          )}
+        </section>
 
         {/* ── Life Expectancy Chart ──────────────────────────────────────── */}
         <section id="life" className="pb-12 scroll-mt-6">

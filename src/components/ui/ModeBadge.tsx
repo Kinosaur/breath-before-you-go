@@ -39,8 +39,8 @@ export function ModeBadge() {
       <span className="text-ink-faint">{modeToHint(normalizedMode)}</span>
 
       <span
-        className="pointer-events-none absolute left-1/2 -translate-x-1/2 top-full mt-1 whitespace-nowrap
-                   rounded-md border border-surface-3 bg-surface px-2 py-1 text-[10px] text-ink-faint
+        className="pointer-events-none absolute left-1/2 -translate-x-1/2 top-full mt-1 max-w-[200px] whitespace-normal text-center
+                   rounded-md border border-surface-3 bg-surface px-2 py-1 text-[10px] leading-relaxed text-ink-muted shadow-lg
                    opacity-0 -translate-y-1 transition-all duration-200 ease-out group-hover:opacity-100 group-hover:translate-y-0"
       >
         Current audience framing
