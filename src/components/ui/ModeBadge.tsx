@@ -30,13 +30,21 @@ export function ModeBadge() {
 
   return (
     <div
-      className="inline-flex items-center gap-2 rounded-full border border-surface-3 px-2.5 py-1 text-xs font-mono text-ink-muted"
+      className="group relative inline-flex items-center gap-2 rounded-full border border-surface-3 px-2.5 py-1 text-xs font-mono text-ink-muted
+                 transition-colors duration-150 hover:border-ink-faint/60"
       aria-live="polite"
-      title="Current audience framing"
     >
       <span className="h-1.5 w-1.5 rounded-full bg-ink-faint" aria-hidden="true" />
       <span className="text-ink">{modeToLabel(normalizedMode)}</span>
       <span className="text-ink-faint">{modeToHint(normalizedMode)}</span>
+
+      <span
+        className="pointer-events-none absolute left-1/2 -translate-x-1/2 top-full mt-1 whitespace-nowrap
+                   rounded-md border border-surface-3 bg-surface px-2 py-1 text-[10px] text-ink-faint
+                   opacity-0 -translate-y-1 transition-all duration-200 ease-out group-hover:opacity-100 group-hover:translate-y-0"
+      >
+        Current audience framing
+      </span>
     </div>
   );
 }

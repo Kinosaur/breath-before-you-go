@@ -143,6 +143,27 @@ export interface HourlyLatest {
   recentDays:     Record<string, HourlyEntry[]>;   // date string → hourly array
 }
 
+// ── cities/{id}/seasonal-heatmap.json ────────────────────────────────────────
+
+export interface HeatmapEntry {
+  month: number;   // 1–12
+  day:   number;   // 1–31
+  value: number | null;
+  band:  string;
+  cigEquiv?:    number;
+  sampleYears?: number;
+}
+
+export interface SeasonalHeatmap {
+  cityId:         string;
+  parameter:      string;
+  unit:           string;
+  bandColors:     Record<string, string>;
+  aggregated:     HeatmapEntry[];                        // 366-entry all-years median
+  byYear:         Record<string, HeatmapEntry[]>;        // year string → entries
+  yearsAvailable: number[];
+}
+
 // ── Data freshness ────────────────────────────────────────────────────────────
 
 export type FreshnessStatus = "live" | "delayed" | "historical";

@@ -51,9 +51,11 @@ export function EntryPointCards() {
           href={card.href}
           className={`group block p-6 rounded-xl border border-surface-3 bg-surface-2
                       ${card.borderClass}
-                      hover:bg-surface-3 transition-all duration-200`}
+                      hover:bg-surface-3 hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(0,0,0,0.24)]
+                      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink-faint focus-visible:ring-offset-2 focus-visible:ring-offset-surface
+                      transition-all duration-200`}
         >
-          <div className="text-3xl mb-3" aria-hidden="true">
+          <div className="text-3xl mb-3 transition-transform duration-200 group-hover:scale-105" aria-hidden="true">
             {card.icon}
           </div>
 
@@ -69,7 +71,7 @@ export function EntryPointCards() {
             {card.detail}
           </p>
 
-          <div className={`mt-4 text-xs font-medium transition-colors ${card.accentClass} text-ink-faint`}>
+          <div className={`mt-4 text-xs font-medium transition-all duration-200 ${card.accentClass} text-ink-faint group-hover:translate-x-0.5`}>
             Get started →
           </div>
         </Link>

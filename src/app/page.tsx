@@ -50,7 +50,7 @@ export default function HomePage() {
           When and where is it safe to breathe?
         </p>
 
-        <p className="text-sm text-ink-faint max-w-2xl leading-relaxed">
+        <p className="text-sm text-ink-muted max-w-2xl leading-relaxed">
           Five years of air quality data across {index.cityCount} Asian cities —
           translated into decisions you can act on.
           Best month to visit. Safe hours to exercise outside.
@@ -69,7 +69,7 @@ export default function HomePage() {
           <h2 className="text-xl font-semibold text-ink">
             Asia Breathing Map
           </h2>
-          <span className="text-sm text-ink-faint hidden sm:inline">
+          <span className="text-sm text-ink-muted hidden sm:inline">
             — drag the month slider to change marker colors
           </span>
         </div>
@@ -85,7 +85,7 @@ export default function HomePage() {
       {/* ── Footer ───────────────────────────────────────────────────────── */}
       <footer className="border-t border-surface-3 px-5 py-8 max-w-5xl mx-auto">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3
-                        text-[11px] text-ink-faint font-mono">
+                        text-[11px] text-ink-muted font-mono">
           <div className="space-y-1">
             <div>
               Data:{" "}
@@ -93,7 +93,7 @@ export default function HomePage() {
                 href="https://openaq.org"
                 target="_blank"
                 rel="noreferrer"
-                className="underline hover:text-ink-muted"
+                className="underline hover:text-ink"
               >
                 OpenAQ API v3
               </a>
@@ -102,7 +102,7 @@ export default function HomePage() {
                 href="https://www.who.int/news-room/fact-sheets/detail/ambient-(outdoor)-air-quality-and-health"
                 target="_blank"
                 rel="noreferrer"
-                className="underline hover:text-ink-muted"
+                className="underline hover:text-ink"
               >
                 WHO 2021 AQI Guidelines
               </a>
@@ -111,7 +111,7 @@ export default function HomePage() {
                 href="https://berkeleyearth.org/air-quality-real-time-map/"
                 target="_blank"
                 rel="noreferrer"
-                className="underline hover:text-ink-muted"
+                className="underline hover:text-ink"
               >
                 Berkeley Earth Cig. Equivalence
               </a>
@@ -119,14 +119,14 @@ export default function HomePage() {
             <div>
               Cigarette equivalence is a statistical communication tool —
               not a clinical diagnosis.{" "}
-              <a href="/about" className="underline hover:text-ink-muted">
+              <a href="/about" className="underline hover:text-ink">
                 Methodology →
               </a>
             </div>
           </div>
           <div className="text-right">
             <div>Built by Kino · Summer 2026</div>
-            <div className="text-ink-faint/60 mt-0.5">
+            <div className="text-ink-muted/80 mt-0.5">
               {index.cityCount} cities · 5 years of data
             </div>
           </div>

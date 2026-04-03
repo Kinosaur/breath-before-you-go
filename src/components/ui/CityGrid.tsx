@@ -26,11 +26,11 @@ export function CityGrid({ cities }: Props) {
     <section>
       <div className="flex items-baseline gap-3 mb-5">
         <h2 className="text-xl font-semibold text-ink">15 Cities</h2>
-        <span className="text-sm text-ink-faint">sorted by tier · click to explore</span>
+        <span className="text-sm text-ink-muted">sorted by tier · click to explore</span>
       </div>
 
       {/* Tier legend */}
-      <div className="flex gap-4 mb-4 text-[11px] font-mono text-ink-faint">
+      <div className="flex gap-4 mb-4 text-[11px] font-mono text-ink-muted">
         <span><span className="text-ink">T1</span> Deep — full story</span>
         <span><span className="text-ink">T2</span> Standard — data + summary</span>
         <span><span className="text-ink">T3</span> Dashboard — data only</span>
@@ -47,18 +47,28 @@ export function CityGrid({ cities }: Props) {
               key={city.id}
               href={`/cities/${city.id}`}
               className="group block p-4 rounded-lg border border-surface-3 bg-surface-2
-                         hover:bg-surface-3 transition-all duration-150"
+                         hover:bg-surface-3 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(0,0,0,0.22)]
+                         focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink-faint focus-visible:ring-offset-2 focus-visible:ring-offset-surface
+                         transition-all duration-200"
               style={{ "--band": color } as React.CSSProperties}
             >
               {/* Top row: band dot + tier tag */}
               <div className="flex items-center justify-between mb-3">
-                <div
-                  className="w-2.5 h-2.5 rounded-full flex-shrink-0"
-                  style={{ background: color }}
-                  title={label}
-                  aria-label={`AQI: ${label}`}
-                />
-                <span className="text-[10px] font-mono text-ink-faint">
+                <div className="relative inline-flex items-center">
+                  <div
+                    className="w-2.5 h-2.5 rounded-full flex-shrink-0"
+                    style={{ background: color }}
+                    aria-label={`AQI: ${label}`}
+                  />
+                  <span
+                    className="pointer-events-none absolute left-1/2 -translate-x-1/2 bottom-full mb-1 whitespace-nowrap
+                               rounded-md border border-surface-3 bg-surface px-2 py-1 text-[10px] text-ink-muted
+                               opacity-0 translate-y-1 transition-all duration-150 group-hover:opacity-100 group-hover:translate-y-0"
+                  >
+                    {label}
+                  </span>
+                </div>
+                <span className="text-[10px] font-mono text-ink-muted">
                   T{city.tier}
                 </span>
               </div>
@@ -67,7 +77,7 @@ export function CityGrid({ cities }: Props) {
               <div className="font-semibold text-sm text-ink leading-tight mb-0.5">
                 {city.name}
               </div>
-              <div className="text-[11px] text-ink-faint mb-3">
+              <div className="text-[11px] text-ink-muted mb-3">
                 {city.country}
               </div>
 
@@ -78,7 +88,7 @@ export function CityGrid({ cities }: Props) {
               >
                 {city.annualMedianPm25}
               </div>
-              <div className="text-[10px] text-ink-faint mt-0.5 mb-3">
+              <div className="text-[10px] text-ink-muted mt-0.5 mb-3">
                 µg/m³ annual median
               </div>
 
@@ -93,7 +103,7 @@ export function CityGrid({ cities }: Props) {
               )}
 
               {/* Worst month hint — appears on hover */}
-              <div className="mt-2 text-[10px] text-ink-faint opacity-0 group-hover:opacity-100 transition-opacity">
+              <div className="mt-2 text-[10px] text-ink-muted opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-150">
                 Worst: {city.worstMonth.name} ({city.worstMonth.median} µg/m³)
               </div>
             </Link>
@@ -102,7 +112,7 @@ export function CityGrid({ cities }: Props) {
       </div>
 
       {/* Attribution */}
-      <p className="mt-4 text-[11px] text-ink-faint">
+      <p className="mt-4 text-[11px] text-ink-muted">
         Source: OpenAQ API v3 · WHO 2021 PM2.5 guidelines ·{" "}
         <span className="font-mono">5-year historical daily data</span>
       </p>

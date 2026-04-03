@@ -8,7 +8,7 @@
 
 import { readFileSync } from "fs";
 import { join } from "path";
-import type { IndexData, CityProfile, HourlyLatest, FreshnessInfo } from "./types";
+import type { IndexData, CityProfile, HourlyLatest, SeasonalHeatmap, FreshnessInfo } from "./types";
 
 function readPublic(relativePath: string): string {
   return readFileSync(
@@ -27,6 +27,10 @@ export function getCityProfile(cityId: string): CityProfile {
 
 export function getHourlyLatest(cityId: string): HourlyLatest {
   return JSON.parse(readPublic(`cities/${cityId}/hourly-latest.json`));
+}
+
+export function getSeasonalHeatmap(cityId: string): SeasonalHeatmap {
+  return JSON.parse(readPublic(`cities/${cityId}/seasonal-heatmap.json`));
 }
 
 // ── Data Freshness ────────────────────────────────────────────────────────────

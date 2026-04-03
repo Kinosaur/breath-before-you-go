@@ -204,6 +204,26 @@ particle mass). The methodology relies on Pope et al. (2016) and has
 been cited by the World Economic Forum and used in the "Sh\*\*t I Smoke"
 app.
 
+## Optional Action Layer: Mask-Adjusted Exposure Scenario
+
+To make the cigarette equivalence more actionable (not just descriptive),
+the UI can offer an optional "with mask" scenario view next to the
+unmasked baseline.
+
+Recommended framing:
+
+- Keep **unmasked baseline** as default.
+- Add **mask-adjusted estimate** as an optional toggle.
+- Show results as a **range** (conservative to optimistic), not a single
+  exact value.
+
+Simple model for scenario display:
+
+Adjusted exposure = Baseline exposure × (1 - effective filtration)
+
+This is a planning aid only, because real-world protection varies by fit,
+wear time, humidity, activity intensity, and mask quality.
+
 +----------------------------------------------------------------------+
 | **Methodology Disclaimer (Shown on Every Page Using This Metric)**   |
 |                                                                      |
@@ -321,7 +341,9 @@ disclaimer.
 inputs. High engagement-to-effort ratio.
 
 **Interaction:** Enter trip dates and cities to compute personal
-cumulative exposure across a multi-city itinerary.
+cumulative exposure across a multi-city itinerary. Optional toggle:
+"Unmasked" vs "Mask-adjusted estimate" (No mask / Surgical / KN95 / N95)
+with uncertainty bands.
 
 ## 4. The City Breathing Biography --- Scrollytelling Narrative (Tier 1 Only)
 
@@ -515,7 +537,8 @@ Build (Weeks 3--6), Polish & Scale (Weeks 7--8), and Launch (Weeks
   **WEEK 5**        **Lung Clock + Scrollytelling Prototype**                                                                    Week 5
   ----------------- ------------------------------------------------------------------------------------------------------------ ------------
   Day 1--3          Build Lung Clock: D3 radial chart (fixed 400px SVG), 24 arcs, WHO color bands, sunrise overlay.              D3.js, SVG
-  Day 3--4          Add activity selector (walk/jog/cycle) with adjusted thresholds. Build linear fallback for \< 480px.         React, CSS
+  Day 3--4          Add activity selector (walk/jog/cycle) with adjusted thresholds. Build linear fallback for < 480px.         React, CSS
+  Day 3--4          Add optional mask-adjusted exposure scenario to Cigarette Counter (range-based, caveated).                  React
   Day 4--5          Build Life Expectancy Toll bar chart: horizontal bars, equity toggle, peer comparison.                       D3.js
   Day 5--7          Begin scrollytelling framework: Intersection Observer + D3 transitions. Build 2 of 6 sections for Bangkok.   React, D3
   **DELIVERABLE**   **Lung Clock + Life Expectancy chart on Bangkok page. Scrollytelling prototype (2 sections) functional.**    
@@ -577,6 +600,7 @@ Build (Weeks 3--6), Polish & Scale (Weeks 7--8), and Launch (Weeks
   Lung Clock radial chart responsive issues         **Medium**     Fixed 400px SVG, center-aligned. Tested at 360px, 768px, 1024px breakpoints                           Degrade to linear horizontal timeline on mobile
   Timezone normalization errors                     **High**       Validate in pipeline: spot-check 3 cities manually. Automated test: 6 AM local = correct UTC offset   Hard-code UTC offsets (no DST in most Asian cities)
   Cigarette metric credibility pushback             **Medium**     Methodology page with Berkeley Earth citation, acute/chronic disclaimer, Pope discrepancy note        Demote to tooltip-only; lead with WHO AQI bands
+  Mask efficacy overclaim risk                      **Medium**     Present mask adjustment as scenario range with fit/usage caveats; keep unmasked baseline as default    Hide mask layer behind "estimate" toggle until wording is validated
   Mapbox free tier limits                           **Low**        50K map loads/month is generous for a portfolio project                                               Switch to MapLibre GL JS (open-source fork)
   Data freshness confusion (static vs. live)        **Medium**     Data Freshness badge on every page with 3 states (live/delayed/historical)                            N/A --- already mitigated by design
 

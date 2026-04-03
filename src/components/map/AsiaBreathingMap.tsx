@@ -228,16 +228,21 @@ export default function AsiaBreathingMap({ cities }: Props) {
           data: buildCityGeoJSON(cities, initMonth),
         });
 
+        // Circle radii interpolate with zoom so markers feel consistent
+        // at all levels — small enough at zoom 2 (all Asia), readable at zoom 8.
+        const ringRadius = ["interpolate", ["linear"], ["zoom"], 2, 7, 5, 11, 8, 16] as unknown as number;
+        const dotRadius  = ["interpolate", ["linear"], ["zoom"], 2, 4, 5,  6, 8,  9] as unknown as number;
+
         map.addLayer({
           id: CITY_RING_LAYER_ID,
           type: "circle",
           source: CITY_SOURCE_ID,
           paint: {
-            "circle-radius": 10,
+            "circle-radius": ringRadius,
             "circle-color": "rgba(0,0,0,0)",
             "circle-stroke-width": 2,
             "circle-stroke-color": ["get", "color"],
-            "circle-opacity": 0.55,
+            "circle-stroke-opacity": 0.55,
           },
         });
 
@@ -246,7 +251,7 @@ export default function AsiaBreathingMap({ cities }: Props) {
           type: "circle",
           source: CITY_SOURCE_ID,
           paint: {
-            "circle-radius": 5,
+            "circle-radius": dotRadius,
             "circle-color": ["get", "color"],
             "circle-stroke-width": 1,
             "circle-stroke-color": "rgba(0,0,0,0.45)",
@@ -270,18 +275,12 @@ export default function AsiaBreathingMap({ cities }: Props) {
         map.on("click", CITY_DOT_LAYER_ID, (event) => {
           const feature = event.features?.[0] as {
             properties?: Record<string, unknown>;
-            geometry?: { type?: string; coordinates?: unknown };
           } | undefined;
 
           const id = typeof feature?.properties?.id === "string"
             ? feature.properties.id
             : null;
-
-          const coordinates = Array.isArray(feature?.geometry?.coordinates)
-            ? feature.geometry.coordinates
-            : null;
-
-          if (!id || !coordinates || coordinates.length < 2) return;
+          if (!id) return;
 
           const city = cityById.get(id);
           if (!city) return;
@@ -289,8 +288,10 @@ export default function AsiaBreathingMap({ cities }: Props) {
           const curMonth = selectedMonthRef.current;
           const curPm25  = city.monthlyMedians[curMonth] ?? city.annualMedianPm25;
 
+          // Use event.lngLat (the actual click point) — safer than
+          // feature.geometry.coordinates which MapLibre may wrap across antimeridian.
           popup
-            .setLngLat([Number(coordinates[0]), Number(coordinates[1])])
+            .setLngLat(event.lngLat)
             .setDOMContent(buildPopupContent(city, curPm25, curMonth))
             .addTo(map);
         });
