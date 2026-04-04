@@ -29,19 +29,21 @@ export function ModeBadge() {
   const normalizedMode: Mode = raw === "resident" ? "resident" : "travel";
 
   return (
-    <div
-      className="group relative inline-flex items-center gap-2 rounded-full border border-surface-3 px-2.5 py-1 text-xs font-mono text-ink-muted
-                 transition-colors duration-150 hover:border-ink-faint/60"
-      aria-live="polite"
-    >
-      <span className="h-1.5 w-1.5 rounded-full bg-ink-faint" aria-hidden="true" />
-      <span className="text-ink">{modeToLabel(normalizedMode)}</span>
-      <span className="text-ink-faint">{modeToHint(normalizedMode)}</span>
+    <div className="group inline-flex flex-col items-start" aria-live="polite">
+      <div
+        className="inline-flex items-center gap-2 rounded-full border border-surface-3 px-2.5 py-1 text-xs font-mono text-ink-muted
+                   transition-colors duration-150 hover:border-ink-faint/60"
+      >
+        <span className="h-1.5 w-1.5 rounded-full bg-ink-faint" aria-hidden="true" />
+        <span className="text-ink">{modeToLabel(normalizedMode)}</span>
+        <span className="text-ink-faint">{modeToHint(normalizedMode)}</span>
+      </div>
 
       <span
-        className="pointer-events-none absolute left-1/2 -translate-x-1/2 top-full mt-1 max-w-[200px] whitespace-normal text-center
-                   rounded-md border border-surface-3 bg-surface px-2 py-1 text-[10px] leading-relaxed text-ink-muted shadow-lg
-                   opacity-0 -translate-y-1 transition-all duration-200 ease-out group-hover:opacity-100 group-hover:translate-y-0"
+        className="mt-1 max-h-0 overflow-hidden rounded-md border border-transparent px-2 py-0
+                   text-[10px] leading-relaxed text-ink-muted opacity-0 transition-all duration-200 ease-out
+                   group-hover:max-h-16 group-hover:border-surface-3 group-hover:bg-surface group-hover:py-1 group-hover:opacity-100
+                   group-focus-within:max-h-16 group-focus-within:border-surface-3 group-focus-within:bg-surface group-focus-within:py-1 group-focus-within:opacity-100"
       >
         Current audience framing
       </span>

@@ -81,7 +81,7 @@ export function HealthMetricsPanel({ profile }: Props) {
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
       {/* ── Annual PM2.5 ── */}
-      <div className="rounded-xl bg-surface-2 border border-surface-3 p-5">
+      <div className="motion-card rounded-xl bg-surface-2 border border-surface-3 p-5 hover:border-ink-faint/45">
         <div className="text-xs text-ink-faint font-mono mb-1">Annual median PM2.5</div>
         <div className="flex items-baseline gap-3 mb-2">
           <span className="text-3xl font-bold text-ink tabular-nums">
@@ -102,7 +102,7 @@ export function HealthMetricsPanel({ profile }: Props) {
       </div>
 
       {/* ── Cigarette equivalence ── */}
-      <div className="rounded-xl bg-surface-2 border border-surface-3 p-5">
+      <div className="motion-card rounded-xl bg-surface-2 border border-surface-3 p-5 hover:border-ink-faint/45">
         <div className="text-xs text-ink-faint font-mono mb-1">Cigarette equivalence</div>
         <div className="flex items-baseline gap-2 mb-1">
           <span className="text-3xl font-bold text-ink tabular-nums">
@@ -121,7 +121,7 @@ export function HealthMetricsPanel({ profile }: Props) {
       </div>
 
       {/* ── Life expectancy ── */}
-      <div className="rounded-xl bg-surface-2 border border-surface-3 p-5">
+      <div className="motion-card rounded-xl bg-surface-2 border border-surface-3 p-5 hover:border-ink-faint/45">
         <div className="text-xs text-ink-faint font-mono mb-1">Estimated life years at risk</div>
         <div className="flex items-baseline gap-2 mb-3">
           <span className="text-3xl font-bold text-ink tabular-nums">
@@ -167,7 +167,7 @@ export function HealthMetricsPanel({ profile }: Props) {
       </div>
 
       {/* ── Best / Worst months ── */}
-      <div className="rounded-xl bg-surface-2 border border-surface-3 p-5">
+      <div className="motion-card rounded-xl bg-surface-2 border border-surface-3 p-5 hover:border-ink-faint/45">
         <div className="text-xs text-ink-faint font-mono mb-3">Seasonal range</div>
 
         <div className="space-y-4">

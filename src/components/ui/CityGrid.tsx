@@ -54,23 +54,20 @@ export function CityGrid({ cities }: Props) {
             >
               {/* Top row: band dot + tier tag */}
               <div className="flex items-center justify-between mb-3">
-                <div className="relative inline-flex items-center">
+                <div className="inline-flex items-center">
                   <div
                     className="w-2.5 h-2.5 rounded-full flex-shrink-0"
                     style={{ background: color }}
                     aria-label={`AQI: ${label}`}
                   />
-                  <span
-                    className="pointer-events-none absolute left-1/2 -translate-x-1/2 bottom-full mb-1 whitespace-nowrap
-                               rounded-md border border-surface-3 bg-surface px-2 py-1 text-[10px] text-ink-muted shadow-lg
-                               opacity-0 translate-y-1 transition-all duration-150 group-hover:opacity-100 group-hover:translate-y-0"
-                  >
-                    {label}
-                  </span>
                 </div>
                 <span className="text-[10px] font-mono text-ink-muted">
                   T{city.tier}
                 </span>
+              </div>
+
+              <div className="-mt-1 mb-3 text-[10px] text-ink-muted touch-tooltip transition-all duration-150">
+                {label}
               </div>
 
               {/* City name + country */}
@@ -103,7 +100,7 @@ export function CityGrid({ cities }: Props) {
               )}
 
               {/* Worst month hint — appears on hover */}
-              <div className="mt-2 text-[10px] text-ink-muted opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200">
+              <div className="mt-2 text-[10px] text-ink-muted touch-tooltip transition-all duration-200">
                 Worst: {city.worstMonth.name} ({city.worstMonth.median} µg/m³)
               </div>
             </Link>

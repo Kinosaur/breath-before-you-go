@@ -352,7 +352,7 @@ export function LungClock({ typicalDay, lat, cityName, timezone }: Props) {
             <div
               className="absolute bottom-2 left-1/2 -translate-x-1/2 pointer-events-none
                           rounded-lg bg-surface-2 border border-surface-3 px-3 py-1.5 text-xs
-                          text-center shadow-lg whitespace-nowrap"
+                          text-center shadow-lg whitespace-nowrap transition-all duration-150"
             >
               <span className="font-mono font-bold text-ink">
                 {hoveredHour!.toString().padStart(2, "0")}:00

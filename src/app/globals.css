@@ -22,6 +22,12 @@
     background-color: #0a0a0a;
     color: #f5f5f5;
   }
+
+  :where(a, button, input, select, summary, [role="button"], [role="radio"]):focus-visible {
+    outline: 2px solid rgba(245, 245, 245, 0.85);
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
 }
 
 /* ── MapLibre popup: dark theme ──────────────────────────────────────── */
@@ -52,6 +58,251 @@
 @keyframes popup-fade-in {
   from { opacity: 0; transform: translateY(3px); }
   to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Subtle motion system (UI polish) ───────────────────────────────── */
+@keyframes fade-up-soft {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow-line {
+  0%   { opacity: 0.35; transform: scaleX(0.98); }
+  50%  { opacity: 0.75; transform: scaleX(1); }
+  100% { opacity: 0.35; transform: scaleX(0.98); }
+}
+
+@layer utilities {
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(14px);
+    transition:
+      opacity 520ms cubic-bezier(0.2, 0.8, 0.2, 1),
+      transform 520ms cubic-bezier(0.2, 0.8, 0.2, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+
+  [data-reveal].is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .motion-fade-up {
+    animation: fade-up-soft 560ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+
+  .motion-card {
+    transition:
+      transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1),
+      border-color 220ms ease,
+      box-shadow 220ms ease,
+      background-color 220ms ease;
+  }
+
+  .motion-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.24);
+  }
+
+  .motion-glow-line {
+    transform-origin: left center;
+    animation: glow-line 4.2s ease-in-out infinite;
+  }
+
+  .motion-heavy-block {
+    opacity: 0.86;
+    transform: translateY(10px) scale(0.995);
+    transition:
+      opacity 440ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 440ms cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 320ms ease;
+  }
+
+  .motion-heavy-block.is-heavy-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.24);
+  }
+
+  .touch-tooltip {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  .group:hover .touch-tooltip {
+    max-height: 4rem;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .group:focus-within .touch-tooltip {
+    max-height: 4rem;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .motion-fade-up,
+  .motion-glow-line {
+    animation: none !important;
+  }
+
+  .motion-card,
+  .motion-card:hover {
+    transition: none !important;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  .motion-heavy-block,
+  .motion-heavy-block.is-heavy-visible {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    box-shadow: none !important;
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .touch-tooltip {
+    max-height: none !important;
+    overflow: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+    position: static !important;
+    display: block !important;
+    margin-top: 0.25rem !important;
+    max-width: 100% !important;
+    width: auto !important;
+    white-space: normal !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    left: auto !important;
+    top: auto !important;
+    translate: none !important;
+  }
+
+  .motion-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+/* ── Smart cursor (desktop only, accessibility-safe) ─────────────────── */
+@media (hover: hover) and (pointer: fine) {
+  .cursor-enhanced,
+  .cursor-enhanced a,
+  .cursor-enhanced button,
+  .cursor-enhanced [role="button"],
+  .cursor-enhanced [role="radio"],
+  .cursor-enhanced input:not([type="date"]),
+  .cursor-enhanced select,
+  .cursor-enhanced textarea,
+  .cursor-enhanced summary,
+  .cursor-enhanced label,
+  .cursor-enhanced .maplibregl-canvas {
+    cursor: none !important;
+  }
+
+  .smart-cursor {
+    position: fixed;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 180ms ease;
+    will-change: transform, opacity;
+    mix-blend-mode: normal;
+  }
+
+  .smart-cursor[data-visible="true"] {
+    opacity: 1;
+  }
+
+  .smart-cursor-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 9999px;
+    background: #f5f5f5;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.28);
+    transition: width 170ms ease, height 170ms ease, background-color 170ms ease, box-shadow 170ms ease;
+  }
+
+  .smart-cursor-ring {
+    width: 26px;
+    height: 26px;
+    border-radius: 9999px;
+    border: 1px solid rgba(245, 245, 245, 0.45);
+    background: rgba(245, 245, 245, 0.03);
+    transition:
+      width 210ms ease,
+      height 210ms ease,
+      border-color 210ms ease,
+      background-color 210ms ease,
+      opacity 140ms ease;
+  }
+
+  .smart-cursor-ring[data-mode="interactive"] {
+    width: 34px;
+    height: 34px;
+    border-color: rgba(255, 235, 59, 0.75);
+    background: rgba(255, 235, 59, 0.08);
+  }
+
+  .smart-cursor-dot[data-mode="interactive"] {
+    background: #ffeb3b;
+    box-shadow: 0 0 12px rgba(255, 235, 59, 0.35);
+  }
+
+  .smart-cursor-ring[data-mode="drag"] {
+    width: 40px;
+    height: 18px;
+    border-radius: 9999px;
+    border-color: rgba(232, 112, 64, 0.85);
+    background: rgba(232, 112, 64, 0.12);
+  }
+
+  .smart-cursor-dot[data-mode="drag"] {
+    width: 5px;
+    height: 5px;
+    background: #e87040;
+    box-shadow: 0 0 10px rgba(232, 112, 64, 0.4);
+  }
+
+  .smart-cursor-ring[data-pressed="true"] {
+    width: 22px;
+    height: 22px;
+  }
+
+  .smart-cursor-dot[data-pressed="true"] {
+    width: 4px;
+    height: 4px;
+  }
+
+  .cursor-enhanced input[type="date"],
+  .cursor-enhanced input[type="date"]::-webkit-calendar-picker-indicator,
+  .cursor-enhanced input[type="date"]::-webkit-clear-button,
+  .cursor-enhanced input[type="date"]::-webkit-inner-spin-button {
+    cursor: auto !important;
+  }
 }
 
 /* ── Pulsing AQI marker ring ─────────────────────────────────────────── */

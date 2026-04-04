@@ -119,6 +119,40 @@ export interface CityProfile {
     sensors:         number;
     lastComputed:    string;
   };
+
+  /** Tier 2 cities only: 500–800 word research-backed narrative summary */
+  narrativeSummary?: string;
+
+  /** Tier 1 cities only: city-specific content for scrollytelling sections 3, 5, 6 */
+  scrollyContent?: CityScrollyContent;
+}
+
+// ── Tier 1 scrollytelling content ─────────────────────────────────────────────
+
+export interface CityScrollyContent {
+  section3: {
+    /** Section heading, e.g. "Every February, the sky catches fire." */
+    title: string;
+    /** Paragraph explaining the seasonal pollution spike */
+    narrative: string;
+    /** Month numbers (1–12) to highlight as the spike season */
+    causeMonths: number[];
+    /** Short footnote label, e.g. "northern crop burning season (Feb – Apr)" */
+    causeLabel: string;
+  };
+  section5: {
+    /** Paragraph under "The same city. Six months apart." heading */
+    narrative: string;
+  };
+  section6: {
+    /** Section heading for the traveler window */
+    title: string;
+    /** Introductory paragraph */
+    intro: string;
+    bestWindow: { months: string; detail: string };
+    caution:    { months: string; detail: string };
+    highRisk:   { months: string; detail: string };
+  };
 }
 
 // ── cities/{id}/hourly-latest.json ────────────────────────────────────────────

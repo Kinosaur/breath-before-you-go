@@ -322,7 +322,7 @@ export default function AsiaBreathingMap({ cities }: Props) {
         <div
           ref={containerRef}
           className="w-full rounded-xl overflow-hidden"
-          style={{ height: 500 }}
+          style={{ height: "clamp(320px, 62vh, 500px)" }}
           aria-label="Asia air quality map — click a city marker for details"
           role="img"
         />

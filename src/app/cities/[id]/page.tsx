@@ -1,15 +1,17 @@
 /**
  * City detail page — /cities/[id]
  *
- * Weeks 4–5 deliverable. Sections (in order):
+ * Weeks 4–8 deliverable. Sections (in order):
  *   Hero     — city name, country, data freshness badge, section nav
  *   #health  — Health Metrics Panel (server component)
- *   #clock   — Lung Clock: D3 radial chart, 24h activity selector (Week 5)
- *   #life    — Life Expectancy Toll chart with peer/equity toggle (Week 5)
+ *   #clock   — Lung Clock: D3 radial chart, 24h activity selector
+ *   #life    — Life Expectancy Toll chart with peer/equity toggle
  *   #calendar — Breathing Calendar: D3 12×31 heatmap
  *   #exposure — Cigarette Counter + Trip Calculator
- *   #story   — Scrollytelling prototype: 2 sections (Week 5)
+ *   #story   — Scrollytelling (Tier 1 only, data-driven via scrollyContent)
+ *   #summary — City profile narrative (Tier 2 only)
  *   #events  — Seasonal risk events (if any)
+ *
  *
  * Data:
  *   profile.json        → getCityProfile()
@@ -20,6 +22,7 @@
 
 import { notFound }                      from "next/navigation";
 import Link                              from "next/link";
+import dynamic                           from "next/dynamic";
 import {
   getCityProfile,
   getSeasonalHeatmap,
@@ -28,16 +31,50 @@ import {
 }                                        from "@/lib/data";
 import { DataFreshnessBadge }            from "@/components/ui/DataFreshnessBadge";
 import { HealthMetricsPanel }            from "@/components/city/HealthMetricsPanel";
-import { BreathingCalendar }             from "@/components/city/BreathingCalendar";
-import { CigaretteCounter }              from "@/components/city/CigaretteCounter";
-import { LungClock }                     from "@/components/city/LungClock";
-import { LifeExpectancyChart }           from "@/components/city/LifeExpectancyChart";
-import { ScrollyTelling }                from "@/components/city/ScrollyTelling";
 import { classifyBand, getBandColor }    from "@/lib/constants";
+import { CitySectionNav } from "@/components/city/CitySectionNav";
+import { CityReadingProgress } from "@/components/city/CityReadingProgress";
+import { HeavyBlockCoordinator } from "@/components/city/HeavyBlockCoordinator";
 
 interface Props {
   params: Promise<{ id: string }>;
 }
+
+function ChartSkeleton({ h = "h-[260px]" }: { h?: string }) {
+  return (
+    <div className={`w-full ${h} rounded-lg bg-surface-3/60 border border-surface-3 animate-pulse`} aria-hidden="true" />
+  );
+}
+
+const BreathingCalendar = dynamic(
+  () => import("@/components/city/BreathingCalendar").then((m) => m.BreathingCalendar),
+  { loading: () => <ChartSkeleton h="h-[340px]" /> },
+);
+
+const CigaretteCounter = dynamic(
+  () => import("@/components/city/CigaretteCounter").then((m) => m.CigaretteCounter),
+  { loading: () => <ChartSkeleton h="h-[220px]" /> },
+);
+
+const LungClock = dynamic(
+  () => import("@/components/city/LungClock").then((m) => m.LungClock),
+  { loading: () => <ChartSkeleton h="h-[440px]" /> },
+);
+
+const LifeExpectancyChart = dynamic(
+  () => import("@/components/city/LifeExpectancyChart").then((m) => m.LifeExpectancyChart),
+  { loading: () => <ChartSkeleton h="h-[320px]" /> },
+);
+
+const ScrollyTelling = dynamic(
+  () => import("@/components/city/ScrollyTelling").then((m) => m.ScrollyTelling),
+  { loading: () => <ChartSkeleton h="h-[520px]" /> },
+);
+
+const CitySummaryPanel = dynamic(
+  () => import("@/components/city/CitySummaryPanel").then((m) => m.CitySummaryPanel),
+  { loading: () => <ChartSkeleton h="h-[360px]" /> },
+);
 
 export async function generateStaticParams() {
   const { getIndex: gi } = await import("@/lib/data");
@@ -71,9 +108,31 @@ export default async function CityPage({ params }: Props) {
   const hourlyCount = hourly?.typicalDay?.length ?? 0;
   const hasHourlyAny = Boolean(hourly?.available && hourlyCount > 0);
   const hasHourlyFull = hasHourlyAny && hourlyCount === 24;
+  const sectionIds = [
+    "health",
+    "clock",
+    ...(profile.tier <= 2 ? ["life"] : []),
+    "calendar",
+    "exposure",
+    ...(profile.tier === 1 ? ["story"] : []),
+    ...(profile.tier === 2 ? ["summary"] : []),
+    ...(profile.seasonalEvents.length > 0 ? ["events"] : []),
+  ];
 
   return (
     <main className="min-h-screen bg-[#0a0a0a]">
+      <CityReadingProgress sectionIds={sectionIds} />
+      <HeavyBlockCoordinator />
+
+      {/* ── Skip to main content (keyboard / screen reader) ───────────── */}
+      <a
+        href="#health"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50
+                   focus:px-3 focus:py-2 focus:rounded focus:bg-surface-2 focus:text-ink focus:text-sm"
+      >
+        Skip to health data
+      </a>
+
       <div className="max-w-5xl mx-auto px-5">
 
         {/* ── Back nav ──────────────────────────────────────────────────── */}
@@ -81,13 +140,14 @@ export default async function CityPage({ params }: Props) {
           <Link
             href="/"
             className="text-xs text-ink-muted font-mono hover:text-ink transition-colors"
+            aria-label="Back to all cities"
           >
             ← All cities
           </Link>
         </div>
 
         {/* ── Hero ──────────────────────────────────────────────────────── */}
-        <section className="pb-10">
+        <section className="pb-10" data-reveal style={{ "--reveal-delay": "40ms" } as React.CSSProperties}>
           <div className="flex flex-wrap items-center gap-3 mb-4">
             <DataFreshnessBadge generatedAt={profile.dataQuality.lastComputed} />
           </div>
@@ -114,45 +174,34 @@ export default async function CityPage({ params }: Props) {
             </div>
           </div>
 
-          <nav className="mt-6 flex flex-wrap gap-2" aria-label="City page sections">
-            {[
-              { href: "#health",   label: "Health" },
-              { href: "#clock",    label: "Lung Clock" },
-              { href: "#life",     label: "Life impact" },
+          <CitySectionNav
+            items={[
+              { href: "#health", label: "Health" },
+              { href: "#clock", label: "Lung Clock" },
+              ...(profile.tier <= 2 ? [{ href: "#life", label: "Life impact" }] : []),
               { href: "#calendar", label: "Calendar" },
               { href: "#exposure", label: "Exposure" },
-              { href: "#story",    label: "Story" },
-              { href: "#events",   label: "Seasonal events", show: profile.seasonalEvents.length > 0 },
-            ]
-              .filter((item) => item.show !== false)
-              .map(({ href, label }) => (
-                <a
-                  key={href}
-                  href={href}
-                  className="px-2.5 py-1 rounded-full text-[11px] font-mono bg-surface-2
-                             border border-surface-3 text-ink-muted hover:text-ink hover:bg-surface-3
-                             transition-colors"
-                >
-                  {label}
-                </a>
-              ))}
-          </nav>
+              ...(profile.tier === 1 ? [{ href: "#story", label: "Story" }] : []),
+              ...(profile.tier === 2 ? [{ href: "#summary", label: "Summary" }] : []),
+              ...(profile.seasonalEvents.length > 0 ? [{ href: "#events", label: "Seasonal events" }] : []),
+            ]}
+          />
         </section>
 
         {/* ── Health Metrics ─────────────────────────────────────────────── */}
-        <section id="health" className="pb-12 scroll-mt-6">
+        <section id="health" className="pb-12 scroll-mt-6" data-reveal>
           <h2 className="text-lg font-semibold text-ink mb-5">Health impact</h2>
           <HealthMetricsPanel profile={profile} />
         </section>
 
         {/* ── Lung Clock ─────────────────────────────────────────────────── */}
-        <section id="clock" className="pb-12 scroll-mt-6">
+        <section id="clock" className="pb-12 scroll-mt-6" data-reveal>
           <h2 className="text-lg font-semibold text-ink mb-2">Lung clock</h2>
           <p className="text-sm text-ink-muted mb-5">
             24-hour air quality pattern. Dimmed arcs are unsafe for the selected activity.
           </p>
           {hasHourlyAny ? (
-            <div className="rounded-xl bg-surface-2 border border-surface-3 p-5">
+            <div className="rounded-xl bg-surface-2 border border-surface-3 p-5 motion-heavy-block" data-heavy-block>
               {!hasHourlyFull && (
                 <div className="mb-3 text-[11px] text-ink-muted font-mono">
                   Partial hourly data: showing {hourlyCount}/24 hours. Missing hours are marked as gray arcs.
@@ -174,52 +223,72 @@ export default async function CityPage({ params }: Props) {
           )}
         </section>
 
-        {/* ── Life Expectancy Chart ──────────────────────────────────────── */}
-        <section id="life" className="pb-12 scroll-mt-6">
-          <h2 className="text-lg font-semibold text-ink mb-2">Life expectancy toll</h2>
-          <p className="text-sm text-ink-muted mb-5">
-            How does the air here compare to other health risks — and to peer cities?
-          </p>
-          <div className="rounded-xl bg-surface-2 border border-surface-3 p-5">
-            <LifeExpectancyChart
-              context={profile.healthMetrics.lifeExpectancyContext}
-              cityName={profile.cityName}
-              peerCities={peerCities}
-            />
-          </div>
-        </section>
+        {/* ── Life Expectancy Chart (Tier 1 + 2 only) ──────────────────── */}
+        {profile.tier <= 2 && (
+          <section id="life" className="pb-12 scroll-mt-6" data-reveal>
+            <h2 className="text-lg font-semibold text-ink mb-2">Life expectancy toll</h2>
+            <p className="text-sm text-ink-muted mb-5">
+              How does the air here compare to other health risks — and to peer cities?
+            </p>
+            <div className="rounded-xl bg-surface-2 border border-surface-3 p-5">
+              <LifeExpectancyChart
+                context={profile.healthMetrics.lifeExpectancyContext}
+                cityName={profile.cityName}
+                peerCities={peerCities}
+              />
+            </div>
+          </section>
+        )}
 
         {/* ── Breathing Calendar ─────────────────────────────────────────── */}
-        <section id="calendar" className="pb-12 scroll-mt-6">
+        <section id="calendar" className="pb-12 scroll-mt-6" data-reveal>
           <h2 className="text-lg font-semibold text-ink mb-2">Breathing calendar</h2>
           <p className="text-sm text-ink-muted mb-5">
             Every day of the year, colored by PM2.5 air quality band.
           </p>
-          <div className="relative rounded-xl bg-surface-2 border border-surface-3 p-5">
+          <div className="relative rounded-xl bg-surface-2 border border-surface-3 p-5 motion-heavy-block" data-heavy-block>
             <BreathingCalendar heatmap={heatmap} />
           </div>
         </section>
 
         {/* ── Cigarette Counter + Trip Calc ──────────────────────────────── */}
-        <section id="exposure" className="pb-12 scroll-mt-6">
+        <section id="exposure" className="pb-12 scroll-mt-6" data-reveal>
           <h2 className="text-lg font-semibold text-ink mb-5">Exposure calculator</h2>
+          <p className="text-sm text-ink-muted mb-5">
+            The baseline view is <strong className="text-ink">No mask</strong>. You can switch to Surgical, KN95, or N95 to see a planning range for mask-adjusted exposure.
+          </p>
           <CigaretteCounter profile={profile} />
         </section>
 
-        {/* ── Scrollytelling ─────────────────────────────────────────────── */}
-        <section id="story" className="pb-12 scroll-mt-6">
-          <h2 className="text-lg font-semibold text-ink mb-2">The story</h2>
-          <p className="text-sm text-ink-muted mb-6">
-            Scroll through to see the numbers come alive.
-          </p>
-          <div className="rounded-xl bg-surface-2 border border-surface-3 overflow-hidden">
-            <ScrollyTelling profile={profile} />
-          </div>
-        </section>
+        {/* ── Scrollytelling (Tier 1 only) ───────────────────────────────── */}
+        {profile.tier === 1 && (
+          <section id="story" className="pb-12 scroll-mt-6" data-reveal>
+            <h2 className="text-lg font-semibold text-ink mb-2">The story</h2>
+            <p className="text-sm text-ink-muted mb-6">
+              Scroll through to see the numbers come alive.
+            </p>
+            <div className="rounded-xl bg-surface-2 border border-surface-3 overflow-hidden motion-heavy-block" data-heavy-block>
+              <ScrollyTelling profile={profile} />
+            </div>
+          </section>
+        )}
+
+        {/* ── City Summary (Tier 2 only) ─────────────────────────────────── */}
+        {profile.tier === 2 && profile.narrativeSummary && (
+          <section id="summary" className="pb-12 scroll-mt-6" data-reveal>
+            <h2 className="text-lg font-semibold text-ink mb-2">City profile</h2>
+            <p className="text-sm text-ink-muted mb-6">
+              Research-backed air quality summary for {profile.cityName}.
+            </p>
+            <div className="rounded-xl bg-surface-2 border border-surface-3 p-6">
+              <CitySummaryPanel profile={profile} />
+            </div>
+          </section>
+        )}
 
         {/* ── Seasonal events ────────────────────────────────────────────── */}
         {profile.seasonalEvents.length > 0 && (
-          <section id="events" className="pb-12 scroll-mt-6">
+          <section id="events" className="pb-12 scroll-mt-6" data-reveal>
             <h2 className="text-lg font-semibold text-ink mb-5">Seasonal risk events</h2>
             <div className="space-y-3">
               {profile.seasonalEvents.map((ev, i) => {
@@ -259,7 +328,7 @@ export default async function CityPage({ params }: Props) {
         )}
 
         {/* ── Footer ─────────────────────────────────────────────────────── */}
-        <footer className="border-t border-surface-3 py-8 text-[11px] text-ink-muted font-mono">
+        <footer className="border-t border-surface-3 py-8 text-[11px] text-ink-muted font-mono" data-reveal>
           <div className="flex flex-col sm:flex-row justify-between gap-3">
             <div>
               Data: OpenAQ API v3 · WHO 2021 AQI Guidelines · Berkeley Earth ·{" "}

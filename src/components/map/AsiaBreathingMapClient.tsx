@@ -10,7 +10,7 @@ const AsiaBreathingMap = dynamic(
     loading: () => (
       <div
         className="w-full rounded-xl bg-surface-2 flex items-center justify-center"
-        style={{ height: 500 }}
+        style={{ height: "clamp(320px, 62vh, 500px)" }}
         aria-label="Map loading"
       >
         <span className="text-sm text-ink-muted animate-pulse">

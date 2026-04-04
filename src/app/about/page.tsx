@@ -1,88 +1,314 @@
 /**
  * About / Methodology page
  *
- * Concise methodology reference for trust and transparency:
- *   • Data sources and update model
- *   • WHO PM2.5 safety band rules (primary metric)
- *   • Cigarette equivalence framing caveats
- *   • AQLI life-years context
+ * Full methodology reference — data sources, PM2.5 bands, cigarette
+ * equivalence, AQLI life-years formula, known limitations, credits.
  */
 
 import Link from "next/link";
 
+// WHO 2021 band table
+const BANDS = [
+  { range: "0 – 15 µg/m³",   label: "Good",                color: "#4CAF50", detail: "WHO 2021 annual target. Safe for all outdoor activities." },
+  { range: "15 – 25 µg/m³",  label: "Moderate",            color: "#FFC107", detail: "Acceptable for most people. Sensitive groups may notice mild effects." },
+  { range: "25 – 50 µg/m³",  label: "Unhealthy (sensitive)", color: "#FF9800", detail: "People with asthma, heart or lung disease should reduce prolonged outdoor exertion." },
+  { range: "50 – 100 µg/m³", label: "Unhealthy",            color: "#F44336", detail: "General population begins experiencing health effects. Reduce outdoor time." },
+  { range: "100+ µg/m³",     label: "Hazardous",            color: "#9C27B0", detail: "Serious risk for everyone. Avoid outdoor activity. N95 mask if unavoidable." },
+];
+
+const COMPARISON_ANCHORS = [
+  { risk: "Smoking 1 cigarette/day",      yearsLost: "~1.0 yr",  source: "Berkeley Earth / WHO"  },
+  { risk: "Heavy alcohol use",             yearsLost: "~1.3 yr",  source: "GBD 2019"               },
+  { risk: "Traffic accidents (avg risk)",  yearsLost: "~0.3 yr",  source: "GBD 2019"               },
+  { risk: "Obesity",                       yearsLost: "~1.0–3 yr", source: "WHO / GBD 2019"        },
+];
+
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-[#0a0a0a] px-5 py-10">
-      <div className="max-w-3xl mx-auto space-y-8">
+      <div className="max-w-3xl mx-auto">
 
-        <div>
-          <Link
-            href="/"
-            className="text-xs text-ink-muted font-mono hover:text-ink transition-colors"
-          >
+        {/* Back nav */}
+        <div className="mb-8" data-reveal style={{ "--reveal-delay": "40ms" } as React.CSSProperties}>
+          <Link href="/" className="text-xs text-ink-muted font-mono hover:text-ink transition-colors">
             ← Back to overview
           </Link>
         </div>
 
-        <header className="space-y-3">
-          <h1 className="text-3xl sm:text-4xl font-bold text-ink">Methodology</h1>
+        {/* Header */}
+        <header className="mb-10" data-reveal style={{ "--reveal-delay": "80ms" } as React.CSSProperties}>
+          <h1 className="text-3xl sm:text-4xl font-bold text-ink mb-3">Methodology</h1>
+          <div className="h-px w-28 bg-ink-faint/40 mb-4 motion-glow-line" aria-hidden="true" />
           <p className="text-sm text-ink-muted max-w-2xl leading-relaxed">
-            This project combines pre-computed historical PM2.5 data with clear health framing.
-            WHO 2021 PM2.5 guidance is the primary safety standard.
-            Cigarette equivalence is presented as a communication aid with explicit caveats.
+            Everything here is built on publicly available data and peer-reviewed methodology.
+            This page explains every number you see — what it means, where it comes from, and what
+            its limitations are.
           </p>
         </header>
 
-        <section className="rounded-xl bg-surface-2 border border-surface-3 p-5 space-y-3">
-          <h2 className="text-lg font-semibold text-ink">Data and Update Model</h2>
-          <ul className="text-sm text-ink-muted space-y-1.5">
-            <li>Primary source: OpenAQ API v3 (historical PM2.5 observations).</li>
-            <li>Storage model: pre-computed JSON in public/data served statically.</li>
-            <li>Freshness states: Live (&lt;2h), Delayed (2–24h), Historical (&gt;24h).</li>
-          </ul>
-        </section>
+        <div className="space-y-6">
 
-        <section className="rounded-xl bg-surface-2 border border-surface-3 p-5 space-y-3">
-          <h2 className="text-lg font-semibold text-ink">WHO 2021 PM2.5 Bands</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-ink-muted font-mono">
-            <div>Good: 0–15 µg/m³</div>
-            <div>Moderate: 15–25 µg/m³</div>
-            <div>Sensitive: 25–50 µg/m³</div>
-            <div>Unhealthy: 50–100 µg/m³</div>
-            <div className="sm:col-span-2">Hazardous: 100+ µg/m³</div>
-          </div>
-          <p className="text-[11px] text-ink-muted">
-            These bands drive calendar colors, map marker colors, and safety wording.
-          </p>
-        </section>
+          {/* Data sources */}
+          <section className="rounded-xl bg-surface-2 border border-surface-3 p-6 space-y-4 motion-card" data-reveal style={{ "--reveal-delay": "100ms" } as React.CSSProperties}>
+            <h2 className="text-lg font-semibold text-ink">Data Sources</h2>
 
-        <section className="rounded-xl bg-surface-2 border border-surface-3 p-5 space-y-3">
-          <h2 className="text-lg font-semibold text-ink">Cigarette Equivalence</h2>
-          <p className="text-sm text-ink-muted leading-relaxed">
-            Conversion used: 22 µg/m³ PM2.5 ≈ 1 cigarette/day (Berkeley Earth framing).
-            This is a population-level communication heuristic, not a clinical diagnosis.
-          </p>
-          <ul className="text-xs text-ink-muted space-y-1">
-            <li>Short-term exposure and smoking are not biologically identical.</li>
-            <li>Local concentration and activity pattern can change personal exposure materially.</li>
-            <li>Use this number to compare risk context, not as a medical estimate.</li>
-          </ul>
-        </section>
+            <div className="space-y-4">
+              <div>
+                <div className="text-sm font-semibold text-ink mb-1">OpenAQ API v3</div>
+                <p className="text-sm text-ink-muted leading-relaxed">
+                  Primary PM2.5 source. Historical daily aggregates pulled via the{" "}
+                  <code className="text-xs bg-surface-3 px-1 py-0.5 rounded">/sensors/&#123;id&#125;/days</code>{" "}
+                  endpoint. Data is pre-computed nightly and stored as static JSON under{" "}
+                  <code className="text-xs bg-surface-3 px-1 py-0.5 rounded">public/data/cities/</code>.
+                  Coverage varies by city (typically 1–5 years of station history).
+                </p>
+              </div>
 
-        <section className="rounded-xl bg-surface-2 border border-surface-3 p-5 space-y-3">
-          <h2 className="text-lg font-semibold text-ink">Life-Years Context (AQLI-style)</h2>
-          <p className="text-sm text-ink-muted leading-relaxed">
-            Life-years comparisons are directional context values, intended to help users interpret
-            long-run burden across cities and seasons.
-          </p>
-          <p className="text-xs text-ink-muted">
-            Full source notes and expanded citations will continue evolving in Week 8.
-          </p>
-        </section>
+              <div>
+                <div className="text-sm font-semibold text-ink mb-1">WHO 2021 Air Quality Guidelines</div>
+                <p className="text-sm text-ink-muted leading-relaxed">
+                  Annual PM2.5 guideline: 5 µg/m³. This is the primary safety benchmark used across
+                  all visualizations. The 2021 revision tightened the previous 10 µg/m³ limit based on
+                  updated evidence for long-term cardiovascular and respiratory effects.
+                </p>
+              </div>
 
-        <footer className="text-[11px] text-ink-muted font-mono border-t border-surface-3 pt-6">
-          Transparency first: metric assumptions are shown in-page wherever values appear.
+              <div>
+                <div className="text-sm font-semibold text-ink mb-1">Berkeley Earth</div>
+                <p className="text-sm text-ink-muted leading-relaxed">
+                  Source for the cigarette equivalence conversion factor (22 µg/m³ PM2.5 ≈ 1
+                  cigarette/day). Based on population-level mortality risk comparison.
+                </p>
+              </div>
+
+              <div>
+                <div className="text-sm font-semibold text-ink mb-1">AQLI (Air Quality Life Index)</div>
+                <p className="text-sm text-ink-muted leading-relaxed">
+                  Framework from the Energy Policy Institute at the University of Chicago (EPIC).
+                  Used for life-expectancy impact calculations. Formula documented in the section below.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* PM2.5 bands */}
+          <section className="rounded-xl bg-surface-2 border border-surface-3 p-6 space-y-4 motion-card" data-reveal>
+            <h2 className="text-lg font-semibold text-ink">PM2.5 Safety Bands (WHO 2021)</h2>
+            <p className="text-sm text-ink-muted">
+              These five bands drive all colors across the calendar, map, and clock visualizations.
+            </p>
+
+            <div className="space-y-2">
+              {BANDS.map((b) => (
+                <div key={b.label} className="flex gap-3 rounded-lg bg-surface-3 p-3">
+                  <div
+                    className="w-1 rounded-full flex-shrink-0 self-stretch"
+                    style={{ background: b.color }}
+                  />
+                  <div className="min-w-0">
+                    <div className="flex flex-wrap items-baseline gap-x-2 mb-0.5">
+                      <span className="text-sm font-semibold" style={{ color: b.color }}>{b.label}</span>
+                      <span className="text-xs text-ink-muted font-mono">{b.range}</span>
+                    </div>
+                    <p className="text-xs text-ink-muted">{b.detail}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <p className="text-[11px] text-ink-muted">
+              The 15 µg/m³ good/moderate threshold is set at 3× the WHO annual guideline to reflect
+              realistic short-visit exposure rather than strict annual-average health thresholds.
+            </p>
+          </section>
+
+          {/* Cigarette equivalence */}
+          <section className="rounded-xl bg-surface-2 border border-surface-3 p-6 space-y-4 motion-card" data-reveal>
+            <h2 className="text-lg font-semibold text-ink">Cigarette Equivalence</h2>
+
+            <div className="rounded-lg bg-surface-3 border border-surface-3 p-4">
+              <div className="text-xs text-ink-muted font-mono mb-1">Conversion formula</div>
+              <div className="text-sm font-mono text-ink">
+                cigarettes/day = PM2.5 (µg/m³) ÷ 22
+              </div>
+            </div>
+
+            <p className="text-sm text-ink-muted leading-relaxed">
+              This conversion, popularized by Berkeley Earth, compares the long-run mortality risk
+              associated with ambient PM2.5 to the risk from active cigarette smoking. A person
+              breathing air at 22 µg/m³ for a full year faces a statistically similar mortality
+              burden increase as someone smoking one cigarette per day.
+            </p>
+
+            <div className="space-y-1.5">
+              <div className="text-sm font-semibold text-ink">Important caveats</div>
+              <ul className="space-y-1.5 text-xs text-ink-muted">
+                <li className="flex gap-2"><span className="text-yellow-400 flex-shrink-0">▸</span>
+                  Ambient PM2.5 and cigarette smoke have different chemical compositions. The comparison is a mortality-risk analogy, not a toxicological equivalence.
+                </li>
+                <li className="flex gap-2"><span className="text-yellow-400 flex-shrink-0">▸</span>
+                  Short-term visits incur far less cumulative exposure than a year-round resident. The displayed value assumes permanent residence.
+                </li>
+                <li className="flex gap-2"><span className="text-yellow-400 flex-shrink-0">▸</span>
+                  Indoor air quality (home filtration, time indoors) can significantly reduce personal exposure relative to the outdoor median shown here.
+                </li>
+                <li className="flex gap-2"><span className="text-yellow-400 flex-shrink-0">▸</span>
+                  This is a population-level statistical estimate. Individual health outcomes depend on age, pre-existing conditions, genetics, and activity level.
+                </li>
+              </ul>
+            </div>
+
+            <div className="rounded-lg bg-surface-3 border border-surface-3 p-4 space-y-2">
+              <div className="text-xs text-ink-muted font-mono mb-1">Mask-adjusted scenario</div>
+              <p className="text-sm text-ink-muted leading-relaxed">
+                The exposure calculator also supports an optional mask scenario: <strong className="text-ink">No mask</strong> remains the baseline, and users can switch to Surgical, KN95, or N95 to see an estimated range. This is a planning aid only, not a guarantee of protection.
+              </p>
+              <p className="text-[11px] text-ink-muted leading-relaxed">
+                Because fit, humidity, wear time, and activity level vary, the app shows a range rather than a single exact number.
+              </p>
+            </div>
+          </section>
+
+          {/* AQLI life years */}
+          <section className="rounded-xl bg-surface-2 border border-surface-3 p-6 space-y-4 motion-card" data-reveal>
+            <h2 className="text-lg font-semibold text-ink">Life-Expectancy Impact (AQLI)</h2>
+
+            <div className="rounded-lg bg-surface-3 border border-surface-3 p-4 space-y-2">
+              <div className="text-xs text-ink-muted font-mono mb-1">Formula used</div>
+              <div className="text-sm font-mono text-ink">
+                years lost = (PM2.5 − 5) × (0.98 ÷ 10)
+              </div>
+              <div className="text-xs text-ink-muted">
+                where 5 µg/m³ = WHO baseline, 0.98 yr = years lost per 10 µg/m³ above baseline
+              </div>
+            </div>
+
+            <p className="text-sm text-ink-muted leading-relaxed">
+              The AQLI framework translates PM2.5 exposure above the WHO baseline into estimated
+              reductions in life expectancy. The coefficient (0.98 years per 10 µg/m³) is derived
+              from epidemiological studies on long-term PM2.5 exposure and mortality.
+            </p>
+
+            <div className="space-y-2">
+              <div className="text-sm font-semibold text-ink">Comparison anchors used in charts</div>
+              <div className="rounded-lg overflow-hidden border border-surface-3">
+                <table className="w-full text-xs text-ink-muted">
+                  <thead>
+                    <tr className="bg-surface-3">
+                      <th className="text-left p-2.5 font-mono font-semibold text-ink">Risk</th>
+                      <th className="text-right p-2.5 font-mono font-semibold text-ink">Years lost</th>
+                      <th className="text-right p-2.5 font-mono font-semibold text-ink">Source</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-surface-3">
+                    {COMPARISON_ANCHORS.map((r) => (
+                      <tr key={r.risk} className="transition-colors duration-200 hover:bg-surface-3/65">
+                        <td className="p-2.5">{r.risk}</td>
+                        <td className="p-2.5 text-right font-mono">{r.yearsLost}</td>
+                        <td className="p-2.5 text-right">{r.source}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <p className="text-[11px] text-ink-muted">
+              These are population-level estimates. They describe the average statistical impact
+              on a large group, not a prediction for any individual. Always consult a healthcare
+              professional for personal health decisions.
+            </p>
+          </section>
+
+          {/* Lung Clock */}
+          <section className="rounded-xl bg-surface-2 border border-surface-3 p-6 space-y-4 motion-card" data-reveal>
+            <h2 className="text-lg font-semibold text-ink">Lung Clock — Hourly Patterns</h2>
+            <p className="text-sm text-ink-muted leading-relaxed">
+              The Lung Clock shows a &ldquo;typical day&rdquo; — the hourly median PM2.5 across the
+              most recent 7 days of available sensor data. It is a snapshot of recent patterns,
+              not a historical average. The daylight arc uses a solar declination model (Spencer 1971)
+              calculated from the city&apos;s coordinates and current date.
+            </p>
+            <ul className="space-y-1.5 text-xs text-ink-muted">
+              <li className="flex gap-2"><span className="text-ink-muted flex-shrink-0">▸</span>
+                Hours with no sensor data are shown as gray arcs.
+              </li>
+              <li className="flex gap-2"><span className="text-ink-muted flex-shrink-0">▸</span>
+                Activity safety dots (walk/cycle/jog) use the same WHO band thresholds as the calendar.
+              </li>
+              <li className="flex gap-2"><span className="text-ink-muted flex-shrink-0">▸</span>
+                Hourly data is unavailable for some cities due to sensor gaps. The calendar view
+                is available for all cities as it uses aggregated daily data.
+              </li>
+            </ul>
+          </section>
+
+          {/* Limitations */}
+          <section className="rounded-xl bg-surface-2 border border-surface-3 p-6 space-y-4 motion-card" data-reveal>
+            <h2 className="text-lg font-semibold text-ink">Known Limitations</h2>
+            <ul className="space-y-2 text-sm text-ink-muted">
+              <li className="flex gap-2">
+                <span className="text-red-400 flex-shrink-0 font-bold">!</span>
+                <span><strong className="text-ink">Single parameter:</strong> Only PM2.5 is tracked. NO₂, O₃, and CO₂ are not included, which may understate total air quality burden in some cities.</span>
+              </li>
+              <li className="flex gap-2">
+                <span className="text-red-400 flex-shrink-0 font-bold">!</span>
+                <span><strong className="text-ink">Station coverage:</strong> Data reflects sensors connected to OpenAQ. Cities with fewer or poorly distributed sensors may not capture intra-city variation.</span>
+              </li>
+              <li className="flex gap-2">
+                <span className="text-red-400 flex-shrink-0 font-bold">!</span>
+                <span><strong className="text-ink">Historical depth:</strong> Some cities have only 1–2 years of data. Seasonal patterns derived from limited years are less reliable than those from 5+ years.</span>
+              </li>
+              <li className="flex gap-2">
+                <span className="text-red-400 flex-shrink-0 font-bold">!</span>
+                <span><strong className="text-ink">Year-round assumption:</strong> Health metrics (cigarettes, years lost) assume permanent residence. Short-term visitors face proportionally lower exposure.</span>
+              </li>
+              <li className="flex gap-2">
+                <span className="text-red-400 flex-shrink-0 font-bold">!</span>
+                <span><strong className="text-ink">Not medical advice:</strong> Nothing on this site constitutes medical advice. Consult a healthcare professional before making health decisions based on air quality data.</span>
+              </li>
+            </ul>
+          </section>
+
+          {/* Credits */}
+          <section className="rounded-xl bg-surface-2 border border-surface-3 p-6 space-y-3 motion-card" data-reveal>
+            <h2 className="text-lg font-semibold text-ink">Credits</h2>
+            <div className="space-y-2 text-sm text-ink-muted">
+              <div className="flex justify-between transition-colors duration-200 hover:text-ink">
+                <span>Air quality data</span>
+                <span className="font-mono">OpenAQ (openaq.org)</span>
+              </div>
+              <div className="flex justify-between transition-colors duration-200 hover:text-ink">
+                <span>Health guidelines</span>
+                <span className="font-mono">WHO 2021 AQG</span>
+              </div>
+              <div className="flex justify-between transition-colors duration-200 hover:text-ink">
+                <span>Cigarette conversion</span>
+                <span className="font-mono">Berkeley Earth</span>
+              </div>
+              <div className="flex justify-between transition-colors duration-200 hover:text-ink">
+                <span>Life-years framework</span>
+                <span className="font-mono">EPIC / AQLI</span>
+              </div>
+              <div className="flex justify-between transition-colors duration-200 hover:text-ink">
+                <span>Solar model</span>
+                <span className="font-mono">Spencer (1971)</span>
+              </div>
+              <div className="flex justify-between transition-colors duration-200 hover:text-ink">
+                <span>Built with</span>
+                <span className="font-mono">Next.js 15, D3.js v7, Tailwind CSS</span>
+              </div>
+            </div>
+          </section>
+
+        </div>
+
+        {/* Footer */}
+        <footer className="mt-10 border-t border-surface-3 pt-6 text-[11px] text-ink-muted font-mono flex flex-col sm:flex-row justify-between gap-2" data-reveal>
+          <span>Breathe Before You Go · air quality travel intelligence</span>
+          <Link href="/" className="underline hover:text-ink">← Back to city overview</Link>
         </footer>
+
       </div>
     </main>
   );

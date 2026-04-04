@@ -22,6 +22,7 @@ import { EntryPointCards }    from "@/components/ui/EntryPointCards";
 import { CityGrid }           from "@/components/ui/CityGrid";
 import { AsiaBreathingMapClient } from "@/components/map/AsiaBreathingMapClient";
 import { ModeBadge } from "@/components/ui/ModeBadge";
+import { DeferredRender } from "@/components/ui/DeferredRender";
 
 export default function HomePage() {
   const index = getIndex();
@@ -30,7 +31,7 @@ export default function HomePage() {
     <main className="min-h-screen bg-[#0a0a0a]">
 
       {/* ── Hero ────────────────────────────────────────────────────────── */}
-      <section className="px-5 pt-16 pb-10 max-w-5xl mx-auto">
+      <section className="px-5 pt-16 pb-10 max-w-5xl mx-auto" data-reveal style={{ "--reveal-delay": "40ms" } as React.CSSProperties}>
 
         <div className="flex flex-wrap items-center gap-3 mb-6">
           <DataFreshnessBadge
@@ -59,12 +60,12 @@ export default function HomePage() {
       </section>
 
       {/* ── Dual entry points ────────────────────────────────────────────── */}
-      <section className="px-5 pb-10 max-w-5xl mx-auto">
+      <section className="px-5 pb-10 max-w-5xl mx-auto" data-reveal style={{ "--reveal-delay": "80ms" } as React.CSSProperties}>
         <EntryPointCards />
       </section>
 
       {/* ── Asia Breathing Map ───────────────────────────────────────────── */}
-      <section id="map" className="px-5 pb-14 max-w-5xl mx-auto">
+      <section id="map" className="px-5 pb-14 max-w-5xl mx-auto" data-reveal style={{ "--reveal-delay": "120ms" } as React.CSSProperties}>
         <div className="flex items-baseline gap-3 mb-5">
           <h2 className="text-xl font-semibold text-ink">
             Asia Breathing Map
@@ -74,16 +75,28 @@ export default function HomePage() {
           </span>
         </div>
 
-        <AsiaBreathingMapClient cities={index.cities} />
+        <DeferredRender
+          fallback={
+            <div
+              className="w-full rounded-xl bg-surface-2 flex items-center justify-center border border-surface-3"
+              style={{ height: "clamp(320px, 62vh, 500px)" }}
+              aria-live="polite"
+            >
+              <span className="text-sm text-ink-muted">Preparing map…</span>
+            </div>
+          }
+        >
+          <AsiaBreathingMapClient cities={index.cities} />
+        </DeferredRender>
       </section>
 
       {/* ── City grid ────────────────────────────────────────────────────── */}
-      <section className="px-5 pb-16 max-w-5xl mx-auto">
+      <section id="city-grid" className="px-5 pb-16 max-w-5xl mx-auto" data-reveal style={{ "--reveal-delay": "80ms" } as React.CSSProperties}>
         <CityGrid cities={index.cities} />
       </section>
 
       {/* ── Footer ───────────────────────────────────────────────────────── */}
-      <footer className="border-t border-surface-3 px-5 py-8 max-w-5xl mx-auto">
+      <footer className="border-t border-surface-3 px-5 py-8 max-w-5xl mx-auto" data-reveal>
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3
                         text-[11px] text-ink-muted font-mono">
           <div className="space-y-1">

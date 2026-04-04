@@ -166,6 +166,8 @@ export function LifeExpectancyChart({ context, cityName, peerCities }: Props) {
       const width = Math.max(xScale(row.years), 2);
       const color = row.isCity ? CITY_COLOR : row.isPeer ? PEER_COLOR : ANCHOR_COLOR;
       const labelColor = row.isCity ? "#f0f0f0" : row.isPeer ? "#707070" : "#909090";
+      const baseOpacity = row.isCity ? 1 : row.isPeer ? 0.6 : 0.75;
+      const hoverOpacity = row.isCity ? 1 : Math.min(baseOpacity + 0.2, 0.95);
 
       // ── Bar background track ──
       g.append("rect")
@@ -175,12 +177,14 @@ export function LifeExpectancyChart({ context, cityName, peerCities }: Props) {
         .attr("fill", "#1a1a1a");
 
       // ── Animated bar fill ──
-      g.append("rect")
+      const fillBar = g.append("rect")
         .attr("x", 0).attr("y", y)
         .attr("width", 0).attr("height", BAR_H)
         .attr("rx", 4)
         .attr("fill", color)
-        .attr("opacity", row.isCity ? 1 : row.isPeer ? 0.6 : 0.75)
+        .attr("opacity", baseOpacity);
+
+      fillBar
         .transition()
         .duration(500)
         .delay(i * 35)
@@ -192,7 +196,7 @@ export function LifeExpectancyChart({ context, cityName, peerCities }: Props) {
         ? row.label.slice(0, maxChars - 1) + "…"
         : row.label;
 
-      g.append("text")
+      const leftLabel = g.append("text")
         .attr("x", -10)
         .attr("y", y + BAR_H / 2)
         .attr("text-anchor", "end")
@@ -203,7 +207,7 @@ export function LifeExpectancyChart({ context, cityName, peerCities }: Props) {
         .text(labelText);
 
       // ── Value label (right of bar) ──
-      g.append("text")
+      const valueLabel = g.append("text")
         .attr("x", width + 6)
         .attr("y", y + BAR_H / 2)
         .attr("dominant-baseline", "central")
@@ -212,6 +216,25 @@ export function LifeExpectancyChart({ context, cityName, peerCities }: Props) {
         .attr("font-weight", row.isCity ? "600" : "400")
         .attr("fill", row.isCity ? "#f0f0f0" : "#606060")
         .text(`${row.years.toFixed(1)} yr`);
+
+      // Hover hit area for subtle emphasis and readability boost.
+      g.append("rect")
+        .attr("x", -LABEL_W + 8)
+        .attr("y", y)
+        .attr("width", LABEL_W + barW)
+        .attr("height", BAR_H)
+        .attr("fill", "transparent")
+        .style("cursor", "default")
+        .on("mouseenter", () => {
+          fillBar.attr("opacity", hoverOpacity);
+          leftLabel.attr("fill", row.isCity ? "#ffffff" : "#cfcfcf");
+          valueLabel.attr("fill", "#f0f0f0");
+        })
+        .on("mouseleave", () => {
+          fillBar.attr("opacity", baseOpacity);
+          leftLabel.attr("fill", labelColor);
+          valueLabel.attr("fill", row.isCity ? "#f0f0f0" : "#606060");
+        });
     });
 
     // ── X axis ───────────────────────────────────────────────────────────

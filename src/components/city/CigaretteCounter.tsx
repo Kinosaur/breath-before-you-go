@@ -219,7 +219,7 @@ function TripCalculator({
                     <span className="w-24 text-ink-muted tabular-nums text-right">
                       {cigs.toFixed(1)} cigs · {count}d
                     </span>
-                    <span className="hidden sm:inline text-[10px] text-ink-faint opacity-0 transition-opacity duration-150 group-hover:opacity-100">
+                    <span className="block text-[10px] text-ink-faint touch-tooltip transition-all duration-150">
                       {pm25.toFixed(1)} µg/m³
                     </span>
                   </div>

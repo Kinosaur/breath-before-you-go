@@ -187,11 +187,19 @@ export function BreathingCalendar({ heatmap }: Props) {
           .attr("data-cellkey", key)   // used by pin-highlight effect below
           .attr("stroke", "none")
           .attr("stroke-width", 0)
+          .style("transform-box", "fill-box")
+          .style("transform-origin", "center")
+          .style("transition", "opacity 140ms ease, transform 140ms ease, filter 160ms ease, stroke 140ms ease")
           .style("cursor", isValid && entry ? "pointer" : "default")
           .on("pointerenter", function (event: PointerEvent) {
             if (!isValid || !entry) return;
             if (pinnedCellKeyRef.current) return;
-            d3.select(this).attr("opacity", 0.7);
+            d3.select(this)
+              .attr("opacity", 0.9)
+              .attr("stroke", "rgba(245,245,245,0.45)")
+              .attr("stroke-width", 0.9)
+              .style("filter", "drop-shadow(0 0 3px rgba(255,255,255,0.18))")
+              .style("transform", "scale(1.06)");
             showTooltip(event, m, d, entry);
           })
           .on("pointermove", function (event: PointerEvent) {
@@ -201,7 +209,12 @@ export function BreathingCalendar({ heatmap }: Props) {
           })
           .on("pointerleave", function () {
             if (pinnedCellKeyRef.current) return;
-            d3.select(this).attr("opacity", isValid ? 1 : 0.15);
+            d3.select(this)
+              .attr("opacity", isValid ? 1 : 0.15)
+              .attr("stroke", "none")
+              .attr("stroke-width", 0)
+              .style("filter", "none")
+              .style("transform", "scale(1)");
             setTooltip((t) => ({ ...t, visible: false }));
           })
           .on("click", function (event: MouseEvent) {
