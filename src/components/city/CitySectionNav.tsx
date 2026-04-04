@@ -64,10 +64,8 @@ export function CitySectionNav({ items }: Props) {
             aria-label={`Jump to ${label} section`}
             aria-current={isActive ? "location" : undefined}
             className={[
-              "px-2.5 py-1.5 min-h-8 rounded-full text-[11px] font-mono border transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink-faint focus-visible:ring-offset-2 focus-visible:ring-offset-surface",
-              isActive
-                ? "bg-ink text-surface border-ink shadow-[0_0_0_1px_rgba(245,245,245,0.3)]"
-                : "bg-surface-2 border-surface-3 text-ink-muted hover:text-ink hover:bg-surface-3",
+              "control-chip text-[11px] font-mono focus-visible:ring-2 focus-visible:ring-accent-clean focus-visible:ring-offset-2 focus-visible:ring-offset-surface",
+              isActive ? "control-chip-active" : "",
             ].join(" ")}
           >
             {label}

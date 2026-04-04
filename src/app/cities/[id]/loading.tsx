@@ -1,6 +1,6 @@
 export default function CityLoading() {
   return (
-    <main className="min-h-screen bg-[#0a0a0a] px-5 pt-16 pb-10">
+    <main className="min-h-screen bg-[#080B12] px-5 pt-16 pb-10">
       <div className="mx-auto max-w-5xl">
         <div className="mb-3 h-4 w-24 animate-pulse rounded bg-surface-3" aria-hidden="true" />
         <div className="mb-2 h-12 w-64 animate-pulse rounded bg-surface-2" aria-hidden="true" />

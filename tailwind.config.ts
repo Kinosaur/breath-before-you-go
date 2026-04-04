@@ -19,17 +19,21 @@ const config: Config = {
           hazardous: "#9C27B0",  // 100+
           unknown:   "#9E9E9E",
         },
-        // ── Dark theme surfaces ───────────────────────────────────────────
+        // ── Dark theme surfaces (blue-cool tint, matches #080B12 base) ───
         surface: {
-          DEFAULT: "#141414",
-          2:       "#1e1e1e",
-          3:       "#2a2a2a",
+          DEFAULT: "#111519",  // barely-blue lift off background
+          2:       "#181D26",  // main card surface
+          3:       "#222A38",  // inner surface / input backgrounds
         },
         // ── Text hierarchy ────────────────────────────────────────────────
         ink: {
           DEFAULT: "#f5f5f5",
-          muted:   "#9e9e9e",
+          muted:   "#9AA3B0",
           faint:   "#5a5a5a",
+        },
+        // ── Interactive accent (mission-aligned) ────────────────────────────
+        accent: {
+          clean: "#4ADE80",  // WHO green: signals clear air target
         },
       },
       fontFamily: {

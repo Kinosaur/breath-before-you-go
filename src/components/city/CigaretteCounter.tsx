@@ -301,12 +301,8 @@ export function CigaretteCounter({ profile }: Props) {
               aria-label={`${MASK_SCENARIOS[key].label} mask scenario`}
               onClick={() => setMask(key)}
               onKeyDown={(e) => onMaskKeyDown(key, e.key)}
-              className={`px-3 py-1.5 rounded-full text-xs border transition-all duration-200
-                focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink-faint focus-visible:ring-offset-2 focus-visible:ring-offset-surface-2
-                active:scale-[0.98] ${
-                mask === key
-                  ? "bg-ink text-surface border-ink shadow-sm"
-                  : "bg-surface-3 text-ink-muted border-surface-3 hover:text-ink hover:border-ink-faint/70 hover:bg-surface"
+              className={`control-chip text-xs focus-visible:ring-2 focus-visible:ring-accent-clean focus-visible:ring-offset-2 focus-visible:ring-offset-surface-2 active:scale-[0.98] ${
+                mask === key ? "control-chip-active" : ""
               }`}
             >
               {MASK_SCENARIOS[key].label}
@@ -328,10 +324,8 @@ export function CigaretteCounter({ profile }: Props) {
                 return next;
               });
             }}
-            className={`px-3 py-1.5 rounded-full text-xs border transition-colors ${
-              isSmokerMode
-                ? "bg-ink text-surface border-ink"
-                : "bg-surface-3 text-ink-muted border-surface-3 hover:text-ink hover:border-ink-faint/70 hover:bg-surface"
+            className={`control-chip text-xs focus-visible:ring-2 focus-visible:ring-accent-clean focus-visible:ring-offset-2 focus-visible:ring-offset-surface-2 ${
+              isSmokerMode ? "control-chip-active" : ""
             }`}
             aria-pressed={isSmokerMode}
             aria-label="Toggle smoking-aware mode"

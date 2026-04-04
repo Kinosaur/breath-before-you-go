@@ -28,7 +28,7 @@ export default function HomePage() {
   const index = getIndex();
 
   return (
-    <main className="min-h-screen bg-[#0a0a0a]">
+    <main className="min-h-screen bg-[#080B12]">
 
       {/* ── Hero ────────────────────────────────────────────────────────── */}
       <section className="px-5 pt-16 pb-10 max-w-5xl mx-auto">

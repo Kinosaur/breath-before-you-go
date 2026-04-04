@@ -9,7 +9,7 @@ interface Props {
 
 export default function RootError({ error, reset }: Props) {
   return (
-    <main className="min-h-screen bg-[#0a0a0a] px-5 pt-20 pb-10">
+    <main className="min-h-screen bg-[#080B12] px-5 pt-20 pb-10">
       <div className="mx-auto max-w-3xl rounded-xl border border-surface-3 bg-surface-2 p-6">
         <h1 className="text-2xl font-semibold text-ink">Something went wrong</h1>
         <p className="mt-3 text-sm leading-relaxed text-ink-muted">

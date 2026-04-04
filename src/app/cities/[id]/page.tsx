@@ -165,7 +165,7 @@ export default async function CityPage({ params }: Props) {
   ];
 
   return (
-    <main className="reading-surface min-h-screen bg-[#0a0a0a]">
+    <main className="reading-surface min-h-screen bg-[#080B12]">
       <CityReadingProgress sectionIds={sectionIds} />
       <HeavyBlockCoordinator />
 
@@ -184,7 +184,7 @@ export default async function CityPage({ params }: Props) {
         <div className="pt-8 pb-4">
           <Link
             href="/"
-            className="text-sm text-ink-muted font-mono hover:text-ink transition-colors"
+            className="link-underline-reveal text-sm text-ink-muted font-mono transition-colors hover:text-ink"
             aria-label="Back to all cities"
           >
             ← All cities
@@ -263,10 +263,10 @@ export default async function CityPage({ params }: Props) {
             </div>
 
             <div className="mt-3 flex flex-wrap gap-2 text-sm">
-              <a href="#calendar" className="px-2.5 py-1.5 rounded-full border border-surface-3 bg-surface-3 text-ink-muted hover:text-ink hover:bg-surface transition-colors">
+              <a href="#calendar" className="control-chip text-[11px]">
                 Check seasonal calendar
               </a>
-              <a href="#clock" className="px-2.5 py-1.5 rounded-full border border-surface-3 bg-surface-3 text-ink-muted hover:text-ink hover:bg-surface transition-colors">
+              <a href="#clock" className="control-chip text-[11px]">
                 Check hourly clock
               </a>
             </div>

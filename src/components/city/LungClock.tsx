@@ -478,7 +478,10 @@ function ActivitySelector({
         Activity safety filter
       </div>
       <div className="flex flex-wrap gap-2" role="radiogroup" aria-label="Activity filter">
-        {(["none", "walk", "cycle", "jog"] as Activity[]).map((opt) => (
+        {(["none", "walk", "cycle", "jog"] as Activity[]).map((opt) => {
+          const isActive = activity === opt;
+
+          return (
           <button
             key={opt}
             type="button"
@@ -486,20 +489,21 @@ function ActivitySelector({
             aria-checked={activity === opt}
             onClick={() => onChange(opt)}
             className={[
-              "px-3 py-1 rounded-full text-xs border transition-all duration-200",
-              activity === opt
-                ? "bg-ink text-[#0a0a0a] border-ink font-semibold"
+              "inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs border transition-all duration-200",
+              isActive
+                ? "bg-ink text-[#080B12] border-ink font-semibold"
                 : "bg-surface-3 text-ink-muted border-surface-3 hover:text-ink hover:border-ink-faint/50",
             ].join(" ")}
           >
             {opt === "none" ? "All hours" : ACTIVITY_LABELS[opt]}
             {opt !== "none" && (
-              <span className="ml-1.5 text-ink-muted text-[10px]">
+              <span className={isActive ? "text-[#080B12]/80 text-[10px]" : "text-ink-muted text-[10px]"}>
                 {"≤ "}{EXERCISE_THRESHOLDS[opt as Exclude<Activity, "none">]} µg
               </span>
             )}
           </button>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

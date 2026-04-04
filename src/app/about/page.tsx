@@ -35,7 +35,7 @@ const SECTION_LINKS = [
 
 export default function AboutPage() {
   return (
-    <main className="reading-surface min-h-screen bg-[#0a0a0a] px-5 py-10">
+    <main className="reading-surface min-h-screen bg-[#080B12] px-5 py-10">
       <div className="max-w-4xl mx-auto">
 
         {/* Back nav */}

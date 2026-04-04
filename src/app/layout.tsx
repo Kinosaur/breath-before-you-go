@@ -59,7 +59,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0a0a0a",
+  themeColor: "#080B12",
   colorScheme: "dark",
 };
 
@@ -73,7 +73,7 @@ export default function RootLayout({
           ${geistSans.variable} ${geistMono.variable}
           ${instrumentSans.variable} ${newsreader.variable}
           font-sans antialiased
-          bg-[#0a0a0a] text-[#f5f5f5]
+          bg-[#080B12] text-[#f5f5f5]
           min-h-screen
         `}
       >
