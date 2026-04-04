@@ -82,52 +82,52 @@ export function HealthMetricsPanel({ profile }: Props) {
 
       {/* ── Annual PM2.5 ── */}
       <div className="motion-card rounded-xl bg-surface-2 border border-surface-3 p-5 hover:border-ink-faint/45">
-        <div className="text-xs text-ink-faint font-mono mb-1">Annual median PM2.5</div>
+        <div className="text-sm text-ink-faint font-mono mb-1">Annual median PM2.5</div>
         <div className="flex items-baseline gap-3 mb-2">
           <span className="text-3xl font-bold text-ink tabular-nums">
             {hm.annualMedianPm25.toFixed(1)}
           </span>
-          <span className="text-sm text-ink-muted">µg/m³</span>
+          <span className="text-base text-ink-muted">µg/m³</span>
           <BandBadge pm25={hm.annualMedianPm25} />
         </div>
-        <div className="text-xs text-ink-faint">
+        <div className="text-sm text-ink-faint">
           WHO 2021 guideline: 5 µg/m³ annual mean
         </div>
 
         {/* AQI distribution bar */}
         <div className="mt-4">
-          <div className="text-xs text-ink-faint mb-1">Days by air quality band</div>
+          <div className="text-sm text-ink-faint mb-1">Days by air quality band</div>
           <AqiBar dist={hm.aqiDistribution} />
         </div>
       </div>
 
       {/* ── Cigarette equivalence ── */}
       <div className="motion-card rounded-xl bg-surface-2 border border-surface-3 p-5 hover:border-ink-faint/45">
-        <div className="text-xs text-ink-faint font-mono mb-1">Cigarette equivalence</div>
+        <div className="text-sm text-ink-faint font-mono mb-1">Cigarette equivalence</div>
         <div className="flex items-baseline gap-2 mb-1">
           <span className="text-3xl font-bold text-ink tabular-nums">
             {hm.cigarettesPerDay.toFixed(2)}
           </span>
-          <span className="text-sm text-ink-muted">cigs / day</span>
+          <span className="text-base text-ink-muted">cigs / day</span>
         </div>
-        <div className="text-xs text-ink-muted leading-relaxed">
+        <div className="text-sm text-ink-muted leading-relaxed">
           Breathing this air year-round is estimated equivalent to smoking{" "}
           <strong className="text-ink">{hm.cigarettesPerDay.toFixed(1)}</strong> cigarettes
           daily.
         </div>
-        <p className="mt-3 text-[10px] text-ink-faint leading-relaxed border-t border-surface-3 pt-3">
+        <p className="mt-3 text-xs text-ink-faint leading-relaxed border-t border-surface-3 pt-3">
           {hm.cigMethodologyNote}
         </p>
       </div>
 
       {/* ── Life expectancy ── */}
       <div className="motion-card rounded-xl bg-surface-2 border border-surface-3 p-5 hover:border-ink-faint/45">
-        <div className="text-xs text-ink-faint font-mono mb-1">Estimated life years at risk</div>
+        <div className="text-sm text-ink-faint font-mono mb-1">Estimated life years at risk</div>
         <div className="flex items-baseline gap-2 mb-3">
           <span className="text-3xl font-bold text-ink tabular-nums">
             {hm.yearsLost.toFixed(1)}
           </span>
-          <span className="text-sm text-ink-muted">years</span>
+          <span className="text-base text-ink-muted">years</span>
         </div>
 
         {/* Comparison anchors */}
@@ -140,7 +140,7 @@ export function HealthMetricsPanel({ profile }: Props) {
             const display  = anchorLabel(anchor.label, profile.cityName);
             return (
               <div key={anchor.label}>
-                <div className="flex justify-between text-xs mb-0.5">
+                <div className="flex justify-between text-sm mb-0.5">
                   <span className={isCity ? "text-ink font-semibold" : "text-ink-muted"}>
                     {display}
                   </span>
@@ -161,23 +161,23 @@ export function HealthMetricsPanel({ profile }: Props) {
             );
           })}
         </div>
-        <p className="mt-3 text-[10px] text-ink-faint leading-relaxed border-t border-surface-3 pt-3">
+        <p className="mt-3 text-xs text-ink-faint leading-relaxed border-t border-surface-3 pt-3">
           {hm.aqliMethodologyNote}
         </p>
       </div>
 
       {/* ── Best / Worst months ── */}
       <div className="motion-card rounded-xl bg-surface-2 border border-surface-3 p-5 hover:border-ink-faint/45">
-        <div className="text-xs text-ink-faint font-mono mb-3">Seasonal range</div>
+        <div className="text-sm text-ink-faint font-mono mb-3">Seasonal range</div>
 
         <div className="space-y-4">
           <div>
-            <div className="text-xs text-ink-faint mb-1">Best month (lowest PM2.5)</div>
+            <div className="text-sm text-ink-faint mb-1">Best month (lowest PM2.5)</div>
             <div className="flex items-center gap-2">
-              <span className="text-base font-bold text-ink">{hm.bestMonthName}</span>
+              <span className="text-lg font-bold text-ink">{hm.bestMonthName}</span>
               {hm.bestMonthMedian != null && (
                 <>
-                  <span className="text-sm text-ink-muted tabular-nums">
+                  <span className="text-base text-ink-muted tabular-nums">
                     {hm.bestMonthMedian.toFixed(1)} µg/m³
                   </span>
                   <BandBadge pm25={hm.bestMonthMedian} />
@@ -187,12 +187,12 @@ export function HealthMetricsPanel({ profile }: Props) {
           </div>
 
           <div>
-            <div className="text-xs text-ink-faint mb-1">Worst month (highest PM2.5)</div>
+            <div className="text-sm text-ink-faint mb-1">Worst month (highest PM2.5)</div>
             <div className="flex items-center gap-2">
-              <span className="text-base font-bold text-ink">{hm.worstMonthName}</span>
+              <span className="text-lg font-bold text-ink">{hm.worstMonthName}</span>
               {hm.worstMonthMedian != null && (
                 <>
-                  <span className="text-sm text-ink-muted tabular-nums">
+                  <span className="text-base text-ink-muted tabular-nums">
                     {hm.worstMonthMedian.toFixed(1)} µg/m³
                   </span>
                   <BandBadge pm25={hm.worstMonthMedian} />
@@ -203,10 +203,10 @@ export function HealthMetricsPanel({ profile }: Props) {
 
           {hm.bestVisitMonthName && (
             <div className="pt-3 border-t border-surface-3">
-              <div className="text-xs text-ink-faint mb-1">Best month to visit</div>
+              <div className="text-sm text-ink-faint mb-1">Best month to visit</div>
               <div className="flex items-center gap-2">
-                <span className="text-base font-bold text-aqi-good">{hm.bestVisitMonthName}</span>
-                <span className="text-xs text-ink-faint">lowest median + lowest variance</span>
+                <span className="text-lg font-bold text-aqi-good">{hm.bestVisitMonthName}</span>
+                <span className="text-sm text-ink-faint">lowest median + lowest variance</span>
               </div>
             </div>
           )}

@@ -114,6 +114,33 @@
     animation: glow-line 4.2s ease-in-out infinite;
   }
 
+  .link-underline-reveal {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    line-height: 1.25;
+  }
+
+  .link-underline-reveal::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.2rem;
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left center;
+    opacity: 0;
+    transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1), opacity 180ms ease;
+  }
+
+  .link-underline-reveal:hover::after,
+  .link-underline-reveal:focus-visible::after {
+    transform: scaleX(1);
+    opacity: 0.85;
+  }
+
   .motion-heavy-block {
     opacity: 0.86;
     transform: translateY(10px) scale(0.995);
@@ -168,6 +195,10 @@
     box-shadow: none !important;
   }
 
+  .link-underline-reveal::after {
+    transition: none !important;
+  }
+
   .motion-heavy-block,
   .motion-heavy-block.is-heavy-visible {
     transition: none !important;
@@ -206,6 +237,15 @@
 
 /* ── Smart cursor (desktop only, accessibility-safe) ─────────────────── */
 @media (hover: hover) and (pointer: fine) {
+  .reading-surface :is(p, li, td, span).text-ink-muted {
+    transition: color 180ms ease, text-shadow 180ms ease;
+  }
+
+  .reading-surface:hover :is(p, li, td, span).text-ink-muted {
+    color: rgba(245, 245, 245, 0.92);
+    text-shadow: 0 0 0.45px rgba(245, 245, 245, 0.45);
+  }
+
   .cursor-enhanced,
   .cursor-enhanced a,
   .cursor-enhanced button,

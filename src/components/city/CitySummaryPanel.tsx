@@ -63,9 +63,9 @@ export function CitySummaryPanel({ profile }: Props) {
             background:  worstM ? `${getBandColor(classifyBand(worstM.p50 ?? 0))}08` : undefined,
           }}
         >
-          <div className="text-[10px] font-mono text-ink-muted uppercase tracking-widest mb-1">Worst month</div>
+          <div className="text-xs font-mono text-ink-muted uppercase tracking-widest mb-1">Worst month</div>
           <div
-            className="text-2xl font-bold"
+            className="font-editorial text-3xl font-bold"
             style={{
               color: worstM ? getBandColor(classifyBand(worstM.p50 ?? 0)) : undefined,
               fontVariantNumeric: "tabular-nums",
@@ -73,7 +73,7 @@ export function CitySummaryPanel({ profile }: Props) {
           >
             {healthMetrics.worstMonthName}
           </div>
-          <div className="text-xs text-ink-muted mt-1">
+          <div className="text-sm text-ink-muted mt-1">
             {worstM ? `${(worstM.p50 ?? 0).toFixed(1)} µg/m³ · ${(worstM.cigarettesPerDay ?? 0).toFixed(1)} cigs/day` : ""}
           </div>
         </div>
@@ -85,9 +85,9 @@ export function CitySummaryPanel({ profile }: Props) {
             background:  bestM ? `${getBandColor(classifyBand(bestM.p50 ?? 0))}08` : undefined,
           }}
         >
-          <div className="text-[10px] font-mono text-ink-muted uppercase tracking-widest mb-1">Best month</div>
+          <div className="text-xs font-mono text-ink-muted uppercase tracking-widest mb-1">Best month</div>
           <div
-            className="text-2xl font-bold"
+            className="font-editorial text-3xl font-bold"
             style={{
               color: bestM ? getBandColor(classifyBand(bestM.p50 ?? 0)) : undefined,
               fontVariantNumeric: "tabular-nums",
@@ -95,7 +95,7 @@ export function CitySummaryPanel({ profile }: Props) {
           >
             {healthMetrics.bestMonthName}
           </div>
-          <div className="text-xs text-ink-muted mt-1">
+          <div className="text-sm text-ink-muted mt-1">
             {bestM ? `${(bestM.p50 ?? 0).toFixed(1)} µg/m³ · ${(bestM.cigarettesPerDay ?? 0).toFixed(1)} cigs/day` : ""}
           </div>
         </div>
@@ -104,14 +104,14 @@ export function CitySummaryPanel({ profile }: Props) {
       {/* ── Narrative text ────────────────────────────────────────────── */}
       <div className="prose prose-sm prose-invert max-w-none">
         {paragraphs.map((para, i) => (
-          <p key={i} className="text-sm text-ink-muted leading-relaxed mb-4 last:mb-0">
+          <p key={i} className="text-base text-ink-muted leading-relaxed mb-4 last:mb-0">
             {para}
           </p>
         ))}
       </div>
 
       {/* ── Source note ───────────────────────────────────────────────── */}
-      <p className="mt-6 text-[10px] text-ink-muted font-mono border-t border-surface-3 pt-4">
+      <p className="mt-6 text-xs text-ink-muted font-mono border-t border-surface-3 pt-4">
         Data: OpenAQ API v3 · WHO 2021 AQI Guidelines · Berkeley Earth ·{" "}
         <a href="/about" className="underline hover:text-ink">Methodology →</a>
       </p>
@@ -134,14 +134,14 @@ function Stat({
 }) {
   return (
     <div className="rounded-lg bg-surface-3 p-3">
-      <div className="text-[10px] text-ink-muted font-mono mb-1">{label}</div>
+      <div className="text-xs text-ink-muted font-mono mb-1">{label}</div>
       <div
-        className="text-sm font-bold leading-tight"
+        className="text-base font-bold leading-tight"
         style={{ color: color ?? "var(--color-ink)", fontVariantNumeric: "tabular-nums" }}
       >
         {value}
       </div>
-      {sub && <div className="text-[9px] text-ink-muted mt-0.5">{sub}</div>}
+      {sub && <div className="text-xs text-ink-muted mt-0.5">{sub}</div>}
     </div>
   );
 }

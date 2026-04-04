@@ -19,6 +19,7 @@ function GitHubIcon() {
 export function CornerActions({ githubHref = "https://github.com/Kinosaur/breath-before-you-go" }: Props) {
   const pathname = usePathname();
   const [hideMethodology, setHideMethodology] = useState(false);
+  const isMethodologyPage = pathname.startsWith("/about");
 
   useEffect(() => {
     if (pathname !== "/") {
@@ -41,24 +42,26 @@ export function CornerActions({ githubHref = "https://github.com/Kinosaur/breath
   }, [pathname]);
 
   return (
-    <div className="fixed right-4 top-4 z-40 flex items-center gap-2 text-[11px] font-mono">
-      <Link
-        href="/about"
-        className={`rounded-full border border-surface-3 bg-surface-2/90 px-3 py-1.5 min-h-8 text-ink-muted backdrop-blur-sm transition-all duration-300 hover:border-ink-faint/60 hover:text-ink hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink-faint focus-visible:ring-offset-2 focus-visible:ring-offset-surface ${hideMethodology ? "pointer-events-none translate-y-1 opacity-0" : "opacity-100"}`}
-        aria-label="Open methodology page"
-      >
-        Methodology
-      </Link>
+    <div className="fixed right-6 top-6 z-40 flex items-center gap-2.5 sm:right-7 sm:top-6 sm:gap-4 text-xs font-mono backdrop-blur-sm">
+      {!isMethodologyPage && (
+        <Link
+          href="/about"
+          className={`link-underline-reveal inline-flex rounded-full border border-surface-3 bg-surface-2/90 px-2.5 py-1 text-[11px] text-ink-muted transition-all duration-300 hover:border-ink-faint/60 hover:text-ink sm:rounded-none sm:border-0 sm:bg-transparent sm:px-0 sm:py-0 sm:text-xs ${hideMethodology ? "pointer-events-none translate-y-1 opacity-0" : "pointer-events-auto translate-y-0 opacity-100"}`}
+          aria-label="Open methodology page"
+        >
+          Methodology
+        </Link>
+      )}
       <a
         href={githubHref}
         target="_blank"
         rel="noreferrer"
-        className="inline-flex items-center gap-1.5 rounded-full border border-surface-3 bg-surface-2/90 px-2.5 py-1.5 min-h-8 text-ink-muted backdrop-blur-sm transition-all duration-200 hover:border-ink-faint/60 hover:text-ink hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink-faint focus-visible:ring-offset-2 focus-visible:ring-offset-surface"
+        className="link-underline-reveal inline-flex items-center gap-1 rounded-full border border-surface-3 bg-surface-2/90 px-2.5 py-1 text-[11px] text-ink-muted transition-all duration-300 hover:border-ink-faint/60 hover:text-ink sm:gap-1.5 sm:rounded-none sm:border-0 sm:bg-transparent sm:px-0 sm:py-0 sm:text-xs"
         aria-label="Open GitHub repository"
         title="GitHub repository"
       >
         <GitHubIcon />
-        <span className="hidden sm:inline">GitHub</span>
+        <span>GitHub</span>
       </a>
     </div>
   );

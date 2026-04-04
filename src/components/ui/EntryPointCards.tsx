@@ -59,19 +59,19 @@ export function EntryPointCards() {
             {card.icon}
           </div>
 
-          <h2 className={`text-lg font-semibold mb-2 transition-colors ${card.accentClass}`}>
+          <h2 className={`font-editorial text-xl font-semibold mb-2 transition-colors ${card.accentClass}`}>
             {card.title}
           </h2>
 
-          <p className="text-sm text-ink-muted leading-relaxed mb-4">
+          <p className="text-base text-ink-muted leading-relaxed mb-4">
             {card.description}
           </p>
 
-          <p className="text-[11px] font-mono text-ink-faint">
+          <p className="text-sm font-mono text-ink-faint">
             {card.detail}
           </p>
 
-          <div className={`mt-4 text-xs font-medium transition-all duration-200 ${card.accentClass} text-ink-faint group-hover:translate-x-0.5`}>
+          <div className={`mt-4 text-sm font-medium transition-all duration-200 ${card.accentClass} text-ink-faint group-hover:translate-x-0.5`}>
             Get started →
           </div>
         </Link>

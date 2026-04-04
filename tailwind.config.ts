@@ -34,6 +34,8 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-geist-sans)", "system-ui", "sans-serif"],
+        ui: ["var(--font-instrument-sans)", "system-ui", "sans-serif"],
+        editorial: ["var(--font-newsreader)", "Georgia", "serif"],
         mono: ["var(--font-geist-mono)", "monospace"],
       },
     },

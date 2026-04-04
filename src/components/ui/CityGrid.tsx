@@ -25,8 +25,8 @@ export function CityGrid({ cities }: Props) {
   return (
     <section>
       <div className="flex items-baseline gap-3 mb-5">
-        <h2 className="text-xl font-semibold text-ink">15 Cities</h2>
-        <span className="text-sm text-ink-muted">sorted by tier · click to explore</span>
+        <h2 className="font-editorial text-2xl font-semibold text-ink">15 Cities</h2>
+        <span className="text-base text-ink-muted">sorted by tier · click to explore</span>
       </div>
 
       {/* Tier legend */}
@@ -71,10 +71,10 @@ export function CityGrid({ cities }: Props) {
               </div>
 
               {/* City name + country */}
-              <div className="font-semibold text-sm text-ink leading-tight mb-0.5">
+              <div className="font-semibold text-base text-ink leading-tight mb-0.5">
                 {city.name}
               </div>
-              <div className="text-[11px] text-ink-muted mb-3">
+              <div className="text-sm text-ink-muted mb-3">
                 {city.country}
               </div>
 
@@ -85,7 +85,7 @@ export function CityGrid({ cities }: Props) {
               >
                 {city.annualMedianPm25}
               </div>
-              <div className="text-[10px] text-ink-muted mt-0.5 mb-3">
+              <div className="text-xs text-ink-muted mt-0.5 mb-3">
                 µg/m³ annual median
               </div>
 
@@ -109,7 +109,7 @@ export function CityGrid({ cities }: Props) {
       </div>
 
       {/* Attribution */}
-      <p className="mt-4 text-[11px] text-ink-muted">
+      <p className="mt-4 text-sm text-ink-muted">
         Source: OpenAQ API v3 · WHO 2021 PM2.5 guidelines ·{" "}
         <span className="font-mono">5-year historical daily data</span>
       </p>

@@ -43,7 +43,7 @@ export default function HomePage() {
           </Suspense>
         </div>
 
-        <h1 className="text-4xl sm:text-5xl font-bold text-ink leading-tight mb-3">
+        <h1 className="font-editorial text-4xl sm:text-5xl font-bold text-ink leading-tight mb-3">
           Breathe Before You Go
         </h1>
 
@@ -51,7 +51,7 @@ export default function HomePage() {
           Air pollution awareness with practical travel decisions across Asia.
         </p>
 
-        <p className="text-sm text-ink-muted max-w-2xl leading-relaxed">
+        <p className="text-base text-ink-muted max-w-2xl leading-relaxed">
           Explore five years of air quality data across {index.cityCount} Asian cities and make clearer choices:
           when to visit, which months to avoid, and which hours are typically safer for outdoor activity.
         </p>
@@ -65,10 +65,10 @@ export default function HomePage() {
       {/* ── Asia Breathing Map ───────────────────────────────────────────── */}
       <section id="map" className="px-5 pb-14 max-w-5xl mx-auto">
         <div className="flex items-baseline gap-3 mb-5">
-          <h2 className="text-xl font-semibold text-ink">
+          <h2 className="font-editorial text-2xl font-semibold text-ink">
             Asia Breathing Map
           </h2>
-          <span className="text-sm text-ink-muted hidden sm:inline">
+          <span className="text-base text-ink-muted hidden sm:inline">
             — drag the month slider to change marker colors
           </span>
         </div>
@@ -80,7 +80,7 @@ export default function HomePage() {
               style={{ height: "clamp(320px, 62vh, 500px)" }}
               aria-live="polite"
             >
-              <span className="text-sm text-ink-muted">Preparing map…</span>
+              <span className="text-base text-ink-muted">Preparing map…</span>
             </div>
           }
         >
@@ -104,7 +104,7 @@ export default function HomePage() {
                 href="https://openaq.org"
                 target="_blank"
                 rel="noreferrer"
-                className="underline hover:text-ink"
+                className="link-underline-reveal transition-colors hover:text-ink"
               >
                 OpenAQ API v3
               </a>
@@ -113,7 +113,7 @@ export default function HomePage() {
                 href="https://www.who.int/news-room/fact-sheets/detail/ambient-(outdoor)-air-quality-and-health"
                 target="_blank"
                 rel="noreferrer"
-                className="underline hover:text-ink"
+                className="link-underline-reveal transition-colors hover:text-ink"
               >
                 WHO 2021 AQI Guidelines
               </a>
@@ -122,7 +122,7 @@ export default function HomePage() {
                 href="https://berkeleyearth.org/air-quality-real-time-map/"
                 target="_blank"
                 rel="noreferrer"
-                className="underline hover:text-ink"
+                className="link-underline-reveal transition-colors hover:text-ink"
               >
                 Berkeley Earth Cig. Equivalence
               </a>
@@ -130,7 +130,7 @@ export default function HomePage() {
             <div>
               Cigarette equivalence is a statistical communication tool —
               not a clinical diagnosis.{" "}
-              <a href="/about" className="underline hover:text-ink">
+              <a href="/about" className="link-underline-reveal transition-colors hover:text-ink">
                 Methodology →
               </a>
             </div>

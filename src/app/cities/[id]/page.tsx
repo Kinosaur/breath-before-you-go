@@ -165,7 +165,7 @@ export default async function CityPage({ params }: Props) {
   ];
 
   return (
-    <main className="min-h-screen bg-[#0a0a0a]">
+    <main className="reading-surface min-h-screen bg-[#0a0a0a]">
       <CityReadingProgress sectionIds={sectionIds} />
       <HeavyBlockCoordinator />
 
@@ -184,7 +184,7 @@ export default async function CityPage({ params }: Props) {
         <div className="pt-8 pb-4">
           <Link
             href="/"
-            className="text-xs text-ink-muted font-mono hover:text-ink transition-colors"
+            className="text-sm text-ink-muted font-mono hover:text-ink transition-colors"
             aria-label="Back to all cities"
           >
             ← All cities
@@ -204,13 +204,13 @@ export default async function CityPage({ params }: Props) {
               aria-hidden="true"
             />
             <div>
-              <h1 className="text-4xl sm:text-5xl font-bold text-ink leading-tight">
+              <h1 className="font-editorial text-4xl sm:text-5xl font-bold text-ink leading-tight">
                 {profile.cityName}
               </h1>
               <p className="text-lg text-ink-muted mt-1">
                 {profile.country} · Tier {profile.tier}
               </p>
-              <p className="text-sm text-ink-muted mt-2 font-mono">
+              <p className="text-base text-ink-muted mt-2 font-mono">
                 {profile.dataQuality.totalDays.toLocaleString()} days of data ·{" "}
                 {profile.dataQuality.yearsAvailable[0]}–
                 {profile.dataQuality.yearsAvailable[profile.dataQuality.yearsAvailable.length - 1]} ·{" "}
@@ -233,17 +233,17 @@ export default async function CityPage({ params }: Props) {
           />
 
           <div className="mt-6 rounded-xl bg-surface-2 border border-surface-3 p-4">
-            <div className="text-xs text-ink-faint font-mono mb-3">Quick decision snapshot</div>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
+            <div className="text-sm text-ink-faint font-mono mb-3">Quick decision snapshot</div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-base">
               <div className="rounded-lg bg-surface-3/55 border border-surface-3 p-3">
-                <div className="text-[10px] text-ink-faint font-mono mb-1">Best month to visit</div>
+                <div className="text-xs text-ink-faint font-mono mb-1">Best month to visit</div>
                 <div className="text-ink font-semibold">
                   {profile.healthMetrics.bestVisitMonthName ?? "No clear seasonal winner"}
                 </div>
               </div>
 
               <div className="rounded-lg bg-surface-3/55 border border-surface-3 p-3">
-                <div className="text-[10px] text-ink-faint font-mono mb-1">Worst month</div>
+                <div className="text-xs text-ink-faint font-mono mb-1">Worst month</div>
                 <div className="text-ink font-semibold">
                   {profile.healthMetrics.worstMonthName}
                   {profile.healthMetrics.worstMonthMedian != null
@@ -253,7 +253,7 @@ export default async function CityPage({ params }: Props) {
               </div>
 
               <div className="rounded-lg bg-surface-3/55 border border-surface-3 p-3">
-                <div className="text-[10px] text-ink-faint font-mono mb-1">Safer walk window (typical day)</div>
+                <div className="text-xs text-ink-faint font-mono mb-1">Safer walk window (typical day)</div>
                 <div className="text-ink font-semibold">
                   {bestWalkWindow
                     ? `${bestWalkWindow.label} · ${bestWalkWindow.durationHours}h`
@@ -262,7 +262,7 @@ export default async function CityPage({ params }: Props) {
               </div>
             </div>
 
-            <div className="mt-3 flex flex-wrap gap-2 text-[11px]">
+            <div className="mt-3 flex flex-wrap gap-2 text-sm">
               <a href="#calendar" className="px-2.5 py-1.5 rounded-full border border-surface-3 bg-surface-3 text-ink-muted hover:text-ink hover:bg-surface transition-colors">
                 Check seasonal calendar
               </a>
@@ -275,20 +275,20 @@ export default async function CityPage({ params }: Props) {
 
         {/* ── Health Metrics ─────────────────────────────────────────────── */}
         <section id="health" className="pb-12 scroll-mt-6">
-          <h2 className="text-lg font-semibold text-ink mb-5">Health impact</h2>
+          <h2 className="font-editorial text-2xl font-semibold text-ink mb-5">Health impact</h2>
           <HealthMetricsPanel profile={profile} />
         </section>
 
         {/* ── Lung Clock ─────────────────────────────────────────────────── */}
         <section id="clock" className="pb-12 scroll-mt-6">
-          <h2 className="text-lg font-semibold text-ink mb-2">Lung clock</h2>
+          <h2 className="font-editorial text-2xl font-semibold text-ink mb-2">Lung clock</h2>
           <p className="text-sm text-ink-muted mb-5">
             24-hour air quality pattern. Dimmed arcs are unsafe for the selected activity.
           </p>
           {hasHourlyAny ? (
             <div className="rounded-xl bg-surface-2 border border-surface-3 p-5 motion-heavy-block" data-heavy-block>
               {!hasHourlyFull && (
-                <div className="mb-3 text-[11px] text-ink-muted font-mono">
+                <div className="mb-3 text-sm text-ink-muted font-mono">
                   Partial hourly data: showing {hourlyCount}/24 hours. Missing hours are marked as gray arcs.
                 </div>
               )}
@@ -311,7 +311,7 @@ export default async function CityPage({ params }: Props) {
         {/* ── Life Expectancy Chart (Tier 1 + 2 only) ──────────────────── */}
         {profile.tier <= 2 && (
           <section id="life" className="pb-12 scroll-mt-6">
-            <h2 className="text-lg font-semibold text-ink mb-2">Life expectancy toll</h2>
+            <h2 className="font-editorial text-2xl font-semibold text-ink mb-2">Life expectancy toll</h2>
             <p className="text-sm text-ink-muted mb-5">
               How does the air here compare to other health risks — and to peer cities?
             </p>
@@ -327,7 +327,7 @@ export default async function CityPage({ params }: Props) {
 
         {/* ── Breathing Calendar ─────────────────────────────────────────── */}
         <section id="calendar" className="pb-12 scroll-mt-6">
-          <h2 className="text-lg font-semibold text-ink mb-2">Breathing calendar</h2>
+          <h2 className="font-editorial text-2xl font-semibold text-ink mb-2">Breathing calendar</h2>
           <p className="text-sm text-ink-muted mb-5">
             Every day of the year, colored by PM2.5 air quality band.
           </p>
@@ -338,7 +338,7 @@ export default async function CityPage({ params }: Props) {
 
         {/* ── Cigarette Counter + Trip Calc ──────────────────────────────── */}
         <section id="exposure" className="pb-12 scroll-mt-6">
-          <h2 className="text-lg font-semibold text-ink mb-5">Exposure calculator</h2>
+          <h2 className="font-editorial text-2xl font-semibold text-ink mb-5">Exposure calculator</h2>
           <p className="text-sm text-ink-muted mb-5">
             The baseline view is <strong className="text-ink">No mask</strong>. You can switch to Surgical, KN95, or N95 to see a planning range for mask-adjusted exposure. Smoking-aware mode is optional and off by default.
           </p>
@@ -348,7 +348,7 @@ export default async function CityPage({ params }: Props) {
         {/* ── Scrollytelling (Tier 1 only) ───────────────────────────────── */}
         {profile.tier === 1 && (
           <section id="story" className="pb-12 scroll-mt-6">
-            <h2 className="text-lg font-semibold text-ink mb-2">The story</h2>
+            <h2 className="font-editorial text-2xl font-semibold text-ink mb-2">The Story</h2>
             <p className="text-sm text-ink-muted mb-6">
               Scroll through to see the numbers come alive.
             </p>
@@ -361,7 +361,7 @@ export default async function CityPage({ params }: Props) {
         {/* ── City Summary (Tier 2 only) ─────────────────────────────────── */}
         {profile.tier === 2 && profile.narrativeSummary && (
           <section id="summary" className="pb-12 scroll-mt-6">
-            <h2 className="text-lg font-semibold text-ink mb-2">City profile</h2>
+            <h2 className="font-editorial text-2xl font-semibold text-ink mb-2">City profile</h2>
             <p className="text-sm text-ink-muted mb-6">
               Research-backed air quality summary for {profile.cityName}.
             </p>
@@ -374,7 +374,7 @@ export default async function CityPage({ params }: Props) {
         {/* ── Seasonal events ────────────────────────────────────────────── */}
         {profile.seasonalEvents.length > 0 && (
           <section id="events" className="pb-12 scroll-mt-6">
-            <h2 className="text-lg font-semibold text-ink mb-5">Seasonal risk events</h2>
+            <h2 className="font-editorial text-2xl font-semibold text-ink mb-5">Seasonal risk events</h2>
             <div className="space-y-3">
               {profile.seasonalEvents.map((ev, i) => {
                 const riskColor =
@@ -389,7 +389,7 @@ export default async function CityPage({ params }: Props) {
                     />
                     <div className="min-w-0">
                       <div className="flex flex-wrap items-center gap-2 mb-1">
-                        <span className="text-sm font-semibold text-ink">{ev.event}</span>
+                        <span className="text-base font-semibold text-ink">{ev.event}</span>
                         <span
                           className="px-2 py-0.5 rounded-full text-[10px] font-semibold uppercase"
                           style={{ background: riskColor, color: ev.risk_level === "high" ? "#fff" : "#000" }}
@@ -397,8 +397,8 @@ export default async function CityPage({ params }: Props) {
                           {ev.risk_level}
                         </span>
                       </div>
-                      <p className="text-xs text-ink-muted">{ev.cause}</p>
-                      <p className="text-[10px] text-ink-muted mt-1 font-mono">
+                      <p className="text-sm text-ink-muted">{ev.cause}</p>
+                      <p className="text-xs text-ink-muted mt-1 font-mono">
                         Affects:{" "}
                         {ev.months
                           .map((m) => ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][m - 1])
@@ -417,10 +417,10 @@ export default async function CityPage({ params }: Props) {
           <div className="flex flex-col sm:flex-row justify-between gap-3">
             <div>
               Data: OpenAQ API v3 · WHO 2021 AQI Guidelines · Berkeley Earth ·{" "}
-              <a href="/about" className="underline hover:text-ink">Methodology →</a>
+              <a href="/about" className="link-underline-reveal transition-colors hover:text-ink">Methodology →</a>
             </div>
             <div>
-              <Link href="/" className="underline hover:text-ink">← Back to overview</Link>
+              <Link href="/" className="link-underline-reveal transition-colors hover:text-ink">← Back to overview</Link>
             </div>
           </div>
         </footer>

@@ -35,12 +35,12 @@ const SECTION_LINKS = [
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-[#0a0a0a] px-5 py-10">
+    <main className="reading-surface min-h-screen bg-[#0a0a0a] px-5 py-10">
       <div className="max-w-4xl mx-auto">
 
         {/* Back nav */}
         <div className="mb-8">
-          <Link href="/" className="text-xs text-ink-muted font-mono hover:text-ink transition-colors underline-offset-4 hover:underline">
+          <Link href="/" className="link-underline-reveal text-base text-ink-muted font-mono hover:text-ink transition-colors">
             ← Back to overview
           </Link>
         </div>
@@ -49,9 +49,9 @@ export default function AboutPage() {
 
             {/* Header */}
             <header className="mb-8">
-              <h1 className="text-3xl sm:text-4xl font-bold text-ink mb-3">Methodology</h1>
-              <div className="h-px w-28 bg-ink-faint/40 mb-4 motion-glow-line" aria-hidden="true" />
-              <p className="text-base sm:text-lg text-ink-muted max-w-2xl leading-relaxed">
+              <h1 className="font-editorial text-4xl sm:text-5xl font-bold text-ink leading-tight mb-3">Methodology</h1>
+              <div className="h-px w-48 sm:w-64 bg-ink-faint/40 mb-4 motion-glow-line" aria-hidden="true" />
+              <p className="font-ui text-base sm:text-lg text-ink-muted max-w-2xl leading-relaxed">
                 Everything here is built on publicly available data and peer-reviewed methodology.
                 This page explains every number you see: what it means, where it comes from, and where
                 its limitations are.
@@ -59,19 +59,19 @@ export default function AboutPage() {
             </header>
 
             <div className="mb-8 rounded-xl bg-surface-2 border border-surface-3 p-5">
-              <div className="text-xs text-ink-faint font-mono mb-3">Reading guide</div>
-              <div className="grid sm:grid-cols-3 gap-3 text-sm">
+              <div className="text-base text-ink-faint font-mono mb-3">Reading guide</div>
+              <div className="grid sm:grid-cols-3 gap-3 text-base">
                 <div className="rounded-lg bg-surface-3/60 border border-surface-3 p-3">
-                  <div className="text-[10px] text-ink-faint font-mono mb-1">Scope</div>
-                  <div className="text-ink">Data sources, formulas, caveats</div>
+                  <div className="text-xs text-ink-faint font-mono mb-1">Scope</div>
+                  <div className="font-ui text-ink">Data sources, formulas, caveats</div>
                 </div>
                 <div className="rounded-lg bg-surface-3/60 border border-surface-3 p-3">
-                  <div className="text-[10px] text-ink-faint font-mono mb-1">Reading effort</div>
-                  <div className="text-ink">About 4-6 minutes</div>
+                  <div className="text-xs text-ink-faint font-mono mb-1">Reading effort</div>
+                  <div className="font-ui text-ink">About 4-6 minutes</div>
                 </div>
                 <div className="rounded-lg bg-surface-3/60 border border-surface-3 p-3">
-                  <div className="text-[10px] text-ink-faint font-mono mb-1">Trust check</div>
-                  <div className="text-ink">Formula-to-UI wording aligned</div>
+                  <div className="text-xs text-ink-faint font-mono mb-1">Trust check</div>
+                  <div className="font-ui text-ink">Formula-to-UI wording aligned</div>
                 </div>
               </div>
 
@@ -80,7 +80,7 @@ export default function AboutPage() {
                   <a
                     key={section.id}
                     href={`#${section.id}`}
-                    className="px-2.5 py-1.5 rounded-full border border-surface-3 bg-surface-3 text-xs text-ink-muted hover:text-ink hover:border-ink-faint/70 transition-colors"
+                    className="px-2.5 py-1.5 rounded-full border border-surface-3 bg-surface-3 text-base text-ink-muted hover:text-ink hover:border-ink-faint/70 transition-colors"
                   >
                     {section.label}
                   </a>
@@ -92,23 +92,23 @@ export default function AboutPage() {
 
           {/* Data sources */}
           <section id="data-sources" className="rounded-xl bg-surface-2 border border-surface-3 p-6 space-y-5 motion-card scroll-mt-24">
-            <h2 className="text-xl font-semibold text-ink">Data Sources</h2>
+            <h2 className="font-editorial text-2xl font-semibold text-ink">Data Sources</h2>
 
             <div className="space-y-4">
               <div>
-                <div className="text-sm font-semibold text-ink mb-1">OpenAQ API v3</div>
-                <p className="text-[15px] sm:text-base text-ink-muted leading-7">
+                <div className="font-ui text-lg font-semibold text-ink mb-1">OpenAQ API v3</div>
+                <p className="font-ui text-base sm:text-lg text-ink-muted leading-8">
                   Primary PM2.5 source. Historical daily aggregates pulled via the{" "}
-                  <code className="text-xs bg-surface-3 px-1 py-0.5 rounded">/sensors/&#123;id&#125;/days</code>{" "}
+                  <code className="text-sm bg-surface-3 px-1 py-0.5 rounded">/sensors/&#123;id&#125;/days</code>{" "}
                   endpoint. Data is pre-computed nightly and stored as static JSON under{" "}
-                  <code className="text-xs bg-surface-3 px-1 py-0.5 rounded">public/data/cities/</code>.
+                  <code className="text-sm bg-surface-3 px-1 py-0.5 rounded">public/data/cities/</code>.
                   Coverage varies by city (typically 1–5 years of station history).
                 </p>
               </div>
 
               <div>
-                <div className="text-sm font-semibold text-ink mb-1">WHO 2021 Air Quality Guidelines</div>
-                <p className="text-[15px] sm:text-base text-ink-muted leading-7">
+                <div className="font-ui text-lg font-semibold text-ink mb-1">WHO 2021 Air Quality Guidelines</div>
+                <p className="font-ui text-base sm:text-lg text-ink-muted leading-8">
                   Annual PM2.5 guideline: 5 µg/m³. This is the primary safety benchmark used across
                   all visualizations. The 2021 revision tightened the previous 10 µg/m³ limit based on
                   updated evidence for long-term cardiovascular and respiratory effects.
@@ -116,16 +116,16 @@ export default function AboutPage() {
               </div>
 
               <div>
-                <div className="text-sm font-semibold text-ink mb-1">Berkeley Earth</div>
-                <p className="text-[15px] sm:text-base text-ink-muted leading-7">
+                <div className="font-ui text-lg font-semibold text-ink mb-1">Berkeley Earth</div>
+                <p className="font-ui text-base sm:text-lg text-ink-muted leading-8">
                   Source for the cigarette equivalence conversion factor (22 µg/m³ PM2.5 ≈ 1
                   cigarette/day). Based on population-level mortality risk comparison.
                 </p>
               </div>
 
               <div>
-                <div className="text-sm font-semibold text-ink mb-1">AQLI (Air Quality Life Index)</div>
-                <p className="text-[15px] sm:text-base text-ink-muted leading-7">
+                <div className="font-ui text-lg font-semibold text-ink mb-1">AQLI (Air Quality Life Index)</div>
+                <p className="font-ui text-base sm:text-lg text-ink-muted leading-8">
                   Framework from the Energy Policy Institute at the University of Chicago (EPIC).
                   Used for life-expectancy impact calculations. Formula documented in the section below.
                 </p>
@@ -135,8 +135,8 @@ export default function AboutPage() {
 
           {/* PM2.5 bands */}
           <section id="pm25-bands" className="rounded-xl bg-surface-2 border border-surface-3 p-6 space-y-4 motion-card scroll-mt-24">
-            <h2 className="text-xl font-semibold text-ink">PM2.5 Safety Bands (WHO 2021)</h2>
-            <p className="text-[15px] sm:text-base text-ink-muted leading-7">
+            <h2 className="font-editorial text-2xl font-semibold text-ink">PM2.5 Safety Bands (WHO 2021)</h2>
+            <p className="font-ui text-base sm:text-lg text-ink-muted leading-8">
               These five bands drive all colors across the calendar, map, and clock visualizations.
             </p>
 
@@ -149,16 +149,16 @@ export default function AboutPage() {
                   />
                   <div className="min-w-0">
                     <div className="flex flex-wrap items-baseline gap-x-2 mb-0.5">
-                      <span className="text-sm font-semibold" style={{ color: b.color }}>{b.label}</span>
-                      <span className="text-xs text-ink-muted font-mono">{b.range}</span>
+                      <span className="text-base font-semibold" style={{ color: b.color }}>{b.label}</span>
+                      <span className="text-base text-ink-muted font-mono">{b.range}</span>
                     </div>
-                    <p className="text-sm text-ink-muted leading-6">{b.detail}</p>
+                    <p className="font-ui text-base text-ink-muted leading-7">{b.detail}</p>
                   </div>
                 </div>
               ))}
             </div>
 
-            <p className="text-[11px] text-ink-muted">
+            <p className="font-ui text-sm text-ink-muted leading-relaxed">
               The 15 µg/m³ good/moderate threshold is set at 3× the WHO annual guideline to reflect
               realistic short-visit exposure rather than strict annual-average health thresholds.
             </p>
@@ -166,30 +166,30 @@ export default function AboutPage() {
 
           {/* Cigarette equivalence */}
           <section id="cigarette-equivalence" className="rounded-xl bg-surface-2 border border-surface-3 p-6 space-y-4 motion-card scroll-mt-24">
-            <h2 className="text-xl font-semibold text-ink">Cigarette Equivalence</h2>
+            <h2 className="font-editorial text-2xl font-semibold text-ink">Cigarette Equivalence</h2>
 
             <div className="rounded-lg bg-surface-3 border border-surface-3 p-4">
-              <div className="text-xs text-ink-muted font-mono mb-1">Conversion formula</div>
-              <div className="text-sm font-mono text-ink">
+              <div className="text-base text-ink-muted font-mono mb-1">Conversion formula</div>
+              <div className="text-base font-mono text-ink">
                 cigarettes/day = PM2.5 (µg/m³) ÷ 22
               </div>
             </div>
 
-            <p className="text-[15px] sm:text-base text-ink-muted leading-7">
+            <p className="font-ui text-base sm:text-lg text-ink-muted leading-8">
               This conversion, popularized by Berkeley Earth, compares the long-run mortality risk
               associated with ambient PM2.5 to the risk from active cigarette smoking. A person
               breathing air at 22 µg/m³ for a full year faces a statistically similar mortality
               burden increase as someone smoking one cigarette per day.
             </p>
 
-            <p className="text-[11px] text-ink-muted leading-relaxed">
+            <p className="font-ui text-sm text-ink-muted leading-relaxed">
               In this app, the cigarette-equivalence headline uses the annual median PM2.5 to represent
               a robust typical exposure level and reduce outlier distortion.
             </p>
 
             <div className="space-y-1.5">
-              <div className="text-sm font-semibold text-ink">Important caveats</div>
-              <ul className="space-y-2 text-sm text-ink-muted leading-6">
+              <div className="font-editorial text-base font-semibold text-ink">Important caveats</div>
+              <ul className="font-ui space-y-2 text-base text-ink-muted leading-7">
                 <li className="flex gap-2"><span className="text-yellow-400 flex-shrink-0">▸</span>
                   Ambient PM2.5 and cigarette smoke have different chemical compositions. The comparison is a mortality-risk analogy, not a toxicological equivalence.
                 </li>
@@ -206,11 +206,11 @@ export default function AboutPage() {
             </div>
 
             <div className="rounded-lg bg-surface-3 border border-surface-3 p-4 space-y-2">
-              <div className="text-xs text-ink-muted font-mono mb-1">Mask-adjusted scenario</div>
-              <p className="text-[15px] sm:text-base text-ink-muted leading-7">
+              <div className="text-base text-ink-muted font-mono mb-1">Mask-adjusted scenario</div>
+              <p className="font-ui text-base sm:text-lg text-ink-muted leading-8">
                 The exposure calculator also supports an optional mask scenario: <strong className="text-ink">No mask</strong> remains the baseline, and users can switch to Surgical, KN95, or N95 to see an estimated range. This is a planning aid only, not a guarantee of protection.
               </p>
-              <p className="text-[11px] text-ink-muted leading-relaxed">
+              <p className="font-ui text-sm text-ink-muted leading-relaxed">
                 Because fit, humidity, wear time, and activity level vary, the app shows a range rather than a single exact number.
               </p>
             </div>
@@ -218,33 +218,33 @@ export default function AboutPage() {
 
           {/* AQLI life years */}
           <section id="aqli" className="rounded-xl bg-surface-2 border border-surface-3 p-6 space-y-4 motion-card scroll-mt-24">
-            <h2 className="text-xl font-semibold text-ink">Life-Expectancy Impact (AQLI)</h2>
+            <h2 className="font-editorial text-2xl font-semibold text-ink">Life-Expectancy Impact (AQLI)</h2>
 
             <div className="rounded-lg bg-surface-3 border border-surface-3 p-4 space-y-2">
-              <div className="text-xs text-ink-muted font-mono mb-1">Formula used</div>
-              <div className="text-sm font-mono text-ink">
+              <div className="text-base text-ink-muted font-mono mb-1">Formula used</div>
+              <div className="text-base font-mono text-ink">
                 years lost = (annual mean PM2.5 − 5) × (0.98 ÷ 10)
               </div>
-              <div className="text-xs text-ink-muted">
+              <div className="text-base text-ink-muted">
                 where 5 µg/m³ = WHO baseline, 0.98 yr = years lost per 10 µg/m³ above baseline
               </div>
             </div>
 
-            <p className="text-[15px] sm:text-base text-ink-muted leading-7">
+            <p className="font-ui text-base sm:text-lg text-ink-muted leading-8">
               The AQLI framework translates PM2.5 exposure above the WHO baseline into estimated
               reductions in life expectancy. The coefficient (0.98 years per 10 µg/m³) is derived
               from epidemiological studies on long-term PM2.5 exposure and mortality.
             </p>
 
-            <p className="text-[11px] text-ink-muted leading-relaxed">
+            <p className="font-ui text-sm text-ink-muted leading-relaxed">
               In this app, years lost is calculated from annual mean PM2.5 (long-term exposure proxy),
               not annual median.
             </p>
 
             <div className="space-y-2">
-              <div className="text-sm font-semibold text-ink">Comparison anchors used in charts</div>
+              <div className="font-editorial text-base font-semibold text-ink">Comparison anchors used in charts</div>
               <div className="rounded-lg overflow-hidden border border-surface-3">
-                <table className="w-full text-xs text-ink-muted">
+                <table className="w-full text-base text-ink-muted">
                   <thead>
                     <tr className="bg-surface-3">
                       <th className="text-left p-2.5 font-mono font-semibold text-ink">Risk</th>
@@ -265,7 +265,7 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <p className="text-[11px] text-ink-muted">
+            <p className="font-ui text-sm text-ink-muted leading-relaxed">
               These are population-level estimates. They describe the average statistical impact
               on a large group, not a prediction for any individual. Always consult a healthcare
               professional for personal health decisions.
@@ -274,14 +274,14 @@ export default function AboutPage() {
 
           {/* Lung Clock */}
           <section id="lung-clock" className="rounded-xl bg-surface-2 border border-surface-3 p-6 space-y-4 motion-card scroll-mt-24">
-            <h2 className="text-xl font-semibold text-ink">Lung Clock — Hourly Patterns</h2>
-            <p className="text-[15px] sm:text-base text-ink-muted leading-7">
+            <h2 className="font-editorial text-2xl font-semibold text-ink">Lung Clock — Hourly Patterns</h2>
+            <p className="font-ui text-base sm:text-lg text-ink-muted leading-8">
               The Lung Clock shows a &ldquo;typical day&rdquo; — the hourly median PM2.5 across the
               most recent 7 days of available sensor data. It is a snapshot of recent patterns,
               not a historical average. The daylight arc uses a solar declination model (Spencer 1971)
               calculated from the city&apos;s coordinates and current date.
             </p>
-            <ul className="space-y-2 text-sm text-ink-muted leading-6">
+            <ul className="font-ui space-y-2 text-base text-ink-muted leading-7">
               <li className="flex gap-2"><span className="text-ink-muted flex-shrink-0">▸</span>
                 Hours with no sensor data are shown as gray arcs.
               </li>
@@ -297,8 +297,8 @@ export default function AboutPage() {
 
           {/* Limitations */}
           <section id="limitations" className="rounded-xl bg-surface-2 border border-surface-3 p-6 space-y-4 motion-card scroll-mt-24" data-reveal>
-            <h2 className="text-xl font-semibold text-ink">Known Limitations</h2>
-            <ul className="space-y-3 text-[15px] text-ink-muted leading-7">
+            <h2 className="font-editorial text-2xl font-semibold text-ink">Known Limitations</h2>
+            <ul className="font-ui space-y-3 text-base sm:text-lg text-ink-muted leading-8">
               <li className="flex gap-2">
                 <span className="text-red-400 flex-shrink-0 font-bold">!</span>
                 <span><strong className="text-ink">Single parameter:</strong> Only PM2.5 is tracked. NO₂, O₃, and CO₂ are not included, which may understate total air quality burden in some cities.</span>
@@ -324,8 +324,8 @@ export default function AboutPage() {
 
           {/* Credits */}
           <section id="credits" className="rounded-xl bg-surface-2 border border-surface-3 p-6 space-y-3 motion-card scroll-mt-24">
-            <h2 className="text-xl font-semibold text-ink">Credits</h2>
-            <div className="space-y-2 text-[15px] text-ink-muted leading-7">
+            <h2 className="font-editorial text-2xl font-semibold text-ink">Credits</h2>
+            <div className="font-ui space-y-2 text-base sm:text-lg text-ink-muted leading-8">
               <div className="flex justify-between transition-colors duration-200 hover:text-ink rounded-md px-1">
                 <span>Air quality data</span>
                 <span className="font-mono">OpenAQ (openaq.org)</span>
@@ -356,9 +356,9 @@ export default function AboutPage() {
             </div>
 
             {/* Footer */}
-            <footer className="mt-10 border-t border-surface-3 pt-6 text-[11px] text-ink-muted font-mono flex flex-col sm:flex-row justify-between gap-2">
+            <footer className="mt-10 border-t border-surface-3 pt-6 text-sm text-ink-muted font-mono flex flex-col sm:flex-row justify-between gap-2">
               <span>Breathe Before You Go · air quality travel intelligence</span>
-              <Link href="/" className="underline hover:text-ink">← Back to city overview</Link>
+              <Link href="/" className="link-underline-reveal hover:text-ink transition-colors">← Back to city overview</Link>
             </footer>
         </div>
 
