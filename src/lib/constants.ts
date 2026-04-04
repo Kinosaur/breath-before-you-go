@@ -76,7 +76,7 @@ export const AQLI_YRS_PER_10  = 0.98;
 
 export function yearsLost(annualPm25: number): number {
   if (annualPm25 <= AQLI_BASELINE) return 0;
-  return ((annualPm25 - AQLI_BASELINE) / 10) * AQLI_YRS_PER_10 * 10;
+  return ((annualPm25 - AQLI_BASELINE) / 10) * AQLI_YRS_PER_10;
 }
 
 // ── Exercise safety ───────────────────────────────────────────────────────────

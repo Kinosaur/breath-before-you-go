@@ -37,6 +37,9 @@ const INNER_R   = 88;
 const OUTER_R   = 160;
 const PAD_ANGLE = 0.028;
 const SAFE_RING = OUTER_R + 18;  // cleared above the taller current-hour arc
+const TOOLTIP_W  = 220;
+const TOOLTIP_H  = 42;
+const TOOLTIP_GAP = 14;
 
 type Activity = "none" | "walk" | "cycle" | "jog";
 
@@ -113,6 +116,7 @@ export function LungClock({ typicalDay, lat, cityName, timezone }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [activity,    setActivity]    = useState<Activity>("none");
   const [hoveredHour, setHoveredHour] = useState<number | null>(null);
+  const [tooltipPos,  setTooltipPos]  = useState({ x: 0, y: 0, flip: false });
   const [isNarrow,    setIsNarrow]    = useState(false);
   const [cityNow,     setCityNow]     = useState(() => getCityNow(timezone));
 
@@ -216,7 +220,14 @@ export function LungClock({ typicalDay, lat, cityName, timezone }: Props) {
         .attr("stroke", isCur ? "#ffffff" : "none")
         .attr("stroke-width", isCur ? 2 : 0)
         .style("cursor", "pointer")
-        .on("mouseenter", () => setHoveredHour(h))
+        .on("mouseenter", (event: PointerEvent) => {
+          setHoveredHour(h);
+          updateTooltipPosition(event.clientX, event.clientY);
+        })
+        .on("pointermove", (event: PointerEvent) => {
+          setHoveredHour(h);
+          updateTooltipPosition(event.clientX, event.clientY);
+        })
         .on("mouseleave", () => setHoveredHour(null));
 
       // Safe-activity outer dot
@@ -248,6 +259,25 @@ export function LungClock({ typicalDay, lat, cityName, timezone }: Props) {
   const safeHours = activity === "none"
     ? dayByHour.filter((entry) => !entry.isMissing).length
     : dayByHour.filter((entry) => !entry.isMissing && isSafeForActivity(entry, activity)).length;
+
+  function updateTooltipPosition(clientX: number, clientY: number) {
+    const rect = containerRef.current?.getBoundingClientRect();
+    if (!rect) return;
+
+    const localX = clientX - rect.left;
+    const localY = clientY - rect.top;
+    const flip = localY < rect.height * 0.38;
+
+    let x = localX + TOOLTIP_GAP;
+    let y = flip ? localY + TOOLTIP_GAP : localY - TOOLTIP_H - TOOLTIP_GAP;
+
+    if (x + TOOLTIP_W > rect.width - 8) x = localX - TOOLTIP_W - TOOLTIP_GAP;
+    if (x < 8) x = 8;
+    if (y < 8) y = 8;
+    if (y + TOOLTIP_H > rect.height - 8) y = rect.height - TOOLTIP_H - 8;
+
+    setTooltipPos({ x, y, flip });
+  }
 
   // ── Linear fallback (narrow containers) ───────────────────────────────────
   if (isNarrow) {
@@ -350,9 +380,13 @@ export function LungClock({ typicalDay, lat, cityName, timezone }: Props) {
           {/* ── Arc hover tooltip ─────────────────────────────────────── */}
           {isHovering && displayEntry && (
             <div
-              className="absolute bottom-2 left-1/2 -translate-x-1/2 pointer-events-none
-                          rounded-lg bg-surface-2 border border-surface-3 px-3 py-1.5 text-xs
-                          text-center shadow-lg whitespace-nowrap transition-all duration-150"
+              className="absolute pointer-events-none rounded-lg bg-surface-2 border border-surface-3 px-3 py-1.5 text-xs
+                          text-center shadow-lg whitespace-nowrap transition-all duration-100 ease-out"
+              style={{
+                left: `${tooltipPos.x}px`,
+                top: `${tooltipPos.y}px`,
+                transform: tooltipPos.flip ? "translateY(0)" : "none",
+              }}
             >
               <span className="font-mono font-bold text-ink">
                 {hoveredHour!.toString().padStart(2, "0")}:00

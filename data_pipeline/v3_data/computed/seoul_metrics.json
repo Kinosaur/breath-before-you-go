@@ -12,7 +12,7 @@
     "annualMedianPm25": 13.5,
     "annualMeanPm25": 16.5,
     "cigarettesPerDay": 0.61,
-    "yearsLost": 8.33,
+    "yearsLost": 1.13,
     "aqiDistribution": {
       "good": 56.3,
       "moderate": 26.5,
@@ -29,7 +29,7 @@
     "bestVisitMonth": 9,
     "bestVisitMonthName": "September",
     "cigMethodologyNote": "Berkeley Earth conversion: 22.0 µg/m³ PM2.5 ≈ 1 cigarette/day. This compares population-level mortality risk, not individual clinical outcomes. Acute vs chronic exposure differs significantly.",
-    "aqliMethodologyNote": "AQLI methodology: each 10 µg/m³ PM2.5 above WHO baseline (5.0 µg/m³) ≈ 0.98 years of life expectancy lost."
+    "aqliMethodologyNote": "AQLI methodology: each 10 µg/m³ PM2.5 above WHO baseline (5.0 µg/m³) ≈ 0.98 years of life expectancy lost. Calculated from annual mean PM2.5 (long-term exposure), not annual median."
   },
   "monthlyProfiles": [
     {
@@ -7739,6 +7739,6 @@
     ],
     "totalDays": 742,
     "sensors": 5,
-    "lastComputed": "2026-04-02T11:14:03Z"
+    "lastComputed": "2026-04-04T10:58:07Z"
   }
 }

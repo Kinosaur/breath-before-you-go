@@ -230,9 +230,9 @@ def export_city(city: dict, metrics: dict, health_ctx: dict, hourly_df) -> dict 
             "lifeExpectancyContext": {
                 "yearsLost": hm["yearsLost"],
                 "comparisonAnchors": [
-                    {"label": "Smoking (10 cigs/day)", "yearsLost": 10.0, "source": "WHO"},
-                    {"label": "Heavy alcohol use",     "yearsLost": 1.3,  "source": "GBD 2019"},
-                    {"label": "Traffic accidents (avg)","yearsLost": 0.3,  "source": "GBD 2019"},
+                    {"label": "Smoking (1 cigarette/day)", "yearsLost": 1.0, "source": "Berkeley Earth / WHO"},
+                    {"label": "Heavy alcohol use",         "yearsLost": 1.3, "source": "GBD 2019"},
+                    {"label": "Traffic accidents (avg)",   "yearsLost": 0.3, "source": "GBD 2019"},
                     {"label": "This city's air",        "yearsLost": hm["yearsLost"], "source": "AQLI"},
                 ],
             },

@@ -96,7 +96,7 @@ def years_lost(annual_pm25: float) -> float:
     """AQLI life-expectancy impact above WHO baseline."""
     if pd.isna(annual_pm25) or annual_pm25 <= AQLI_BASELINE:
         return 0.0
-    return round((annual_pm25 - AQLI_BASELINE) / 10.0 * AQLI_YRS_PER_10 * 10, 2)
+    return round((annual_pm25 - AQLI_BASELINE) / 10.0 * AQLI_YRS_PER_10, 2)
 
 
 def aqi_distribution(series: pd.Series) -> dict:
@@ -295,7 +295,7 @@ def compute_city(city: dict) -> dict | None:
             "annualMedianPm25":    round(annual_median, 1),
             "annualMeanPm25":      round(annual_mean, 1),
             "cigarettesPerDay":    cig_equiv(annual_median),
-            "yearsLost":           years_lost(annual_median),
+            "yearsLost":           years_lost(annual_mean),
             "aqiDistribution":     annual_dist,
             "bestMonth":           best_month,
             "bestMonthName":       MONTH_NAMES.get(best_month, ""),
@@ -313,7 +313,8 @@ def compute_city(city: dict) -> dict | None:
             ),
             "aqliMethodologyNote": (
                 f"AQLI methodology: each 10 µg/m³ PM2.5 above WHO baseline "
-                f"({AQLI_BASELINE} µg/m³) ≈ {AQLI_YRS_PER_10} years of life expectancy lost."
+                f"({AQLI_BASELINE} µg/m³) ≈ {AQLI_YRS_PER_10} years of life expectancy lost. "
+                "Calculated from annual mean PM2.5 (long-term exposure), not annual median."
             ),
         },
         "monthlyProfiles": monthly_profiles,

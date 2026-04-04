@@ -86,9 +86,11 @@ function OdometerDigit({ value, prevValue }: { value: number; prevValue: number 
 function TripCalculator({
   profile,
   mask,
+  smokerCigsPerDay,
 }: {
   profile: CityProfile;
   mask: MaskOption;
+  smokerCigsPerDay: number;
 }) {
   const today      = new Date();
   const inTwoWeeks = new Date(today.getTime() + 14 * 86400000);
@@ -123,6 +125,8 @@ function TripCalculator({
   const scenario = MASK_SCENARIOS[mask];
   const adjusted = getMaskRange(totalCigs, mask);
   const displayTotal = mask === "none" ? totalCigs : adjusted.mid;
+  const smokingBaselineTrip = smokerCigsPerDay * days.length;
+  const combinedTrip = smokingBaselineTrip + displayTotal;
 
   // Group by calendar month for breakdown
   const byMonth: Map<number, { count: number; pm25: number }> = new Map();
@@ -174,14 +178,24 @@ function TripCalculator({
               {displayTotal.toFixed(1)}
             </span>
             <span className="text-sm text-ink-muted">
-              {mask === "none" ? "cigarette equivalents" : `${scenario.label} adjusted estimate`}
+              {mask === "none" ? "air-added cigarette equivalents" : `${scenario.label} adjusted air-added estimate`}
             </span>
             <span className="text-xs text-ink-faint">over {days.length} days</span>
           </div>
 
+          {smokerCigsPerDay > 0 && (
+            <div className="mb-4 rounded-lg border border-surface-3 bg-surface-3/45 p-3">
+              <p className="text-[11px] text-ink-muted leading-relaxed">
+                Smoking baseline for this trip: <span className="font-mono text-ink">{smokingBaselineTrip.toFixed(1)}</span> cigs
+                {" · "}
+                Combined total (smoking + air): <span className="font-mono text-ink">{combinedTrip.toFixed(1)}</span> cigs.
+              </p>
+            </div>
+          )}
+
           {mask === "none" ? (
             <p className="-mt-2 mb-4 text-[10px] text-ink-faint leading-relaxed">
-              Planning estimate from monthly median PM2.5 values, not a personal clinical dose.
+              Planning estimate from monthly median PM2.5 values. Air-equivalent burden is additive and does not replace smoking burden.
             </p>
           ) : (
             <p className="-mt-2 mb-4 text-[10px] text-ink-faint leading-relaxed">
@@ -245,9 +259,13 @@ export function CigaretteCounter({ profile }: Props) {
   const targetCigs = profile.healthMetrics.cigarettesPerDay;
   const [animating, setAnimating] = useState(false);
   const [mask, setMask] = useState<MaskOption>("none");
+  const [isSmokerMode, setIsSmokerMode] = useState(false);
+  const [smokerCigsPerDay, setSmokerCigsPerDay] = useState(0);
 
   const scenario = MASK_SCENARIOS[mask];
   const dailyAdjusted = getMaskRange(targetCigs, mask);
+  const airAddedDaily = mask === "none" ? targetCigs : dailyAdjusted.mid;
+  const combinedDaily = smokerCigsPerDay + airAddedDaily;
 
   useEffect(() => {
     // Trigger odometer animation after a short delay on mount
@@ -300,15 +318,61 @@ export function CigaretteCounter({ profile }: Props) {
             Estimated filtration: {formatPct(scenario.mid)} typical (range {formatPct(scenario.low)}-{formatPct(scenario.high)}).
           </p>
         )}
+        <div className="mt-3">
+          <button
+            type="button"
+            onClick={() => {
+              setIsSmokerMode((prev) => {
+                const next = !prev;
+                if (!next) setSmokerCigsPerDay(0);
+                return next;
+              });
+            }}
+            className={`px-3 py-1.5 rounded-full text-xs border transition-colors ${
+              isSmokerMode
+                ? "bg-ink text-surface border-ink"
+                : "bg-surface-3 text-ink-muted border-surface-3 hover:text-ink hover:border-ink-faint/70 hover:bg-surface"
+            }`}
+            aria-pressed={isSmokerMode}
+            aria-label="Toggle smoking-aware mode"
+          >
+            {isSmokerMode ? "Smoking-aware mode: On" : "Smoking-aware mode: Off"}
+          </button>
+
+          {isSmokerMode && (
+            <div className="mt-3 flex flex-col gap-1">
+              <label htmlFor="smoker-baseline" className="text-[10px] text-ink-faint font-mono">
+                Current smoking baseline (cigs/day)
+              </label>
+              <input
+                id="smoker-baseline"
+                type="number"
+                min={0}
+                max={80}
+                step={0.5}
+                inputMode="decimal"
+                value={smokerCigsPerDay}
+                onChange={(e) => {
+                  const next = Number(e.target.value);
+                  setSmokerCigsPerDay(Number.isFinite(next) ? Math.max(0, Math.min(80, next)) : 0);
+                }}
+                className="w-40 bg-surface-3 border border-surface-3 text-ink text-xs rounded-lg px-3 py-2
+                           transition-colors focus:outline-none focus:border-ink-faint hover:border-ink-faint/60 font-mono"
+              />
+            </div>
+          )}
+        </div>
         <p className="mt-3 text-[10px] text-ink-faint leading-relaxed">
-          Baseline remains unmasked. Mask options are scenario estimates and include uncertainty.
+          {isSmokerMode
+            ? "Smoking baseline remains unmasked. Mask options are scenario estimates and include uncertainty."
+            : "Smoking-aware mode is optional. Turn it on only if you want combined smoking + air burden estimates."}
         </p>
       </div>
 
       {/* Odometer card */}
       <div className="rounded-xl bg-surface-2 border border-surface-3 p-5">
         <div className="text-xs text-ink-faint font-mono mb-1">
-          Daily cigarette equivalence (annual average)
+          Daily air-added cigarette equivalence (annual average)
         </div>
 
         <div className="flex items-baseline gap-3 my-3">
@@ -354,10 +418,17 @@ export function CigaretteCounter({ profile }: Props) {
             (range {dailyAdjusted.lower.toFixed(2)}-{dailyAdjusted.upper.toFixed(2)}).
           </p>
         )}
+
+        {isSmokerMode && smokerCigsPerDay > 0 && (
+          <p className="mt-2 text-[10px] text-ink-faint leading-relaxed">
+            Smoking baseline: {smokerCigsPerDay.toFixed(1)} cigs/day · Combined total: {combinedDaily.toFixed(2)} cigs/day
+            (smoking + air-equivalent burden).
+          </p>
+        )}
       </div>
 
       {/* Trip calculator */}
-      <TripCalculator profile={profile} mask={mask} />
+      <TripCalculator profile={profile} mask={mask} smokerCigsPerDay={isSmokerMode ? smokerCigsPerDay : 0} />
     </div>
   );
 }

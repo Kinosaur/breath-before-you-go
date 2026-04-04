@@ -31,7 +31,7 @@ export default function HomePage() {
     <main className="min-h-screen bg-[#0a0a0a]">
 
       {/* ── Hero ────────────────────────────────────────────────────────── */}
-      <section className="px-5 pt-16 pb-10 max-w-5xl mx-auto" data-reveal style={{ "--reveal-delay": "40ms" } as React.CSSProperties}>
+      <section className="px-5 pt-16 pb-10 max-w-5xl mx-auto">
 
         <div className="flex flex-wrap items-center gap-3 mb-6">
           <DataFreshnessBadge
@@ -48,24 +48,22 @@ export default function HomePage() {
         </h1>
 
         <p className="text-xl text-ink-muted mb-3">
-          When and where is it safe to breathe?
+          Air pollution awareness with practical travel decisions across Asia.
         </p>
 
         <p className="text-sm text-ink-muted max-w-2xl leading-relaxed">
-          Five years of air quality data across {index.cityCount} Asian cities —
-          translated into decisions you can act on.
-          Best month to visit. Safe hours to exercise outside.
-          Health costs in terms anyone can understand.
+          Explore five years of air quality data across {index.cityCount} Asian cities and make clearer choices:
+          when to visit, which months to avoid, and which hours are typically safer for outdoor activity.
         </p>
       </section>
 
       {/* ── Dual entry points ────────────────────────────────────────────── */}
-      <section className="px-5 pb-10 max-w-5xl mx-auto" data-reveal style={{ "--reveal-delay": "80ms" } as React.CSSProperties}>
+      <section className="px-5 pb-10 max-w-5xl mx-auto">
         <EntryPointCards />
       </section>
 
       {/* ── Asia Breathing Map ───────────────────────────────────────────── */}
-      <section id="map" className="px-5 pb-14 max-w-5xl mx-auto" data-reveal style={{ "--reveal-delay": "120ms" } as React.CSSProperties}>
+      <section id="map" className="px-5 pb-14 max-w-5xl mx-auto">
         <div className="flex items-baseline gap-3 mb-5">
           <h2 className="text-xl font-semibold text-ink">
             Asia Breathing Map
@@ -91,12 +89,12 @@ export default function HomePage() {
       </section>
 
       {/* ── City grid ────────────────────────────────────────────────────── */}
-      <section id="city-grid" className="px-5 pb-16 max-w-5xl mx-auto" data-reveal style={{ "--reveal-delay": "80ms" } as React.CSSProperties}>
+      <section id="city-grid" className="px-5 pb-16 max-w-5xl mx-auto">
         <CityGrid cities={index.cities} />
       </section>
 
       {/* ── Footer ───────────────────────────────────────────────────────── */}
-      <footer className="border-t border-surface-3 px-5 py-8 max-w-5xl mx-auto" data-reveal>
+      <footer className="border-t border-surface-3 px-5 py-8 max-w-5xl mx-auto">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3
                         text-[11px] text-ink-muted font-mono">
           <div className="space-y-1">

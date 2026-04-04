@@ -40,6 +40,48 @@ interface Props {
   params: Promise<{ id: string }>;
 }
 
+function formatHourLabel(hour: number): string {
+  return `${hour.toString().padStart(2, "0")}:00`;
+}
+
+function findLongestSafeWalkWindow(
+  hourlyEntries: Array<{ hour: number; safeForWalk: boolean }> | null | undefined,
+): { label: string; durationHours: number } | null {
+  if (!hourlyEntries || hourlyEntries.length === 0) return null;
+
+  const sorted = [...hourlyEntries].sort((a, b) => a.hour - b.hour);
+  let bestStart = -1;
+  let bestEnd = -1;
+  let curStart = -1;
+
+  for (let i = 0; i < sorted.length; i++) {
+    const entry = sorted[i];
+    if (entry.safeForWalk) {
+      if (curStart === -1) curStart = entry.hour;
+      const isWindowEnd = i === sorted.length - 1 || !sorted[i + 1].safeForWalk;
+      if (isWindowEnd) {
+        const curEnd = entry.hour;
+        const curLen = curEnd - curStart + 1;
+        const bestLen = bestEnd >= bestStart && bestStart !== -1 ? bestEnd - bestStart + 1 : 0;
+        if (curLen > bestLen) {
+          bestStart = curStart;
+          bestEnd = curEnd;
+        }
+        curStart = -1;
+      }
+    }
+  }
+
+  if (bestStart === -1 || bestEnd === -1) return null;
+
+  const startLabel = formatHourLabel(bestStart);
+  const endLabel = formatHourLabel((bestEnd + 1) % 24);
+  return {
+    label: `${startLabel}-${endLabel}`,
+    durationHours: bestEnd - bestStart + 1,
+  };
+}
+
 function ChartSkeleton({ h = "h-[260px]" }: { h?: string }) {
   return (
     <div className={`w-full ${h} rounded-lg bg-surface-3/60 border border-surface-3 animate-pulse`} aria-hidden="true" />
@@ -108,6 +150,9 @@ export default async function CityPage({ params }: Props) {
   const hourlyCount = hourly?.typicalDay?.length ?? 0;
   const hasHourlyAny = Boolean(hourly?.available && hourlyCount > 0);
   const hasHourlyFull = hasHourlyAny && hourlyCount === 24;
+  const bestWalkWindow = hasHourlyAny
+    ? findLongestSafeWalkWindow(hourly?.typicalDay ?? [])
+    : null;
   const sectionIds = [
     "health",
     "clock",
@@ -147,7 +192,7 @@ export default async function CityPage({ params }: Props) {
         </div>
 
         {/* ── Hero ──────────────────────────────────────────────────────── */}
-        <section className="pb-10" data-reveal style={{ "--reveal-delay": "40ms" } as React.CSSProperties}>
+        <section className="pb-10">
           <div className="flex flex-wrap items-center gap-3 mb-4">
             <DataFreshnessBadge generatedAt={profile.dataQuality.lastComputed} />
           </div>
@@ -186,16 +231,56 @@ export default async function CityPage({ params }: Props) {
               ...(profile.seasonalEvents.length > 0 ? [{ href: "#events", label: "Seasonal events" }] : []),
             ]}
           />
+
+          <div className="mt-6 rounded-xl bg-surface-2 border border-surface-3 p-4">
+            <div className="text-xs text-ink-faint font-mono mb-3">Quick decision snapshot</div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
+              <div className="rounded-lg bg-surface-3/55 border border-surface-3 p-3">
+                <div className="text-[10px] text-ink-faint font-mono mb-1">Best month to visit</div>
+                <div className="text-ink font-semibold">
+                  {profile.healthMetrics.bestVisitMonthName ?? "No clear seasonal winner"}
+                </div>
+              </div>
+
+              <div className="rounded-lg bg-surface-3/55 border border-surface-3 p-3">
+                <div className="text-[10px] text-ink-faint font-mono mb-1">Worst month</div>
+                <div className="text-ink font-semibold">
+                  {profile.healthMetrics.worstMonthName}
+                  {profile.healthMetrics.worstMonthMedian != null
+                    ? ` (${profile.healthMetrics.worstMonthMedian.toFixed(1)} µg/m³)`
+                    : ""}
+                </div>
+              </div>
+
+              <div className="rounded-lg bg-surface-3/55 border border-surface-3 p-3">
+                <div className="text-[10px] text-ink-faint font-mono mb-1">Safer walk window (typical day)</div>
+                <div className="text-ink font-semibold">
+                  {bestWalkWindow
+                    ? `${bestWalkWindow.label} · ${bestWalkWindow.durationHours}h`
+                    : "Limited or unavailable hourly data"}
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-3 flex flex-wrap gap-2 text-[11px]">
+              <a href="#calendar" className="px-2.5 py-1.5 rounded-full border border-surface-3 bg-surface-3 text-ink-muted hover:text-ink hover:bg-surface transition-colors">
+                Check seasonal calendar
+              </a>
+              <a href="#clock" className="px-2.5 py-1.5 rounded-full border border-surface-3 bg-surface-3 text-ink-muted hover:text-ink hover:bg-surface transition-colors">
+                Check hourly clock
+              </a>
+            </div>
+          </div>
         </section>
 
         {/* ── Health Metrics ─────────────────────────────────────────────── */}
-        <section id="health" className="pb-12 scroll-mt-6" data-reveal>
+        <section id="health" className="pb-12 scroll-mt-6">
           <h2 className="text-lg font-semibold text-ink mb-5">Health impact</h2>
           <HealthMetricsPanel profile={profile} />
         </section>
 
         {/* ── Lung Clock ─────────────────────────────────────────────────── */}
-        <section id="clock" className="pb-12 scroll-mt-6" data-reveal>
+        <section id="clock" className="pb-12 scroll-mt-6">
           <h2 className="text-lg font-semibold text-ink mb-2">Lung clock</h2>
           <p className="text-sm text-ink-muted mb-5">
             24-hour air quality pattern. Dimmed arcs are unsafe for the selected activity.
@@ -225,7 +310,7 @@ export default async function CityPage({ params }: Props) {
 
         {/* ── Life Expectancy Chart (Tier 1 + 2 only) ──────────────────── */}
         {profile.tier <= 2 && (
-          <section id="life" className="pb-12 scroll-mt-6" data-reveal>
+          <section id="life" className="pb-12 scroll-mt-6">
             <h2 className="text-lg font-semibold text-ink mb-2">Life expectancy toll</h2>
             <p className="text-sm text-ink-muted mb-5">
               How does the air here compare to other health risks — and to peer cities?
@@ -241,7 +326,7 @@ export default async function CityPage({ params }: Props) {
         )}
 
         {/* ── Breathing Calendar ─────────────────────────────────────────── */}
-        <section id="calendar" className="pb-12 scroll-mt-6" data-reveal>
+        <section id="calendar" className="pb-12 scroll-mt-6">
           <h2 className="text-lg font-semibold text-ink mb-2">Breathing calendar</h2>
           <p className="text-sm text-ink-muted mb-5">
             Every day of the year, colored by PM2.5 air quality band.
@@ -252,17 +337,17 @@ export default async function CityPage({ params }: Props) {
         </section>
 
         {/* ── Cigarette Counter + Trip Calc ──────────────────────────────── */}
-        <section id="exposure" className="pb-12 scroll-mt-6" data-reveal>
+        <section id="exposure" className="pb-12 scroll-mt-6">
           <h2 className="text-lg font-semibold text-ink mb-5">Exposure calculator</h2>
           <p className="text-sm text-ink-muted mb-5">
-            The baseline view is <strong className="text-ink">No mask</strong>. You can switch to Surgical, KN95, or N95 to see a planning range for mask-adjusted exposure.
+            The baseline view is <strong className="text-ink">No mask</strong>. You can switch to Surgical, KN95, or N95 to see a planning range for mask-adjusted exposure. Smoking-aware mode is optional and off by default.
           </p>
           <CigaretteCounter profile={profile} />
         </section>
 
         {/* ── Scrollytelling (Tier 1 only) ───────────────────────────────── */}
         {profile.tier === 1 && (
-          <section id="story" className="pb-12 scroll-mt-6" data-reveal>
+          <section id="story" className="pb-12 scroll-mt-6">
             <h2 className="text-lg font-semibold text-ink mb-2">The story</h2>
             <p className="text-sm text-ink-muted mb-6">
               Scroll through to see the numbers come alive.
@@ -275,7 +360,7 @@ export default async function CityPage({ params }: Props) {
 
         {/* ── City Summary (Tier 2 only) ─────────────────────────────────── */}
         {profile.tier === 2 && profile.narrativeSummary && (
-          <section id="summary" className="pb-12 scroll-mt-6" data-reveal>
+          <section id="summary" className="pb-12 scroll-mt-6">
             <h2 className="text-lg font-semibold text-ink mb-2">City profile</h2>
             <p className="text-sm text-ink-muted mb-6">
               Research-backed air quality summary for {profile.cityName}.
@@ -288,7 +373,7 @@ export default async function CityPage({ params }: Props) {
 
         {/* ── Seasonal events ────────────────────────────────────────────── */}
         {profile.seasonalEvents.length > 0 && (
-          <section id="events" className="pb-12 scroll-mt-6" data-reveal>
+          <section id="events" className="pb-12 scroll-mt-6">
             <h2 className="text-lg font-semibold text-ink mb-5">Seasonal risk events</h2>
             <div className="space-y-3">
               {profile.seasonalEvents.map((ev, i) => {
@@ -328,7 +413,7 @@ export default async function CityPage({ params }: Props) {
         )}
 
         {/* ── Footer ─────────────────────────────────────────────────────── */}
-        <footer className="border-t border-surface-3 py-8 text-[11px] text-ink-muted font-mono" data-reveal>
+        <footer className="border-t border-surface-3 py-8 text-[11px] text-ink-muted font-mono">
           <div className="flex flex-col sm:flex-row justify-between gap-3">
             <div>
               Data: OpenAQ API v3 · WHO 2021 AQI Guidelines · Berkeley Earth ·{" "}

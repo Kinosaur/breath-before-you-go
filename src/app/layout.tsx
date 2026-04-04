@@ -3,7 +3,6 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { CornerActions } from "@/components/ui/CornerActions";
 import { SmartCursor } from "@/components/ui/SmartCursor";
-import { PageInteractionOrchestrator } from "@/components/ui/PageInteractionOrchestrator";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -64,7 +63,6 @@ export default function RootLayout({
       >
         <CornerActions githubHref={process.env.NEXT_PUBLIC_GITHUB_REPO_URL} />
         <SmartCursor />
-        <PageInteractionOrchestrator />
         {children}
       </body>
     </html>
