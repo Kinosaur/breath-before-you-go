@@ -203,7 +203,7 @@ export function HealthMetricsPanel({ profile }: Props) {
 
           {hm.bestVisitMonthName && (
             <div className="pt-3 border-t border-surface-3">
-              <div className="text-sm text-ink-faint mb-1">Best month to visit</div>
+              <div className="text-sm text-ink-faint mb-1">Lower-risk month window</div>
               <div className="flex items-center gap-2">
                 <span className="text-lg font-bold text-aqi-good">{hm.bestVisitMonthName}</span>
                 <span className="text-sm text-ink-faint">lowest median + lowest variance</span>

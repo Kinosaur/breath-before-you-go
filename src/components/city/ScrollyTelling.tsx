@@ -370,7 +370,7 @@ function SectionBurningSeason({ profile }: { profile: CityProfile }) {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// SECTION 4 — When to visit
+// SECTION 4 — Seasonal risk profile
 // ─────────────────────────────────────────────────────────────────────────────
 
 function WhenToVisitContent({ profile, visible }: { profile: CityProfile; visible: boolean }) {
@@ -384,7 +384,7 @@ function WhenToVisitContent({ profile, visible }: { profile: CityProfile; visibl
       visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
     ].join(" ")}>
       <p className="text-xs text-ink-muted font-mono uppercase tracking-widest mb-6 text-center">
-        Section 4 of 6 · When to visit
+        Section 4 of 6 · Seasonal risk profile
       </p>
 
       <h2 className="text-2xl sm:text-3xl font-bold text-ink mb-4 leading-tight text-center">
@@ -455,11 +455,11 @@ function WhenToVisitContent({ profile, visible }: { profile: CityProfile; visibl
       <div className="flex flex-wrap justify-center gap-4 text-[10px] text-ink-muted">
         <span className="flex items-center gap-1.5">
           <span className="inline-block w-2 h-2 rounded-full bg-green-400" />
-          Best month to visit
+          Lower-risk month
         </span>
         <span className="flex items-center gap-1.5">
           <span className="inline-block w-2 h-2 rounded-full bg-red-400" />
-          Worst month to visit
+          Higher-risk month
         </span>
         <span>Numbers = median PM2.5 (µg/m³)</span>
       </div>

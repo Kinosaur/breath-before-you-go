@@ -48,12 +48,12 @@ export default function HomePage() {
         </h1>
 
         <p className="text-xl text-ink-muted mb-3">
-          Air pollution awareness with practical travel decisions across Asia.
+          Air quality decision intelligence across Asia.
         </p>
 
         <p className="text-base text-ink-muted max-w-2xl leading-relaxed">
           Explore five years of air quality data across {index.cityCount} Asian cities and make clearer choices:
-          when to visit, which months to avoid, and which hours are typically safer for outdoor activity.
+          which months carry lower risk, which periods to avoid, and which hours are typically safer for outdoor activity.
         </p>
       </section>
 

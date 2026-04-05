@@ -5,8 +5,11 @@
  *   "Plan a Trip" → Travel mode: Breathing Calendar first, best month badge
  *   "My City"     → Resident mode: Lung Clock first, real-time safe windows
  *
- * Both paths lead to the same city pages but with different default viz
- * ordering. The ?mode param is read by city pages in Week 4.
+ * Home-page first click should preserve intent:
+ *   - Plan a Trip lands on map comparison
+ *   - My City lands on city list selection
+ *
+ * Both paths still set ?mode so city pages can adapt defaults.
  */
 
 import Link from "next/link";
@@ -25,18 +28,18 @@ const CARDS: EntryCard[] = [
   {
     href:        "/?mode=travel#map",
     icon:        "✈️",
-    title:       "Plan a Trip",
-    description: "Pick a city, compare months, and decide when to go with lower pollution risk.",
-    detail:      "Best month · Seasonal calendar · Trip exposure estimate",
+    title:       "Compare City Air Risk",
+    description: "Compare cities and months to spot lower-risk periods based on historical PM2.5 patterns.",
+    detail:      "Lower-risk month · Seasonal calendar · Exposure estimate",
     accentClass: "group-hover:text-aqi-good",
     borderClass: "hover:border-aqi-good/40",
   },
   {
-    href:        "/?mode=resident#map",
+    href:        "/?mode=resident#city-grid",
     icon:        "🏙️",
     title:       "My City",
-    description: "See the city's typical daily pattern and identify safer windows for outdoor plans.",
-    detail:      "Lung clock · Safer hour windows · Health snapshot",
+    description: "Jump straight to city selection, then view daily patterns and safer outdoor time windows.",
+    detail:      "City list first · Lung clock · Safer hour windows",
     accentClass: "group-hover:text-aqi-moderate",
     borderClass: "hover:border-aqi-moderate/40",
   },

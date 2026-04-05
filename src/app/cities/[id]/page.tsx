@@ -236,7 +236,7 @@ export default async function CityPage({ params }: Props) {
             <div className="text-sm text-ink-faint font-mono mb-3">Quick decision snapshot</div>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-base">
               <div className="rounded-lg bg-surface-3/55 border border-surface-3 p-3">
-                <div className="text-xs text-ink-faint font-mono mb-1">Best month to visit</div>
+                <div className="text-xs text-ink-faint font-mono mb-1">Lower-risk month window</div>
                 <div className="text-ink font-semibold">
                   {profile.healthMetrics.bestVisitMonthName ?? "No clear seasonal winner"}
                 </div>

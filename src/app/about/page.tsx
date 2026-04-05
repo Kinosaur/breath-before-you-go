@@ -357,7 +357,7 @@ export default function AboutPage() {
 
             {/* Footer */}
             <footer className="mt-10 border-t border-surface-3 pt-6 text-sm text-ink-muted font-mono flex flex-col sm:flex-row justify-between gap-2">
-              <span>Breathe Before You Go · air quality travel intelligence</span>
+              <span>Breathe Before You Go · air quality decision intelligence</span>
               <Link href="/" className="link-underline-reveal hover:text-ink transition-colors">← Back to city overview</Link>
             </footer>
         </div>

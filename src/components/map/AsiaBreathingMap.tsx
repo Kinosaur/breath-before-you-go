@@ -120,7 +120,7 @@ function buildPopupContent(city: CityIndexEntry, pm25: number, monthIndex: numbe
 
   // Best visit month
   const bestRow = el("div", { fontSize: "11px", color: "#9e9e9e", marginBottom: "14px" });
-  bestRow.textContent = "Best month to visit: ";
+  bestRow.textContent = "Lower-risk month: ";
   const bestStrong = el("strong", { color: "#f5f5f5" }, bestVisit);
   bestRow.appendChild(bestStrong);
   root.appendChild(bestRow);

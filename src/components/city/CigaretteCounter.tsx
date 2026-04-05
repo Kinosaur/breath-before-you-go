@@ -140,12 +140,12 @@ function TripCalculator({
 
   return (
     <div className="rounded-xl bg-surface-2 border border-surface-3 p-5">
-      <div className="text-xs text-ink-faint font-mono mb-4">Trip calculator</div>
+      <div className="text-xs text-ink-faint font-mono mb-4">Exposure duration calculator</div>
 
       {/* Date inputs */}
       <div className="flex flex-wrap gap-3 mb-5">
         <div className="flex flex-col gap-1">
-          <label className="text-[10px] text-ink-faint font-mono">Arrival</label>
+          <label className="text-[10px] text-ink-faint font-mono">Start date</label>
           <input
             type="date"
             value={startDate}
@@ -156,7 +156,7 @@ function TripCalculator({
           />
         </div>
         <div className="flex flex-col gap-1">
-          <label className="text-[10px] text-ink-faint font-mono">Departure</label>
+          <label className="text-[10px] text-ink-faint font-mono">End date</label>
           <input
             type="date"
             value={endDate}
@@ -186,7 +186,7 @@ function TripCalculator({
           {smokerCigsPerDay > 0 && (
             <div className="mb-4 rounded-lg border border-surface-3 bg-surface-3/45 p-3">
               <p className="text-[11px] text-ink-muted leading-relaxed">
-                Smoking baseline for this trip: <span className="font-mono text-ink">{smokingBaselineTrip.toFixed(1)}</span> cigs
+                Smoking baseline for this period: <span className="font-mono text-ink">{smokingBaselineTrip.toFixed(1)}</span> cigs
                 {" · "}
                 Combined total (smoking + air): <span className="font-mono text-ink">{combinedTrip.toFixed(1)}</span> cigs.
               </p>
