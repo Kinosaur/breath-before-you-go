@@ -216,6 +216,21 @@ def export_city(city: dict, metrics: dict, health_ctx: dict, hourly_df) -> dict 
     dq      = metrics["dataQuality"]
     city_health = health_ctx.get("cities", {}).get(cid, {})
 
+    # ── 0. Load existing profile to preserve manually-added fields ──────────
+    profile_path = city_dir / "profile.json"
+    existing_manual: dict = {}
+    if profile_path.exists():
+        try:
+            with open(profile_path, encoding="utf-8") as _f:
+                _existing = json.load(_f)
+            # Only preserve keys that are NOT pipeline-computed
+            PRESERVE_KEYS = {"scrollyContent", "narrativeSummary"}
+            for _k in PRESERVE_KEYS:
+                if _k in _existing:
+                    existing_manual[_k] = _existing[_k]
+        except (json.JSONDecodeError, IOError):
+            pass  # Corrupted or missing → proceed without preservation
+
     # ── 1. profile.json ──────────────────────────────────────────────────────
     profile = {
         "cityId":      cid,
@@ -248,6 +263,9 @@ def export_city(city: dict, metrics: dict, health_ctx: dict, hourly_df) -> dict 
             "dataSource":           "OpenAQ API v3 /sensors/{id}/days pre-computed daily aggregates",
         },
     }
+    # Merge preserved manual fields back in
+    profile.update(existing_manual)
+
     with open(city_dir / "profile.json", "w", encoding="utf-8") as f:
         json.dump(profile, f, separators=(",", ":"), ensure_ascii=False)
 

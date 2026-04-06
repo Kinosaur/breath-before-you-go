@@ -94,6 +94,26 @@ export function HealthMetricsPanel({ profile }: Props) {
           WHO 2021 guideline: 5 µg/m³ annual mean
         </div>
 
+        {/* WHO 2019 cross-reference */}
+        {profile.whoData?.available && profile.whoData.pm25Estimate?.value != null && (
+          <div className="mt-4 pt-4 border-t border-surface-3">
+            <div className="text-xs text-ink-faint font-mono mb-1">WHO 2019 modelled estimate</div>
+            <div className="flex items-baseline gap-2">
+              <span className="text-base font-semibold text-ink-muted tabular-nums">
+                {profile.whoData.pm25Estimate.value.toFixed(1)} µg/m³
+              </span>
+              <span className="text-[10px] text-ink-faint font-mono">annual mean · {profile.whoData.pm25Estimate.year}</span>
+            </div>
+            <p className="text-[10px] text-ink-muted mt-1 leading-relaxed">
+              Independent modelled estimate for reference. Our data uses station sensors
+              which may cover different years and locations.{" "}
+                <a href="/about" className="link-underline-reveal transition-colors hover:text-ink">
+                Methodology →
+              </a>
+            </p>
+          </div>
+        )}
+
         {/* AQI distribution bar */}
         <div className="mt-4">
           <div className="text-sm text-ink-faint mb-1">Days by air quality band</div>
@@ -115,7 +135,7 @@ export function HealthMetricsPanel({ profile }: Props) {
           <strong className="text-ink">{hm.cigarettesPerDay.toFixed(1)}</strong> cigarettes
           daily.
         </div>
-        <p className="mt-3 text-xs text-ink-faint leading-relaxed border-t border-surface-3 pt-3">
+        <p className="mt-3 text-xs text-ink-muted leading-relaxed border-t border-surface-3 pt-3">
           {hm.cigMethodologyNote}
         </p>
       </div>
@@ -161,7 +181,7 @@ export function HealthMetricsPanel({ profile }: Props) {
             );
           })}
         </div>
-        <p className="mt-3 text-xs text-ink-faint leading-relaxed border-t border-surface-3 pt-3">
+        <p className="mt-3 text-xs text-ink-muted leading-relaxed border-t border-surface-3 pt-3">
           {hm.aqliMethodologyNote}
         </p>
       </div>

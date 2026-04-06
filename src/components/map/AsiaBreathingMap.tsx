@@ -92,7 +92,7 @@ function buildPopupContent(city: CityIndexEntry, pm25: number, monthIndex: numbe
     return node;
   }
 
-  const root = el("div", { padding: "16px", minWidth: "210px", fontFamily: "system-ui,sans-serif" });
+  const root = el("div", { padding: "16px", minWidth: "210px", fontFamily: "var(--font-instrument-sans), system-ui, sans-serif" });
 
   // City name
   root.appendChild(el("div", { fontSize: "15px", fontWeight: "700", marginBottom: "2px", color: "#f5f5f5" }, city.name));
@@ -323,8 +323,8 @@ export default function AsiaBreathingMap({ cities }: Props) {
           ref={containerRef}
           className="w-full rounded-xl overflow-hidden"
           style={{ height: "clamp(320px, 62vh, 500px)" }}
-          aria-label="Asia air quality map — click a city marker for details"
-          role="img"
+          aria-label="Asia air quality map. Use markers with mouse or city links below with keyboard."
+          role="region"
         />
 
         {/* Loading overlay */}
@@ -392,6 +392,22 @@ export default function AsiaBreathingMap({ cities }: Props) {
           </div>
         ))}
       </div>
+
+      {/* Keyboard-accessible fallback navigation */}
+      <nav className="mt-4" aria-label="City links">
+        <div className="text-xs text-ink-muted font-mono mb-2">City links</div>
+        <div className="flex flex-wrap gap-2">
+          {cities.map((city) => (
+            <a
+              key={city.id}
+              href={`/cities/${city.id}`}
+              className="control-chip text-[11px]"
+            >
+              {city.name}
+            </a>
+          ))}
+        </div>
+      </nav>
     </div>
   );
 }

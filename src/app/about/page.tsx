@@ -75,7 +75,7 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <div className="mt-4 flex flex-wrap gap-2 lg:hidden">
+              <div className="mt-4 flex flex-wrap gap-2">
                 {SECTION_LINKS.map((section) => (
                   <a
                     key={section.id}

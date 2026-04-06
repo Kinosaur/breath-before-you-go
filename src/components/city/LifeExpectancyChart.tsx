@@ -298,10 +298,10 @@ export function LifeExpectancyChart({ context, cityName, peerCities }: Props) {
         <button
           onClick={() => setShowPeers((p) => !p)}
           className={[
-            "px-3 py-1.5 rounded-full text-xs border transition-colors",
+            "control-chip text-xs focus-visible:ring-2 focus-visible:ring-accent-clean focus-visible:ring-offset-2 focus-visible:ring-offset-surface-2",
             showPeers
-              ? "bg-ink text-[#0a0a0a] border-ink font-semibold"
-              : "bg-surface-3 text-ink-muted border-surface-3 hover:text-ink hover:border-ink-faint",
+              ? "control-chip-active font-semibold"
+              : "",
           ].join(" ")}
         >
           {showPeers ? "↑ Hide" : "↓ Show"} peer cities
@@ -309,10 +309,10 @@ export function LifeExpectancyChart({ context, cityName, peerCities }: Props) {
         <button
           onClick={() => setShowEquity((e) => !e)}
           className={[
-            "px-3 py-1.5 rounded-full text-xs border transition-colors",
+            "control-chip text-xs focus-visible:ring-2 focus-visible:ring-accent-clean focus-visible:ring-offset-2 focus-visible:ring-offset-surface-2",
             showEquity
-              ? "bg-yellow-500/20 text-yellow-300 border-yellow-500/40 font-semibold"
-              : "bg-surface-3 text-ink-muted border-surface-3 hover:text-ink hover:border-ink-faint",
+              ? "control-chip-active font-semibold"
+              : "",
           ].join(" ")}
         >
           {showEquity ? "↑ Hide" : "↓ Show"} global benchmarks

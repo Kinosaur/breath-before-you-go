@@ -14,13 +14,13 @@ import { useSearchParams } from "next/navigation";
 type Mode = "travel" | "resident";
 
 function modeToLabel(mode: Mode): string {
-  return mode === "travel" ? "Travel Mode" : "Resident Mode";
+  return mode === "travel" ? "Seasonal Lens" : "City Lens";
 }
 
 function modeToHint(mode: Mode): string {
   return mode === "travel"
-    ? "Calendar-first framing"
-    : "Real-time-first framing";
+    ? "Month-risk-first"
+    : "City-selection-first";
 }
 
 export function ModeBadge() {
@@ -45,7 +45,7 @@ export function ModeBadge() {
                    group-hover:max-h-16 group-hover:border-surface-3 group-hover:bg-surface group-hover:py-1 group-hover:opacity-100
                    group-focus-within:max-h-16 group-focus-within:border-surface-3 group-focus-within:bg-surface group-focus-within:py-1 group-focus-within:opacity-100"
       >
-        Current audience framing
+        Current decision framing
       </span>
     </div>
   );

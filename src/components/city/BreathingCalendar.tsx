@@ -268,7 +268,7 @@ export function BreathingCalendar({ heatmap }: Props) {
         ))}
       </div>
 
-      <p className="mb-3 text-[10px] text-ink-faint">
+      <p className="mb-3 text-[10px] text-ink-muted">
         Tip: tap a day cell to pin details, tap outside to close.
       </p>
 
@@ -328,13 +328,13 @@ export function BreathingCalendar({ heatmap }: Props) {
               className="w-3 h-3 rounded-sm flex-shrink-0"
               style={{ background: color, border: border ? "1px solid #3a3a3a" : undefined }}
             />
-            <span className="text-[10px] text-ink-faint">{label} µg/m³</span>
+            <span className="text-[10px] text-ink-muted">{label} µg/m³</span>
           </div>
         ))}
       </div>
 
       {/* Disclaimer */}
-      <p className="mt-3 text-[10px] text-ink-faint leading-relaxed">
+      <p className="mt-3 text-[10px] text-ink-muted leading-relaxed">
         All-years view shows the median across available years per calendar day.
         Individual year views show actual measured values.{" "}
         <a href="/about" className="underline hover:text-ink-muted">

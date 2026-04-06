@@ -66,7 +66,7 @@ export function CityGrid({ cities }: Props) {
                 </span>
               </div>
 
-              <div className="-mt-1 mb-3 text-[10px] text-ink-muted touch-tooltip transition-all duration-150">
+              <div className="-mt-1 mb-3 text-[11px] text-ink-muted touch-tooltip transition-all duration-150">
                 {label}
               </div>
 
@@ -91,7 +91,7 @@ export function CityGrid({ cities }: Props) {
 
               {/* Best visit month badge */}
               {city.bestVisitMonth.name ? (
-                <div className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full bg-aqi-good/10 text-aqi-good">
+                <div className="inline-flex items-center gap-1 text-[11px] px-2 py-0.5 rounded-full bg-aqi-good/10 text-aqi-good">
                   <span aria-hidden="true">✓</span>
                   <span>{city.bestVisitMonth.name}</span>
                 </div>
@@ -100,7 +100,7 @@ export function CityGrid({ cities }: Props) {
               )}
 
               {/* Worst month hint — appears on hover */}
-              <div className="mt-2 text-[10px] text-ink-muted touch-tooltip transition-all duration-200">
+              <div className="mt-2 text-[11px] text-ink-muted touch-tooltip transition-all duration-200">
                 Worst: {city.worstMonth.name} ({city.worstMonth.median} µg/m³)
               </div>
             </Link>

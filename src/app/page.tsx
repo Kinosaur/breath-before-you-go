@@ -18,11 +18,10 @@
 import { Suspense } from "react";
 import { getIndex } from "@/lib/data";
 import { DataFreshnessBadge } from "@/components/ui/DataFreshnessBadge";
-import { EntryPointCards }    from "@/components/ui/EntryPointCards";
 import { CityGrid }           from "@/components/ui/CityGrid";
 import { AsiaBreathingMapClient } from "@/components/map/AsiaBreathingMapClient";
 import { ModeBadge } from "@/components/ui/ModeBadge";
-import { DeferredRender } from "@/components/ui/DeferredRender";
+import { EntryPointCards } from "@/components/ui/EntryPointCards";
 
 export default function HomePage() {
   const index = getIndex();
@@ -52,13 +51,36 @@ export default function HomePage() {
         </p>
 
         <p className="text-base text-ink-muted max-w-2xl leading-relaxed">
-          Explore five years of air quality data across {index.cityCount} Asian cities and make clearer choices:
+          Explore years of air quality data across {index.cityCount} Asian cities and make clearer choices:
           which months carry lower risk, which periods to avoid, and which hours are typically safer for outdoor activity.
+        </p>
+        <p className="mt-3 text-sm text-ink-muted max-w-2xl leading-relaxed">
+          Seasonal planning tool, not a real-time monitor — for today&apos;s readings use{" "}
+          <a
+            href="https://www.iqair.com"
+            target="_blank"
+            rel="noreferrer"
+            className="link-underline-reveal transition-colors hover:text-ink"
+          >
+            IQAir ↗
+          </a>{" "}
+          or your local authority.{" "}
+          <a href="/about" className="link-underline-reveal transition-colors hover:text-ink">
+            Methodology ↗
+          </a>
         </p>
       </section>
 
-      {/* ── Dual entry points ────────────────────────────────────────────── */}
-      <section className="px-5 pb-10 max-w-5xl mx-auto">
+      {/* ── Entry paths ─────────────────────────────────────────────────── */}
+      <section className="px-5 pb-12 max-w-5xl mx-auto">
+        <div className="flex items-baseline gap-3 mb-5">
+          <h2 className="font-editorial text-2xl font-semibold text-ink">
+            Start Here
+          </h2>
+          <span className="text-base text-ink-muted hidden sm:inline">
+            — choose a planning path
+          </span>
+        </div>
         <EntryPointCards />
       </section>
 
@@ -73,19 +95,7 @@ export default function HomePage() {
           </span>
         </div>
 
-        <DeferredRender
-          fallback={
-            <div
-              className="w-full rounded-xl bg-surface-2 flex items-center justify-center border border-surface-3"
-              style={{ height: "clamp(320px, 62vh, 500px)" }}
-              aria-live="polite"
-            >
-              <span className="text-base text-ink-muted">Preparing map…</span>
-            </div>
-          }
-        >
-          <AsiaBreathingMapClient cities={index.cities} />
-        </DeferredRender>
+        <AsiaBreathingMapClient cities={index.cities} />
       </section>
 
       {/* ── City grid ────────────────────────────────────────────────────── */}

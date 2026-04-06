@@ -15,9 +15,27 @@ interface Props {
   profile: CityProfile;
 }
 
+function buildFallbackParagraphs(profile: CityProfile): string[] {
+  const { cityName, healthMetrics, monthlyProfiles, seasonalEvents } = profile;
+  const pm25 = healthMetrics.annualMedianPm25;
+  const bestM = monthlyProfiles.find((m) => m.month === healthMetrics.bestMonth);
+  const worstM = monthlyProfiles.find((m) => m.month === healthMetrics.worstMonth);
+  const event = seasonalEvents[0];
+
+  const p1 = `${cityName} has an annual median PM2.5 of ${pm25.toFixed(1)} µg/m³ (${(pm25 / 5).toFixed(1)}× the WHO clean-air baseline). The lowest-risk month is ${healthMetrics.bestMonthName}${bestM?.p50 != null ? ` at ${bestM.p50.toFixed(1)} µg/m³` : ""}, while the highest-risk month is ${healthMetrics.worstMonthName}${worstM?.p50 != null ? ` at ${worstM.p50.toFixed(1)} µg/m³` : ""}.`;
+
+  const p2 = event
+    ? `A key local pattern is ${event.event.toLowerCase()} (${event.months.map((m) => ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][m - 1]).join(", ")}), typically linked to ${event.cause.toLowerCase()}. Use the seasonal calendar to choose lower-risk months and the Lung Clock to find safer outdoor hours.`
+    : `Seasonal and hourly conditions can vary significantly across the year. Use the seasonal calendar to choose lower-risk months and the Lung Clock to find safer outdoor hours for activity.`;
+
+  return [p1, p2];
+}
+
 export function CitySummaryPanel({ profile }: Props) {
   const { narrativeSummary, healthMetrics, monthlyProfiles } = profile;
   const paragraphs = (narrativeSummary ?? "").split(/\n\n+/).filter(Boolean);
+  const hasNarrative = paragraphs.length > 0;
+  const displayParagraphs = hasNarrative ? paragraphs : buildFallbackParagraphs(profile);
 
   const pm25      = healthMetrics.annualMedianPm25;
   const pm25Color = getBandColor(classifyBand(pm25));
@@ -101,9 +119,15 @@ export function CitySummaryPanel({ profile }: Props) {
         </div>
       </div>
 
+      {!hasNarrative && (
+        <div className="mb-4 rounded-lg border border-surface-3 bg-surface-3/35 px-3 py-2 text-xs text-ink-muted">
+          City-specific long-form narrative is being refreshed. This summary is generated from current city data.
+        </div>
+      )}
+
       {/* ── Narrative text ────────────────────────────────────────────── */}
       <div className="prose prose-sm prose-invert max-w-none">
-        {paragraphs.map((para, i) => (
+        {displayParagraphs.map((para, i) => (
           <p key={i} className="text-base text-ink-muted leading-relaxed mb-4 last:mb-0">
             {para}
           </p>

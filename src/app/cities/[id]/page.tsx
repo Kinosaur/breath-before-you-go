@@ -82,6 +82,28 @@ function findLongestSafeWalkWindow(
   };
 }
 
+function DataConfidenceBadge({
+  dq,
+}: {
+  dq: { yearsAvailable: number[]; totalDays: number };
+}) {
+  const years = dq.yearsAvailable.length;
+  const days  = dq.totalDays;
+  const isHigh     = years >= 4 && days >= 1000;
+  const isModerate = !isHigh && (years >= 2 || days >= 400);
+  const label = isHigh ? "High confidence" : isModerate ? "Moderate confidence" : "Limited coverage";
+  const color = isHigh ? "#4ADE80" : isModerate ? "#FFEB3B" : "#FF9800";
+  return (
+    <span
+      className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold font-mono"
+      style={{ background: `${color}22`, color, border: `1px solid ${color}44` }}
+      title={`${years} year${years !== 1 ? "s" : ""} of data, ${days.toLocaleString()} days`}
+    >
+      {label}
+    </span>
+  );
+}
+
 function ChartSkeleton({ h = "h-[260px]" }: { h?: string }) {
   return (
     <div className={`w-full ${h} rounded-lg bg-surface-3/60 border border-surface-3 animate-pulse`} aria-hidden="true" />
@@ -150,6 +172,8 @@ export default async function CityPage({ params }: Props) {
   const hourlyCount = hourly?.typicalDay?.length ?? 0;
   const hasHourlyAny = Boolean(hourly?.available && hourlyCount > 0);
   const hasHourlyFull = hasHourlyAny && hourlyCount === 24;
+  const freshnessGeneratedAt = index.generated;
+  const hourlyGeneratedAt = hourly?.fetchedAt ?? index.generated;
   const bestWalkWindow = hasHourlyAny
     ? findLongestSafeWalkWindow(hourly?.typicalDay ?? [])
     : null;
@@ -194,7 +218,7 @@ export default async function CityPage({ params }: Props) {
         {/* ── Hero ──────────────────────────────────────────────────────── */}
         <section className="pb-10">
           <div className="flex flex-wrap items-center gap-3 mb-4">
-            <DataFreshnessBadge generatedAt={profile.dataQuality.lastComputed} />
+            <DataFreshnessBadge generatedAt={freshnessGeneratedAt} />
           </div>
 
           <div className="flex items-start gap-4">
@@ -210,12 +234,15 @@ export default async function CityPage({ params }: Props) {
               <p className="text-lg text-ink-muted mt-1">
                 {profile.country} · Tier {profile.tier}
               </p>
-              <p className="text-base text-ink-muted mt-2 font-mono">
-                {profile.dataQuality.totalDays.toLocaleString()} days of data ·{" "}
-                {profile.dataQuality.yearsAvailable[0]}–
-                {profile.dataQuality.yearsAvailable[profile.dataQuality.yearsAvailable.length - 1]} ·{" "}
-                {profile.dataQuality.sensors} sensor{profile.dataQuality.sensors !== 1 ? "s" : ""}
-              </p>
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mt-2">
+                <p className="text-base text-ink-muted font-mono">
+                  {profile.dataQuality.totalDays.toLocaleString()} days ·{" "}
+                  {profile.dataQuality.yearsAvailable[0]}–
+                  {profile.dataQuality.yearsAvailable[profile.dataQuality.yearsAvailable.length - 1]} ·{" "}
+                  {profile.dataQuality.sensors} sensor{profile.dataQuality.sensors !== 1 ? "s" : ""}
+                </p>
+                <DataConfidenceBadge dq={profile.dataQuality} />
+              </div>
             </div>
           </div>
 
@@ -232,7 +259,30 @@ export default async function CityPage({ params }: Props) {
             ]}
           />
 
-          <div className="mt-6 rounded-xl bg-surface-2 border border-surface-3 p-4">
+          {/* ── Seasonal / real-time disclaimer ───────────────────────────── */}
+          <div className="mt-5 flex items-start gap-2.5 rounded-lg bg-surface-2 border border-surface-3 px-4 py-3">
+            <svg className="flex-shrink-0 mt-0.5 text-ink-faint" width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+              <path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zm0 3a.75.75 0 1 1 0 1.5A.75.75 0 0 1 8 4zm.75 3v5h-1.5V7h1.5z"/>
+            </svg>
+            <p className="text-xs text-ink-muted leading-relaxed">
+              Seasonal historical data — not for today&apos;s readings.
+              For current air quality:{" "}
+              <a
+                href="https://www.iqair.com/world-air-quality"
+                target="_blank"
+                rel="noreferrer"
+                className="link-underline-reveal transition-colors hover:text-ink"
+              >
+                IQAir ↗
+              </a>
+              {" · "}
+              <a href="/about" className="link-underline-reveal transition-colors hover:text-ink">
+                Methodology →
+              </a>
+            </p>
+          </div>
+
+          <div className="mt-4 rounded-xl bg-surface-2 border border-surface-3 p-4">
             <div className="text-sm text-ink-faint font-mono mb-3">Quick decision snapshot</div>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-base">
               <div className="rounded-lg bg-surface-3/55 border border-surface-3 p-3">
@@ -281,12 +331,18 @@ export default async function CityPage({ params }: Props) {
 
         {/* ── Lung Clock ─────────────────────────────────────────────────── */}
         <section id="clock" className="pb-12 scroll-mt-6">
-          <h2 className="font-editorial text-2xl font-semibold text-ink mb-2">Lung clock</h2>
-          <p className="text-sm text-ink-muted mb-5">
-            24-hour air quality pattern. Dimmed arcs are unsafe for the selected activity.
+          <div className="flex flex-wrap items-center gap-2 mb-2">
+            <h2 className="font-editorial text-2xl font-semibold text-ink">Lung clock</h2>
+            <DataFreshnessBadge generatedAt={hourlyGeneratedAt} />
+          </div>
+          <p className="text-sm text-ink-muted mb-2">
+            24-hour pattern from the most recent 7 days of hourly data. Dimmed arcs are unsafe for the selected activity.
+          </p>
+          <p className="text-xs text-ink-muted mb-5">
+            This is a short-term trend view (not live minute-by-minute monitoring).
           </p>
           {hasHourlyAny ? (
-            <div className="rounded-xl bg-surface-2 border border-surface-3 p-5 motion-heavy-block" data-heavy-block>
+            <div className="rounded-xl bg-surface-2 border border-surface-3 p-5 motion-heavy-block motion-fade-up" data-heavy-block>
               {!hasHourlyFull && (
                 <div className="mb-3 text-sm text-ink-muted font-mono">
                   Partial hourly data: showing {hourlyCount}/24 hours. Missing hours are marked as gray arcs.
@@ -302,7 +358,7 @@ export default async function CityPage({ params }: Props) {
           ) : (
             <div className="rounded-xl bg-surface-2 border border-surface-3 p-5">
               <p className="text-sm text-ink-muted">
-                Hourly data is currently unavailable for this city. You can still use the seasonal calendar and health summary.
+                Hourly data is currently unavailable for this city. Use the seasonal calendar and health summary for planning decisions.
               </p>
             </div>
           )}
@@ -359,11 +415,11 @@ export default async function CityPage({ params }: Props) {
         )}
 
         {/* ── City Summary (Tier 2 only) ─────────────────────────────────── */}
-        {profile.tier === 2 && profile.narrativeSummary && (
+        {profile.tier === 2 && (
           <section id="summary" className="pb-12 scroll-mt-6">
             <h2 className="font-editorial text-2xl font-semibold text-ink mb-2">City profile</h2>
             <p className="text-sm text-ink-muted mb-6">
-              Research-backed air quality summary for {profile.cityName}.
+              Data-backed city context for {profile.cityName}, with practical interpretation.
             </p>
             <div className="rounded-xl bg-surface-2 border border-surface-3 p-6">
               <CitySummaryPanel profile={profile} />

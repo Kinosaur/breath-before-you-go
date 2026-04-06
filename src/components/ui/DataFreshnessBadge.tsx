@@ -25,8 +25,8 @@ const DOT_STYLES: Record<FreshnessStatus, string> = {
 };
 
 const MESSAGES: Record<FreshnessStatus, (label: string) => string> = {
-  live:       (label) => `Live — ${label}`,
-  delayed:    (label) => `Delayed — ${label}`,
+  live:       (label) => `Fresh — ${label}`,
+  delayed:    (label) => `Recent — ${label}`,
   historical: ()      => "Historical — last pipeline update was over 24h ago",
 };
 

@@ -68,6 +68,16 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className="dark">
+      <head>
+        <link rel="dns-prefetch" href="https://basemaps.cartocdn.com" />
+        <link rel="preconnect" href="https://basemaps.cartocdn.com" crossOrigin="anonymous" />
+        <link
+          rel="preload"
+          as="fetch"
+          href="https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body
         className={`
           ${geistSans.variable} ${geistMono.variable}

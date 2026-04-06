@@ -114,6 +114,7 @@ function getCityNow(timezone: string): { hour: number; minute: number } {
 export function LungClock({ typicalDay, lat, cityName, timezone }: Props) {
   const svgRef       = useRef<SVGSVGElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const clockRef     = useRef<HTMLDivElement>(null);
   const [activity,    setActivity]    = useState<Activity>("none");
   const [hoveredHour, setHoveredHour] = useState<number | null>(null);
   const [tooltipPos,  setTooltipPos]  = useState({ x: 0, y: 0, flip: false });
@@ -261,7 +262,7 @@ export function LungClock({ typicalDay, lat, cityName, timezone }: Props) {
     : dayByHour.filter((entry) => !entry.isMissing && isSafeForActivity(entry, activity)).length;
 
   function updateTooltipPosition(clientX: number, clientY: number) {
-    const rect = containerRef.current?.getBoundingClientRect();
+    const rect = clockRef.current?.getBoundingClientRect();
     if (!rect) return;
 
     const localX = clientX - rect.left;
@@ -338,7 +339,7 @@ export function LungClock({ typicalDay, lat, cityName, timezone }: Props) {
         </div>
 
         {/* Clock + overlays */}
-        <div className="relative w-full max-w-[400px]">
+        <div ref={clockRef} className="relative w-full max-w-[400px]">
           <svg
             ref={svgRef}
             viewBox={`0 0 ${SVG_SIZE} ${SVG_SIZE}`}
@@ -349,30 +350,30 @@ export function LungClock({ typicalDay, lat, cityName, timezone }: Props) {
 
           {/* ── Center overlay (React state, zero D3 rebuilds on hover) ── */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div className="text-center select-none">
+            <div className="text-center select-none transition-all duration-200 ease-out">
               {displayEntry ? (
                 <>
                   <div
-                    className="text-2xl font-bold leading-none"
+                    className="text-2xl font-bold leading-none transition-colors duration-150"
                     style={{ color: displayColor, fontVariantNumeric: "tabular-nums" }}
                   >
                     {displayEntry.isMissing ? "--" : displayEntry.value.toFixed(1)}
                   </div>
-                  <div className="text-[9px] text-ink-faint mt-0.5">µg/m³</div>
+                  <div className="text-[10px] text-ink-faint mt-0.5 transition-opacity duration-150">µg/m³</div>
                   <div
-                    className="text-[9px] font-semibold mt-1"
+                    className="text-[10px] font-semibold mt-1 transition-colors duration-150"
                     style={{ color: displayColor }}
                   >
                     {displayEntry.isMissing ? "No Data" : getBandLabel(displayBand)}
                   </div>
-                  <div className="text-[8px] font-mono mt-1.5" style={{ color: "#505050" }}>
+                  <div className="text-[10px] font-mono mt-1.5 transition-colors duration-150" style={{ color: "#505050" }}>
                     {isHovering
                       ? `${hoveredHour!.toString().padStart(2, "0")}:00`
                       : `now · ${currentHour.toString().padStart(2, "0")}:${currentMinute.toString().padStart(2, "0")}`}
                   </div>
                 </>
               ) : (
-                <div className="text-[9px] text-ink-faint">—</div>
+                <div className="text-[10px] text-ink-faint">—</div>
               )}
             </div>
           </div>
@@ -380,8 +381,8 @@ export function LungClock({ typicalDay, lat, cityName, timezone }: Props) {
           {/* ── Arc hover tooltip ─────────────────────────────────────── */}
           {isHovering && displayEntry && (
             <div
-              className="absolute pointer-events-none rounded-lg bg-surface-2 border border-surface-3 px-3 py-1.5 text-xs
-                          text-center shadow-lg whitespace-nowrap transition-all duration-100 ease-out"
+              className="absolute z-30 pointer-events-none rounded-lg bg-surface-2/95 border border-surface-3 px-3 py-1.5 text-xs
+                          text-center shadow-xl backdrop-blur-sm whitespace-nowrap transition-all duration-100 ease-out"
               style={{
                 left: `${tooltipPos.x}px`,
                 top: `${tooltipPos.y}px`,
@@ -472,22 +473,72 @@ function ActivitySelector({
   activity: Activity;
   onChange: (a: Activity) => void;
 }) {
+  const options: Activity[] = ["none", "walk", "cycle", "jog"];
+  const buttonRefs = useRef<Array<HTMLButtonElement | null>>([]);
+
+  function moveFocus(nextIndex: number) {
+    requestAnimationFrame(() => {
+      buttonRefs.current[nextIndex]?.focus();
+    });
+  }
+
+  function onRadioKeyDown(current: Activity, key: string) {
+    const idx = options.indexOf(current);
+    if (idx === -1) return;
+
+    if (key === "ArrowRight" || key === "ArrowDown") {
+      const nextIdx = (idx + 1) % options.length;
+      onChange(options[nextIdx]);
+      moveFocus(nextIdx);
+      return;
+    }
+
+    if (key === "ArrowLeft" || key === "ArrowUp") {
+      const nextIdx = (idx - 1 + options.length) % options.length;
+      onChange(options[nextIdx]);
+      moveFocus(nextIdx);
+      return;
+    }
+
+    if (key === "Home") {
+      onChange(options[0]);
+      moveFocus(0);
+      return;
+    }
+
+    if (key === "End") {
+      const lastIdx = options.length - 1;
+      onChange(options[lastIdx]);
+      moveFocus(lastIdx);
+    }
+  }
+
   return (
     <div>
-      <div className="text-[10px] text-ink-muted font-mono mb-2">
+      <div className="text-[11px] text-ink-muted font-mono mb-2">
         Activity safety filter
       </div>
       <div className="flex flex-wrap gap-2" role="radiogroup" aria-label="Activity filter">
-        {(["none", "walk", "cycle", "jog"] as Activity[]).map((opt) => {
+        {options.map((opt, idx) => {
           const isActive = activity === opt;
 
           return (
           <button
             key={opt}
+            ref={(el) => {
+              buttonRefs.current[idx] = el;
+            }}
             type="button"
             role="radio"
-            aria-checked={activity === opt}
+            aria-checked={isActive}
+            tabIndex={isActive ? 0 : -1}
             onClick={() => onChange(opt)}
+            onKeyDown={(event) => {
+              if (["ArrowRight", "ArrowDown", "ArrowLeft", "ArrowUp", "Home", "End"].includes(event.key)) {
+                event.preventDefault();
+                onRadioKeyDown(opt, event.key);
+              }
+            }}
             className={[
               "inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs border transition-all duration-200",
               isActive
@@ -497,7 +548,7 @@ function ActivitySelector({
           >
             {opt === "none" ? "All hours" : ACTIVITY_LABELS[opt]}
             {opt !== "none" && (
-              <span className={isActive ? "text-[#080B12]/80 text-[10px]" : "text-ink-muted text-[10px]"}>
+              <span className={isActive ? "text-[#080B12]/80 text-[11px]" : "text-ink-muted text-[11px]"}>
                 {"≤ "}{EXERCISE_THRESHOLDS[opt as Exclude<Activity, "none">]} µg
               </span>
             )}
@@ -521,7 +572,7 @@ function LinearLegend() {
       ].map(({ label, color }) => (
         <div key={label} className="flex items-center gap-1.5">
           <div className="w-2.5 h-2.5 rounded-sm flex-shrink-0" style={{ background: color }} />
-          <span className="text-[10px] text-ink-muted">{label}</span>
+          <span className="text-[11px] text-ink-muted">{label}</span>
         </div>
       ))}
     </div>
