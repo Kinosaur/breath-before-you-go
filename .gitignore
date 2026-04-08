@@ -12,10 +12,19 @@ __pycache__/
 *.pyc
 # OS generated files
 .DS_Store
+# Office / binary docs (keep source docs in markdown)
+*.doc
+*.docx
+*.pdf
+*.ppt
+*.pptx
+*.pages
+*.key
 # IDE / editor files
 .vscode/
 .idea/
 # Data pipeline outputs
+data_pipeline/output/*.csv
 coverage_report.md
 # Logs
 *.log
