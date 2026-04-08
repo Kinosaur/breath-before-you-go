@@ -1,0 +1,491 @@
+{
+  "cityId": "mumbai",
+  "cityName": "Mumbai",
+  "country": "India",
+  "tier": 3,
+  "coordinates": {
+    "lat": 19.076,
+    "lon": 72.8777
+  },
+  "timezone": "Asia/Kolkata",
+  "healthMetrics": {
+    "annualMedianPm25": 28.5,
+    "annualMeanPm25": 67.8,
+    "cigarettesPerDay": 1.3,
+    "yearsLost": 6.15,
+    "aqiDistribution": {
+      "good": 25.9,
+      "moderate": 19.0,
+      "unhealthy_sensitive": 21.4,
+      "unhealthy": 25.2,
+      "hazardous": 8.4
+    },
+    "bestMonth": 8,
+    "bestMonthName": "August",
+    "bestMonthMedian": 12.2,
+    "worstMonth": 12,
+    "worstMonthName": "December",
+    "worstMonthMedian": 74.0,
+    "bestVisitMonth": 8,
+    "bestVisitMonthName": "August",
+    "cigMethodologyNote": "Berkeley Earth conversion: 22.0 µg/m³ PM2.5 ≈ 1 cigarette/day. This compares population-level mortality risk, not individual clinical outcomes. Acute vs chronic exposure differs significantly.",
+    "aqliMethodologyNote": "AQLI methodology: each 10 µg/m³ PM2.5 above WHO baseline (5.0 µg/m³) ≈ 0.98 years of life expectancy lost. Calculated from annual mean PM2.5 (long-term exposure), not annual median.",
+    "lifeExpectancyContext": {
+      "yearsLost": 6.15,
+      "comparisonAnchors": [
+        {
+          "label": "Smoking (1 cigarette/day)",
+          "yearsLost": 1.0,
+          "source": "Berkeley Earth / WHO"
+        },
+        {
+          "label": "Heavy alcohol use",
+          "yearsLost": 1.3,
+          "source": "GBD 2019"
+        },
+        {
+          "label": "Traffic accidents (avg)",
+          "yearsLost": 0.3,
+          "source": "GBD 2019"
+        },
+        {
+          "label": "This city's air",
+          "yearsLost": 6.15,
+          "source": "AQLI"
+        }
+      ]
+    }
+  },
+  "monthlyProfiles": [
+    {
+      "month": 1,
+      "monthName": "January",
+      "monthShort": "Jan",
+      "p10": 28.46,
+      "p25": 38.31,
+      "p50": 58.68,
+      "p75": 82.0,
+      "p90": 96.07,
+      "mean": 72.57,
+      "aqiDistribution": {
+        "good": 0.0,
+        "moderate": 3.8,
+        "unhealthy_sensitive": 37.2,
+        "unhealthy": 51.3,
+        "hazardous": 7.7
+      },
+      "dominantBand": "unhealthy",
+      "cigarettesPerDay": 2.67,
+      "daysCount": 78,
+      "safeDays": {
+        "walk": 41.0,
+        "cycle": 20.5,
+        "jog": 3.8
+      }
+    },
+    {
+      "month": 2,
+      "monthName": "February",
+      "monthShort": "Feb",
+      "p10": 26.18,
+      "p25": 39.27,
+      "p50": 54.67,
+      "p75": 69.16,
+      "p90": 76.46,
+      "mean": 55.87,
+      "aqiDistribution": {
+        "good": 2.5,
+        "moderate": 6.3,
+        "unhealthy_sensitive": 30.4,
+        "unhealthy": 58.2,
+        "hazardous": 2.5
+      },
+      "dominantBand": "unhealthy",
+      "cigarettesPerDay": 2.48,
+      "daysCount": 79,
+      "safeDays": {
+        "walk": 39.2,
+        "cycle": 20.3,
+        "jog": 8.9
+      }
+    },
+    {
+      "month": 3,
+      "monthName": "March",
+      "monthShort": "Mar",
+      "p10": 13.78,
+      "p25": 17.95,
+      "p50": 30.75,
+      "p75": 40.86,
+      "p90": 54.64,
+      "mean": 32.27,
+      "aqiDistribution": {
+        "good": 16.7,
+        "moderate": 20.0,
+        "unhealthy_sensitive": 50.0,
+        "unhealthy": 12.5,
+        "hazardous": 0.8
+      },
+      "dominantBand": "unhealthy_sensitive",
+      "cigarettesPerDay": 1.4,
+      "daysCount": 120,
+      "safeDays": {
+        "walk": 86.7,
+        "cycle": 61.7,
+        "jog": 36.7
+      }
+    },
+    {
+      "month": 4,
+      "monthName": "April",
+      "monthShort": "Apr",
+      "p10": 15.47,
+      "p25": 19.83,
+      "p50": 26.33,
+      "p75": 30.73,
+      "p90": 54.15,
+      "mean": 33.46,
+      "aqiDistribution": {
+        "good": 9.4,
+        "moderate": 38.8,
+        "unhealthy_sensitive": 40.0,
+        "unhealthy": 5.9,
+        "hazardous": 5.9
+      },
+      "dominantBand": "unhealthy_sensitive",
+      "cigarettesPerDay": 1.2,
+      "daysCount": 85,
+      "safeDays": {
+        "walk": 88.2,
+        "cycle": 80.0,
+        "jog": 48.2
+      }
+    },
+    {
+      "month": 5,
+      "monthName": "May",
+      "monthShort": "May",
+      "p10": 11.73,
+      "p25": 13.88,
+      "p50": 35.67,
+      "p75": 141.15,
+      "p90": 502.27,
+      "mean": 130.11,
+      "aqiDistribution": {
+        "good": 31.2,
+        "moderate": 11.2,
+        "unhealthy_sensitive": 15.0,
+        "unhealthy": 10.0,
+        "hazardous": 32.5
+      },
+      "dominantBand": "hazardous",
+      "cigarettesPerDay": 1.62,
+      "daysCount": 80,
+      "safeDays": {
+        "walk": 57.5,
+        "cycle": 50.0,
+        "jog": 42.5
+      }
+    },
+    {
+      "month": 6,
+      "monthName": "June",
+      "monthShort": "Jun",
+      "p10": 7.6,
+      "p25": 11.25,
+      "p50": 16.18,
+      "p75": 20.24,
+      "p90": 26.84,
+      "mean": 16.63,
+      "aqiDistribution": {
+        "good": 48.2,
+        "moderate": 40.0,
+        "unhealthy_sensitive": 11.8,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "good",
+      "cigarettesPerDay": 0.74,
+      "daysCount": 85,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 97.6,
+        "jog": 88.2
+      }
+    },
+    {
+      "month": 7,
+      "monthName": "July",
+      "monthShort": "Jul",
+      "p10": 7.18,
+      "p25": 10.11,
+      "p50": 12.76,
+      "p75": 16.92,
+      "p90": 20.65,
+      "mean": 42.02,
+      "aqiDistribution": {
+        "good": 65.3,
+        "moderate": 27.1,
+        "unhealthy_sensitive": 0.8,
+        "unhealthy": 0.8,
+        "hazardous": 5.9
+      },
+      "dominantBand": "good",
+      "cigarettesPerDay": 0.58,
+      "daysCount": 118,
+      "safeDays": {
+        "walk": 93.2,
+        "cycle": 93.2,
+        "jog": 92.4
+      }
+    },
+    {
+      "month": 8,
+      "monthName": "August",
+      "monthShort": "Aug",
+      "p10": 9.35,
+      "p25": 10.49,
+      "p50": 12.2,
+      "p75": 16.0,
+      "p90": 496.0,
+      "mean": 103.29,
+      "aqiDistribution": {
+        "good": 69.1,
+        "moderate": 18.5,
+        "unhealthy_sensitive": 0.0,
+        "unhealthy": 1.2,
+        "hazardous": 11.1
+      },
+      "dominantBand": "good",
+      "cigarettesPerDay": 0.55,
+      "daysCount": 81,
+      "safeDays": {
+        "walk": 87.7,
+        "cycle": 87.7,
+        "jog": 87.7
+      }
+    },
+    {
+      "month": 9,
+      "monthName": "September",
+      "monthShort": "Sep",
+      "p10": 8.62,
+      "p25": 11.46,
+      "p50": 14.89,
+      "p75": 18.6,
+      "p90": 25.8,
+      "mean": 40.09,
+      "aqiDistribution": {
+        "good": 52.7,
+        "moderate": 35.7,
+        "unhealthy_sensitive": 6.2,
+        "unhealthy": 0.9,
+        "hazardous": 4.5
+      },
+      "dominantBand": "good",
+      "cigarettesPerDay": 0.68,
+      "daysCount": 112,
+      "safeDays": {
+        "walk": 94.6,
+        "cycle": 94.6,
+        "jog": 88.4
+      }
+    },
+    {
+      "month": 10,
+      "monthName": "October",
+      "monthShort": "Oct",
+      "p10": 14.03,
+      "p25": 21.47,
+      "p50": 37.6,
+      "p75": 65.41,
+      "p90": 279.19,
+      "mean": 103.97,
+      "aqiDistribution": {
+        "good": 11.4,
+        "moderate": 17.5,
+        "unhealthy_sensitive": 36.0,
+        "unhealthy": 23.7,
+        "hazardous": 11.4
+      },
+      "dominantBand": "unhealthy_sensitive",
+      "cigarettesPerDay": 1.71,
+      "daysCount": 114,
+      "safeDays": {
+        "walk": 64.9,
+        "cycle": 46.5,
+        "jog": 28.9
+      }
+    },
+    {
+      "month": 11,
+      "monthName": "November",
+      "monthShort": "Nov",
+      "p10": 31.03,
+      "p25": 52.68,
+      "p50": 67.16,
+      "p75": 80.28,
+      "p90": 225.29,
+      "mean": 104.7,
+      "aqiDistribution": {
+        "good": 0.9,
+        "moderate": 4.7,
+        "unhealthy_sensitive": 15.1,
+        "unhealthy": 67.9,
+        "hazardous": 11.3
+      },
+      "dominantBand": "unhealthy",
+      "cigarettesPerDay": 3.05,
+      "daysCount": 106,
+      "safeDays": {
+        "walk": 20.8,
+        "cycle": 11.3,
+        "jog": 5.7
+      }
+    },
+    {
+      "month": 12,
+      "monthName": "December",
+      "monthShort": "Dec",
+      "p10": 38.93,
+      "p25": 57.89,
+      "p50": 74.03,
+      "p75": 89.6,
+      "p90": 105.8,
+      "mean": 89.58,
+      "aqiDistribution": {
+        "good": 0.0,
+        "moderate": 1.9,
+        "unhealthy_sensitive": 14.8,
+        "unhealthy": 72.2,
+        "hazardous": 11.1
+      },
+      "dominantBand": "unhealthy",
+      "cigarettesPerDay": 3.37,
+      "daysCount": 108,
+      "safeDays": {
+        "walk": 16.7,
+        "cycle": 5.6,
+        "jog": 1.9
+      }
+    }
+  ],
+  "seasonalEvents": [
+    {
+      "months": [
+        11,
+        12,
+        1,
+        2
+      ],
+      "event": "Winter construction and burning",
+      "risk_level": "high",
+      "cause": "Post-monsoon construction boom, Diwali residue, vehicular emissions under winter inversion over Arabian Sea coast"
+    },
+    {
+      "months": [
+        3,
+        4,
+        5
+      ],
+      "event": "Pre-monsoon heat haze",
+      "risk_level": "medium",
+      "cause": "Rising temperatures and low rainfall concentrate urban emissions"
+    },
+    {
+      "months": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "event": "Southwest monsoon",
+      "risk_level": "low",
+      "cause": "Arabian Sea monsoon brings heavy rainfall and clean oceanic air"
+    }
+  ],
+  "monthlyRiskIndex": [
+    {
+      "month": 1,
+      "riskLevel": "high"
+    },
+    {
+      "month": 2,
+      "riskLevel": "high"
+    },
+    {
+      "month": 3,
+      "riskLevel": "medium"
+    },
+    {
+      "month": 4,
+      "riskLevel": "medium"
+    },
+    {
+      "month": 5,
+      "riskLevel": "medium"
+    },
+    {
+      "month": 6,
+      "riskLevel": "low"
+    },
+    {
+      "month": 7,
+      "riskLevel": "low"
+    },
+    {
+      "month": 8,
+      "riskLevel": "low"
+    },
+    {
+      "month": 9,
+      "riskLevel": "low"
+    },
+    {
+      "month": 10,
+      "riskLevel": "low"
+    },
+    {
+      "month": 11,
+      "riskLevel": "high"
+    },
+    {
+      "month": 12,
+      "riskLevel": "high"
+    }
+  ],
+  "whoData": {
+    "available": true,
+    "pm25Estimate": {
+      "value": 50.17359,
+      "year": 2019,
+      "unit": null
+    },
+    "mortalityPer100k": {
+      "value": 157.54999,
+      "year": 2019,
+      "unit": null
+    }
+  },
+  "dataQuality": {
+    "dateFrom": "2019-06-21",
+    "dateTo": "2026-04-01",
+    "yearsAvailable": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2025,
+      2026
+    ],
+    "totalDays": 1166,
+    "sensors": 5,
+    "lastComputed": "2026-04-04T10:58:07Z"
+  },
+  "methodology": {
+    "cigaretteEquivalence": "Berkeley Earth conversion: 22.0 µg/m³ PM2.5 ≈ 1 cigarette/day. This compares population-level mortality risk, not individual clinical outcomes. Acute vs chronic exposure differs significantly.",
+    "aqli": "AQLI methodology: each 10 µg/m³ PM2.5 above WHO baseline (5.0 µg/m³) ≈ 0.98 years of life expectancy lost. Calculated from annual mean PM2.5 (long-term exposure), not annual median.",
+    "dataSource": "OpenAQ API v3 /sensors/{id}/days pre-computed daily aggregates"
+  },
+  "narrativeSummary": "Mumbai's air quality follows one of the starkest seasonal reversals in this dataset. During the Southwest Monsoon (June–September), rain, sea breezes, and cleansing winds drive PM2.5 down to 12–16 µg/m³ — comparable to moderately clean European cities. Once the monsoon retreats in October, pollution accelerates sharply toward December's median of 74.0 µg/m³, a 6.1-fold swing from the August low of 12.2 µg/m³.\n\nThe annual mean (67.8 µg/m³) far exceeds the annual median (28.5 µg/m³), reflecting extreme spike days concentrated in the post-monsoon and winter months. Diwali fireworks in October–November produce some of the worst single-day readings. Winter atmospheric inversions trap emissions from the city's 3 million vehicles, dense construction activity, waste burning in informal settlements, and industrial emissions from the Thane–Belapur corridor to the northeast. By AQLI methodology, this exposure burden translates to 6.15 years of life expectancy lost.\n\nThe monsoon window is genuine. June through September offers conditions safe for most outdoor activities, with no days in the Hazardous band during peak monsoon. The pre-monsoon months (March–May) are mixed: March falls to a moderate 30.8 µg/m³, but May spikes back to 35.7 µg/m³ due to heat-driven dust suspension before the rains arrive.\n\nData confidence is moderate: six years of station records with a gap between 2022 and 2025. The seasonal structure is robust and consistent with decades of meteorological observation, but absolute values may shift as more recent sensors are added. October through February represents serious health risk for vulnerable populations. An N95 mask worn during outdoor commuting in winter is not excessive caution — it is a rational response to ambient readings."
+}

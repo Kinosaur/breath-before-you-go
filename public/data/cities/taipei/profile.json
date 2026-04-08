@@ -1,0 +1,484 @@
+{
+  "cityId": "taipei",
+  "cityName": "Taipei",
+  "country": "Taiwan",
+  "tier": 3,
+  "coordinates": {
+    "lat": 25.033,
+    "lon": 121.5654
+  },
+  "timezone": "Asia/Taipei",
+  "healthMetrics": {
+    "annualMedianPm25": 11.0,
+    "annualMeanPm25": 12.7,
+    "cigarettesPerDay": 0.5,
+    "yearsLost": 0.76,
+    "aqiDistribution": {
+      "good": 71.6,
+      "moderate": 22.2,
+      "unhealthy_sensitive": 6.2,
+      "unhealthy": 0.0,
+      "hazardous": 0.0
+    },
+    "bestMonth": 9,
+    "bestMonthName": "September",
+    "bestMonthMedian": 8.5,
+    "worstMonth": 4,
+    "worstMonthName": "April",
+    "worstMonthMedian": 16.0,
+    "bestVisitMonth": 9,
+    "bestVisitMonthName": "September",
+    "cigMethodologyNote": "Berkeley Earth conversion: 22.0 µg/m³ PM2.5 ≈ 1 cigarette/day. This compares population-level mortality risk, not individual clinical outcomes. Acute vs chronic exposure differs significantly.",
+    "aqliMethodologyNote": "AQLI methodology: each 10 µg/m³ PM2.5 above WHO baseline (5.0 µg/m³) ≈ 0.98 years of life expectancy lost. Calculated from annual mean PM2.5 (long-term exposure), not annual median.",
+    "lifeExpectancyContext": {
+      "yearsLost": 0.76,
+      "comparisonAnchors": [
+        {
+          "label": "Smoking (1 cigarette/day)",
+          "yearsLost": 1.0,
+          "source": "Berkeley Earth / WHO"
+        },
+        {
+          "label": "Heavy alcohol use",
+          "yearsLost": 1.3,
+          "source": "GBD 2019"
+        },
+        {
+          "label": "Traffic accidents (avg)",
+          "yearsLost": 0.3,
+          "source": "GBD 2019"
+        },
+        {
+          "label": "This city's air",
+          "yearsLost": 0.76,
+          "source": "AQLI"
+        }
+      ]
+    }
+  },
+  "monthlyProfiles": [
+    {
+      "month": 1,
+      "monthName": "January",
+      "monthShort": "Jan",
+      "p10": 6.0,
+      "p25": 8.0,
+      "p50": 12.0,
+      "p75": 17.5,
+      "p90": 23.9,
+      "mean": 13.67,
+      "aqiDistribution": {
+        "good": 68.1,
+        "moderate": 24.9,
+        "unhealthy_sensitive": 7.0,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "good",
+      "cigarettesPerDay": 0.55,
+      "daysCount": 213,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 99.1,
+        "jog": 93.0
+      }
+    },
+    {
+      "month": 2,
+      "monthName": "February",
+      "monthShort": "Feb",
+      "p10": 6.0,
+      "p25": 8.88,
+      "p50": 14.0,
+      "p75": 20.12,
+      "p90": 26.95,
+      "mean": 15.25,
+      "aqiDistribution": {
+        "good": 54.7,
+        "moderate": 31.8,
+        "unhealthy_sensitive": 13.5,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "good",
+      "cigarettesPerDay": 0.64,
+      "daysCount": 192,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 98.4,
+        "jog": 86.5
+      }
+    },
+    {
+      "month": 3,
+      "monthName": "March",
+      "monthShort": "Mar",
+      "p10": 8.0,
+      "p25": 11.0,
+      "p50": 15.5,
+      "p75": 21.0,
+      "p90": 25.95,
+      "mean": 16.47,
+      "aqiDistribution": {
+        "good": 49.5,
+        "moderate": 38.2,
+        "unhealthy_sensitive": 12.3,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "good",
+      "cigarettesPerDay": 0.7,
+      "daysCount": 212,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 98.6,
+        "jog": 87.7
+      }
+    },
+    {
+      "month": 4,
+      "monthName": "April",
+      "monthShort": "Apr",
+      "p10": 9.0,
+      "p25": 12.0,
+      "p50": 16.0,
+      "p75": 22.0,
+      "p90": 26.75,
+      "mean": 17.14,
+      "aqiDistribution": {
+        "good": 45.8,
+        "moderate": 42.2,
+        "unhealthy_sensitive": 12.0,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "good",
+      "cigarettesPerDay": 0.73,
+      "daysCount": 166,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 98.2,
+        "jog": 88.0
+      }
+    },
+    {
+      "month": 5,
+      "monthName": "May",
+      "monthShort": "May",
+      "p10": 6.05,
+      "p25": 9.0,
+      "p50": 11.5,
+      "p75": 15.0,
+      "p90": 20.0,
+      "mean": 12.59,
+      "aqiDistribution": {
+        "good": 75.4,
+        "moderate": 21.1,
+        "unhealthy_sensitive": 3.5,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "good",
+      "cigarettesPerDay": 0.52,
+      "daysCount": 142,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 100.0,
+        "jog": 96.5
+      }
+    },
+    {
+      "month": 6,
+      "monthName": "June",
+      "monthShort": "Jun",
+      "p10": 5.5,
+      "p25": 7.0,
+      "p50": 9.0,
+      "p75": 11.0,
+      "p90": 13.0,
+      "mean": 9.6,
+      "aqiDistribution": {
+        "good": 93.9,
+        "moderate": 4.5,
+        "unhealthy_sensitive": 1.5,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "good",
+      "cigarettesPerDay": 0.41,
+      "daysCount": 132,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 100.0,
+        "jog": 98.5
+      }
+    },
+    {
+      "month": 7,
+      "monthName": "July",
+      "monthShort": "Jul",
+      "p10": 5.0,
+      "p25": 7.0,
+      "p50": 9.0,
+      "p75": 10.88,
+      "p90": 12.0,
+      "mean": 8.6,
+      "aqiDistribution": {
+        "good": 98.9,
+        "moderate": 1.1,
+        "unhealthy_sensitive": 0.0,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "good",
+      "cigarettesPerDay": 0.41,
+      "daysCount": 90,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 100.0,
+        "jog": 100.0
+      }
+    },
+    {
+      "month": 8,
+      "monthName": "August",
+      "monthShort": "Aug",
+      "p10": 4.12,
+      "p25": 6.5,
+      "p50": 9.0,
+      "p75": 12.5,
+      "p90": 15.75,
+      "mean": 9.65,
+      "aqiDistribution": {
+        "good": 87.5,
+        "moderate": 12.5,
+        "unhealthy_sensitive": 0.0,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "good",
+      "cigarettesPerDay": 0.41,
+      "daysCount": 96,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 100.0,
+        "jog": 100.0
+      }
+    },
+    {
+      "month": 9,
+      "monthName": "September",
+      "monthShort": "Sep",
+      "p10": 3.0,
+      "p25": 5.0,
+      "p50": 8.5,
+      "p75": 12.88,
+      "p90": 18.0,
+      "mean": 9.65,
+      "aqiDistribution": {
+        "good": 82.6,
+        "moderate": 15.9,
+        "unhealthy_sensitive": 1.4,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "good",
+      "cigarettesPerDay": 0.39,
+      "daysCount": 138,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 100.0,
+        "jog": 98.6
+      }
+    },
+    {
+      "month": 10,
+      "monthName": "October",
+      "monthShort": "Oct",
+      "p10": 4.0,
+      "p25": 6.0,
+      "p50": 10.5,
+      "p75": 13.0,
+      "p90": 18.6,
+      "mean": 10.77,
+      "aqiDistribution": {
+        "good": 85.0,
+        "moderate": 12.0,
+        "unhealthy_sensitive": 3.0,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "good",
+      "cigarettesPerDay": 0.48,
+      "daysCount": 133,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 99.2,
+        "jog": 97.0
+      }
+    },
+    {
+      "month": 11,
+      "monthName": "November",
+      "monthShort": "Nov",
+      "p10": 5.0,
+      "p25": 7.0,
+      "p50": 9.25,
+      "p75": 12.0,
+      "p90": 18.9,
+      "mean": 10.57,
+      "aqiDistribution": {
+        "good": 83.3,
+        "moderate": 12.1,
+        "unhealthy_sensitive": 4.5,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "good",
+      "cigarettesPerDay": 0.42,
+      "daysCount": 132,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 100.0,
+        "jog": 95.5
+      }
+    },
+    {
+      "month": 12,
+      "monthName": "December",
+      "monthShort": "Dec",
+      "p10": 5.0,
+      "p25": 7.0,
+      "p50": 10.0,
+      "p75": 15.0,
+      "p90": 19.0,
+      "mean": 11.62,
+      "aqiDistribution": {
+        "good": 75.3,
+        "moderate": 20.4,
+        "unhealthy_sensitive": 4.3,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "good",
+      "cigarettesPerDay": 0.45,
+      "daysCount": 162,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 97.5,
+        "jog": 95.7
+      }
+    }
+  ],
+  "seasonalEvents": [
+    {
+      "months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "event": "Cross-strait industrial pollution",
+      "risk_level": "medium",
+      "cause": "Northeast monsoon carries PM2.5 from eastern Chinese industrial zones across the Taiwan Strait"
+    },
+    {
+      "months": [
+        4,
+        5
+      ],
+      "event": "Spring transitional haze",
+      "risk_level": "low",
+      "cause": "Shifting winds during monsoon transition"
+    },
+    {
+      "months": [
+        7,
+        8,
+        9
+      ],
+      "event": "Typhoon season",
+      "risk_level": "low",
+      "cause": "Frequent rainfall and strong winds clean the atmosphere, though typhoons can also carry dust"
+    }
+  ],
+  "monthlyRiskIndex": [
+    {
+      "month": 1,
+      "riskLevel": "medium"
+    },
+    {
+      "month": 2,
+      "riskLevel": "medium"
+    },
+    {
+      "month": 3,
+      "riskLevel": "medium"
+    },
+    {
+      "month": 4,
+      "riskLevel": "low"
+    },
+    {
+      "month": 5,
+      "riskLevel": "low"
+    },
+    {
+      "month": 6,
+      "riskLevel": "low"
+    },
+    {
+      "month": 7,
+      "riskLevel": "low"
+    },
+    {
+      "month": 8,
+      "riskLevel": "low"
+    },
+    {
+      "month": 9,
+      "riskLevel": "low"
+    },
+    {
+      "month": 10,
+      "riskLevel": "medium"
+    },
+    {
+      "month": 11,
+      "riskLevel": "medium"
+    },
+    {
+      "month": 12,
+      "riskLevel": "medium"
+    }
+  ],
+  "whoData": {
+    "available": false
+  },
+  "dataQuality": {
+    "dateFrom": "2016-12-21",
+    "dateTo": "2026-04-01",
+    "yearsAvailable": [
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2024,
+      2025,
+      2026
+    ],
+    "totalDays": 1808,
+    "sensors": 5,
+    "lastComputed": "2026-04-04T10:58:07Z"
+  },
+  "methodology": {
+    "cigaretteEquivalence": "Berkeley Earth conversion: 22.0 µg/m³ PM2.5 ≈ 1 cigarette/day. This compares population-level mortality risk, not individual clinical outcomes. Acute vs chronic exposure differs significantly.",
+    "aqli": "AQLI methodology: each 10 µg/m³ PM2.5 above WHO baseline (5.0 µg/m³) ≈ 0.98 years of life expectancy lost. Calculated from annual mean PM2.5 (long-term exposure), not annual median.",
+    "dataSource": "OpenAQ API v3 /sensors/{id}/days pre-computed daily aggregates"
+  },
+  "narrativeSummary": "Taipei is the cleanest city in this dataset after Seoul, with an annual median PM2.5 of 11.0 µg/m³ — within reach of the WHO 2021 annual guideline of 5 µg/m³ on its best months. Nine years of sensor data (2016–2026, 1,808 days) make this one of the most reliable profiles in the collection. Life expectancy impact by AQLI methodology is 0.76 years — the second lowest recorded here.\n\nThe main pollution risk is not local — it arrives from across the Taiwan Strait. Spring dust transport from mainland China brings industrial aerosols, Gobi and Loess Plateau dust, and combustion products from the Yangtze River Delta manufacturing corridor. March through April register the highest monthly medians (15.5 and 16.0 µg/m³ respectively). This cross-border transport is well-documented and largely outside Taiwan's regulatory control, though EPA emission reductions have meaningfully improved the baseline over the past decade.\n\nSummer is Taipei's genuine clean season. The southwest monsoon and frequent typhoon rain events wash particulates from the sky. June, July, and August hold steady around 9 µg/m³. September records the lowest monthly median in the entire dataset at 8.5 µg/m³ — a month that combines the end of the monsoon, reduced regional burning, and prevailing winds from the clean Pacific.\n\nWinter (November–February) is moderate rather than severe: 9.0–12.0 µg/m³, a level broadly safe for most outdoor activities. The practical recommendation is to avoid March and April for heavy outdoor exercise, and to plan any strenuous outdoor activity for the September–November window. Residents with respiratory conditions should monitor AQI during spring dust advisory periods."
+}

@@ -1,0 +1,481 @@
+{
+  "cityId": "manila",
+  "cityName": "Manila",
+  "country": "Philippines",
+  "tier": 3,
+  "coordinates": {
+    "lat": 14.5995,
+    "lon": 120.9842
+  },
+  "timezone": "Asia/Manila",
+  "healthMetrics": {
+    "annualMedianPm25": 16.7,
+    "annualMeanPm25": 17.2,
+    "cigarettesPerDay": 0.76,
+    "yearsLost": 1.2,
+    "aqiDistribution": {
+      "good": 38.9,
+      "moderate": 49.3,
+      "unhealthy_sensitive": 11.8,
+      "unhealthy": 0.0,
+      "hazardous": 0.0
+    },
+    "bestMonth": 7,
+    "bestMonthName": "July",
+    "bestMonthMedian": 12.5,
+    "worstMonth": 10,
+    "worstMonthName": "October",
+    "worstMonthMedian": 21.0,
+    "bestVisitMonth": 7,
+    "bestVisitMonthName": "July",
+    "cigMethodologyNote": "Berkeley Earth conversion: 22.0 µg/m³ PM2.5 ≈ 1 cigarette/day. This compares population-level mortality risk, not individual clinical outcomes. Acute vs chronic exposure differs significantly.",
+    "aqliMethodologyNote": "AQLI methodology: each 10 µg/m³ PM2.5 above WHO baseline (5.0 µg/m³) ≈ 0.98 years of life expectancy lost. Calculated from annual mean PM2.5 (long-term exposure), not annual median.",
+    "lifeExpectancyContext": {
+      "yearsLost": 1.2,
+      "comparisonAnchors": [
+        {
+          "label": "Smoking (1 cigarette/day)",
+          "yearsLost": 1.0,
+          "source": "Berkeley Earth / WHO"
+        },
+        {
+          "label": "Heavy alcohol use",
+          "yearsLost": 1.3,
+          "source": "GBD 2019"
+        },
+        {
+          "label": "Traffic accidents (avg)",
+          "yearsLost": 0.3,
+          "source": "GBD 2019"
+        },
+        {
+          "label": "This city's air",
+          "yearsLost": 1.2,
+          "source": "AQLI"
+        }
+      ]
+    }
+  },
+  "monthlyProfiles": [
+    {
+      "month": 1,
+      "monthName": "January",
+      "monthShort": "Jan",
+      "p10": 11.45,
+      "p25": 14.91,
+      "p50": 18.53,
+      "p75": 23.02,
+      "p90": 27.38,
+      "mean": 18.94,
+      "aqiDistribution": {
+        "good": 29.0,
+        "moderate": 48.4,
+        "unhealthy_sensitive": 22.6,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "moderate",
+      "cigarettesPerDay": 0.84,
+      "daysCount": 31,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 100.0,
+        "jog": 77.4
+      }
+    },
+    {
+      "month": 2,
+      "monthName": "February",
+      "monthShort": "Feb",
+      "p10": 13.09,
+      "p25": 14.55,
+      "p50": 16.68,
+      "p75": 19.96,
+      "p90": 21.63,
+      "mean": 16.93,
+      "aqiDistribution": {
+        "good": 28.6,
+        "moderate": 71.4,
+        "unhealthy_sensitive": 0.0,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "moderate",
+      "cigarettesPerDay": 0.76,
+      "daysCount": 28,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 100.0,
+        "jog": 100.0
+      }
+    },
+    {
+      "month": 3,
+      "monthName": "March",
+      "monthShort": "Mar",
+      "p10": 13.47,
+      "p25": 14.14,
+      "p50": 16.24,
+      "p75": 19.46,
+      "p90": 22.25,
+      "mean": 17.06,
+      "aqiDistribution": {
+        "good": 35.5,
+        "moderate": 64.5,
+        "unhealthy_sensitive": 0.0,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "moderate",
+      "cigarettesPerDay": 0.74,
+      "daysCount": 31,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 100.0,
+        "jog": 100.0
+      }
+    },
+    {
+      "month": 4,
+      "monthName": "April",
+      "monthShort": "Apr",
+      "p10": 10.33,
+      "p25": 12.43,
+      "p50": 16.79,
+      "p75": 20.28,
+      "p90": 28.52,
+      "mean": 17.38,
+      "aqiDistribution": {
+        "good": 41.7,
+        "moderate": 45.8,
+        "unhealthy_sensitive": 12.5,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "moderate",
+      "cigarettesPerDay": 0.76,
+      "daysCount": 24,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 100.0,
+        "jog": 87.5
+      }
+    },
+    {
+      "month": 5,
+      "monthName": "May",
+      "monthShort": "May",
+      "p10": 10.35,
+      "p25": 12.15,
+      "p50": 14.05,
+      "p75": 15.35,
+      "p90": 21.06,
+      "mean": 14.89,
+      "aqiDistribution": {
+        "good": 64.5,
+        "moderate": 29.0,
+        "unhealthy_sensitive": 6.5,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "good",
+      "cigarettesPerDay": 0.64,
+      "daysCount": 31,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 100.0,
+        "jog": 93.5
+      }
+    },
+    {
+      "month": 6,
+      "monthName": "June",
+      "monthShort": "Jun",
+      "p10": 10.71,
+      "p25": 12.99,
+      "p50": 15.64,
+      "p75": 21.35,
+      "p90": 24.23,
+      "mean": 17.25,
+      "aqiDistribution": {
+        "good": 43.3,
+        "moderate": 46.7,
+        "unhealthy_sensitive": 10.0,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "moderate",
+      "cigarettesPerDay": 0.71,
+      "daysCount": 30,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 100.0,
+        "jog": 90.0
+      }
+    },
+    {
+      "month": 7,
+      "monthName": "July",
+      "monthShort": "Jul",
+      "p10": 7.16,
+      "p25": 9.34,
+      "p50": 12.47,
+      "p75": 16.15,
+      "p90": 18.06,
+      "mean": 12.46,
+      "aqiDistribution": {
+        "good": 64.5,
+        "moderate": 35.5,
+        "unhealthy_sensitive": 0.0,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "good",
+      "cigarettesPerDay": 0.57,
+      "daysCount": 31,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 100.0,
+        "jog": 100.0
+      }
+    },
+    {
+      "month": 8,
+      "monthName": "August",
+      "monthShort": "Aug",
+      "p10": 12.81,
+      "p25": 14.81,
+      "p50": 17.88,
+      "p75": 22.45,
+      "p90": 25.46,
+      "mean": 18.88,
+      "aqiDistribution": {
+        "good": 29.0,
+        "moderate": 58.1,
+        "unhealthy_sensitive": 12.9,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "moderate",
+      "cigarettesPerDay": 0.81,
+      "daysCount": 31,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 100.0,
+        "jog": 87.1
+      }
+    },
+    {
+      "month": 9,
+      "monthName": "September",
+      "monthShort": "Sep",
+      "p10": 8.18,
+      "p25": 13.63,
+      "p50": 17.73,
+      "p75": 21.93,
+      "p90": 25.88,
+      "mean": 17.41,
+      "aqiDistribution": {
+        "good": 40.0,
+        "moderate": 46.7,
+        "unhealthy_sensitive": 13.3,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "moderate",
+      "cigarettesPerDay": 0.81,
+      "daysCount": 30,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 100.0,
+        "jog": 86.7
+      }
+    },
+    {
+      "month": 10,
+      "monthName": "October",
+      "monthShort": "Oct",
+      "p10": 11.82,
+      "p25": 17.45,
+      "p50": 21.01,
+      "p75": 26.29,
+      "p90": 27.69,
+      "mean": 20.78,
+      "aqiDistribution": {
+        "good": 20.0,
+        "moderate": 46.7,
+        "unhealthy_sensitive": 33.3,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "moderate",
+      "cigarettesPerDay": 0.96,
+      "daysCount": 30,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 100.0,
+        "jog": 66.7
+      }
+    },
+    {
+      "month": 11,
+      "monthName": "November",
+      "monthShort": "Nov",
+      "p10": 10.21,
+      "p25": 11.48,
+      "p50": 15.04,
+      "p75": 17.77,
+      "p90": 22.13,
+      "mean": 15.4,
+      "aqiDistribution": {
+        "good": 48.3,
+        "moderate": 41.4,
+        "unhealthy_sensitive": 10.3,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "good",
+      "cigarettesPerDay": 0.68,
+      "daysCount": 29,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 100.0,
+        "jog": 89.7
+      }
+    },
+    {
+      "month": 12,
+      "monthName": "December",
+      "monthShort": "Dec",
+      "p10": 12.42,
+      "p25": 15.43,
+      "p50": 19.8,
+      "p75": 23.98,
+      "p90": 25.33,
+      "mean": 19.62,
+      "aqiDistribution": {
+        "good": 22.6,
+        "moderate": 58.1,
+        "unhealthy_sensitive": 19.4,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "moderate",
+      "cigarettesPerDay": 0.9,
+      "daysCount": 31,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 100.0,
+        "jog": 80.6
+      }
+    }
+  ],
+  "seasonalEvents": [
+    {
+      "months": [
+        12,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "event": "Dry season pollution",
+      "risk_level": "medium",
+      "cause": "Vehicle exhaust and industrial emissions accumulate during dry northeast monsoon"
+    },
+    {
+      "months": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "event": "Wet season",
+      "risk_level": "low",
+      "cause": "Southwest monsoon and typhoon season bring regular rainfall"
+    }
+  ],
+  "monthlyRiskIndex": [
+    {
+      "month": 1,
+      "riskLevel": "medium"
+    },
+    {
+      "month": 2,
+      "riskLevel": "medium"
+    },
+    {
+      "month": 3,
+      "riskLevel": "medium"
+    },
+    {
+      "month": 4,
+      "riskLevel": "medium"
+    },
+    {
+      "month": 5,
+      "riskLevel": "medium"
+    },
+    {
+      "month": 6,
+      "riskLevel": "low"
+    },
+    {
+      "month": 7,
+      "riskLevel": "low"
+    },
+    {
+      "month": 8,
+      "riskLevel": "low"
+    },
+    {
+      "month": 9,
+      "riskLevel": "low"
+    },
+    {
+      "month": 10,
+      "riskLevel": "low"
+    },
+    {
+      "month": 11,
+      "riskLevel": "low"
+    },
+    {
+      "month": 12,
+      "riskLevel": "medium"
+    }
+  ],
+  "whoData": {
+    "available": true,
+    "pm25Estimate": {
+      "value": 22.45141,
+      "year": 2019,
+      "unit": null
+    },
+    "mortalityPer100k": {
+      "value": 128.73817,
+      "year": 2019,
+      "unit": null
+    }
+  },
+  "dataQuality": {
+    "dateFrom": "2025-04-08",
+    "dateTo": "2026-04-01",
+    "yearsAvailable": [
+      2025,
+      2026
+    ],
+    "totalDays": 357,
+    "sensors": 5,
+    "lastComputed": "2026-04-04T10:58:07Z"
+  },
+  "methodology": {
+    "cigaretteEquivalence": "Berkeley Earth conversion: 22.0 µg/m³ PM2.5 ≈ 1 cigarette/day. This compares population-level mortality risk, not individual clinical outcomes. Acute vs chronic exposure differs significantly.",
+    "aqli": "AQLI methodology: each 10 µg/m³ PM2.5 above WHO baseline (5.0 µg/m³) ≈ 0.98 years of life expectancy lost. Calculated from annual mean PM2.5 (long-term exposure), not annual median.",
+    "dataSource": "OpenAQ API v3 /sensors/{id}/days pre-computed daily aggregates"
+  },
+  "narrativeSummary": "Manila sits at the northwest edge of the Philippine archipelago, surrounded on three sides by water — a geography that should help air quality, but is undermined by Southeast Asia's most traffic-saturated road network. The annual median PM2.5 is 16.7 µg/m³, modest by South and Southeast Asian standards, placing lifetime exposure at roughly 1.2 years of life expectancy lost for permanent residents.\n\nJeepneys, tricycles, and a car fleet that has doubled since 2010 are the primary emission sources. Unlike cities with strong seasonal industrial cycles, Manila's pollution is dominated by combustion exhaust concentrated in the metro area. The topographic bowl formed by the Sierra Madre range to the east can trap pollution during periods of weak wind, particularly in the dry northeast monsoon months.\n\nThe seasonal pattern is moderate but real. The southwest monsoon (June–September) brings the cleanest months — July records the lowest median at 12.5 µg/m³. October is counterintuitively the worst month (21.0 µg/m³), likely due to post-typhoon stagnation events as typhoon season transitions to the dry season. January through April cluster between 16–19 µg/m³.\n\nImportant caveat: this profile is based on only two years of sensor data (2025–2026, 357 days). The seasonal pattern described here is plausible and consistent with known meteorology, but should be treated as preliminary. More years of data would significantly improve confidence. For current readings, rely on official DENR monitoring stations or IQAir."
+}

@@ -16,7 +16,6 @@ __pycache__/
 .vscode/
 .idea/
 # Data pipeline outputs
-public/data/
 coverage_report.md
 # Logs
 *.log

@@ -1,0 +1,489 @@
+{
+  "cityId": "singapore",
+  "cityName": "Singapore",
+  "country": "Singapore",
+  "tier": 3,
+  "coordinates": {
+    "lat": 1.3521,
+    "lon": 103.8198
+  },
+  "timezone": "Asia/Singapore",
+  "healthMetrics": {
+    "annualMedianPm25": 16.0,
+    "annualMeanPm25": 17.5,
+    "cigarettesPerDay": 0.73,
+    "yearsLost": 1.22,
+    "aqiDistribution": {
+      "good": 45.4,
+      "moderate": 34.9,
+      "unhealthy_sensitive": 19.7,
+      "unhealthy": 0.0,
+      "hazardous": 0.0
+    },
+    "bestMonth": 12,
+    "bestMonthName": "December",
+    "bestMonthMedian": 11.0,
+    "worstMonth": 7,
+    "worstMonthName": "July",
+    "worstMonthMedian": 23.6,
+    "bestVisitMonth": 12,
+    "bestVisitMonthName": "December",
+    "cigMethodologyNote": "Berkeley Earth conversion: 22.0 µg/m³ PM2.5 ≈ 1 cigarette/day. This compares population-level mortality risk, not individual clinical outcomes. Acute vs chronic exposure differs significantly.",
+    "aqliMethodologyNote": "AQLI methodology: each 10 µg/m³ PM2.5 above WHO baseline (5.0 µg/m³) ≈ 0.98 years of life expectancy lost. Calculated from annual mean PM2.5 (long-term exposure), not annual median.",
+    "lifeExpectancyContext": {
+      "yearsLost": 1.22,
+      "comparisonAnchors": [
+        {
+          "label": "Smoking (1 cigarette/day)",
+          "yearsLost": 1.0,
+          "source": "Berkeley Earth / WHO"
+        },
+        {
+          "label": "Heavy alcohol use",
+          "yearsLost": 1.3,
+          "source": "GBD 2019"
+        },
+        {
+          "label": "Traffic accidents (avg)",
+          "yearsLost": 0.3,
+          "source": "GBD 2019"
+        },
+        {
+          "label": "This city's air",
+          "yearsLost": 1.22,
+          "source": "AQLI"
+        }
+      ]
+    }
+  },
+  "monthlyProfiles": [
+    {
+      "month": 1,
+      "monthName": "January",
+      "monthShort": "Jan",
+      "p10": 9.55,
+      "p25": 10.47,
+      "p50": 12.28,
+      "p75": 17.8,
+      "p90": 22.21,
+      "mean": 14.4,
+      "aqiDistribution": {
+        "good": 62.3,
+        "moderate": 34.4,
+        "unhealthy_sensitive": 3.3,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "good",
+      "cigarettesPerDay": 0.56,
+      "daysCount": 61,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 100.0,
+        "jog": 96.7
+      }
+    },
+    {
+      "month": 2,
+      "monthName": "February",
+      "monthShort": "Feb",
+      "p10": 8.25,
+      "p25": 9.61,
+      "p50": 12.89,
+      "p75": 16.01,
+      "p90": 21.37,
+      "mean": 13.78,
+      "aqiDistribution": {
+        "good": 67.3,
+        "moderate": 25.5,
+        "unhealthy_sensitive": 7.3,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "good",
+      "cigarettesPerDay": 0.59,
+      "daysCount": 55,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 100.0,
+        "jog": 92.7
+      }
+    },
+    {
+      "month": 3,
+      "monthName": "March",
+      "monthShort": "Mar",
+      "p10": 8.94,
+      "p25": 12.33,
+      "p50": 18.41,
+      "p75": 23.99,
+      "p90": 32.95,
+      "mean": 19.53,
+      "aqiDistribution": {
+        "good": 35.5,
+        "moderate": 43.5,
+        "unhealthy_sensitive": 21.0,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "moderate",
+      "cigarettesPerDay": 0.84,
+      "daysCount": 62,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 91.9,
+        "jog": 79.0
+      }
+    },
+    {
+      "month": 4,
+      "monthName": "April",
+      "monthShort": "Apr",
+      "p10": 8.83,
+      "p25": 9.63,
+      "p50": 13.14,
+      "p75": 19.97,
+      "p90": 24.94,
+      "mean": 15.32,
+      "aqiDistribution": {
+        "good": 54.8,
+        "moderate": 35.5,
+        "unhealthy_sensitive": 9.7,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "good",
+      "cigarettesPerDay": 0.6,
+      "daysCount": 31,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 100.0,
+        "jog": 90.3
+      }
+    },
+    {
+      "month": 5,
+      "monthName": "May",
+      "monthShort": "May",
+      "p10": 11.38,
+      "p25": 14.88,
+      "p50": 18.18,
+      "p75": 23.97,
+      "p90": 29.22,
+      "mean": 19.33,
+      "aqiDistribution": {
+        "good": 25.8,
+        "moderate": 48.4,
+        "unhealthy_sensitive": 25.8,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "moderate",
+      "cigarettesPerDay": 0.83,
+      "daysCount": 31,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 100.0,
+        "jog": 74.2
+      }
+    },
+    {
+      "month": 6,
+      "monthName": "June",
+      "monthShort": "Jun",
+      "p10": 9.96,
+      "p25": 13.56,
+      "p50": 18.85,
+      "p75": 25.24,
+      "p90": 29.72,
+      "mean": 19.54,
+      "aqiDistribution": {
+        "good": 40.0,
+        "moderate": 33.3,
+        "unhealthy_sensitive": 26.7,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "good",
+      "cigarettesPerDay": 0.86,
+      "daysCount": 30,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 96.7,
+        "jog": 73.3
+      }
+    },
+    {
+      "month": 7,
+      "monthName": "July",
+      "monthShort": "Jul",
+      "p10": 15.04,
+      "p25": 18.75,
+      "p50": 23.64,
+      "p75": 30.36,
+      "p90": 33.02,
+      "mean": 23.62,
+      "aqiDistribution": {
+        "good": 9.7,
+        "moderate": 48.4,
+        "unhealthy_sensitive": 41.9,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "moderate",
+      "cigarettesPerDay": 1.07,
+      "daysCount": 31,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 96.8,
+        "jog": 58.1
+      }
+    },
+    {
+      "month": 8,
+      "monthName": "August",
+      "monthShort": "Aug",
+      "p10": 5.32,
+      "p25": 8.79,
+      "p50": 16.78,
+      "p75": 23.76,
+      "p90": 32.38,
+      "mean": 17.44,
+      "aqiDistribution": {
+        "good": 46.5,
+        "moderate": 30.2,
+        "unhealthy_sensitive": 23.3,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "good",
+      "cigarettesPerDay": 0.76,
+      "daysCount": 43,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 97.7,
+        "jog": 76.7
+      }
+    },
+    {
+      "month": 9,
+      "monthName": "September",
+      "monthShort": "Sep",
+      "p10": 9.25,
+      "p25": 11.38,
+      "p50": 17.78,
+      "p75": 26.45,
+      "p90": 32.4,
+      "mean": 19.94,
+      "aqiDistribution": {
+        "good": 36.7,
+        "moderate": 33.3,
+        "unhealthy_sensitive": 30.0,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "good",
+      "cigarettesPerDay": 0.81,
+      "daysCount": 60,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 95.0,
+        "jog": 70.0
+      }
+    },
+    {
+      "month": 10,
+      "monthName": "October",
+      "monthShort": "Oct",
+      "p10": 8.79,
+      "p25": 12.76,
+      "p50": 18.5,
+      "p75": 26.64,
+      "p90": 31.66,
+      "mean": 19.59,
+      "aqiDistribution": {
+        "good": 33.9,
+        "moderate": 35.5,
+        "unhealthy_sensitive": 30.6,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "moderate",
+      "cigarettesPerDay": 0.84,
+      "daysCount": 62,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 96.8,
+        "jog": 69.4
+      }
+    },
+    {
+      "month": 11,
+      "monthName": "November",
+      "monthShort": "Nov",
+      "p10": 8.49,
+      "p25": 11.06,
+      "p50": 16.43,
+      "p75": 22.18,
+      "p90": 27.7,
+      "mean": 17.14,
+      "aqiDistribution": {
+        "good": 43.3,
+        "moderate": 33.3,
+        "unhealthy_sensitive": 23.3,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "good",
+      "cigarettesPerDay": 0.75,
+      "daysCount": 60,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 100.0,
+        "jog": 76.7
+      }
+    },
+    {
+      "month": 12,
+      "monthName": "December",
+      "monthShort": "Dec",
+      "p10": 6.9,
+      "p25": 8.58,
+      "p50": 10.97,
+      "p75": 17.89,
+      "p90": 22.17,
+      "mean": 13.56,
+      "aqiDistribution": {
+        "good": 66.1,
+        "moderate": 27.4,
+        "unhealthy_sensitive": 6.5,
+        "unhealthy": 0.0,
+        "hazardous": 0.0
+      },
+      "dominantBand": "good",
+      "cigarettesPerDay": 0.5,
+      "daysCount": 62,
+      "safeDays": {
+        "walk": 100.0,
+        "cycle": 100.0,
+        "jog": 93.5
+      }
+    }
+  ],
+  "seasonalEvents": [
+    {
+      "months": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "event": "Transboundary haze episodes",
+      "risk_level": "high",
+      "cause": "Sumatra and Kalimantan peat/forest fires carried by southwest monsoon winds to Singapore"
+    },
+    {
+      "months": [
+        11,
+        12,
+        1,
+        2
+      ],
+      "event": "Northeast monsoon",
+      "risk_level": "low",
+      "cause": "Northeast monsoon brings cleaner oceanic air"
+    },
+    {
+      "months": [
+        3,
+        4,
+        5
+      ],
+      "event": "Inter-monsoon period",
+      "risk_level": "medium",
+      "cause": "Light variable winds can concentrate localised emissions"
+    }
+  ],
+  "monthlyRiskIndex": [
+    {
+      "month": 1,
+      "riskLevel": "low"
+    },
+    {
+      "month": 2,
+      "riskLevel": "low"
+    },
+    {
+      "month": 3,
+      "riskLevel": "medium"
+    },
+    {
+      "month": 4,
+      "riskLevel": "medium"
+    },
+    {
+      "month": 5,
+      "riskLevel": "medium"
+    },
+    {
+      "month": 6,
+      "riskLevel": "high"
+    },
+    {
+      "month": 7,
+      "riskLevel": "high"
+    },
+    {
+      "month": 8,
+      "riskLevel": "high"
+    },
+    {
+      "month": 9,
+      "riskLevel": "high"
+    },
+    {
+      "month": 10,
+      "riskLevel": "high"
+    },
+    {
+      "month": 11,
+      "riskLevel": "low"
+    },
+    {
+      "month": 12,
+      "riskLevel": "low"
+    }
+  ],
+  "whoData": {
+    "available": true,
+    "pm25Estimate": {
+      "value": 13.33302,
+      "year": 2019,
+      "unit": null
+    },
+    "mortalityPer100k": {
+      "value": 1.75216,
+      "year": 2019,
+      "unit": null
+    }
+  },
+  "dataQuality": {
+    "dateFrom": "2024-08-19",
+    "dateTo": "2026-04-01",
+    "yearsAvailable": [
+      2024,
+      2025,
+      2026
+    ],
+    "totalDays": 588,
+    "sensors": 5,
+    "lastComputed": "2026-04-04T10:58:07Z"
+  },
+  "methodology": {
+    "cigaretteEquivalence": "Berkeley Earth conversion: 22.0 µg/m³ PM2.5 ≈ 1 cigarette/day. This compares population-level mortality risk, not individual clinical outcomes. Acute vs chronic exposure differs significantly.",
+    "aqli": "AQLI methodology: each 10 µg/m³ PM2.5 above WHO baseline (5.0 µg/m³) ≈ 0.98 years of life expectancy lost. Calculated from annual mean PM2.5 (long-term exposure), not annual median.",
+    "dataSource": "OpenAQ API v3 /sensors/{id}/days pre-computed daily aggregates"
+  },
+  "narrativeSummary": "Singapore is a city-state that cannot fully control its own air. The annual sensor median is 16.0 µg/m³ — moderate and manageable — but one season, driven entirely by fires burning hundreds of kilometres away, periodically pushes it into Unhealthy territory. July records the worst monthly median at 23.6 µg/m³; December the cleanest at 11.0 µg/m³.\n\nThe culprit is the transboundary haze that has affected Singapore roughly every two to three years since the 1970s. Peat fires on Sumatra and Kalimantan — burned to clear agricultural land, primarily for palm oil concessions — ignite during the dry season (June–October). Southwest monsoon winds carry the smoke directly over Singapore. The worst historical episodes (1997, 2013, 2015) produced PSI readings above 300 — the Hazardous band — for days at a time. The sensor data here reflects recent years, which have been less extreme, but the structural risk remains.\n\nThe northeast monsoon (December–March) is Singapore's clean season. Winds from the South China Sea bring maritime air with minimal terrestrial pollution loading. December and January are the most reliably clean months, both sitting around 11–12 µg/m³.\n\nNote: this profile covers only three years of data (2024–2026, 588 days), the shortest observation window in this dataset. The seasonal pattern is consistent with Singapore's well-documented meteorology, but year-to-year variability in haze severity is high. In severe haze years, July–September readings can be substantially worse than what this limited baseline shows. For real-time haze monitoring, Singapore's National Environment Agency (NEA) publishes hourly PSI readings."
+}
