@@ -18,7 +18,7 @@ For every city you get:
 - **Lung Clock** — 24-hour radial chart showing the typical daily pollution cycle and safe exercise windows.
 - **Life Expectancy Toll** — AQLI-based estimate of years of life expectancy lost from long-term exposure, compared to smoking and alcohol.
 - **Cigarette Counter** — Berkeley Earth equivalence: breathing this city's air year-round equals smoking how many cigarettes per day?
-- **Asia Breathing Map** — Mapbox GL JS continental map with a month slider showing every city's typical PM2.5 for that month.
+- **Asia Breathing Map** — MapLibre GL JS continental map with a month slider showing every city's typical PM2.5 for that month.
 - **City Narrative** — Plain-language seasonal analysis written from the data: what drives the bad season, when the relief arrives, what the numbers mean.
 - **Data Confidence Badge** — Honest signal: how many years of data back up this profile?
 
@@ -44,7 +44,7 @@ This is a **seasonal planning tool**, not a real-time monitor. For today's readi
 | Language | TypeScript |
 | Styling | Tailwind CSS v3 |
 | Visualizations | D3.js v7 (custom — no chart libraries) |
-| Map | Mapbox GL JS |
+| Map | MapLibre GL JS |
 | Data pipeline | Python 3.12 (Pandas, Requests) |
 | Data source | OpenAQ API v3 |
 | Hosting | Vercel (free tier, zero server cost) |
@@ -125,9 +125,23 @@ npm run build
 # Required for data pipeline only (not needed to run the frontend)
 OPENAQ_API_KEY=your_key_here
 
-# Optional: override the canonical site URL (defaults to VERCEL_URL in production)
+# Optional: override the canonical site URL
+# Fallback order: NEXT_PUBLIC_SITE_URL -> VERCEL_PROJECT_PRODUCTION_URL -> VERCEL_URL -> localhost
 NEXT_PUBLIC_SITE_URL=https://your-domain.com
 ```
+
+## Deploy on Vercel
+
+1. Import this repository in Vercel and keep the default Next.js preset.
+2. Root directory: `./`
+3. Build command: default (`next build`)
+4. After first successful deploy, set:
+
+```bash
+NEXT_PUBLIC_SITE_URL=https://your-project.vercel.app
+```
+
+5. Redeploy once so metadata, sitemap, robots, and share URLs use the canonical site URL.
 
 ---
 
