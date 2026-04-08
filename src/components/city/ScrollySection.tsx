@@ -24,12 +24,11 @@ interface Props {
 export function ScrollySection({
   children,
   threshold = 0.35,
-  once      = false,
+  once      = true,
   className = "",
 }: Props) {
   const ref          = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
-  const triggered    = useRef(false);
 
   useEffect(() => {
     if (!ref.current) return;
@@ -38,12 +37,11 @@ export function ScrollySection({
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          triggered.current = true;
         } else if (!once) {
           setIsVisible(false);
         }
       },
-      { threshold },
+      { threshold, rootMargin: "0px 0px -8% 0px" },
     );
 
     obs.observe(ref.current);

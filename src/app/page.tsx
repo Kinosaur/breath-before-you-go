@@ -1,18 +1,11 @@
 /**
  * Landing page — Server Component (statically rendered)
  *
- * Assembles:
- *   1. Hero with tagline + Data Freshness badge
- *   2. Dual entry point cards (Plan a Trip / My City)
- *   3. Asia Breathing Map (client, lazy-loaded)
- *   4. City grid (15 cities)
- *   5. Footer with attribution
- *
- * Data is read from disk at build/request time (getIndex uses fs.readFileSync).
- * No network calls from the server — all data is pre-computed static JSON.
- *
- * ModeBadge reads ?mode= client-side via useSearchParams() so this route
- * stays statically rendered (○) — no searchParams prop needed here.
+ * Structure:
+ *   1. Hero — headline, one-line description, inline caveat
+ *   2. Asia Breathing Map
+ *   3. City grid (15 cities)
+ *   4. Footer with attribution
  */
 
 import { Suspense } from "react";
@@ -21,7 +14,6 @@ import { DataFreshnessBadge } from "@/components/ui/DataFreshnessBadge";
 import { CityGrid }           from "@/components/ui/CityGrid";
 import { AsiaBreathingMapClient } from "@/components/map/AsiaBreathingMapClient";
 import { ModeBadge } from "@/components/ui/ModeBadge";
-import { EntryPointCards } from "@/components/ui/EntryPointCards";
 
 export default function HomePage() {
   const index = getIndex();
@@ -32,56 +24,37 @@ export default function HomePage() {
       {/* ── Hero ────────────────────────────────────────────────────────── */}
       <section className="px-5 pt-16 pb-10 max-w-5xl mx-auto">
 
-        <div className="flex flex-wrap items-center gap-3 mb-6">
-          <DataFreshnessBadge
-            generatedAt={index.generated}
-          />
-          {/* Suspense required: useSearchParams() suspends until query string is known */}
-          <Suspense fallback={null}>
-            <ModeBadge />
-          </Suspense>
-        </div>
-
         <h1 className="font-editorial text-4xl sm:text-5xl font-bold text-ink leading-tight mb-3">
           Breathe Before You Go
         </h1>
 
-        <p className="text-xl text-ink-muted mb-3">
-          Air quality decision intelligence across Asia.
+        <p className="text-xl text-ink-muted mb-4 max-w-2xl">
+          When is it safe to breathe? Seasonal air quality for {index.cityCount} Asian cities — pick one to explore.
         </p>
 
-        <p className="text-base text-ink-muted max-w-2xl leading-relaxed">
-          Explore years of air quality data across {index.cityCount} Asian cities and make clearer choices:
-          which months carry lower risk, which periods to avoid, and which hours are typically safer for outdoor activity.
-        </p>
-        <p className="mt-3 text-sm text-ink-muted max-w-2xl leading-relaxed">
-          Seasonal planning tool, not a real-time monitor — for today&apos;s readings use{" "}
-          <a
-            href="https://www.iqair.com"
-            target="_blank"
-            rel="noreferrer"
-            className="link-underline-reveal transition-colors hover:text-ink"
-          >
-            IQAir ↗
-          </a>{" "}
-          or your local authority.{" "}
-          <a href="/about" className="link-underline-reveal transition-colors hover:text-ink">
-            Methodology ↗
-          </a>
-        </p>
-      </section>
-
-      {/* ── Entry paths ─────────────────────────────────────────────────── */}
-      <section className="px-5 pb-12 max-w-5xl mx-auto">
-        <div className="flex items-baseline gap-3 mb-5">
-          <h2 className="font-editorial text-2xl font-semibold text-ink">
-            Start Here
-          </h2>
-          <span className="text-base text-ink-muted hidden sm:inline">
-            — choose a planning path
+        <div className="flex flex-wrap items-center gap-3">
+          <DataFreshnessBadge generatedAt={index.generated} />
+          {/* Suspense required: useSearchParams() suspends until query string is known */}
+          <Suspense fallback={null}>
+            <ModeBadge />
+          </Suspense>
+          <span className="text-xs text-ink-muted font-mono">
+            Seasonal data —{" "}
+            <a
+              href="https://www.iqair.com"
+              target="_blank"
+              rel="noreferrer"
+              className="link-underline-reveal hover:text-ink transition-colors"
+            >
+              IQAir ↗
+            </a>
+            {" "}for today&apos;s readings ·{" "}
+            <a href="/about" className="link-underline-reveal hover:text-ink transition-colors">
+              Methodology ↗
+            </a>
           </span>
         </div>
-        <EntryPointCards />
+
       </section>
 
       {/* ── Asia Breathing Map ───────────────────────────────────────────── */}
@@ -90,7 +63,7 @@ export default function HomePage() {
           <h2 className="font-editorial text-2xl font-semibold text-ink">
             Asia Breathing Map
           </h2>
-          <span className="text-base text-ink-muted hidden sm:inline">
+          <span className="text-sm text-ink-muted hidden sm:inline">
             — drag the month slider to change marker colors
           </span>
         </div>
@@ -148,7 +121,7 @@ export default function HomePage() {
           <div className="text-right">
             <div>Built by Kino · Summer 2026</div>
             <div className="text-ink-muted/80 mt-0.5">
-              {index.cityCount} cities · 5 years of data
+              {index.cityCount} cities · years of seasonal data
             </div>
           </div>
         </div>

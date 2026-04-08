@@ -23,6 +23,7 @@
 import { notFound }                      from "next/navigation";
 import Link                              from "next/link";
 import dynamic                           from "next/dynamic";
+import type { Metadata }                 from "next";
 import {
   getCityProfile,
   getSeasonalHeatmap,
@@ -35,9 +36,39 @@ import { classifyBand, getBandColor }    from "@/lib/constants";
 import { CitySectionNav } from "@/components/city/CitySectionNav";
 import { CityReadingProgress } from "@/components/city/CityReadingProgress";
 import { HeavyBlockCoordinator } from "@/components/city/HeavyBlockCoordinator";
+import { CityShareButton } from "@/components/city/CityShareButton";
 
 interface Props {
   params: Promise<{ id: string }>;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { id } = await params;
+  try {
+    const profile = getCityProfile(id);
+    const pm25    = profile.healthMetrics.annualMedianPm25;
+    const best    = profile.healthMetrics.bestMonthName;
+    const worst   = profile.healthMetrics.worstMonthName;
+    const title   = `${profile.cityName} Air Quality — Breathe Before You Go`;
+    const description = `${profile.cityName}, ${profile.country}: annual median PM2.5 ${pm25} µg/m³. Best month: ${best}. Worst month: ${worst}. Seasonal health calendar, cigarette equivalence, and life expectancy impact.`;
+    return {
+      title,
+      description,
+      openGraph: {
+        title,
+        description,
+        url: `/cities/${id}`,
+        type: "website",
+      },
+      twitter: {
+        card:        "summary_large_image",
+        title,
+        description,
+      },
+    };
+  } catch {
+    return { title: "City — Breathe Before You Go" };
+  }
 }
 
 function formatHourLabel(hour: number): string {
@@ -219,6 +250,14 @@ export default async function CityPage({ params }: Props) {
         <section className="pb-10">
           <div className="flex flex-wrap items-center gap-3 mb-4">
             <DataFreshnessBadge generatedAt={freshnessGeneratedAt} />
+            <CityShareButton
+              cityName={profile.cityName}
+              country={profile.country}
+              pm25={profile.healthMetrics.annualMedianPm25}
+              bestMonth={profile.healthMetrics.bestMonthName}
+              worstMonth={profile.healthMetrics.worstMonthName}
+              cityId={id}
+            />
           </div>
 
           <div className="flex items-start gap-4">

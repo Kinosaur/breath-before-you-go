@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { CornerActions } from "@/components/ui/CornerActions";
 import { SmartCursor } from "@/components/ui/SmartCursor";
+import { getSiteUrl } from "@/lib/site-url";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -34,6 +35,7 @@ const newsreader = Newsreader({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(getSiteUrl()),
   title: {
     default:  "Breathe Before You Go",
     template: "%s · Breathe Before You Go",

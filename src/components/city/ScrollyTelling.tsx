@@ -273,7 +273,7 @@ function BurningSeasonContent({ profile, visible }: { profile: CityProfile; visi
         {s3.title}
       </h2>
 
-      <p className="text-sm text-ink-muted mb-10 text-center max-w-lg mx-auto leading-relaxed">
+      <p className="text-sm sm:text-base text-ink-muted mb-10 text-left max-w-lg mx-auto leading-relaxed">
         {s3.narrative}
       </p>
 
@@ -308,7 +308,7 @@ function BurningSeasonContent({ profile, visible }: { profile: CityProfile; visi
 
               {/* Month label */}
               <span className={[
-                "text-[9px] sm:text-[10px] font-mono",
+                "text-[10px] sm:text-[11px] font-mono",
                 isSpike ? "text-orange-400 font-bold" : "text-ink-muted",
               ].join(" ")}>
                 {MONTH_SHORT[i]}
@@ -319,7 +319,7 @@ function BurningSeasonContent({ profile, visible }: { profile: CityProfile; visi
       </div>
 
       {/* Scale labels */}
-      <div className="flex justify-between text-[9px] text-ink-muted font-mono mb-6 px-0.5">
+      <div className="flex justify-between text-[10px] text-ink-muted font-mono mb-6 px-0.5">
         <span>↑ PM2.5 (µg/m³)</span>
         <span>Scale: 0 – {Math.round(maxPm25)} µg/m³</span>
       </div>
@@ -344,8 +344,8 @@ function BurningSeasonContent({ profile, visible }: { profile: CityProfile; visi
                 >
                   {(m.p50 ?? 0).toFixed(0)}
                 </div>
-                <div className="text-[9px] text-ink-muted mt-0.5">µg/m³</div>
-                <div className="text-[9px] text-ink-muted mt-1">
+                <div className="text-[10px] text-ink-muted mt-0.5">µg/m³</div>
+                <div className="text-[10px] text-ink-muted mt-1">
                   {(m.cigarettesPerDay ?? 0).toFixed(1)} cigs/day
                 </div>
               </div>
@@ -392,7 +392,7 @@ function WhenToVisitContent({ profile, visible }: { profile: CityProfile; visibl
         breathing freely and holding your breath.
       </h2>
 
-      <p className="text-sm text-ink-muted mb-10 text-center max-w-lg mx-auto leading-relaxed">
+      <p className="text-sm sm:text-base text-ink-muted mb-10 text-left max-w-lg mx-auto leading-relaxed">
         Each card shows the monthly median PM2.5 and the share of days safe for outdoor jogging.
       </p>
 
@@ -421,13 +421,13 @@ function WhenToVisitContent({ profile, visible }: { profile: CityProfile; visibl
               }}
             >
               {/* Badge */}
-              <div className="text-[8px] font-bold mb-1 h-3">
+              <div className="text-[10px] font-bold mb-1 h-3">
                 {isBest  && <span className="text-green-400">BEST</span>}
                 {isWorst && <span className="text-red-400">WORST</span>}
               </div>
 
               {/* Month */}
-              <div className="text-[10px] font-bold text-ink-muted mb-1">
+              <div className="text-[11px] font-bold text-ink-muted mb-1">
                 {MONTH_SHORT[i]}
               </div>
 
@@ -443,7 +443,7 @@ function WhenToVisitContent({ profile, visible }: { profile: CityProfile; visibl
               </div>
 
               {/* Safe jog % */}
-              <div className="text-[8px] text-ink-muted">
+              <div className="text-[10px] text-ink-muted">
                 {jogSafe.toFixed(0)}% jog
               </div>
             </div>
@@ -638,7 +638,7 @@ function YourWindowContent({ profile, visible }: { profile: CityProfile; visible
             />
           ))}
         </div>
-        <div className="flex text-[8px] text-ink-muted font-mono">
+        <div className="flex text-[10px] text-ink-muted font-mono">
           {MONTH_SHORT.map((s) => (
             <div key={s} className="flex-1 text-center">{s}</div>
           ))}
