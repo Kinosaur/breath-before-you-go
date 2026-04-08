@@ -31,7 +31,7 @@ function BandBadge({ pm25 }: { pm25: number }) {
   const text  = getBandTextColor(band);
   return (
     <span
-      className="inline-block px-2.5 py-0.5 rounded-full text-xs font-semibold"
+      className="inline-block whitespace-nowrap px-2.5 py-0.5 rounded-full text-xs font-semibold flex-shrink-0"
       style={{ background: color, color: text }}
     >
       {label}
@@ -193,7 +193,7 @@ export function HealthMetricsPanel({ profile }: Props) {
         <div className="space-y-4">
           <div>
             <div className="text-sm text-ink-faint mb-1">Best month (lowest PM2.5)</div>
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
               <span className="text-lg font-bold text-ink">{hm.bestMonthName}</span>
               {hm.bestMonthMedian != null && (
                 <>
@@ -208,7 +208,7 @@ export function HealthMetricsPanel({ profile }: Props) {
 
           <div>
             <div className="text-sm text-ink-faint mb-1">Worst month (highest PM2.5)</div>
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
               <span className="text-lg font-bold text-ink">{hm.worstMonthName}</span>
               {hm.worstMonthMedian != null && (
                 <>

@@ -1,57 +1,165 @@
 # Breathe Before You Go
 
-Help people in Asia decide when and where it is safer to breathe and travel.
+**Seasonal air quality decision support for 15 Asian cities.**
 
-## Purpose
+> *When and where is it safe to breathe?*
 
-This community project turns PM2.5 data into decisions people can use:
+Live: [breath-before-you-go.vercel.app](https://breath-before-you-go.vercel.app) · Methodology: [/about](https://breath-before-you-go.vercel.app/about)
 
-- Understand how bad air pollution is across Asian cities.
-- Choose better months for travel.
-- Find typically safer daily windows for outdoor activity.
+---
 
-## Core User Journeys
+## What it does
 
-1. Plan a trip:
-- Compare cities by seasonal PM2.5 patterns.
-- See best month and worst month.
-- Estimate trip exposure.
+Existing AQI tools (IQAir, AirVisual) show real-time numbers with no seasonal context, no health translation, and no planning layer. This fills those gaps.
 
-2. My city:
-- See hourly breathing patterns.
-- Identify safer windows for walk or exercise.
-- Track health-oriented context from PM2.5 data.
+For every city you get:
 
-## Data + Methodology
+- **Breathing Calendar** — 12×31 D3 heatmap of every day of the year, colored by PM2.5 band. Shows the full seasonal pattern at a glance.
+- **Lung Clock** — 24-hour radial chart showing the typical daily pollution cycle and safe exercise windows.
+- **Life Expectancy Toll** — AQLI-based estimate of years of life expectancy lost from long-term exposure, compared to smoking and alcohol.
+- **Cigarette Counter** — Berkeley Earth equivalence: breathing this city's air year-round equals smoking how many cigarettes per day?
+- **Asia Breathing Map** — Mapbox GL JS continental map with a month slider showing every city's typical PM2.5 for that month.
+- **City Narrative** — Plain-language seasonal analysis written from the data: what drives the bad season, when the relief arrives, what the numbers mean.
+- **Data Confidence Badge** — Honest signal: how many years of data back up this profile?
 
-- Source data: OpenAQ API v3
-- Health baseline: WHO 2021 PM2.5 guidance
-- Communication metric: Berkeley Earth cigarette equivalence
-- Life-impact framing: AQLI style years-lost estimate
+This is a **seasonal planning tool**, not a real-time monitor. For today's readings, use [IQAir](https://www.iqair.com).
 
-For formulas, caveats, and limits, see the in-app Methodology page at `/about`.
+---
 
-## Local Development
+## Cities (15)
 
-```bash
-npm install
-npm run dev
+| Tier | Cities | What you get |
+|------|--------|-------------|
+| **T1 — Deep** | Bangkok · Chiang Mai · Delhi | Full scrollytelling story + all charts |
+| **T2 — Standard** | Hanoi · Jakarta · Seoul · Beijing · Dhaka · Kathmandu · Ulaanbaatar | All charts + narrative summary |
+| **T3 — Dashboard** | Manila · Ho Chi Minh City · Taipei · Singapore · Mumbai | All charts + narrative summary |
+
+---
+
+## Stack
+
+| Layer | Technology |
+|-------|------------|
+| Framework | Next.js 15 (App Router, SSG) |
+| Language | TypeScript |
+| Styling | Tailwind CSS v3 |
+| Visualizations | D3.js v7 (custom — no chart libraries) |
+| Map | Mapbox GL JS |
+| Data pipeline | Python 3.12 (Pandas, Requests) |
+| Data source | OpenAQ API v3 |
+| Hosting | Vercel (free tier, zero server cost) |
+| Data format | Static JSON in `/public/data/` |
+
+---
+
+## Architecture
+
+```
+OpenAQ API v3
+     │
+     ▼
+data_pipeline/
+  04_fetch_daily_aggregates.py   ← raw PM2.5 daily data per city
+  05_fetch_hourly_aggregates.py  ← hourly data for Lung Clock
+  06_compute_metrics.py          ← seasonal profiles, P10/P50/P90,
+  │                                 AQI distribution, cigarette equiv,
+  │                                 AQLI years-lost
+  07_fetch_health_context.py     ← WHO 2019 modelled estimates
+  08_export_json.py              ← assembles all data into static JSON
+  09_validate.py                 ← schema validation before deploy
+     │
+     ▼
+public/data/
+  index.json                     ← 15-city summary (map + city grid)
+  cities/{id}/
+    profile.json                 ← full city page data
+    seasonal-heatmap.json        ← Breathing Calendar D3 input
+    hourly-latest.json           ← Lung Clock D3 input
+     │
+     ▼
+Next.js SSG
+  /                              ← homepage + Asia map + city grid
+  /cities/[id]                   ← city page (15 static routes)
+  /about                         ← methodology reference
+  /sitemap.xml                   ← auto-generated
+  /robots.txt                    ← auto-generated
 ```
 
-Open http://localhost:3000.
+All data is pre-computed at pipeline run time. The frontend reads static JSON — no API calls, no database, no server-side rendering. Re-running the pipeline and re-deploying updates the data.
 
-## Data Pipeline (Python)
+---
 
-Pipeline scripts are in `data_pipeline/` and can be run from the project `.venv`.
+## Health metrics methodology
 
-Typical refresh sequence:
+| Metric | Source | Formula |
+|--------|--------|---------|
+| PM2.5 bands | WHO 2021 AQG | 0–15 / 15–25 / 25–50 / 50–100 / 100+ µg/m³ |
+| Cigarette equivalence | Berkeley Earth | PM2.5 (µg/m³) ÷ 22 = cigarettes/day |
+| Life years lost | AQLI (EPIC/UChicago) | (annual mean − 5) × 0.098 |
+| WHO cross-reference | WHO 2019 modelled estimates | Independent validation layer |
+
+All caveats, formula derivations, and known limitations are documented at [/about](https://breath-before-you-go.vercel.app/about).
+
+---
+
+## Local development
+
+```bash
+# Install
+npm install
+
+# Dev server
+npm run dev
+# → http://localhost:3000
+
+# Type check
+npx tsc --noEmit
+
+# Production build
+npm run build
+```
+
+### Environment variables
+
+```bash
+# Required for data pipeline only (not needed to run the frontend)
+OPENAQ_API_KEY=your_key_here
+
+# Optional: override the canonical site URL (defaults to VERCEL_URL in production)
+NEXT_PUBLIC_SITE_URL=https://your-domain.com
+```
+
+---
+
+## Data pipeline
+
+Pipeline scripts live in `data_pipeline/`. Run from project root after activating `.venv`:
 
 ```bash
 cd data_pipeline
-../.venv/bin/python 04_fetch_daily_aggregates.py
-../.venv/bin/python 05_fetch_hourly_aggregates.py
-../.venv/bin/python 06_compute_metrics.py
-../.venv/bin/python 07_fetch_health_context.py
-../.venv/bin/python 08_export_json.py
-../.venv/bin/python 09_validate.py
+
+# Full refresh (order matters)
+python 04_fetch_daily_aggregates.py   # raw daily PM2.5 per city
+python 05_fetch_hourly_aggregates.py  # hourly data for Lung Clock
+python 06_compute_metrics.py          # seasonal profiles + health metrics
+python 07_fetch_health_context.py     # WHO 2019 modelled estimates
+python 08_export_json.py              # assemble static JSON for frontend
+python 09_validate.py                 # schema check before deploy
 ```
+
+The pipeline preserves manually-authored fields (`scrollyContent`, `narrativeSummary`) in existing `profile.json` files — re-running will not overwrite narrative content.
+
+---
+
+## Known limitations
+
+- **PM2.5 only** — NO₂, O₃, and CO₂ are not tracked.
+- **Station coverage varies** — cities with fewer sensors (e.g. Manila: 2 years, 357 days) have less reliable seasonal patterns than cities with deep history (e.g. Ho Chi Minh City: 11 years, 2,742 days).
+- **Health metrics assume permanent residence** — cigarette equivalence and years-lost estimates apply to year-round residents, not short-term visitors.
+- **Not medical advice** — all figures are population-level statistical estimates.
+
+---
+
+## License
+
+MIT
