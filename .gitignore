@@ -26,6 +26,12 @@ __pycache__/
 # Data pipeline outputs
 data_pipeline/output/*.csv
 coverage_report.md
+# Test artifacts
+.pytest_cache/
+
+# Pipeline run log (local artifact — differs per machine)
+data_pipeline/pipeline_log.jsonl
+
 # Logs
 *.log
 # Misc

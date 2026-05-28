@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Instrument_Sans, Newsreader } from "next/font/google";
+import { Newsreader } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import { CornerActions } from "@/components/ui/CornerActions";
@@ -17,13 +17,6 @@ const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
   weight: "100 900",
-  display: "swap",
-});
-
-const instrumentSans = Instrument_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-instrument-sans",
   display: "swap",
 });
 
@@ -83,7 +76,7 @@ export default function RootLayout({
       <body
         className={`
           ${geistSans.variable} ${geistMono.variable}
-          ${instrumentSans.variable} ${newsreader.variable}
+          ${newsreader.variable}
           font-sans antialiased
           bg-[#080B12] text-[#f5f5f5]
           min-h-screen

@@ -331,6 +331,8 @@ def main():
     health_ctx = load_health_context()
     index_entries = []
     files_written = 0
+    warnings = 0
+    errors = 0
 
     for city in CITIES:
         cid = city["id"]
@@ -339,11 +341,13 @@ def main():
         metrics = load_metrics(cid)
         if not metrics:
             print(f"    [SKIP] No metrics — run 06 first")
+            errors += 1
             continue
 
         hourly_df = load_hourly(cid)
         if hourly_df is None:
             print(f"    [WARN] No hourly data — hourly-latest.json will be empty")
+            warnings += 1
 
         entry = export_city(city, metrics, health_ctx, hourly_df)
         if entry:
@@ -375,6 +379,21 @@ def main():
     for p in sorted(PUBLIC_DIR.rglob("*.json")):
         size_kb = p.stat().st_size / 1024
         print(f"  {str(p.relative_to(PUBLIC_DIR)):<55} {size_kb:6.1f} KB")
+
+    # ── Append run record to pipeline_log.jsonl ───────────────────────────────
+    # Each line is one pipeline run. JSONL lets you grep/tail without parsing
+    # the whole file, and append without loading it into memory.
+    log_entry = {
+        "run_at":            datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "cities_processed":  len(index_entries),
+        "files_written":     files_written,
+        "warnings":          warnings,
+        "errors":            errors,
+    }
+    log_path = Path("pipeline_log.jsonl")
+    with open(log_path, "a", encoding="utf-8") as f:
+        f.write(json.dumps(log_entry) + "\n")
+    print(f"\n  ✓ pipeline_log.jsonl ← {log_entry}")
 
 
 if __name__ == "__main__":

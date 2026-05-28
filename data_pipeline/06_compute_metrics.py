@@ -34,6 +34,29 @@ from datetime import datetime
 
 from config import CITIES
 
+try:
+    import pandera.pandas as pa
+    _PANDERA_AVAILABLE = True
+except ImportError:
+    _PANDERA_AVAILABLE = False
+    print("  [INFO] pandera not installed — skipping schema validation (pip install pandera)")
+
+# Expected columns in the raw daily CSV produced by 04_fetch_daily_aggregates.py.
+# If OpenAQ changes their output format, validation will surface it immediately
+# instead of silently producing wrong metrics.
+_RAW_CSV_SCHEMA = None
+if _PANDERA_AVAILABLE:
+    _RAW_CSV_SCHEMA = pa.DataFrameSchema(
+        columns={
+            "date_local": pa.Column(str, nullable=False),
+            "parameter":  pa.Column(str, nullable=False),
+            "median":     pa.Column(float, nullable=True, coerce=True),
+            "sensor_id":  pa.Column(object, nullable=True),
+        },
+        strict=False,   # allow extra columns (avg, min, max, coverage_pct, etc.)
+        coerce=False,
+    )
+
 # ---------------------------------------------------------------------------
 # Configuration
 # ---------------------------------------------------------------------------
@@ -147,6 +170,16 @@ def compute_city(city: dict) -> dict | None:
         return None
 
     df = pd.read_csv(path)
+
+    # Schema validation — catches API format changes before they corrupt metrics
+    if _PANDERA_AVAILABLE and _RAW_CSV_SCHEMA is not None:
+        try:
+            _RAW_CSV_SCHEMA.validate(df, lazy=True)
+        except pa.errors.SchemaErrors as exc:
+            failures = exc.failure_cases[["column", "check", "failure_case"]]
+            print(f"    [SCHEMA WARN] {city['name']}: {len(exc.failure_cases)} schema issue(s) — results may be incomplete")
+            print(failures.to_string(index=False))
+
     df["date_local"] = pd.to_datetime(df["date_local"], errors="coerce")
     df["year"]  = df["date_local"].dt.year
     df["month"] = df["date_local"].dt.month

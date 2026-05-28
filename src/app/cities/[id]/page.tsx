@@ -105,12 +105,15 @@ function findLongestSafeWalkWindow(
 
   if (bestStart === -1 || bestEnd === -1) return null;
 
+  const durationHours = bestEnd - bestStart + 1;
+
+  if (durationHours === 24) {
+    return { label: "All day", durationHours: 24 };
+  }
+
   const startLabel = formatHourLabel(bestStart);
-  const endLabel = formatHourLabel((bestEnd + 1) % 24);
-  return {
-    label: `${startLabel}-${endLabel}`,
-    durationHours: bestEnd - bestStart + 1,
-  };
+  const endLabel   = formatHourLabel((bestEnd + 1) % 24);
+  return { label: `${startLabel}-${endLabel}`, durationHours };
 }
 
 function DataConfidenceBadge({

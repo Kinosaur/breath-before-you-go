@@ -29,7 +29,7 @@ const config: Config = {
         ink: {
           DEFAULT: "#f5f5f5",
           muted:   "#9AA3B0",
-          faint:   "#5a5a5a",
+          faint:   "#757575",  // was #5a5a5a (3.8:1) — now 4.6:1 WCAG AA
         },
         // ── Interactive accent (mission-aligned) ────────────────────────────
         accent: {
@@ -37,10 +37,9 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["var(--font-geist-sans)", "system-ui", "sans-serif"],
-        ui: ["var(--font-instrument-sans)", "system-ui", "sans-serif"],
+        sans:      ["var(--font-geist-sans)", "system-ui", "sans-serif"],
         editorial: ["var(--font-newsreader)", "Georgia", "serif"],
-        mono: ["var(--font-geist-mono)", "monospace"],
+        mono:      ["var(--font-geist-mono)", "monospace"],
       },
     },
   },
