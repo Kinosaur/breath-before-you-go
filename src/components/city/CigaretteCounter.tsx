@@ -56,11 +56,27 @@ function formatPct(v: number): string {
 
 // ── Odometer digits ───────────────────────────────────────────────────────────
 
+function useReducedMotion(): boolean {
+  const [reduced, setReduced] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setReduced(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setReduced(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
+  return reduced;
+}
+
 function OdometerDigit({ value, prevValue }: { value: number; prevValue: number }) {
+  const reduced  = useReducedMotion();
   const [display, setDisplay] = useState(prevValue);
   const rafRef = useRef<number>();
 
   useEffect(() => {
+    // Skip animation for users who prefer reduced motion
+    if (reduced) { setDisplay(value); return; }
+
     const start    = prevValue;
     const end      = value;
     const duration = 1200;
@@ -76,7 +92,7 @@ function OdometerDigit({ value, prevValue }: { value: number; prevValue: number 
     }
     rafRef.current = requestAnimationFrame(animate);
     return () => { if (rafRef.current) cancelAnimationFrame(rafRef.current); };
-  }, [value, prevValue]);
+  }, [value, prevValue, reduced]);
 
   return <>{display.toFixed(2)}</>;
 }
@@ -145,24 +161,26 @@ function TripCalculator({
       {/* Date inputs */}
       <div className="flex flex-wrap gap-3 mb-5">
         <div className="flex flex-col gap-1">
-          <label className="text-[10px] text-ink-faint font-mono">Start date</label>
+          <label htmlFor="trip-start" className="text-[10px] text-ink-faint font-mono">Start date</label>
           <input
+            id="trip-start"
             type="date"
             value={startDate}
             min={today10}
             onChange={(e) => setStartDate(e.target.value)}
-            className="bg-surface-3 border border-surface-3 text-ink text-xs rounded-lg px-3 py-2
+            className="bg-surface-3 border border-surface-3 text-ink text-xs rounded-lg px-3 py-3 min-h-[44px]
                        transition-colors focus:outline-none focus:border-ink-faint hover:border-ink-faint/60 font-mono"
           />
         </div>
         <div className="flex flex-col gap-1">
-          <label className="text-[10px] text-ink-faint font-mono">End date</label>
+          <label htmlFor="trip-end" className="text-[10px] text-ink-faint font-mono">End date</label>
           <input
+            id="trip-end"
             type="date"
             value={endDate}
             min={startDate}
             onChange={(e) => setEndDate(e.target.value)}
-            className="bg-surface-3 border border-surface-3 text-ink text-xs rounded-lg px-3 py-2
+            className="bg-surface-3 border border-surface-3 text-ink text-xs rounded-lg px-3 py-3 min-h-[44px]
                        transition-colors focus:outline-none focus:border-ink-faint hover:border-ink-faint/60 font-mono"
           />
         </div>

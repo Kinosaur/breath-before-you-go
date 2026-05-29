@@ -48,9 +48,9 @@ const LABEL_W  = 160;
 const MARGIN   = { top: 12, right: 56, bottom: 32, left: LABEL_W };
 
 // City-bar accent colour (warm red-orange so it reads as "attention" not "danger")
-const CITY_COLOR   = "#E87040";
-const PEER_COLOR   = "#3a3a3a";
-const ANCHOR_COLOR = "#4a4a4a";
+const CITY_COLOR   = "#E87040";   // warm accent — attention, not danger
+const PEER_COLOR   = "#2a2a2a";   // surface-3 equivalent
+const ANCHOR_COLOR = "#3a3a3a";   // between surface-3 and ink.faint
 
 export function LifeExpectancyChart({ context, cityName, peerCities }: Props) {
   const svgRef       = useRef<SVGSVGElement>(null);
@@ -251,7 +251,7 @@ export function LifeExpectancyChart({ context, cityName, peerCities }: Props) {
         axis.select(".domain").attr("stroke", "#3a3a3a");
         axis.selectAll(".tick line").attr("stroke", "#3a3a3a");
         axis.selectAll(".tick text")
-          .attr("fill", "#666666")
+          .attr("fill", "#757575")
           .attr("font-size", 10);
       });
 
@@ -260,8 +260,8 @@ export function LifeExpectancyChart({ context, cityName, peerCities }: Props) {
       .attr("x", barW / 2)
       .attr("y", axisY + 26)
       .attr("text-anchor", "middle")
-      .attr("font-size", 9)
-      .attr("fill", "#505050")
+      .attr("font-size", 10)
+      .attr("fill", "#757575")
       .text("life-years lost vs. WHO clean-air baseline");
 
   }, [context, cityName, peerCities, showPeers, showEquity]);
@@ -276,8 +276,8 @@ export function LifeExpectancyChart({ context, cityName, peerCities }: Props) {
     <div>
       {/* ── Callout summary ───────────────────────────────────────────── */}
       {cityYears !== null && (
-        <div className="mb-5 p-3 rounded-lg bg-[#1e1510] border border-[#3a2510]">
-          <p className="text-sm text-[#e0a060] leading-snug">
+        <div className="mb-5 p-3 rounded-lg bg-surface-2 border border-[#E87040]/25">
+          <p className="text-sm text-[#E87040] leading-snug">
             <span className="font-semibold">{cityName}</span>
             {" "}residents lose an estimated{" "}
             <span className="font-bold tabular-nums">{cityYears.toFixed(1)} year{cityYears !== 1 ? "s" : ""}</span>
@@ -320,7 +320,14 @@ export function LifeExpectancyChart({ context, cityName, peerCities }: Props) {
       </div>
 
       <div ref={containerRef}>
-        <svg ref={svgRef} aria-label={`Life expectancy impact chart for ${cityName}`} />
+        <svg
+          ref={svgRef}
+          aria-label={
+            cityYears !== null
+              ? `Horizontal bar chart. ${cityName}'s air costs an estimated ${cityYears.toFixed(1)} life-years — compared to smoking 1 cigarette/day (1.0 yr) and heavy alcohol use (1.3 yr).`
+              : `Life expectancy impact chart for ${cityName}`
+          }
+        />
       </div>
 
       <p className="mt-3 text-[10px] text-ink-faint leading-relaxed">

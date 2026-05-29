@@ -52,7 +52,11 @@ export function CitySectionNav({ items }: Props) {
   }, [sectionIds]);
 
   return (
-    <nav className="mt-6 flex flex-wrap gap-2" aria-label="City page sections">
+    <nav
+      className="mt-6 flex flex-wrap gap-2 sticky top-0 z-40 -mx-5 px-5 py-2
+                 bg-[#080B12]/90 backdrop-blur-sm border-b border-surface-3/50"
+      aria-label="City page sections"
+    >
       {items.map(({ href, label }) => {
         const id = href.replace("#", "");
         const isActive = id === activeId;

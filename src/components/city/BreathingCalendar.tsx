@@ -117,8 +117,8 @@ export function BreathingCalendar({ heatmap }: Props) {
       .attr("x", (d) => LABEL_W + (d - 1) * STEP + CELL_SIZE / 2)
       .attr("y", HEADER_H - 4)
       .attr("text-anchor", "middle")
-      .attr("font-size", 8)
-      .attr("fill", "#5a5a5a")
+      .attr("font-size", 10)
+      .attr("fill", "#757575")
       .text((d) => d);
 
     function showTooltip(event: MouseEvent | PointerEvent, month: number, day: number, entry: HeatmapEntry) {
@@ -159,7 +159,7 @@ export function BreathingCalendar({ heatmap }: Props) {
         .attr("y", y + CELL_SIZE / 2 + 3)
         .attr("text-anchor", "end")
         .attr("font-size", 9)
-        .attr("fill", "#9e9e9e")
+        .attr("fill", "#9AA3B0")
         .text(MONTH_SHORT[m - 1]);
 
       // Day cells
@@ -261,6 +261,7 @@ export function BreathingCalendar({ heatmap }: Props) {
               activeYear === yr
                 ? "bg-ink text-[#0a0a0a] font-semibold"
                 : "bg-surface-3 text-ink-muted hover:bg-surface-2 hover:text-ink",
+            "min-h-[44px]",
             ].join(" ")}
           >
             {yr === "all" ? "All years" : yr}
@@ -273,9 +274,18 @@ export function BreathingCalendar({ heatmap }: Props) {
       </p>
 
       {/* Calendar SVG — horizontally scrollable on mobile */}
-      <div className="overflow-x-auto -mx-1 px-1">
+      <div className="relative overflow-x-auto -mx-1 px-1">
+        {/* Right-edge fade — hints at horizontal scroll on small screens */}
+        <div
+          className="absolute inset-y-0 right-0 w-8 pointer-events-none sm:hidden"
+          style={{ background: "linear-gradient(to left, #181D26, transparent)" }}
+          aria-hidden="true"
+        />
         <div style={{ minWidth: LABEL_W + 31 * STEP }}>
-          <svg ref={svgRef} aria-label="Breathing calendar heatmap" />
+          <svg
+            ref={svgRef}
+            aria-label="Breathing calendar: 12-month heatmap of daily PM2.5 air quality bands. Tap a cell to see the exact value."
+          />
         </div>
       </div>
 

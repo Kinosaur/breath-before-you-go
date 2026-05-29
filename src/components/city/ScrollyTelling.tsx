@@ -107,7 +107,7 @@ function EveryBreathContent({ profile, visible }: { profile: CityProfile; visibl
 
   return (
     <div className={[
-      "max-w-xl text-center transition-all duration-700",
+      "max-w-xl text-center transition-[opacity,transform] duration-500",
       visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
     ].join(" ")}>
       <p className="text-xs text-ink-muted font-mono uppercase tracking-widest mb-6">
@@ -191,7 +191,7 @@ function InvisibleTollContent({ profile, visible }: { profile: CityProfile; visi
 
   return (
     <div className={[
-      "max-w-xl text-center transition-all duration-700",
+      "max-w-xl text-center transition-[opacity,transform] duration-500",
       visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
     ].join(" ")}>
       <p className="text-xs text-ink-muted font-mono uppercase tracking-widest mb-6">
@@ -262,7 +262,7 @@ function BurningSeasonContent({ profile, visible }: { profile: CityProfile; visi
 
   return (
     <div className={[
-      "max-w-2xl w-full transition-all duration-700",
+      "max-w-2xl w-full transition-[opacity,transform] duration-500",
       visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
     ].join(" ")}>
       <p className="text-xs text-ink-muted font-mono uppercase tracking-widest mb-6 text-center">
@@ -288,8 +288,8 @@ function BurningSeasonContent({ profile, visible }: { profile: CityProfile; visi
           return (
             <div key={m.month} className="flex flex-col items-center gap-1" style={{ minWidth: 0, flex: "1 1 0" }}>
               {/* Spike marker */}
-              <div className="text-[10px] leading-none mb-0.5" style={{ opacity: isSpike ? 1 : 0 }}>
-                🔥
+              <div className="text-[10px] leading-none mb-0.5" style={{ opacity: isSpike ? 1 : 0 }} aria-hidden="true">
+                ▲
               </div>
 
               {/* Bar */}
@@ -355,7 +355,7 @@ function BurningSeasonContent({ profile, visible }: { profile: CityProfile; visi
       )}
 
       <p className="mt-8 text-[11px] text-ink-muted text-center max-w-md mx-auto">
-        🔥 = {s3.causeLabel} · Bars show monthly median PM2.5
+        <span aria-hidden="true">▲</span> = {s3.causeLabel} · Bars show monthly median PM2.5
       </p>
     </div>
   );
@@ -380,7 +380,7 @@ function WhenToVisitContent({ profile, visible }: { profile: CityProfile; visibl
 
   return (
     <div className={[
-      "max-w-2xl w-full transition-all duration-700",
+      "max-w-2xl w-full transition-[opacity,transform] duration-500",
       visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
     ].join(" ")}>
       <p className="text-xs text-ink-muted font-mono uppercase tracking-widest mb-6 text-center">
@@ -494,7 +494,7 @@ function TwoBangkoksContent({ profile, visible }: { profile: CityProfile; visibl
 
   return (
     <div className={[
-      "max-w-xl w-full text-center transition-all duration-700",
+      "max-w-xl w-full text-center transition-[opacity,transform] duration-500",
       visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
     ].join(" ")}>
       <p className="text-xs text-ink-muted font-mono uppercase tracking-widest mb-6">
@@ -607,7 +607,7 @@ function YourWindowContent({ profile, visible }: { profile: CityProfile; visible
 
   return (
     <div className={[
-      "max-w-xl w-full text-center transition-all duration-700",
+      "max-w-xl w-full text-center transition-[opacity,transform] duration-500",
       visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
     ].join(" ")}>
       <p className="text-xs text-ink-muted font-mono uppercase tracking-widest mb-6">
@@ -662,19 +662,19 @@ function YourWindowContent({ profile, visible }: { profile: CityProfile; visible
       {/* Recommendations */}
       <div className="space-y-3 text-left">
         <div className="rounded-xl bg-surface-3 border border-green-400/20 p-4">
-          <div className="text-xs font-bold text-green-400 mb-2">✓ Best time to visit</div>
+          <div className="text-xs font-bold text-green-400 mb-2"><span aria-hidden="true">✓</span> Best time to visit</div>
           <div className="text-sm text-ink">{s6.bestWindow.months}</div>
           <div className="text-xs text-ink-muted mt-1">{s6.bestWindow.detail}</div>
         </div>
 
         <div className="rounded-xl bg-surface-3 border border-yellow-400/20 p-4">
-          <div className="text-xs font-bold text-yellow-400 mb-2">⚠ Proceed with care</div>
+          <div className="text-xs font-bold text-yellow-400 mb-2"><span aria-hidden="true">⚠</span> Proceed with care</div>
           <div className="text-sm text-ink">{s6.caution.months}</div>
           <div className="text-xs text-ink-muted mt-1">{s6.caution.detail}</div>
         </div>
 
         <div className="rounded-xl bg-surface-3 border border-red-400/20 p-4">
-          <div className="text-xs font-bold text-red-400 mb-2">✗ High-risk season</div>
+          <div className="text-xs font-bold text-red-400 mb-2"><span aria-hidden="true">✗</span> High-risk season</div>
           <div className="text-sm text-ink">{s6.highRisk.months}</div>
           <div className="text-xs text-ink-muted mt-1">{s6.highRisk.detail}</div>
         </div>

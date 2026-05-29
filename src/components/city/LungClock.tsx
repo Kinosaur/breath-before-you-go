@@ -200,7 +200,7 @@ export function LungClock({ typicalDay, lat, cityName, timezone }: Props) {
       // Center each hourly arc on the integer hour label.
       const startA = hourToAngle(h - 0.5);
       const endA   = hourToAngle(h + 0.5);
-      const color  = entry.isMissing ? "#5a5a5a" : getBandColor(classifyBand(entry.value));
+      const color  = entry.isMissing ? "#757575" : getBandColor(classifyBand(entry.value));
       const safe   = !entry.isMissing && isSafeForActivity(entry, activity);
       const isCur  = !entry.isMissing && h === currentHour;
       const outerR = isCur ? OUTER_R + 10 : OUTER_R;
@@ -289,7 +289,7 @@ export function LungClock({ typicalDay, lat, cityName, timezone }: Props) {
           <div className="flex gap-1 min-w-max px-1 pb-2">
             {dayByHour.map((entry) => {
               const safe  = !entry.isMissing && isSafeForActivity(entry, activity);
-              const color = entry.isMissing ? "#5a5a5a" : getBandColor(classifyBand(entry.value));
+              const color = entry.isMissing ? "#757575" : getBandColor(classifyBand(entry.value));
               const isCur = !entry.isMissing && entry.hour === currentHour;
               return (
                 <div key={entry.hour} className="flex flex-col items-center gap-1">
@@ -425,9 +425,9 @@ export function LungClock({ typicalDay, lat, cityName, timezone }: Props) {
         {/* Daylight window legend */}
         <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-1 text-[10px] font-mono text-ink-muted">
           <div className="flex items-center gap-1.5">
-            <span>☀️ Sunrise {formatHour(sunrise)}</span>
+            <span><span aria-hidden="true">☀</span><span className="sr-only">Sunrise</span> {formatHour(sunrise)}</span>
             <span className="text-ink-faint/60">·</span>
-            <span>🌇 Sunset {formatHour(sunset)}</span>
+            <span><span aria-hidden="true">↓</span><span className="sr-only">Sunset</span> {formatHour(sunset)}</span>
             <span className="text-ink-faint/60">·</span>
             <span className="inline-flex items-center gap-1">
               <span className="inline-block w-3 h-1.5 rounded-sm flex-shrink-0"
@@ -453,7 +453,7 @@ export function LungClock({ typicalDay, lat, cityName, timezone }: Props) {
             </div>
           )}
           <div className="flex items-center gap-1.5">
-            <span className="inline-block w-2.5 h-2.5 rounded-sm flex-shrink-0 bg-[#5a5a5a]/80 border border-surface-3" />
+            <span className="inline-block w-2.5 h-2.5 rounded-sm flex-shrink-0 bg-[#757575]/80 border border-surface-3" />
             <span className="text-ink-faint/80">gray arc = missing hourly data</span>
           </div>
         </div>
@@ -540,7 +540,7 @@ function ActivitySelector({
               }
             }}
             className={[
-              "inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs border transition-all duration-200",
+              "inline-flex items-center gap-1.5 px-3 py-1 min-h-[44px] rounded-full text-xs border transition-all duration-200",
               isActive
                 ? "bg-ink text-[#080B12] border-ink font-semibold"
                 : "bg-surface-3 text-ink-muted border-surface-3 hover:text-ink hover:border-ink-faint/50",

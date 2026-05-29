@@ -51,7 +51,7 @@ export default function AboutPage() {
             <header className="mb-8">
               <h1 className="font-editorial text-4xl sm:text-5xl font-bold text-ink leading-tight mb-3">Methodology</h1>
               <div className="h-px w-48 sm:w-64 bg-ink-faint/40 mb-4 motion-glow-line" aria-hidden="true" />
-              <p className="font-ui text-base sm:text-lg text-ink-muted max-w-2xl leading-relaxed">
+              <p className="font-sans text-base sm:text-lg text-ink-muted max-w-2xl leading-relaxed">
                 Everything here is built on publicly available data and peer-reviewed methodology.
                 This page explains every number you see: what it means, where it comes from, and where
                 its limitations are.

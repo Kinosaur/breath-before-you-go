@@ -56,10 +56,11 @@ export function DataFreshnessBadge({ generatedAt, className = "" }: Props) {
 
       {status === "historical" && (
         <span
-          className="mt-1 max-h-0 overflow-hidden rounded-md border border-transparent px-2 py-0
-                     text-[10px] leading-relaxed text-ink-muted opacity-0 transition-all duration-150
-                     group-hover:max-h-20 group-hover:border-surface-3 group-hover:bg-surface group-hover:py-1 group-hover:opacity-100
-                     group-focus-within:max-h-20 group-focus-within:border-surface-3 group-focus-within:bg-surface group-focus-within:py-1 group-focus-within:opacity-100"
+          className="mt-1 rounded-md border border-transparent px-2 py-0
+                     text-[10px] leading-relaxed text-ink-muted
+                     opacity-0 invisible transition-[opacity,visibility] duration-150
+                     group-hover:opacity-100 group-hover:visible group-hover:border-surface-3 group-hover:bg-surface group-hover:py-1
+                     group-focus-within:opacity-100 group-focus-within:visible group-focus-within:border-surface-3 group-focus-within:bg-surface group-focus-within:py-1"
         >
           {historicalHint}
         </span>
